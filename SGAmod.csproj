@@ -15,4 +15,10 @@
       <HintPath>..\..\..\tModLoader-preview\ModReader\Idglibrary\Idglibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\jacob\Documents\My Games\Terraria\tModLoader\ModSources\SGAmod\.editorconfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\jacob\Documents\My Games\Terraria\tModLoader\ModSources\SGAmod\.editorconfig" />
+  </ItemGroup>
 </Project>

@@ -46,7 +46,7 @@ namespace SGAmod.NPCs.TownNPCs
 
 			NPC.Happiness
 				.SetBiomeAffection<ForestBiome>(AffectionLevel.Like)
-				.SetNPCAffection(ModContent.NPCType<Dergon>(), AffectionLevel.Like)
+				.SetNPCAffection(ModContent.NPCType<Dergon>(), AffectionLevel.Love)
 			//Princess is automatically set
 			; // < Mind the semicolon!
 		}

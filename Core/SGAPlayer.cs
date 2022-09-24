@@ -16,11 +16,90 @@ using Terraria.ModLoader.Default;
 using Idglibrary;
 using Terraria.ModLoader.IO;
 using Terraria.Graphics.Shaders;
+using Terraria.Utilities;
 
 namespace SGAmod
 {
-	public class SGAPlayer : ModPlayer
-	{
 
-	}
+    public partial class SGAPlayer : ModPlayer
+    {
+
+        // Apocalyptical related
+        public double[] apocalypticalChance = { 0, 0, 0, 0 };
+        public float apocalypticalStrength = 1f;
+        public float lifestealentropy = 0f;
+
+        public bool dragonFriend = false;
+
+        public List<int> ExpertisePointsFromBosses;
+        public List<string> ExpertisePointsFromBossesModded;
+        public List<int> ExpertisePointsFromBossesPoints;
+        public int ExpertiseCollected = 0;
+        public int ExpertiseCollectedTotal = 0;
+
+        public override void ResetEffects()
+        {
+            Player.breathMax = 200;
+        }
+
+        public override void clientClone(ModPlayer clientClone)
+        {
+            SGAPlayer sgaplayer = clientClone as SGAPlayer;
+            sgaplayer.ExpertiseCollected = ExpertiseCollected;
+            sgaplayer.ExpertiseCollectedTotal = ExpertiseCollectedTotal;
+            sgaplayer.dragonFriend = dragonFriend;
+        }
+
+        public override void SendClientChanges(ModPlayer clientPlayer)
+        {
+            bool mismatch = false;
+            SGAPlayer sgaplayer = clientPlayer as SGAPlayer;
+
+            if (sgaplayer.ExpertiseCollected != ExpertiseCollected || 
+                sgaplayer.ExpertiseCollectedTotal != ExpertiseCollectedTotal || 
+                sgaplayer.dragonFriend != dragonFriend
+                )
+            {
+                mismatch = true;
+            }
+
+            if (mismatch)
+            {
+                SendClientChangesPacket();
+            }
+        }
+
+
+        private void SendClientChangesPacket()
+        {
+            if (Main.netMode == NetmodeID.MultiplayerClient)
+            {
+
+            }
+        }
+
+
+        public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
+        {
+            return new[] {
+                new Item(ModContent.ItemType<Items.Consumables.GrabBags.StartingBag>())
+            };
+        }
+
+        public override void SaveData(TagCompound tag)
+        {
+            tag["ZZZExpertiseCollectedZZZ"] = ExpertiseCollected;
+            tag["ZZZExpertiseCollectedTotalZZZ"] = ExpertiseCollectedTotal;
+            tag["dragonFriend"] = dragonFriend;
+
+            SaveExpertise(ref tag);
+        }
+
+        public override void LoadData(TagCompound tag)
+        {
+            dragonFriend = tag.GetBool("dragonFriend");
+
+            LoadExpertise(tag);
+        }
+    }
 }

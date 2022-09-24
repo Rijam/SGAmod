@@ -98,14 +98,14 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			if (!Main.gameMenu)
 			{
-				/*
+                /*
 				Texture2D texture = DrakeniteBar.staticeffects[(int)(Main.GlobalTimeWrappedHourly * 20f) % DrakeniteBar.staticeffects.Length];
 				Vector2 slotSize = new(52f, 52f);
 				position -= slotSize * Main.inventoryScale / 2f - frame.Size() * scale / 2f;
 				Vector2 drawPos = position + slotSize * Main.inventoryScale / 2f;
 				Vector2 textureOrigin = new(texture.Width / 2, texture.Height / 2);
 				spriteBatch.Draw(texture, drawPos, null, drawColor, 0f, textureOrigin, Main.inventoryScale * 2f, SpriteEffects.None, 0f);
-				*/
+                */
 			}
 		}
 

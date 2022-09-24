@@ -30,8 +30,6 @@ namespace SGAmod.NPCs.TownNPCs
 
 		public override void SetStaticDefaults()
 		{
-			// DisplayName automatically assigned from .lang files, but the commented line below is the normal approach.
-			// DisplayName.SetDefault("Example Person");
 			Main.npcFrameCount[NPC.type] = 7;
 			NPCID.Sets.ExtraFramesCount[NPC.type] = 0;
 			NPCID.Sets.AttackFrameCount[NPC.type] = 0;
@@ -56,7 +54,7 @@ namespace SGAmod.NPCs.TownNPCs
 
 			NPC.Happiness
 				.SetBiomeAffection<ForestBiome>(AffectionLevel.Like)
-				.SetNPCAffection(ModContent.NPCType<Goat>(), AffectionLevel.Like)
+				.SetNPCAffection(ModContent.NPCType<Goat>(), AffectionLevel.Love)
 			//Princess is automatically set
 			; // < Mind the semicolon!
 		}
@@ -118,10 +116,10 @@ namespace SGAmod.NPCs.TownNPCs
 
 				if (Main.player[gg].active)
 				{
-					// if (Main.player[gg].SGAPly().ExpertiseCollectedTotal > 0)
-					// {
+					if (Main.player[gg].GetModPlayer<SGAPlayer>().ExpertiseCollectedTotal > 0)
+					{
 						return true;
-					// }
+					}
 				}
 			}
 			return false;
@@ -214,10 +212,10 @@ namespace SGAmod.NPCs.TownNPCs
 
 		public override string GetChat()
 		{
-			WeightedRandom<string> chat = new WeightedRandom<string>();
+			WeightedRandom<string> chat = new();
 
-			// SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();
-			// int expgathered = Main.LocalPlayer.GetModPlayer<SGAPlayer>().ExpertiseCollectedTotal;
+			SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();
+			int expgathered = Main.LocalPlayer.GetModPlayer<SGAPlayer>().ExpertiseCollectedTotal;
 
 			/*
 			if (SGAmod.TotalCheating && SGAmod.PlayingPercent >= 1f)
@@ -256,7 +254,6 @@ namespace SGAmod.NPCs.TownNPCs
 				chat.Add("...");
 				chat.Add("Is it safe out now?");
 
-				/*
 				if (expgathered < 200)
 				{
 					chat.Add("Hi... I'm Draken, I hope your friendly.");
@@ -269,7 +266,6 @@ namespace SGAmod.NPCs.TownNPCs
 				{
 					chat.Add("I hope all those you've slain were meant to harm us... I can't bear idea of innocents dying.");
 				}
-				*/
 
 				int Tnpc1 = NPC.FindFirstNPC(NPCID.Dryad);
 				if (Tnpc1 >= 0)
@@ -649,10 +645,9 @@ namespace SGAmod.NPCs.TownNPCs
 				{
 					SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();
 
-					// NPC him2;
+					NPC him2;
 					string adder = "";
 
-					/*
 					if (modplayer.ExpertisePointsFromBosses.Count > 0)
 					{
 						him2 = new NPC();
@@ -683,8 +678,6 @@ namespace SGAmod.NPCs.TownNPCs
 						}
 					}
 					Main.npcChatText = "You have " + modplayer.ExpertiseCollected + " Expertise, out of a total of " + modplayer.ExpertiseCollectedTotal + "." + adder;
-					*/
-					Main.npcChatText = "Menu disabled";
 				}
 				else
 				{
@@ -813,7 +806,7 @@ namespace SGAmod.NPCs.TownNPCs
 				{ ModContent.ItemType<Items.Consumables.RedManaStar>(),500 },
 				{ ModContent.ItemType<Items.Weapons.ThievesThrow>(),750 },
 				*/
-				{ ItemID.Arkhalis,1000 },
+				{ ItemID.Terragrim, 1000 },
 				/*
 				{ ModContent.ItemType<Items.Consumables.SoulJar>(),1250 },
 				{ ItemID.RodofDiscord,2000 },
@@ -822,15 +815,14 @@ namespace SGAmod.NPCs.TownNPCs
 				{ ModContent.ItemType<Items.Accessories.PrimordialSkull>(),5000 },
 				{ ModContent.ItemType<Items.Accessories.MVMUpgrade>(),6000 },
 				*/
-				{ ItemID.AviatorSunglasses,10000 },
-				{ ItemID.RedPotion,1000000 },
-				{ ItemID.RedPotion,1000000 },
-				{ ItemID.RedPotion,1000000 },
+				{ ItemID.AviatorSunglasses, 10000 },
+				{ ItemID.RedPotion, 1000000 },
+				{ ItemID.RedPotion, 1000000 },
+				{ ItemID.RedPotion, 1000000 },
 			};
 
 			SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();
 			int index = 0;
-			/*
 			int expmax = modplayer.ExpertiseCollectedTotal;
 			//int offset = 0;
 			while (index < itemsinshop.Length && expmax > itemsinshop[index, 1])
@@ -839,16 +831,19 @@ namespace SGAmod.NPCs.TownNPCs
 				index += 1;
 			}
 			int math = itemsinshop[index, 1] - modplayer.ExpertiseCollectedTotal;
-			*/
-			int math = 0;
 			string str;
-			if (math >= 50000)
+            if (math == 0)
+            {
+                index++;
+                math = itemsinshop[index, 1] - modplayer.ExpertiseCollectedTotal;
+            }
+            if (math >= 50000)
 			{
 				str = "You unlocked everything so far, stay safe friend <3";
 			}
 			else
 			{
-				Item itm = new Item();
+				Item itm = new();
 				itm.SetDefaults(itemsinshop[index, 0]);
 				str = "You are " + (math) + " away from the next item unlocking: "+ itm.Name+".";
 			}
@@ -861,21 +856,22 @@ namespace SGAmod.NPCs.TownNPCs
 
 			SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();
 
-			/*
+			
 			if (Main.hardMode)
 			{
 				shop.item[nextSlot].SetDefaults(ItemID.PlatinumCoin);
 				shop.item[nextSlot].shopCustomPrice = 30;
-				shop.item[nextSlot].shopSpecialCurrency = SGAmod.ScrapCustomCurrencyID;
+				shop.item[nextSlot].shopSpecialCurrency = SGAmod.ExpertiseCustomCurrencyID;
 				nextSlot++;
 			}
 			else
 			{
 				shop.item[nextSlot].SetDefaults(ItemID.GoldCoin);
 				shop.item[nextSlot].shopCustomPrice = 1;
-				shop.item[nextSlot].shopSpecialCurrency = SGAmod.ScrapCustomCurrencyID;
+				shop.item[nextSlot].shopSpecialCurrency = SGAmod.ExpertiseCustomCurrencyID;
 				nextSlot++;
 			}
+            /*
 			shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("BossHints").Type);
 			shop.item[nextSlot].shopCustomPrice = 1;
 			shop.item[nextSlot].shopSpecialCurrency = SGAmod.ScrapCustomCurrencyID;
@@ -937,13 +933,15 @@ namespace SGAmod.NPCs.TownNPCs
 				shop.item[nextSlot].shopSpecialCurrency = SGAmod.ScrapCustomCurrencyID;
 				nextSlot++;
 			}
+            */
 			if (modplayer.ExpertiseCollectedTotal >= 1000)
 			{
-				shop.item[nextSlot].SetDefaults(ItemID.Arkhalis);
+				shop.item[nextSlot].SetDefaults(ItemID.Terragrim);
 				shop.item[nextSlot].shopCustomPrice = 75;
-				shop.item[nextSlot].shopSpecialCurrency = SGAmod.ScrapCustomCurrencyID;
+				shop.item[nextSlot].shopSpecialCurrency = SGAmod.ExpertiseCustomCurrencyID;
 				nextSlot++;
 			}
+            /*
 			if (modplayer.ExpertiseCollectedTotal >= 1250)
 			{
 				shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("SoulJar").Type);
@@ -992,14 +990,16 @@ namespace SGAmod.NPCs.TownNPCs
 				shop.item[nextSlot].shopCustomPrice = 150;
 				shop.item[nextSlot].shopSpecialCurrency = SGAmod.ScrapCustomCurrencyID;
 				nextSlot++;
-			}								
+			}
+            */
 			if (modplayer.ExpertiseCollectedTotal >= 10000)
 			{
 				shop.item[nextSlot].SetDefaults(ItemID.AviatorSunglasses);
 				shop.item[nextSlot].shopCustomPrice = 200;
-				shop.item[nextSlot].shopSpecialCurrency = SGAmod.ScrapCustomCurrencyID;
+				shop.item[nextSlot].shopSpecialCurrency = SGAmod.ExpertiseCustomCurrencyID;
 				nextSlot++;
 			}
+            /*
 			if (modplayer.ExpertiseCollectedTotal >= 12000 && SGAWorld.downedHellion>1 && Main.LocalPlayer.HasItem(ModContent.ItemType<Items.CosmicFragment>()))
 			{
 				shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("DragonCommanderStaff").Type);
@@ -1041,7 +1041,6 @@ namespace SGAmod.NPCs.TownNPCs
 			randomOffset = 3f;
 		}
 	}
-	// Nightmare ModItem moved to its own file in Items/Misc
 
 	public class DergonProfile : ITownNPCProfile
 	{

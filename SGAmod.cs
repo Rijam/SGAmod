@@ -1,4 +1,3 @@
-//#define WebmilioCommonsPresent
 #define DEBUG
 #define DefineHellionUpdate
 #define Dimensions
@@ -104,19 +103,25 @@ namespace SGAmod
 
 		public SGAmod()
 		{
+            
+        }
 
-		}
+        public static int ExpertiseCustomCurrencyID;
+        public static CustomCurrencySystem ExpertiseCustomCurrencySystem;
 
-		public override void Load()
+        public override void Load()
 		{
 			Instance = this;
-		}
+
+            ExpertiseCustomCurrencySystem = new ExpertiseCurrency(ModContent.ItemType<Items.Misc.ExpertiseItem>(), 999L);
+            ExpertiseCustomCurrencyID = CustomCurrencyManager.RegisterCurrency(ExpertiseCustomCurrencySystem);
+        }
 
 		public override uint ExtraPlayerBuffSlots => 50;
 
 		public override void Unload()
 		{
-
-		}
+            SGAmod.ExpertiseCustomCurrencySystem = null;
+        }
 	}
 }

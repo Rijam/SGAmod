@@ -57,7 +57,7 @@ namespace SGAmod.Items.Consumables.Debug
 
 	}
 
-	/*
+    /*
 	public class Debug13 : ModItem
 	{
 		public override void SetStaticDefaults()
@@ -99,7 +99,7 @@ namespace SGAmod.Items.Consumables.Debug
     }
 	*/
 
-	/*
+    /*
 	public class Debug12 : ModItem
 	{
 		public override void SetStaticDefaults()
@@ -148,7 +148,7 @@ namespace SGAmod.Items.Consumables.Debug
 	}
 	*/
 
-	/*
+    /*
 	public class Debug11 : ModItem
 	{
 		public override void SetStaticDefaults()
@@ -170,7 +170,7 @@ namespace SGAmod.Items.Consumables.Debug
 		}
 		public override string Texture
 		{
-			get { return "Terraria/Xmas_0"; }
+			get { return "Terraria/Images/Xmas_0"; }
 		}
 
 		public override bool? UseItem(Player player)
@@ -181,7 +181,7 @@ namespace SGAmod.Items.Consumables.Debug
 	}
 	*/
 
-	/*
+    /*
 	public class Debug10 : ModItem
 	{
 		public override void SetStaticDefaults()
@@ -205,7 +205,7 @@ namespace SGAmod.Items.Consumables.Debug
 	}
 	*/
 
-	/*
+    /*
 	public class Debug9 : ModItem
 	{
 		public override void SetStaticDefaults()
@@ -233,7 +233,7 @@ namespace SGAmod.Items.Consumables.Debug
 	}
 	*/
 
-	/*
+    /*
 	public class Debug8 : ModItem
 	{
 		public override void SetStaticDefaults()
@@ -270,7 +270,7 @@ namespace SGAmod.Items.Consumables.Debug
 	}
 	*/
 
-	/*
+    /*
 	public class Debug7 : ModItem
 	{
 		public override void SetStaticDefaults()
@@ -314,7 +314,7 @@ namespace SGAmod.Items.Consumables.Debug
 	}
 	*/
 
-	/*
+    /*
 	public class Debug6 : ModItem
 	{
 		public override void SetStaticDefaults()
@@ -365,7 +365,7 @@ namespace SGAmod.Items.Consumables.Debug
 	}
 	*/
 
-	/*
+    /*
 	public class Debug5 : ModItem
 	{
 		public override void SetStaticDefaults()
@@ -400,7 +400,7 @@ namespace SGAmod.Items.Consumables.Debug
 		}
 		public override string Texture
 		{
-			get { return "Terraria/Item_" + ItemID.PartyPresent; }
+			get { return "Terraria/Images/Item_" + ItemID.PartyPresent; }
 		}
 
 	}
@@ -432,13 +432,12 @@ namespace SGAmod.Items.Consumables.Debug
 		}
 		public override string Texture
 		{
-			get { return "Terraria/Item_" + ItemID.PurpleSolution; }
+			get { return "Terraria/Images/Item_" + ItemID.PurpleSolution; }
 		}
 	}
 	*/
 
-	/*
-	public class Debug2 : ModItem
+    public class Debug2 : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
@@ -451,7 +450,7 @@ namespace SGAmod.Items.Consumables.Debug
 			Item.height = 14;
 			Item.maxStack = 30;
 			Item.rare = ItemRarityID.Yellow;
-			Item.value = 1000;
+			Item.value = 0;
 			Item.useStyle = ItemUseStyleID.EatFood;
 			Item.useAnimation = 17;
 			Item.useTime = 17;
@@ -462,17 +461,47 @@ namespace SGAmod.Items.Consumables.Debug
 		public override bool? UseItem(Player player)
 		{
 			SGAPlayer sgaplayer = player.GetModPlayer<SGAPlayer>();
-			sgaplayer.ExpertiseCollected += 100;
-			sgaplayer.ExpertiseCollectedTotal += 100;
-			Main.NewText("Expertise: "+ sgaplayer.ExpertiseCollected+": Max: "+ sgaplayer.ExpertiseCollectedTotal);
+            sgaplayer.ExpertiseCollected += 100;
+            sgaplayer.ExpertiseCollectedTotal += 100;
+            Main.NewText("Expertise: "+ sgaplayer.ExpertiseCollected+": Max: "+ sgaplayer.ExpertiseCollectedTotal);
 			return true;
 		}
-		public override string Texture
+        public override bool CanRightClick()
+        {
+            return true;
+        }
+        public override void RightClick(Player player)
+        {
+            SGAPlayer sgaplayer = player.GetModPlayer<SGAPlayer>();
+            if (sgaplayer.ExpertiseCollected - 100 < 0)
+            {
+                sgaplayer.ExpertiseCollected = 0;
+            }
+            else
+            {
+                sgaplayer.ExpertiseCollected -= 100;
+            }
+            if (sgaplayer.ExpertiseCollectedTotal - 100 < 0)
+            {
+                sgaplayer.ExpertiseCollectedTotal = 0;
+            }
+            else
+            {
+                sgaplayer.ExpertiseCollectedTotal -= 100;
+            }
+            Main.NewText("Expertise: " + sgaplayer.ExpertiseCollected + ": Max: " + sgaplayer.ExpertiseCollectedTotal);
+        }
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            tooltips.Add(new TooltipLine(Mod, "CurrentState", "ExpertiseCollected == " + Main.LocalPlayer.GetModPlayer<SGAPlayer>().ExpertiseCollected.ToString()));
+            tooltips.Add(new TooltipLine(Mod, "CurrentState", "ExpertiseCollectedTotal == " + Main.LocalPlayer.GetModPlayer<SGAPlayer>().ExpertiseCollectedTotal.ToString()));
+        }
+
+        public override string Texture
 		{
-			get { return "Terraria/Item_" + ItemID.DarkBlueSolution; }
+			get { return "Terraria/Images/Item_" + ItemID.DarkBlueSolution; }
 		}
 	}
-	*/
 
 
 	public class Debug1 : ModItem
@@ -499,10 +528,10 @@ namespace SGAmod.Items.Consumables.Debug
 		}
 		public override bool? UseItem(Player player)/* Suggestion: Return null instead of false */
 		{
-			/*
 			SGAPlayer sgaplayer = player.GetModPlayer<SGAPlayer>();
 			sgaplayer.ExpertiseCollected = 0;
 			sgaplayer.ExpertiseCollectedTotal = 0;
+            /*
 			sgaplayer.Redmanastar = 0;
 			sgaplayer.Electicpermboost = 0;
 			sgaplayer.gothellion = false;
@@ -524,7 +553,7 @@ namespace SGAmod.Items.Consumables.Debug
 
 	}
 
-	/*
+    /*
 	public class Debug4 : ModItem
 	{
 		public override void SetStaticDefaults()
@@ -553,7 +582,7 @@ namespace SGAmod.Items.Consumables.Debug
 		}
 		public override string Texture
 		{
-			get { return "Terraria/Item_" + ItemID.Darkness; }
+			get { return "Terraria/Images/Item_" + ItemID.Darkness; }
 		}
 
 	}
