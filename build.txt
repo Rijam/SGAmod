@@ -1,6 +1,6 @@
 displayName = SGAmod: [c/FF0000:IN DEVELOPMENT VERSION]
-author = IDGCaptainRussia & Rijam
-version = 0.0.0.2
+author = IDGCaptainUkraine & Rijam
+version = 0.0.0.3
 buildIgnore = .vs\*, .git\*, ignore\*, .gitignore, .gitattributes, .zip, Effects\fxcompiler,*.exe,*.zip,*.gif, *.xcf, *.idg, *.MD, *.csproj, *.user, obj\*, bin\*, vs\*, git\*
 includePDB = true
 hideCode = false
