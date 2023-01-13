@@ -94,7 +94,7 @@ namespace SGAmod.NPCs.TownNPCs
 			}
 		}
 
-		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs)
 		{
 			return NPC.AnyNPCs(ModContent.NPCType<Dergon>());//&& SGAmod.NightmareUnlocked);
 		}
@@ -145,7 +145,7 @@ namespace SGAmod.NPCs.TownNPCs
 			chat.Add("'Bleat'");
 			chat.Add("I love Draken so much");
 			chat.Add("Only the best goat for the best derg");
-			// chat.Add("[i: " + ModContent.ItemType<YellowHeart>() + "] the Derg");
+			chat.Add("[i: " + ModContent.ItemType<Items.Consumables.Debug.YellowHeart>() + "] the Derg");
 			chat.Add("I never felt true platonic love til I met Draken");
 			if (Main.dayTime)
 			{

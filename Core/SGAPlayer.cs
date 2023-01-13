@@ -20,7 +20,6 @@ using Terraria.Utilities;
 
 namespace SGAmod
 {
-
     public partial class SGAPlayer : ModPlayer
     {
 
@@ -34,17 +33,17 @@ namespace SGAmod
         public List<int> ExpertisePointsFromBosses;
         public List<string> ExpertisePointsFromBossesModded;
         public List<int> ExpertisePointsFromBossesPoints;
-        public int ExpertiseCollected = 0;
-        public int ExpertiseCollectedTotal = 0;
+        public long ExpertiseCollected = 0;
+        public long ExpertiseCollectedTotal = 0;
 
         public override void ResetEffects()
         {
             Player.breathMax = 200;
         }
 
-        public override void clientClone(ModPlayer clientClone)
+        public override void CopyClientState(ModPlayer targetCopy)
         {
-            SGAPlayer sgaplayer = clientClone as SGAPlayer;
+            SGAPlayer sgaplayer = targetCopy as SGAPlayer;
             sgaplayer.ExpertiseCollected = ExpertiseCollected;
             sgaplayer.ExpertiseCollectedTotal = ExpertiseCollectedTotal;
             sgaplayer.dragonFriend = dragonFriend;
@@ -77,7 +76,6 @@ namespace SGAmod
 
             }
         }
-
 
         public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
         {

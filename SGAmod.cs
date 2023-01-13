@@ -73,55 +73,53 @@ using SGAmod.Dimensions;
 namespace SGAmod
 {
 
-	/*public class Blank : Subworld
-	{
-		public override int width => 800;
-		public override int height => 400;
-		public override ModWorld modWorld => SGAWorld.Instance;
+    /*public class Blank : Subworld
+    {
+        public override int width => 800;
+        public override int height => 400;
+        public override ModWorld modWorld => SGAWorld.Instance;
 
-		public override SubworldGenPass[] tasks => new SubworldGenPass[]
-		{
-		new SubworldGenPass("Loading", 1f, progress =>
-		{
-			progress.Message = "Loading"; //Sets the text above the worldgen progress bar
-			Main.worldSurface = Main.maxTilesY - 42; //Hides the underground layer just out of bounds
-			Main.rockLayer = Main.maxTilesY; //Hides the cavern layer way out of bounds
-		})
-		};
+        public override SubworldGenPass[] tasks => new SubworldGenPass[]
+        {
+        new SubworldGenPass("Loading", 1f, progress =>
+        {
+            progress.Message = "Loading"; //Sets the text above the worldgen progress bar
+            Main.worldSurface = Main.maxTilesY - 42; //Hides the underground layer just out of bounds
+            Main.rockLayer = Main.maxTilesY; //Hides the cavern layer way out of bounds
+        })
+        };
 
-		public override void Load()
-		{
-			Main.dayTime = true;
-			Main.time = 27000;
-			Main.worldRate = 0;
-		}
-	}*/
+        public override void Load()
+        {
+            Main.dayTime = true;
+            Main.time = 27000;
+            Main.worldRate = 0;
+        }
+    }*/
 
-	public partial class SGAmod : Mod
-	{
-		public SGAmod Instance;
+    public partial class SGAmod : Mod
+    {
+        public SGAmod Instance;
 
-		public SGAmod()
-		{
-            
+        public SGAmod()
+        {
+
         }
 
         public static int ExpertiseCustomCurrencyID;
         public static CustomCurrencySystem ExpertiseCustomCurrencySystem;
 
         public override void Load()
-		{
-			Instance = this;
+        {
+            Instance = this;
 
             ExpertiseCustomCurrencySystem = new ExpertiseCurrency(ModContent.ItemType<Items.Misc.ExpertiseItem>(), 999L);
             ExpertiseCustomCurrencyID = CustomCurrencyManager.RegisterCurrency(ExpertiseCustomCurrencySystem);
         }
 
-		public override uint ExtraPlayerBuffSlots => 50;
-
-		public override void Unload()
-		{
+        public override void Unload()
+        {
             SGAmod.ExpertiseCustomCurrencySystem = null;
         }
-	}
+    }
 }

@@ -28,7 +28,7 @@ namespace SGAmod
 			return (long)99999;
 		}
 
-		public override bool TryPurchasing(int price, List<Item[]> inv, List<Point> slotCoins, List<Point> slotsEmpty, List<Point> slotEmptyBank, List<Point> slotEmptyBank2, List<Point> slotEmptyBank3, List<Point> slotEmptyBank4)
+		public override bool TryPurchasing(long price, List<Item[]> inv, List<Point> slotCoins, List<Point> slotsEmpty, List<Point> slotEmptyBank, List<Point> slotEmptyBank2, List<Point> slotEmptyBank3, List<Point> slotEmptyBank4)
 		{
 			SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();
 			if (modplayer.ExpertiseCollected >= price*10)
@@ -45,7 +45,7 @@ namespace SGAmod
 			base.DrawSavingsMoney(sb, text, shopx, shopy, totalCoins, horizontal);
 		}
 
-		public override void GetPriceText(string[] lines, ref int currentLine, int price)
+		public override void GetPriceText(string[] lines, ref int currentLine, long price)
 		{
 			Color color = SGACustomCurrencyTextColor * ((float)Main.mouseTextColor / 255f);
 			SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();

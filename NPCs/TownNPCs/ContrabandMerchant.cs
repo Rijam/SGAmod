@@ -131,7 +131,7 @@ namespace SGAmod.NPCs.TownNPCs
 			}
 		}
 
-		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs)
 		{
 			return false;
 		}
@@ -522,7 +522,7 @@ namespace SGAmod.NPCs.TownNPCs
 		{
 		}
 
-		public override void GetPriceText(string[] lines, ref int currentLine, int price)
+		public override void GetPriceText(string[] lines, ref int currentLine, long price)
 		{
 			Color color = SGACustomCurrencyTextColor * ((float)Main.mouseTextColor / 255f);
 			SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();
@@ -546,7 +546,7 @@ namespace SGAmod.NPCs.TownNPCs
 		{
 		}
 
-		public override void GetPriceText(string[] lines, ref int currentLine, int price)
+		public override void GetPriceText(string[] lines, ref int currentLine, long price)
 		{
 			Color color = SGACustomCurrencyTextColor * ((float)Main.mouseTextColor / 255f);
 			SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();
@@ -570,7 +570,7 @@ namespace SGAmod.NPCs.TownNPCs
 		{
 		}
 
-		public override void GetPriceText(string[] lines, ref int currentLine, int price)
+		public override void GetPriceText(string[] lines, ref int currentLine, long price)
 		{
 			Color color = SGACustomCurrencyTextColor * ((float)Main.mouseTextColor / 255f);
 			SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();
@@ -593,7 +593,7 @@ namespace SGAmod.NPCs.TownNPCs
 		{
 		}
 
-		public override void GetPriceText(string[] lines, ref int currentLine, int price)
+		public override void GetPriceText(string[] lines, ref int currentLine, long price)
 		{
 			Color color = SGACustomCurrencyTextColor * ((float)Main.mouseTextColor / 255f);
 			SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();
@@ -616,7 +616,7 @@ namespace SGAmod.NPCs.TownNPCs
 		{
 		}
 
-		public override void GetPriceText(string[] lines, ref int currentLine, int price)
+		public override void GetPriceText(string[] lines, ref int currentLine, long price)
 		{
 			Color color = SGACustomCurrencyTextColor * ((float)Main.mouseTextColor / 255f);
 			SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();

@@ -109,7 +109,7 @@ namespace SGAmod.NPCs.TownNPCs
 			}
 		}
 
-		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+		public override bool CanTownNPCSpawn(int numTownNPCs)
 		{
 			for (int gg = 0; gg < Main.maxPlayers; gg += 1)
 			{
@@ -215,7 +215,7 @@ namespace SGAmod.NPCs.TownNPCs
 			WeightedRandom<string> chat = new();
 
 			SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();
-			int expgathered = Main.LocalPlayer.GetModPlayer<SGAPlayer>().ExpertiseCollectedTotal;
+			long expgathered = Main.LocalPlayer.GetModPlayer<SGAPlayer>().ExpertiseCollectedTotal;
 
 			/*
 			if (SGAmod.TotalCheating && SGAmod.PlayingPercent >= 1f)
@@ -648,7 +648,7 @@ namespace SGAmod.NPCs.TownNPCs
 					NPC him2;
 					string adder = "";
 
-					if (modplayer.ExpertisePointsFromBosses.Count > 0)
+					if (modplayer.ExpertisePointsFromBosses is not null && modplayer.ExpertisePointsFromBosses.Count > 0) // Added null safety check
 					{
 						him2 = new NPC();
 						if (modplayer.ExpertisePointsFromBossesModded[0] != "")
@@ -669,7 +669,7 @@ namespace SGAmod.NPCs.TownNPCs
 						if (him2 != null)
 						{
 							adder = " The very next target is a(n) " + him2.FullName+". "+ GetNextItem();
-							if (modplayer.ExpertisePointsFromBosses[0]==NPCID.CultistArcherWhite)
+							if (modplayer.ExpertisePointsFromBosses[0] == NPCID.CultistArcherWhite)
 								adder = " You got them all!! " + GetNextItem();
 						}
 						else
@@ -823,14 +823,14 @@ namespace SGAmod.NPCs.TownNPCs
 
 			SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();
 			int index = 0;
-			int expmax = modplayer.ExpertiseCollectedTotal;
+			long expmax = modplayer.ExpertiseCollectedTotal;
 			//int offset = 0;
 			while (index < itemsinshop.Length && expmax > itemsinshop[index, 1])
 			{
 				//expmax -= itemsinshop[index, 1];
 				index += 1;
 			}
-			int math = itemsinshop[index, 1] - modplayer.ExpertiseCollectedTotal;
+			long math = itemsinshop[index, 1] - modplayer.ExpertiseCollectedTotal;
 			string str;
             if (math == 0)
             {
