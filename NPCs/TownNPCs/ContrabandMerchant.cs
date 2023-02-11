@@ -443,7 +443,7 @@ namespace SGAmod.NPCs.TownNPCs
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Contra poof! Annnndd he's gone! Bummer for you!");
+			// DisplayName.SetDefault("Contra poof! Annnndd he's gone! Bummer for you!");
 		}
 
 		public override void SetDefaults()

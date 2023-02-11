@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace SGAmod.Tiles.Bars
@@ -23,8 +24,8 @@ namespace SGAmod.Tiles.Bars
             DustType = -1;
             ItemDrop = ModContent.ItemType<Items.Materials.Bars.VibraniumCrystal>();
             MineResist = 2.50f;
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Vibranium Crystal");
+            LocalizedText name = CreateMapEntryName();
+            // name.SetDefault("Vibranium Crystal");
             AddMapEntry(new Color(255, 60, 60), name);
         }
 
@@ -74,8 +75,8 @@ namespace SGAmod.Tiles.Bars
             HitSound = SoundID.Tink;
             ItemDrop = ModContent.ItemType<Items.Materials.Bars.PrismalOre>();
             MineResist = 1.25f;
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Prismal Ore");
+            LocalizedText name = CreateMapEntryName();
+            // name.SetDefault("Prismal Ore");
             AddMapEntry(new Color(70, 0, 40), name);
         }
       

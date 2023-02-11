@@ -11,8 +11,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Novite Ore");
-			Tooltip.SetDefault("Brassy scrap metal from a time along ago, might be of electronical use...");
+			// DisplayName.SetDefault("Novite Ore");
+			// Tooltip.SetDefault("Brassy scrap metal from a time along ago, might be of electronical use...");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
 		}
 		public override void SetDefaults()
@@ -37,8 +37,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Novite Bar");
-			Tooltip.SetDefault("This Brassy alloy reminds you of 60s scifi");
+			// DisplayName.SetDefault("Novite Bar");
+			// Tooltip.SetDefault("This Brassy alloy reminds you of 60s scifi");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 		}
 		public override void SetDefaults()
@@ -73,8 +73,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Advanced Plating");
-			Tooltip.SetDefault("Advanced for the land of Terraria's standards, that is");
+			// DisplayName.SetDefault("Advanced Plating");
+			// Tooltip.SetDefault("Advanced for the land of Terraria's standards, that is");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 		}
 

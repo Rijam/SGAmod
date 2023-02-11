@@ -43,8 +43,8 @@ namespace SGAmod
         protected void LoadExpertise(TagCompound tag)
         {
 
-            ExpertiseCollected = tag.GetInt("ZZZExpertiseCollectedZZZ");
-            int maybeExpertiseCollected = tag.GetInt("ZZZExpertiseCollectedTotalZZZ");
+            ExpertiseCollected = tag.GetAsLong("ZZZExpertiseCollectedZZZ");
+            long maybeExpertiseCollected = tag.GetAsLong("ZZZExpertiseCollectedTotalZZZ");
             ExpertiseCollectedTotal = maybeExpertiseCollected;
 
             ExpertisePointsFromBosses = new List<int>();

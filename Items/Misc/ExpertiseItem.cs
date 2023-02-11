@@ -9,8 +9,8 @@ namespace SGAmod.Items.Misc
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Expertise!");
-			Tooltip.SetDefault("Earn Expertise by slaying certain enemies!\nSpend Expertise at the Draken's shop!");
+			// Tooltip.SetDefault("Expertise!");
+			// Tooltip.SetDefault("Earn Expertise by slaying certain enemies!\nSpend Expertise at the Draken's shop!");
 		}
 
 		public override void SetDefaults()

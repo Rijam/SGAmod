@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace SGAmod.Tiles.Bars
@@ -25,8 +26,8 @@ namespace SGAmod.Tiles.Bars
 			ItemDrop = ModContent.ItemType<Items.Materials.Bars.VirulentOre>();
 			MinPick = 150;
 			MineResist = 5f;
-			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("Virulent");
+			LocalizedText name = CreateMapEntryName();
+			// name.SetDefault("Virulent");
 			AddMapEntry(Color.Lime, name);
 		}
 

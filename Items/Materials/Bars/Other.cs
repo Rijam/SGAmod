@@ -11,8 +11,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Glowrock");
-			Tooltip.SetDefault("These rocks seem to give the Asteriods a glow; Curious.\nExtract it via an Extractinator for some goodies!\nDoesn't have much other use, outside of illegal interests");
+			// DisplayName.SetDefault("Glowrock");
+			// Tooltip.SetDefault("These rocks seem to give the Asteriods a glow; Curious.\nExtract it via an Extractinator for some goodies!\nDoesn't have much other use, outside of illegal interests");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
 			ItemID.Sets.ExtractinatorMode[Item.type] = Item.type;
 		}
@@ -181,8 +181,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Celestine Chunk");
-			Tooltip.SetDefault("Inert and radioactive Luminite...");
+			// DisplayName.SetDefault("Celestine Chunk");
+			// Tooltip.SetDefault("Inert and radioactive Luminite...");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
 		}
 		public override void SetDefaults()
@@ -238,8 +238,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Overseen Crystal");
-			Tooltip.SetDefault("Celestial Shards manifested from Phaethon's creators; resonates with charged forgotten spirits\nMay be used to fuse several strong materials together with ease\nSurely a shady dealer will also be interested in trading for these...");
+			// DisplayName.SetDefault("Overseen Crystal");
+			// Tooltip.SetDefault("Celestial Shards manifested from Phaethon's creators; resonates with charged forgotten spirits\nMay be used to fuse several strong materials together with ease\nSurely a shady dealer will also be interested in trading for these...");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
 		}
 		public override void SetDefaults()

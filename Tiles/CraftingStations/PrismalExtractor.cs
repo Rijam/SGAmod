@@ -24,8 +24,8 @@ namespace SGAmod.Tiles.CraftingStations
 			AnimationFrameHeight = 54;
 			TileObjectData.addTile(Type);
 			AdjTiles = new int[]{96};
-			ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Prismal Extractor");
+			LocalizedText name = CreateMapEntryName();
+            // name.SetDefault("Prismal Extractor");
             //name.AddTranslation(GameCulture.Chinese, "烤炉");
             AddMapEntry(new Color(227, 216, 195), name);
         }

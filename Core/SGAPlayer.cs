@@ -36,6 +36,13 @@ namespace SGAmod
         public long ExpertiseCollected = 0;
         public long ExpertiseCollectedTotal = 0;
 
+        public override void Initialize()
+        {
+            ExpertisePointsFromBosses = new();
+            ExpertisePointsFromBossesModded = new();
+            ExpertisePointsFromBossesPoints = new();
+        }
+
         public override void ResetEffects()
         {
             Player.breathMax = 200;
@@ -95,7 +102,7 @@ namespace SGAmod
 
         public override void LoadData(TagCompound tag)
         {
-            dragonFriend = tag.GetBool("dragonFriend");
+            dragonFriend = tag.ContainsKey("dragonFriend");
 
             LoadExpertise(tag);
         }

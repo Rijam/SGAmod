@@ -9,8 +9,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Entrophite");
-			Tooltip.SetDefault("Corrupted beyond the veils of life");
+			// DisplayName.SetDefault("Entrophite");
+			// Tooltip.SetDefault("Corrupted beyond the veils of life");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
 		}
 		public override void SetDefaults()
@@ -34,8 +34,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Woven Entrophite");
-			Tooltip.SetDefault("Suprisingly strong, after being interlaced with souls");
+			// DisplayName.SetDefault("Woven Entrophite");
+			// Tooltip.SetDefault("Suprisingly strong, after being interlaced with souls");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 		}
 

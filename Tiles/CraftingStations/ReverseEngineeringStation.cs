@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.Enums;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
@@ -25,8 +26,8 @@ namespace SGAmod.Tiles.CraftingStations
             //TileObjectData.newTile.StyleWrapLimit = 36;
             TileObjectData.addTile(Type);
             AdjTiles = new int[] { TileID.TinkerersWorkbench };
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Reverse Engineering Station");
+            LocalizedText name = CreateMapEntryName();
+            // name.SetDefault("Reverse Engineering Station");
             //name.AddTranslation(GameCulture.Chinese, "烤炉");
             AddMapEntry(new Color(227, 216, 195), name);
         }

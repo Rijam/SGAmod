@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace SGAmod.Tiles.Bars
@@ -24,8 +25,8 @@ namespace SGAmod.Tiles.Bars
 			ItemDrop = ModContent.ItemType<Items.Materials.Bars.Photosyte>();
 			MinPick = 10;
 			MineResist = 1f;
-			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("Photosyte");
+			LocalizedText name = CreateMapEntryName();
+			// name.SetDefault("Photosyte");
 			AddMapEntry(new Color(40, 150, 40), name);
 		}
 	}

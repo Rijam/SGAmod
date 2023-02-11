@@ -1,3 +1,4 @@
+
 Mods: {
 	SGAmod: {
 		TownNPCMood: {
@@ -9,16 +10,17 @@ Mods: {
 				FarFromHome: I am far from my home.
 				DislikeCrowded: I dislike the crowd.
 				HateCrowded: I hate the crowd.
-				LikeBiome: "I like {BiomeName}."
-				LoveBiome: "I love {BiomeName}."
-				DislikeBiome: "I dislike {BiomeName}."
-				HateBiome: "I hate {BiomeName}."
-				LikeNPC: "I like {NPCName}."
-				LikeNPC_Princess: "I like {NPCName}."
-				LoveNPC: "I love {NPCName}."
-				DislikeNPC: "I dislike {NPCName}."
-				HateNPC: "I hate {NPCName}."
+				LikeBiome: I like {BiomeName}.
+				LoveBiome: I love {BiomeName}.
+				DislikeBiome: I dislike {BiomeName}.
+				HateBiome: I hate {BiomeName}.
+				LikeNPC: I like {NPCName}.
+				LikeNPC_Princess: I like {NPCName}.
+				LoveNPC: I love {NPCName}.
+				DislikeNPC: I dislike {NPCName}.
+				HateNPC: I hate {NPCName}.
 			}
+
 			Goat: {
 				Content: I feel content.
 				NoHome: I would like a home.
@@ -26,16 +28,17 @@ Mods: {
 				FarFromHome: I am far from my home.
 				DislikeCrowded: I dislike the crowd.
 				HateCrowded: I hate the crowd.
-				LikeBiome: "I like {BiomeName}."
-				LoveBiome: "I love {BiomeName}."
-				DislikeBiome: "I dislike {BiomeName}."
-				HateBiome: "I hate {BiomeName}."
-				LikeNPC: "I like {NPCName}."
-				LikeNPC_Princess: "I like {NPCName}."
-				LoveNPC: "I love {NPCName}."
-				DislikeNPC: "I dislike {NPCName}."
-				HateNPC: "I hate {NPCName}."
+				LikeBiome: I like {BiomeName}.
+				LoveBiome: I love {BiomeName}.
+				DislikeBiome: I dislike {BiomeName}.
+				HateBiome: I hate {BiomeName}.
+				LikeNPC: I like {NPCName}.
+				LikeNPC_Princess: I like {NPCName}.
+				LoveNPC: I love {NPCName}.
+				DislikeNPC: I dislike {NPCName}.
+				HateNPC: I hate {NPCName}.
 			}
+
 			ContrabandMerchant: {
 				Content: I feel content.
 				NoHome: I would like a home.
@@ -43,22 +46,241 @@ Mods: {
 				FarFromHome: I am far from my home.
 				DislikeCrowded: I dislike the crowd.
 				HateCrowded: I hate the crowd.
-				LikeBiome: "I like {BiomeName}."
-				LoveBiome: "I love {BiomeName}."
-				DislikeBiome: "I dislike {BiomeName}."
-				HateBiome: "I hate {BiomeName}."
-				LikeNPC: "I like {NPCName}."
-				LikeNPC_Princess: "I like {NPCName}."
-				LoveNPC: "I love {NPCName}."
-				DislikeNPC: "I dislike {NPCName}."
-				HateNPC: "I hate {NPCName}."
+				LikeBiome: I like {BiomeName}.
+				LoveBiome: I love {BiomeName}.
+				DislikeBiome: I dislike {BiomeName}.
+				HateBiome: I hate {BiomeName}.
+				LikeNPC: I like {NPCName}.
+				LikeNPC_Princess: I like {NPCName}.
+				LoveNPC: I love {NPCName}.
+				DislikeNPC: I dislike {NPCName}.
+				HateNPC: I hate {NPCName}.
 			}
+		}
+
+		Items: {
+			Debug1: {
+				DisplayName: Debug-reset SGA Player Save Data
+				Tooltip:
+					'''
+					Use this item if your getting 'null List' errors on killing enemies
+					Holding this item activates a trippy Shader
+					'''
+			}
+
+			Debug2: {
+				DisplayName: Debug-Gain 100 Expertise
+				Tooltip: ""
+			}
+
+			YellowHeart: {
+				DisplayName: Oh hey, you found an Easter Egg!
+				Tooltip: ""
+			}
+
+			StartingBag: {
+				DisplayName: IDG's Starting Bag
+				Tooltip:
+					'''
+					Some starting items couldn't fit in your inventory??
+					{$CommonItemTooltip.RightClickToOpen}
+					'''
+			}
+
+			AdvancedPlating: {
+				DisplayName: Advanced Plating
+				Tooltip: Advanced for the land of Terraria's standards, that is
+			}
+
+			CelestineChunk: {
+				DisplayName: Celestine Chunk
+				Tooltip: Inert and radioactive Luminite...
+			}
+
+			CryostalBar: {
+				DisplayName: Cryostal Bar
+				Tooltip: Condensed ice magic has formed into this bar
+			}
+
+			DrakeniteBar: {
+				DisplayName: Drakenite Bar
+				Tooltip: A Bar forged from the same powers that created Draken...
+			}
+
+			Entrophite: {
+				DisplayName: Entrophite
+				Tooltip: Corrupted beyond the veils of life
+			}
+
+			Glowrock: {
+				DisplayName: Glowrock
+				Tooltip:
+					'''
+					These rocks seem to give the Asteriods a glow; Curious.
+					Extract it via an Extractinator for some goodies!
+					Doesn't have much other use, outside of illegal interests
+					'''
+			}
+
+			NoviteBar: {
+				DisplayName: Novite Bar
+				Tooltip: This Brassy alloy reminds you of 60s scifi
+			}
+
+			NoviteOre: {
+				DisplayName: Novite Ore
+				Tooltip: Brassy scrap metal from a time along ago, might be of electronical use...
+			}
+
+			NovusBar: {
+				DisplayName: Novus Bar
+				Tooltip:
+					'''
+					This alloy of Novus and the power of the wraiths have awakened some of its dorment power
+					May be interchanged for iron bars in some crafting recipes
+					'''
+			}
+
+			NovusOre: {
+				DisplayName: Novus Ore
+				Tooltip: Stone laden with doment power...
+			}
+
+			OverseenCrystal: {
+				DisplayName: Overseen Crystal
+				Tooltip:
+					'''
+					Celestial Shards manifested from Phaethon's creators; resonates with charged forgotten spirits
+					May be used to fuse several strong materials together with ease
+					Surely a shady dealer will also be interested in trading for these...
+					'''
+			}
+
+			Photosyte: {
+				DisplayName: Photosyte
+				Tooltip:
+					'''
+					'Parasitic plant matter'
+					Is found largely infesting clouds where it can gain the most sunlight
+					'''
+			}
+
+			PhotosyteBar: {
+				DisplayName: Photosyte Bar
+				Tooltip: A hardened bar made from parasitic biomass reacting from murky gel and moss
+			}
+
+			PrismalBar: {
+				DisplayName: Prismal Bar
+				Tooltip: It radiates the true energy of Novus
+			}
+
+			PrismalOre: {
+				DisplayName: Prismal Ore
+				Tooltip: The power inside is cracked wide open, ready to be used
+			}
+
+			StarMetalBar: {
+				DisplayName: Star Metal Bar
+				Tooltip: "'This bar is a glimming white sliver that shimmers with stars baring the color of pillars'"
+			}
+
+			StarMetalMold: {
+				DisplayName: Star Metal Mold
+				Tooltip:
+					'''
+					A mold used to make Wraith Cores, it seems fit to mold bars from heaven
+					Is not consumed in crafting Star Metal Bars
+					'''
+			}
+
+			VibraniumBar: {
+				DisplayName: Vibranium Bar
+				Tooltip: "'This alloy is just barely stable enough to not phase out of existance'"
+			}
+
+			VibraniumCrystal: {
+				DisplayName: Vibranium Crystal
+				Tooltip: "'Makes a humming sound while almost shaking out your hands'"
+			}
+
+			VibraniumPlating: {
+				DisplayName: Vibranium Plating
+				Tooltip: "'Dark cold steel; it constantly vibrates to the touch'"
+			}
+
+			VirulentBar: {
+				DisplayName: Virulent Bar
+				Tooltip: Condensed life essence in bar form
+			}
+
+			VirulentOre: {
+				DisplayName: Virulent Ore
+				Tooltip: ""
+			}
+
+			WovenEntrophite: {
+				DisplayName: Woven Entrophite
+				Tooltip: Suprisingly strong, after being interlaced with souls
+			}
+
+			ExpertiseItem: {
+				DisplayName: Expertise Item
+				Tooltip:
+					'''
+					Earn Expertise by slaying certain enemies!
+					Spend Expertise at the Draken's shop!
+					'''
+			}
+
+			PrismalExtractor: {
+				DisplayName: Prismal Extractor
+				Tooltip:
+					'''
+					It would seem the Lihzahrds knew a way to awaken Novus involving Novite to their full potiental...
+					Allows transmuting of a Novus + Novite alloy into Prismal ore
+					'''
+			}
+
+			ReverseEngineeringStation: {
+				DisplayName: Reverse Engineering Station
+				Tooltip:
+					'''
+					Allows weaponization of unusual tidbits and crafting of advanced machinery
+					Some formerly uncraftable items may be crafted here
+					Doubles as a Tinkerer's Workbench
+					'''
+			}
+		}
+
+		NPCs: {
+			ContrabandMerchant.DisplayName: Contraband Merchant
+			Dergon.DisplayName: Dergon
+			Goat.DisplayName: Goat
+		}
+
+		Projectiles: {
+			ContrabandMerchantPoof.DisplayName: Contra poof! Annnndd he's gone! Bummer for you!
+			DD2DrakinShotFriendly.DisplayName: D D2 Drakin Shot Friendly
+		}
+
+		Tiles: {
+			BarTiles.MapEntry: Metal Bar
+			Entrophite.MapEntry: Entrophite
+			NoviteOreTile.MapEntry: Novite Ore
+			NovusOreTile.MapEntry: Novus Ore
+			Photosyte.MapEntry: Photosyte
+			PrismalTile.MapEntry: Prismal Ore
+			VibraniumCrystalTile.MapEntry: Vibranium Crystal
+			VirulentOre.MapEntry: Virulent
+			PrismalExtractor.MapEntry: Prismal Extractor
+			ReverseEngineeringStation.MapEntry: Reverse Engineering Station
 		}
 	}
 }
 
 TownNPCMood_Princess: {
-	LoveNPC_SGAmod/Dergon: "I love {NPCName}."
-	LoveNPC_SGAmod/Goat: "I love {NPCName}."
-	LoveNPC_SGAmod/ContrabandMerchant: "I love {NPCName}."
+	LoveNPC_SGAmod/Dergon: I love {NPCName}.
+	LoveNPC_SGAmod/Goat: I love {NPCName}.
+	LoveNPC_SGAmod/ContrabandMerchant: I love {NPCName}.
 }

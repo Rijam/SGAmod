@@ -9,7 +9,7 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Virulent Ore");
+			// DisplayName.SetDefault("Virulent Ore");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
 			ItemSets.havocItem.Add(Type);
 		}
@@ -35,8 +35,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Virulent Bar");
-			Tooltip.SetDefault("Condensed life essence in bar form");
+			// DisplayName.SetDefault("Virulent Bar");
+			// Tooltip.SetDefault("Condensed life essence in bar form");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 			ItemSets.havocItem.Add(Type);
 		}

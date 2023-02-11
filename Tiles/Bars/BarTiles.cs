@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using SGAmod.Items.Materials.Bars;
@@ -25,8 +26,8 @@ namespace SGAmod.Tiles.Bars
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.LavaDeath = false;
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Metal Bar");
+            LocalizedText name = CreateMapEntryName();
+            // name.SetDefault("Metal Bar");
             AddMapEntry(Color.White, name); // TODO: add the different colors for the bars (even though vanilla's is just one color)
         }
 

@@ -11,8 +11,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Star Metal Mold");
-			Tooltip.SetDefault("A mold used to make Wraith Cores, it seems fit to mold bars from heaven\nIs not consumed in crafting Star Metal Bars");
+			// DisplayName.SetDefault("Star Metal Mold");
+			// Tooltip.SetDefault("A mold used to make Wraith Cores, it seems fit to mold bars from heaven\nIs not consumed in crafting Star Metal Bars");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 		public override void SetDefaults()
@@ -29,8 +29,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Star Metal Bar");
-			Tooltip.SetDefault("'This bar is a glimming white sliver that shimmers with stars baring the color of pillars'");
+			// DisplayName.SetDefault("Star Metal Bar");
+			// Tooltip.SetDefault("'This bar is a glimming white sliver that shimmers with stars baring the color of pillars'");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 		}
 		public override void SetDefaults()

@@ -11,8 +11,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cryostal Bar");
-			Tooltip.SetDefault("Condensed ice magic has formed into this bar");
+			// DisplayName.SetDefault("Cryostal Bar");
+			// Tooltip.SetDefault("Condensed ice magic has formed into this bar");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 		}
 

@@ -24,7 +24,7 @@ namespace SGAmod.Items.Consumables.Debug
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Oh hey, you found an Easter Egg!");
+            // DisplayName.SetDefault("Oh hey, you found an Easter Egg!");
         }
 
         public override void SetDefaults()
@@ -441,8 +441,8 @@ namespace SGAmod.Items.Consumables.Debug
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Debug-Gain 100 Expertise");
-            Tooltip.SetDefault("Right click to remove 100 Expertise");
+            // DisplayName.SetDefault("Debug-Gain 100 Expertise");
+            // Tooltip.SetDefault("Right click to remove 100 Expertise");
         }
 
         public override void SetDefaults()
@@ -508,8 +508,8 @@ namespace SGAmod.Items.Consumables.Debug
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Debug-reset SGA Player Save Data");
-            Tooltip.SetDefault("Use this item if your getting 'null List' errors on killing enemies\nHolding this item activates a trippy Shader");
+            // DisplayName.SetDefault("Debug-reset SGA Player Save Data");
+            // Tooltip.SetDefault("Use this item if your getting 'null List' errors on killing enemies\nHolding this item activates a trippy Shader");
         }
 
         public override void SetDefaults()

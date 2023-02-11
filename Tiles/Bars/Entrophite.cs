@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace SGAmod.Tiles.Bars
@@ -28,8 +29,8 @@ namespace SGAmod.Tiles.Bars
 			DustType = DustID.Smoke;
 			TileID.Sets.CanBeClearedDuringGeneration[Type] = true;
 			ItemDrop = ModContent.ItemType<Items.Materials.Bars.Entrophite>();
-			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("Entrophite");
+			LocalizedText name = CreateMapEntryName();
+			// name.SetDefault("Entrophite");
 			AddMapEntry(new Color(30, 0, 25), name);
 		}
 		public override bool CanExplode(int i, int j)

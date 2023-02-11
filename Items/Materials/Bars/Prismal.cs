@@ -11,8 +11,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Prismal Ore");
-			Tooltip.SetDefault("The power inside is cracked wide open, ready to be used");
+			// DisplayName.SetDefault("Prismal Ore");
+			// Tooltip.SetDefault("The power inside is cracked wide open, ready to be used");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
 		}
 		public override void SetDefaults()
@@ -53,8 +53,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Prismal Bar");
-			Tooltip.SetDefault("It radiates the true energy of Novus");
+			// DisplayName.SetDefault("Prismal Bar");
+			// Tooltip.SetDefault("It radiates the true energy of Novus");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 		}
 		public override void SetDefaults()

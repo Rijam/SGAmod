@@ -7,8 +7,8 @@ namespace SGAmod.Items.Placeable.CraftingStations
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Prismal Extractor");
-			Tooltip.SetDefault("It would seem the Lihzahrds knew a way to awaken Novus involving Novite to their full potiental...\nAllows transmuting of a Novus + Novite alloy into Prismal ore");
+			// DisplayName.SetDefault("Prismal Extractor");
+			// Tooltip.SetDefault("It would seem the Lihzahrds knew a way to awaken Novus involving Novite to their full potiental...\nAllows transmuting of a Novus + Novite alloy into Prismal ore");
 		}
 		public override void SetDefaults()
 		{

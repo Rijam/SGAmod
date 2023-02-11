@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace SGAmod.Tiles.Bars
@@ -25,8 +26,8 @@ namespace SGAmod.Tiles.Bars
             ItemDrop = ModContent.ItemType<Items.Materials.Bars.NovusOre>();
             MinPick = 55;
             MineResist = 1.25f;
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Novus Ore");
+            LocalizedText name = CreateMapEntryName();
+            // name.SetDefault("Novus Ore");
             AddMapEntry(new Color(70, 0, 40), name);
         }
 
@@ -61,8 +62,8 @@ namespace SGAmod.Tiles.Bars
             ItemDrop = ModContent.ItemType<Items.Materials.Bars.NoviteOre>();
             MinPick = 55;
             MineResist = 1.25f;
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Novite Ore");
+            LocalizedText name = CreateMapEntryName();
+            // name.SetDefault("Novite Ore");
             AddMapEntry(new Color(240, 221, 168), name);
         }
 

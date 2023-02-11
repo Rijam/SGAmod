@@ -9,8 +9,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Photosyte");
-			Tooltip.SetDefault("'Parasitic plant matter'\nIs found largely infesting clouds where it can gain the most sunlight");
+			// DisplayName.SetDefault("Photosyte");
+			// Tooltip.SetDefault("'Parasitic plant matter'\nIs found largely infesting clouds where it can gain the most sunlight");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
 			ItemSets.havocItem.Add(Type);
 		}
@@ -35,8 +35,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Photosyte Bar");
-			Tooltip.SetDefault("A hardened bar made from parasitic biomass reacting from murky gel and moss");
+			// DisplayName.SetDefault("Photosyte Bar");
+			// Tooltip.SetDefault("A hardened bar made from parasitic biomass reacting from murky gel and moss");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 			ItemSets.havocItem.Add(Type);
 		}

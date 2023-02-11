@@ -14,8 +14,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Drakenite Bar");
-			Tooltip.SetDefault("A Bar forged from the same powers that created Draken...");
+			// DisplayName.SetDefault("Drakenite Bar");
+			// Tooltip.SetDefault("A Bar forged from the same powers that created Draken...");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 		}
 		public override void SetDefaults()

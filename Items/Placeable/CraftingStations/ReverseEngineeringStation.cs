@@ -11,8 +11,8 @@ namespace SGAmod.Items.Placeable.CraftingStations
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Reverse Engineering Station");
-			Tooltip.SetDefault("Allows weaponization of unusual tidbits and crafting of advanced machinery\nSome formerly uncraftable items may be crafted here\nDoubles as a Tinkerer's Workbench");
+			// DisplayName.SetDefault("Reverse Engineering Station");
+			// Tooltip.SetDefault("Allows weaponization of unusual tidbits and crafting of advanced machinery\nSome formerly uncraftable items may be crafted here\nDoubles as a Tinkerer's Workbench");
 		}
 		public override void SetDefaults()
 		{

@@ -10,8 +10,8 @@ namespace SGAmod.Items.Consumables.GrabBags
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("IDG's Starting Bag");
-            Tooltip.SetDefault("Some starting items couldn't fit in your inventory??\n{$CommonItemTooltip.RightClickToOpen}");
+            // DisplayName.SetDefault("IDG's Starting Bag");
+            // Tooltip.SetDefault("Some starting items couldn't fit in your inventory??\n{$CommonItemTooltip.RightClickToOpen}");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 3;
         }
 

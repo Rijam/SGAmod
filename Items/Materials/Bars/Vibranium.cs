@@ -11,8 +11,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vibranium Crystal");
-			Tooltip.SetDefault("'Makes a humming sound while almost shaking out your hands'");
+			// DisplayName.SetDefault("Vibranium Crystal");
+			// Tooltip.SetDefault("'Makes a humming sound while almost shaking out your hands'");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
 		}
 		public override void SetDefaults()
@@ -46,8 +46,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vibranium Plating");
-			Tooltip.SetDefault("'Dark cold steel; it constantly vibrates to the touch'");
+			// DisplayName.SetDefault("Vibranium Plating");
+			// Tooltip.SetDefault("'Dark cold steel; it constantly vibrates to the touch'");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 		}
 
@@ -72,8 +72,8 @@ namespace SGAmod.Items.Materials.Bars
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vibranium Bar");
-			Tooltip.SetDefault("'This alloy is just barely stable enough to not phase out of existance'");
+			// DisplayName.SetDefault("Vibranium Bar");
+			// Tooltip.SetDefault("'This alloy is just barely stable enough to not phase out of existance'");
 		}
 
 		public override void SetDefaults()
