@@ -1,4 +1,3 @@
-
 Mods: {
 	SGAmod: {
 		TownNPCMood: {
@@ -251,17 +250,135 @@ Mods: {
 					Doubles as a Tinkerer's Workbench
 					'''
 			}
+
+			AcidicEgg: {
+				DisplayName: Acidic Egg
+				Tooltip:
+					'''
+					'No words for this...'
+					Summons the Spider Queen
+					Rotten Eggs drop from spiders
+					'''
+			}
+
+			VialOfAcid: {
+				DisplayName: Vial of Acid
+				Tooltip: Highly Corrosive
+			}
+
+			CorrodedSkull: {
+				DisplayName: Corroded Skull
+				Tooltip:
+					'''
+					Grants immunity against Acid Burn
+					Grants 25% increased radiation resistance
+					'It seems surprisingly intact, yet corroded by the Spider Queen'
+					'''
+			}
+
+			AlkalescentHeart: {
+				DisplayName: Alkalescent Heart
+				Tooltip:
+					'''
+					#TODO not implemented
+
+					Dealing crits debuff enemies, doing more damage while they are debuffed as follows:
+					While not poisoned, poison enemies
+					While poisoned, do 5% more damage and next crit Venoms
+					While Venomed, do 10% more damage and next crit Acid Burns
+					While Acid Burned, do 15% more damage
+					These damage boosts do not stack; highest takes priority
+					Minions may inflict this based off your highest crit chance
+					'The Spider Queen's toxic blood pumps through you!'
+					'''
+			}
+
+			TreasureBagSpiderQueen: {
+				DisplayName: Treasure Bag (Spider Queen)
+				Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+			}
+
+			SpiderQueenMask: {
+				DisplayName: Spider Queen Mask
+				Tooltip: ""
+			}
 		}
 
 		NPCs: {
-			ContrabandMerchant.DisplayName: Contraband Merchant
-			Dergon.DisplayName: Dergon
-			Goat.DisplayName: Goat
+			ContrabandMerchant: {
+				DisplayName: Contraband Merchant
+
+				TownNPCMood: {
+					Content: "{$Mods.SGAmod.TownNPCMood.ContrabandMerchant.Content}"
+					NoHome: "{$Mods.SGAmod.TownNPCMood.ContrabandMerchant.NoHome}"
+					FarFromHome: "{$Mods.SGAmod.TownNPCMood.ContrabandMerchant.FarFromHome}"
+					LoveSpace: "{$Mods.SGAmod.TownNPCMood.ContrabandMerchant.LoveSpace}"
+					DislikeCrowded: "{$Mods.SGAmod.TownNPCMood.ContrabandMerchant.DislikeCrowded}"
+					HateCrowded: "{$Mods.SGAmod.TownNPCMood.ContrabandMerchant.HateCrowded}"
+					LikeNPC_Princess: "{$Mods.SGAmod.TownNPCMood.ContrabandMerchant.LikeNPC_Princess}"
+					Princess_LovesNPC: "{$TownNPCMood_Princess.LoveNPC_SGAmod/ContrabandMerchant}"
+				}
+
+				Census.SpawnCondition: Conditions unknown
+			}
+
+			Dergon: {
+				DisplayName: Dergon
+
+				TownNPCMood: {
+					Content: "{$Mods.SGAmod.TownNPCMood.Dergon.Content}"
+					NoHome: "{$Mods.SGAmod.TownNPCMood.Dergon.NoHome}"
+					FarFromHome: "{$Mods.SGAmod.TownNPCMood.Dergon.FarFromHome}"
+					LoveSpace: "{$Mods.SGAmod.TownNPCMood.Dergon.LoveSpace}"
+					DislikeCrowded: "{$Mods.SGAmod.TownNPCMood.Dergon.DislikeCrowded}"
+					HateCrowded: "{$Mods.SGAmod.TownNPCMood.Dergon.HateCrowded}"
+					LikeBiome: "{$Mods.SGAmod.TownNPCMood.Dergon.LikeBiome}"
+					LoveNPC: "{$Mods.SGAmod.TownNPCMood.Dergon.LoveNPC}"
+					LikeNPC: "{$Mods.SGAmod.TownNPCMood.Dergon.LikeNPC}"
+					LikeNPC_Princess: "{$Mods.SGAmod.TownNPCMood.Dergon.LikeNPC_Princess}"
+					Princess_LovesNPC: "{$TownNPCMood_Princess.LoveNPC_SGAmod/Dergon}"
+				}
+
+				Census.SpawnCondition: Conditions unknown
+			}
+
+			Goat: {
+				DisplayName: Goat
+
+				TownNPCMood: {
+					Content: "{$Mods.SGAmod.TownNPCMood.Goat.Content}"
+					NoHome: "{$Mods.SGAmod.TownNPCMood.Goat.NoHome}"
+					FarFromHome: "{$Mods.SGAmod.TownNPCMood.Goat.FarFromHome}"
+					LoveSpace: "{$Mods.SGAmod.TownNPCMood.Goat.LoveSpace}"
+					DislikeCrowded: "{$Mods.SGAmod.TownNPCMood.Goat.DislikeCrowded}"
+					HateCrowded: "{$Mods.SGAmod.TownNPCMood.Goat.HateCrowded}"
+					LikeBiome: "{$Mods.SGAmod.TownNPCMood.Goat.LikeBiome}"
+					LoveNPC: "{$Mods.SGAmod.TownNPCMood.Goat.LoveNPC}"
+					LikeNPC_Princess: "{$Mods.SGAmod.TownNPCMood.Goat.LikeNPC_Princess}"
+					Princess_LovesNPC: "{$TownNPCMood_Princess.LoveNPC_SGAmod/Goat}"
+				}
+
+				Census.SpawnCondition: Conditions unknown
+			}
+
+			SpiderQueen.DisplayName: Spider Queen
 		}
+
+		Bestiary.SpiderQueen: Spider Queen Bestiary
 
 		Projectiles: {
 			ContrabandMerchantPoof.DisplayName: Contra poof! Annnndd he's gone! Bummer for you!
 			DD2DrakinShotFriendly.DisplayName: D D2 Drakin Shot Friendly
+
+			TrappingWeb: {
+				$parentVal: Trapping Web
+				DisplayName: Trapping Web
+			}
+
+			SpiderVenom: {
+				$parentVal: Spider Venom
+				DisplayName: Spider Venom
+			}
 		}
 
 		Tiles: {
@@ -275,6 +392,14 @@ Mods: {
 			VirulentOre.MapEntry: Virulent
 			PrismalExtractor.MapEntry: Prismal Extractor
 			ReverseEngineeringStation.MapEntry: Reverse Engineering Station
+			AcidicWebTile.MapEntry: Acidic Web Tile
+		}
+
+		Buffs: {
+			AcidBurn: {
+				DisplayName: Acid Burn
+				Description: Reduced Defense and your defense works again your life
+			}
 		}
 	}
 }

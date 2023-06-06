@@ -28,7 +28,7 @@ namespace SGAmod.Tiles.Bars
 			MineResist = 3f;
 			DustType = DustID.Smoke;
 			TileID.Sets.CanBeClearedDuringGeneration[Type] = true;
-			ItemDrop = ModContent.ItemType<Items.Materials.Bars.Entrophite>();
+			//ItemDrop = ModContent.ItemType<Items.Materials.Bars.Entrophite>();
 			LocalizedText name = CreateMapEntryName();
 			// name.SetDefault("Entrophite");
 			AddMapEntry(new Color(30, 0, 25), name);

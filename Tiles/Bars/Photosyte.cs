@@ -22,7 +22,7 @@ namespace SGAmod.Tiles.Bars
 			TileID.Sets.Ore[Type] = true;
 			HitSound = SoundID.NPCHit9;
 			DustType = 128;
-			ItemDrop = ModContent.ItemType<Items.Materials.Bars.Photosyte>();
+			//ItemDrop = ModContent.ItemType<Items.Materials.Bars.Photosyte>();
 			MinPick = 10;
 			MineResist = 1f;
 			LocalizedText name = CreateMapEntryName();

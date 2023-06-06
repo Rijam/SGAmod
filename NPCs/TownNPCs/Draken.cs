@@ -23,6 +23,7 @@ namespace SGAmod.NPCs.TownNPCs
     [AutoloadHead]
     public class Dergon : ModNPC
     {
+        private static string Shop1 = "Shop1";
 
         float walkframe = 0f;
         int confort = 0;
@@ -47,7 +48,9 @@ namespace SGAmod.NPCs.TownNPCs
                 // PortraitPositionXOverride = 0f,
                 // PortraitPositionYOverride = 0f,
                 Velocity = 1f, // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
-                Direction = 1
+                Direction = -1,
+				Frame = 0,
+				Position = new Vector2(-5, 0) // Small picture
             };
 
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
@@ -96,7 +99,7 @@ namespace SGAmod.NPCs.TownNPCs
             confort = reader.ReadInt32();
         }
 
-        public override void HitEffect(int hitDirection, double damage)
+        public override void HitEffect(NPC.HitInfo hitInfo)
         {
             if (Main.netMode != NetmodeID.Server && NPC.life <= 0)
             {
@@ -594,7 +597,7 @@ namespace SGAmod.NPCs.TownNPCs
             */
         }
 
-        public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+        public override void OnChatButtonClicked(bool firstButton, ref string shop)
         {
             if (!firstButton)
             {
@@ -681,7 +684,7 @@ namespace SGAmod.NPCs.TownNPCs
                 }
                 else
                 {
-                    shop = true;
+                    shop = Shop1;
                 }
             } 
             else 
@@ -850,14 +853,26 @@ namespace SGAmod.NPCs.TownNPCs
             return str;
         }
 
-        public override void SetupShop(Chest shop, ref int nextSlot)
+        private SGAPlayer GetModPlayerForShop()
+        {
+            if (Main.LocalPlayer.active)
+            {
+                return Main.LocalPlayer.GetModPlayer<SGAPlayer>();
+            }
+            return null;
+        }
+
+        public override void AddShops()
         {
             // Draken's shop items
 
-            SGAPlayer modplayer = Main.LocalPlayer.GetModPlayer<SGAPlayer>();
+            Condition expertiseAbove(int amount) => new($"When the player has collected {amount} Expertise or more", () => GetModPlayerForShop().ExpertiseCollectedTotal >= amount);
 
-            
-            if (Main.hardMode)
+            NPCShop npcShop = new NPCShop(Type, Shop1)
+                .Add(new Item(ItemID.PlatinumCoin) { shopCustomPrice = 30, shopSpecialCurrency = SGAmod.ExpertiseCustomCurrencyID }, Condition.Hardmode)
+                .Add(new Item(ItemID.GoldCoin) { shopCustomPrice = 30, shopSpecialCurrency = SGAmod.ExpertiseCustomCurrencyID }, Condition.PreHardmode)
+
+            /*if (Main.hardMode)
             {
                 shop.item[nextSlot].SetDefaults(ItemID.PlatinumCoin);
                 shop.item[nextSlot].shopCustomPrice = 30;
@@ -870,7 +885,8 @@ namespace SGAmod.NPCs.TownNPCs
                 shop.item[nextSlot].shopCustomPrice = 1;
                 shop.item[nextSlot].shopSpecialCurrency = SGAmod.ExpertiseCustomCurrencyID;
                 nextSlot++;
-            }
+            }*/
+
             /*
             shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("BossHints").Type);
             shop.item[nextSlot].shopCustomPrice = 1;
@@ -934,13 +950,15 @@ namespace SGAmod.NPCs.TownNPCs
                 nextSlot++;
             }
             */
-            if (modplayer.ExpertiseCollectedTotal >= 1000)
+                .Add(new Item(ItemID.Terragrim) { shopCustomPrice = 75, shopSpecialCurrency = SGAmod.ExpertiseCustomCurrencyID }, expertiseAbove(1000))
+
+            /*if (modplayer.ExpertiseCollectedTotal >= 1000)
             {
                 shop.item[nextSlot].SetDefaults(ItemID.Terragrim);
                 shop.item[nextSlot].shopCustomPrice = 75;
                 shop.item[nextSlot].shopSpecialCurrency = SGAmod.ExpertiseCustomCurrencyID;
                 nextSlot++;
-            }
+            }*/
             /*
             if (modplayer.ExpertiseCollectedTotal >= 1250)
             {
@@ -992,13 +1010,15 @@ namespace SGAmod.NPCs.TownNPCs
                 nextSlot++;
             }
             */
-            if (modplayer.ExpertiseCollectedTotal >= 10000)
+
+                .Add(new Item(ItemID.AviatorSunglasses) { shopCustomPrice = 200, shopSpecialCurrency = SGAmod.ExpertiseCustomCurrencyID }, expertiseAbove(10000));
+            /*if (modplayer.ExpertiseCollectedTotal >= 10000)
             {
                 shop.item[nextSlot].SetDefaults(ItemID.AviatorSunglasses);
                 shop.item[nextSlot].shopCustomPrice = 200;
                 shop.item[nextSlot].shopSpecialCurrency = SGAmod.ExpertiseCustomCurrencyID;
                 nextSlot++;
-            }
+            }*/
             /*
             if (modplayer.ExpertiseCollectedTotal >= 12000 && SGAWorld.downedHellion>1 && Main.LocalPlayer.HasItem(ModContent.ItemType<Items.CosmicFragment>()))
             {
@@ -1015,6 +1035,7 @@ namespace SGAmod.NPCs.TownNPCs
                 nextSlot++;
             }
             */
+            npcShop.Register();
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)

@@ -99,7 +99,8 @@ namespace SGAmod
 
     public partial class SGAmod : Mod
     {
-        public SGAmod Instance;
+#pragma warning disable CA2211 // Non-constant fields should not be visible
+		public static SGAmod Instance;
 
         public SGAmod()
         {
@@ -108,18 +109,22 @@ namespace SGAmod
 
         public static int ExpertiseCustomCurrencyID;
         public static CustomCurrencySystem ExpertiseCustomCurrencySystem;
+#pragma warning restore CA2211 // Non-constant fields should not be visible
 
-        public override void Load()
+		public override void Load()
         {
             Instance = this;
 
             ExpertiseCustomCurrencySystem = new ExpertiseCurrency(ModContent.ItemType<Items.Misc.ExpertiseItem>(), 999L);
             ExpertiseCustomCurrencyID = CustomCurrencyManager.RegisterCurrency(ExpertiseCustomCurrencySystem);
-        }
+
+			SGAILHacks.Patch();
+		}
 
         public override void Unload()
         {
             SGAmod.ExpertiseCustomCurrencySystem = null;
-        }
+			SGAILHacks.Unpatch();
+		}
     }
 }

@@ -14,6 +14,7 @@ using Terraria.GameContent.UI;
 using Terraria.GameContent;
 using ReLogic.Content;
 using Terraria.GameContent.Bestiary;
+using System.CodeDom;
 // using SGAmod.Items.Consumables.LootBoxes;
 
 namespace SGAmod.NPCs.TownNPCs
@@ -22,6 +23,8 @@ namespace SGAmod.NPCs.TownNPCs
 	[AutoloadHead]
 	public class ContrabandMerchant : ModNPC
 	{
+        private static string Shop1 = "Shop1";
+
 		public int itemRandomizer = 0;
 		public static UnifiedRandom randz = new UnifiedRandom();
 
@@ -111,7 +114,7 @@ namespace SGAmod.NPCs.TownNPCs
 			});
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hitInfo)
 		{
 			if (Main.netMode != NetmodeID.Server && NPC.life <= 0)
 			{
@@ -279,25 +282,31 @@ namespace SGAmod.NPCs.TownNPCs
 			}
 		}
 
-		public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+		public override void OnChatButtonClicked(bool firstButton, ref string shop)
 		{
 			if (firstButton)
 			{
 				if (!Main.dayTime)
-					shop = true;
+					shop = Shop1;
 				else
 					Main.npcChatText = "I won't sell anything at this time, come back later.";
 			}
 		}
 
-		public override void SetupShop(Chest shop, ref int nextSlot)
-		{
-
+        public override void AddShops()
+        {
 			randz = new UnifiedRandom(itemRandomizer);
 
-			//if (Main.LocalPlayer.HasItem(ItemID.AncientCloth))
-			//{
+            Condition random10LessThanNum(int num) => new("Randomly", () => randz.Next(10) < num);
 
+            NPCShop npcShop = new NPCShop(Type, Shop1)
+
+            //if (Main.LocalPlayer.HasItem(ItemID.AncientCloth))
+            //{
+
+                .Add(new Item(ItemID.IronPickaxe) { shopCustomPrice = 30, shopSpecialCurrency = CrateCurrencyCustomCurrencyID })
+                .Add(new Item(ItemID.IronPickaxe) { shopCustomPrice = randz.Next(3, 7), shopSpecialCurrency = CrateCurrencyCustomCurrencyID })
+            /*
 			shop.item[nextSlot].SetDefaults(ItemID.IronPickaxe);
 			// shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Accessories.LiquidGambling>());
 			shop.item[nextSlot].shopCustomPrice = 30;
@@ -309,8 +318,9 @@ namespace SGAmod.NPCs.TownNPCs
 			shop.item[nextSlot].shopCustomPrice = randz.Next(3, 7);
 			shop.item[nextSlot].shopSpecialCurrency = ContrabandMerchant.DesertFossilCurrencyCustomCurrencyID;
 			nextSlot++;
+            */
 
-			/*
+            /*
 			if (NPC.CountNPCS(ModContent.NPCType<Dimensions.NPCs.DungeonPortal>()) > 0)
 			{
 				shop.item[nextSlot].SetDefaults(ModContent.ItemType<LootBoxDeeperDungeons>());
@@ -320,9 +330,26 @@ namespace SGAmod.NPCs.TownNPCs
 			}
 			*/
 
-			if (!Main.hardMode)
-				return;
+            //if (!Main.hardMode)
+			//	return;
 
+                .Add(new Item(ItemID.IronPickaxe) { shopCustomPrice = randz.Next(3, 8), shopSpecialCurrency = AncientClothCurrencyCustomCurrencyID },
+                    Condition.Hardmode, random10LessThanNum(8))
+                .Add(new Item(ItemID.IronPickaxe) { shopCustomPrice = 1 + randz.Next(1, 3), shopSpecialCurrency = AncientClothCurrencyCustomCurrencyID },
+                    Condition.Hardmode, random10LessThanNum(8))
+                .Add(new Item(ItemID.IronPickaxe) { shopCustomPrice = 1 + randz.Next(1, 3), shopSpecialCurrency = AncientClothCurrencyCustomCurrencyID },
+                    Condition.Hardmode, random10LessThanNum(8))
+                .Add(new Item(ItemID.IronPickaxe) { shopCustomPrice = randz.Next(30, 51), shopSpecialCurrency = GlowrockCustomCurrencyID },
+                    Condition.Hardmode, random10LessThanNum(8))
+                .Add(new Item(ItemID.IronPickaxe) { shopCustomPrice = randz.Next(8, 29), shopSpecialCurrency = GlowrockCustomCurrencyID },
+                    Condition.Hardmode, random10LessThanNum(8))
+                .Add(new Item(ItemID.IronPickaxe) { shopCustomPrice = randz.Next(8, 29), shopSpecialCurrency = GlowrockCustomCurrencyID },
+                    Condition.Hardmode, random10LessThanNum(8))
+                .Add(new Item(ItemID.IronPickaxe) { shopCustomPrice = 100, shopSpecialCurrency = OverseenCrystalCustomCurrencyID },
+                    Condition.Hardmode, random10LessThanNum(8));
+            npcShop.Register();
+
+            /*
 			if (randz.Next(10) < 8)
 			{
 				shop.item[nextSlot].SetDefaults(ItemID.IronPickaxe);
@@ -374,8 +401,9 @@ namespace SGAmod.NPCs.TownNPCs
 				shop.item[nextSlot].shopSpecialCurrency = ContrabandMerchant.GlowrockCustomCurrencyID;
 				nextSlot++;
 			}
+            */
 
-			/*
+            /*
 			if (Main.LocalPlayer.HasItem(ModContent.ItemType<OverseenCrystal>()))
 			{
 				shop.item[nextSlot].SetDefaults(ModContent.ItemType<LootBoxAccessoriesEX>());
@@ -384,7 +412,7 @@ namespace SGAmod.NPCs.TownNPCs
 				nextSlot++;
 			}
 			*/
-		}
+        }
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)
 		{

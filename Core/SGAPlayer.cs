@@ -17,6 +17,7 @@ using Idglibrary;
 using Terraria.ModLoader.IO;
 using Terraria.Graphics.Shaders;
 using Terraria.Utilities;
+using SGAmod.Buffs.Debuffs;
 
 namespace SGAmod
 {
@@ -36,7 +37,13 @@ namespace SGAmod
         public long ExpertiseCollected = 0;
         public long ExpertiseCollectedTotal = 0;
 
-        public override void Initialize()
+		// Buffs
+		public bool acidBurn = false;
+
+		// Accessories
+		public byte cobwebRepellent = 0;
+
+		public override void Initialize()
         {
             ExpertisePointsFromBosses = new();
             ExpertisePointsFromBossesModded = new();
@@ -46,7 +53,10 @@ namespace SGAmod
         public override void ResetEffects()
         {
             Player.breathMax = 200;
-        }
+			acidBurn = false;
+
+			cobwebRepellent = 0;
+		}
 
         public override void CopyClientState(ModPlayer targetCopy)
         {
@@ -106,5 +116,31 @@ namespace SGAmod
 
             LoadExpertise(tag);
         }
-    }
+
+		public override void UpdateBadLifeRegen()
+		{
+			if (acidBurn)
+			{
+				Player.lifeRegen -= 15 + (int)(Player.statDefense * 0.90f);
+				Player.statDefense -= 5;
+			}
+		}
+		public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
+		{
+			if (acidBurn)
+			{
+				if (Main.rand.NextBool(4) && drawInfo.shadow == 0f)
+				{
+					int dust = Dust.NewDust(drawInfo.Position - new Vector2(2f, 2f), Player.width + 4, Player.height + 4, ModContent.DustType<Dusts.AcidDust>(), Player.velocity.X * 0.4f, Player.velocity.Y * 0.4f, 100, default, 1f);
+					Main.dust[dust].velocity *= 1.8f;
+					Main.dust[dust].velocity.Y -= 0.5f;
+					drawInfo.DustCache.Add(dust);
+				}
+				r *= 0.1f;
+				g *= 0.7f;
+				b *= 0.1f;
+				fullBright = true;
+			}
+		}
+	}
 }

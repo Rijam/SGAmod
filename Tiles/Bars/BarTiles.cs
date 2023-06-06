@@ -31,7 +31,7 @@ namespace SGAmod.Tiles.Bars
             AddMapEntry(Color.White, name); // TODO: add the different colors for the bars (even though vanilla's is just one color)
         }
 
-		public override bool Drop(int i, int j)
+		public override bool CanDrop(int i, int j)
 		{
 			Tile t = Main.tile[i, j];
 			int style = t.TileFrameX / 18;
@@ -51,7 +51,7 @@ namespace SGAmod.Tiles.Bars
 			};
 			Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, item);
 
-			return base.Drop(i, j);
+			return base.CanDrop(i, j);
 		}
 
 		/*

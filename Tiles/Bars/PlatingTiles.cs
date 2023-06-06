@@ -14,7 +14,7 @@ namespace SGAmod.Tiles.Bars
 			Main.tileLighted[Type] = true;
 			HitSound = SoundID.Tink;
 			DustType = DustID.Iron;
-			ItemDrop = ModContent.ItemType<Items.Materials.Bars.AdvancedPlating>();
+			//ItemDrop = ModContent.ItemType<Items.Materials.Bars.AdvancedPlating>();
 			AddMapEntry(new Color(181, 165, 107));
 		}
 
@@ -32,7 +32,7 @@ namespace SGAmod.Tiles.Bars
 			Main.tileLighted[Type] = true;
 			HitSound = SoundID.Tink;
 			DustType = DustID.Iron;
-			ItemDrop = ModContent.ItemType<Items.Materials.Bars.VibraniumPlating>();
+			//ItemDrop = ModContent.ItemType<Items.Materials.Bars.VibraniumPlating>();
 			AddMapEntry(new Color(88, 44, 86));
 		}
 

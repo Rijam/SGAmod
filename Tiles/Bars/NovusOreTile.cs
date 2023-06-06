@@ -23,7 +23,7 @@ namespace SGAmod.Tiles.Bars
             TileID.Sets.Ore[Type] = true;
             HitSound = SoundID.Tink;
             DustType = 0;
-            ItemDrop = ModContent.ItemType<Items.Materials.Bars.NovusOre>();
+            //ItemDrop = ModContent.ItemType<Items.Materials.Bars.NovusOre>();
             MinPick = 55;
             MineResist = 1.25f;
             LocalizedText name = CreateMapEntryName();
@@ -59,7 +59,7 @@ namespace SGAmod.Tiles.Bars
             TileID.Sets.Ore[Type] = true;
             HitSound = SoundID.Tink;
             DustType = DustID.GoldCoin;
-            ItemDrop = ModContent.ItemType<Items.Materials.Bars.NoviteOre>();
+            //ItemDrop = ModContent.ItemType<Items.Materials.Bars.NoviteOre>();
             MinPick = 55;
             MineResist = 1.25f;
             LocalizedText name = CreateMapEntryName();

@@ -23,7 +23,7 @@ namespace SGAmod.Tiles.Bars
 			TileID.Sets.Ore[Type] = true;
 			HitSound = SoundID.Tink;
 			DustType = 128;
-			ItemDrop = ModContent.ItemType<Items.Materials.Bars.VirulentOre>();
+			//ItemDrop = ModContent.ItemType<Items.Materials.Bars.VirulentOre>();
 			MinPick = 150;
 			MineResist = 5f;
 			LocalizedText name = CreateMapEntryName();

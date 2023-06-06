@@ -22,7 +22,7 @@ namespace SGAmod.Tiles.Bars
             MinPick = 250;
             HitSound = SoundID.Item50;
             DustType = -1;
-            ItemDrop = ModContent.ItemType<Items.Materials.Bars.VibraniumCrystal>();
+            //ItemDrop = ModContent.ItemType<Items.Materials.Bars.VibraniumCrystal>();
             MineResist = 2.50f;
             LocalizedText name = CreateMapEntryName();
             // name.SetDefault("Vibranium Crystal");
@@ -73,7 +73,7 @@ namespace SGAmod.Tiles.Bars
             TileID.Sets.Ore[Type] = true;
             MinPick = 120;
             HitSound = SoundID.Tink;
-            ItemDrop = ModContent.ItemType<Items.Materials.Bars.PrismalOre>();
+            //ItemDrop = ModContent.ItemType<Items.Materials.Bars.PrismalOre>();
             MineResist = 1.25f;
             LocalizedText name = CreateMapEntryName();
             // name.SetDefault("Prismal Ore");

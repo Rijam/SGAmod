@@ -24,7 +24,9 @@ namespace SGAmod.NPCs.TownNPCs
 	[AutoloadHead]
 	public class Goat : ModNPC
 	{
-		public override void SetStaticDefaults()
+        private static string Shop1 = "Shop1";
+
+        public override void SetStaticDefaults()
 		{
 			Main.npcFrameCount[NPC.type] = Main.npcFrameCount[NPCID.Guide];
 			NPCID.Sets.ExtraFramesCount[NPC.type] = 10;
@@ -79,7 +81,7 @@ namespace SGAmod.NPCs.TownNPCs
 			});
 		}
 
-		public override void HitEffect(int hitDirection, double damage)
+		public override void HitEffect(NPC.HitInfo hitInfo)
 		{
 			if (Main.netMode != NetmodeID.Server && NPC.life <= 0)
 			{
@@ -168,16 +170,16 @@ namespace SGAmod.NPCs.TownNPCs
 
 		}
 
-		public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+		public override void OnChatButtonClicked(bool firstButton, ref string shop)
 		{
 			if (firstButton)
 			{
-				shop = true;
+				shop = Shop1;
 			}
 		}
 
-		public override void SetupShop(Chest shop, ref int nextSlot)
-		{
+        public override void AddShops()
+        {
 			/*
 			shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("DergPainting").Type);
 			shop.item[nextSlot].value = Item.buyPrice(0, 1);
