@@ -24,9 +24,9 @@ namespace SGAmod.NPCs.TownNPCs
 	[AutoloadHead]
 	public class Goat : ModNPC
 	{
-        private static string Shop1 = "Shop1";
+		private static string Shop1 = "Shop1";
 
-        public override void SetStaticDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.npcFrameCount[NPC.type] = Main.npcFrameCount[NPCID.Guide];
 			NPCID.Sets.ExtraFramesCount[NPC.type] = 10;
@@ -68,8 +68,7 @@ namespace SGAmod.NPCs.TownNPCs
 			NPC.knockBackResist = 0.5f;
 			AnimationType = NPCID.Guide;
 			NPC.homeless = true;
-			Color c = Main.hslToRgb((float)(Main.GlobalTimeWrappedHourly/2)%1f, 0.5f, 0.35f);
-
+			//Color c = Main.hslToRgb((float)(Main.GlobalTimeWrappedHourly/2)%1f, 0.5f, 0.35f);
 		}
 
 		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -120,7 +119,7 @@ namespace SGAmod.NPCs.TownNPCs
 		}
 
 		public override void AI()
-        {
+		{
 			if (!ContrabandMerchant.IsNpcOnscreen(NPC.Center) && !NPC.AnyNPCs(ModContent.NPCType<Dergon>()))
 			{
 				if (Main.netMode == NetmodeID.SinglePlayer) Main.NewText(NPC.FullName + " has left!", 50, 125, 255);
@@ -131,14 +130,14 @@ namespace SGAmod.NPCs.TownNPCs
 			}
 
 			base.AI();
-        }
+		}
 
 
-        // Consider using this alternate approach to choosing a random thing. Very useful for a variety of use cases.
-        // The WeightedRandom class needs "using Terraria.Utilities;" to use
-        public override string GetChat()
+		// Consider using this alternate approach to choosing a random thing. Very useful for a variety of use cases.
+		// The WeightedRandom class needs "using Terraria.Utilities;" to use
+		public override string GetChat()
 		{
-			WeightedRandom<string> chat = new WeightedRandom<string>();
+			WeightedRandom<string> chat = new();
 
 			if (!NPC.AnyNPCs(ModContent.NPCType<Dergon>()))
 			return "I have nothing to say to you...";
@@ -178,8 +177,8 @@ namespace SGAmod.NPCs.TownNPCs
 			}
 		}
 
-        public override void AddShops()
-        {
+		public override void AddShops()
+		{
 			/*
 			shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("DergPainting").Type);
 			shop.item[nextSlot].value = Item.buyPrice(0, 1);
@@ -233,7 +232,7 @@ namespace SGAmod.NPCs.TownNPCs
 			shop.item[nextSlot].shopCustomPrice = Item.buyPrice(1, 0, 0, 0);
 			nextSlot += 1;
 			if (Main.LocalPlayer.HasItem(ModContent.ItemType<CopperTack>()))
-            {
+			{
 				shop.item[nextSlot].SetDefaults(ModContent.ItemType<TinTack>());
 				nextSlot++;
 			}

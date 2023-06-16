@@ -21,21 +21,21 @@ using SGAmod.Buffs.Debuffs;
 
 namespace SGAmod
 {
-    public partial class SGAPlayer : ModPlayer
-    {
+	public partial class SGAPlayer : ModPlayer
+	{
 
-        // Apocalyptical related
-        public double[] apocalypticalChance = { 0, 0, 0, 0 };
-        public float apocalypticalStrength = 1f;
-        public float lifestealentropy = 0f;
+		// Apocalyptical related
+		public double[] apocalypticalChance = { 0, 0, 0, 0 };
+		public float apocalypticalStrength = 1f;
+		public float lifestealentropy = 0f;
 
-        public bool dragonFriend = false;
+		public bool dragonFriend = false;
 
-        public List<int> ExpertisePointsFromBosses;
-        public List<string> ExpertisePointsFromBossesModded;
-        public List<int> ExpertisePointsFromBossesPoints;
-        public long ExpertiseCollected = 0;
-        public long ExpertiseCollectedTotal = 0;
+		public List<int> ExpertisePointsFromBosses;
+		public List<string> ExpertisePointsFromBossesModded;
+		public List<int> ExpertisePointsFromBossesPoints;
+		public long ExpertiseCollected = 0;
+		public long ExpertiseCollectedTotal = 0;
 
 		// Buffs
 		public bool acidBurn = false;
@@ -43,79 +43,87 @@ namespace SGAmod
 		// Accessories
 		public byte cobwebRepellent = 0;
 
-		public override void Initialize()
-        {
-            ExpertisePointsFromBosses = new();
-            ExpertisePointsFromBossesModded = new();
-            ExpertisePointsFromBossesPoints = new();
-        }
+		// World
+		public bool Drakenshopunlock = false;
 
-        public override void ResetEffects()
-        {
-            Player.breathMax = 200;
+		public override void Initialize()
+		{
+			ExpertisePointsFromBosses = new();
+			ExpertisePointsFromBossesModded = new();
+			ExpertisePointsFromBossesPoints = new();
+		}
+
+		public override void ResetEffects()
+		{
+			Player.breathMax = 200;
 			acidBurn = false;
 
 			cobwebRepellent = 0;
+			Drakenshopunlock = false;
 		}
 
-        public override void CopyClientState(ModPlayer targetCopy)
-        {
-            SGAPlayer sgaplayer = targetCopy as SGAPlayer;
-            sgaplayer.ExpertiseCollected = ExpertiseCollected;
-            sgaplayer.ExpertiseCollectedTotal = ExpertiseCollectedTotal;
-            sgaplayer.dragonFriend = dragonFriend;
-        }
+		public override void CopyClientState(ModPlayer targetCopy)
+		{
+			SGAPlayer sgaplayer = targetCopy as SGAPlayer;
+			sgaplayer.ExpertiseCollected = ExpertiseCollected;
+			sgaplayer.ExpertiseCollectedTotal = ExpertiseCollectedTotal;
+			sgaplayer.dragonFriend = dragonFriend;
+			sgaplayer.Drakenshopunlock = Drakenshopunlock;
+		}
 
-        public override void SendClientChanges(ModPlayer clientPlayer)
-        {
-            bool mismatch = false;
-            SGAPlayer sgaplayer = clientPlayer as SGAPlayer;
+		public override void SendClientChanges(ModPlayer clientPlayer)
+		{
+			bool mismatch = false;
+			SGAPlayer sgaplayer = clientPlayer as SGAPlayer;
 
-            if (sgaplayer.ExpertiseCollected != ExpertiseCollected || 
-                sgaplayer.ExpertiseCollectedTotal != ExpertiseCollectedTotal || 
-                sgaplayer.dragonFriend != dragonFriend
-                )
-            {
-                mismatch = true;
-            }
+			if (sgaplayer.ExpertiseCollected != ExpertiseCollected || 
+				sgaplayer.ExpertiseCollectedTotal != ExpertiseCollectedTotal || 
+				sgaplayer.dragonFriend != dragonFriend ||
+				sgaplayer.Drakenshopunlock != Drakenshopunlock
+				)
+			{
+				mismatch = true;
+			}
 
-            if (mismatch)
-            {
-                SendClientChangesPacket();
-            }
-        }
+			if (mismatch)
+			{
+				SendClientChangesPacket();
+			}
+		}
 
 
-        private void SendClientChangesPacket()
-        {
-            if (Main.netMode == NetmodeID.MultiplayerClient)
-            {
+		private void SendClientChangesPacket()
+		{
+			if (Main.netMode == NetmodeID.MultiplayerClient)
+			{
 
-            }
-        }
+			}
+		}
 
-        public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
-        {
-            return new[] {
-                new Item(ModContent.ItemType<Items.Consumables.GrabBags.StartingBag>())
-            };
-        }
+		public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
+		{
+			return new[] {
+				new Item(ModContent.ItemType<Items.Consumables.GrabBags.StartingBag>())
+			};
+		}
 
-        public override void SaveData(TagCompound tag)
-        {
-            tag["ZZZExpertiseCollectedZZZ"] = ExpertiseCollected;
-            tag["ZZZExpertiseCollectedTotalZZZ"] = ExpertiseCollectedTotal;
-            tag["dragonFriend"] = dragonFriend;
+		public override void SaveData(TagCompound tag)
+		{
+			tag["ZZZExpertiseCollectedZZZ"] = ExpertiseCollected;
+			tag["ZZZExpertiseCollectedTotalZZZ"] = ExpertiseCollectedTotal;
+			tag["dragonFriend"] = dragonFriend;
+			tag["Drakenshopunlock"] = Drakenshopunlock;
 
-            SaveExpertise(ref tag);
-        }
+			SaveExpertise(ref tag);
+		}
 
-        public override void LoadData(TagCompound tag)
-        {
-            dragonFriend = tag.ContainsKey("dragonFriend");
+		public override void LoadData(TagCompound tag)
+		{
+			dragonFriend = tag.ContainsKey("dragonFriend");
+			Drakenshopunlock = tag.ContainsKey("Drakenshopunlock");
 
-            LoadExpertise(tag);
-        }
+			LoadExpertise(tag);
+		}
 
 		public override void UpdateBadLifeRegen()
 		{
