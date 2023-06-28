@@ -13,12 +13,12 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Cryostal Bar");
 			// Tooltip.SetDefault("Condensed ice magic has formed into this bar");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
+			Item.ResearchUnlockCount = 25;
 		}
 
 		public override void SetDefaults()
 		{
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 26;
 			Item.height = 14;
 			Item.value = 1000;

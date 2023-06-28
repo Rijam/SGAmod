@@ -1,0 +1,453 @@
+Debug1: {
+	DisplayName: Debug - reset SGA Player Save Data
+	Tooltip:
+		'''
+		Use this item if your getting 'null List' errors on killing enemies
+		Holding this item activates a trippy Shader
+		'''
+}
+
+Debug2: {
+	DisplayName: Debug - Gain 100 Expertise
+	Tooltip: ""
+}
+
+YellowHeart: {
+	DisplayName: Oh hey, you found an Easter Egg!
+	Tooltip: ""
+}
+
+StartingBag: {
+	DisplayName: IDG's Starting Bag
+	Tooltip:
+		'''
+		Some starting items couldn't fit in your inventory??
+		{$CommonItemTooltip.RightClickToOpen}
+		'''
+}
+
+AdvancedPlating: {
+	DisplayName: Advanced Plating
+	Tooltip: Advanced for the land of Terraria's standards, that is
+}
+
+CelestineChunk: {
+	DisplayName: Celestine Chunk
+	Tooltip: Inert and radioactive Luminite...
+}
+
+CryostalBar: {
+	DisplayName: Cryostal Bar
+	Tooltip: Condensed ice magic has formed into this bar
+}
+
+DrakeniteBar: {
+	DisplayName: Drakenite Bar
+	Tooltip: A Bar forged from the same powers that created Draken...
+}
+
+Entrophite: {
+	DisplayName: Entrophite
+	Tooltip: Corrupted beyond the veils of life
+}
+
+Glowrock: {
+	DisplayName: Glowrock
+	Tooltip:
+		'''
+		These rocks seem to give the Asteriods a glow; Curious.
+		Extract it via an Extractinator for some goodies!
+		Doesn't have much other use, outside of illegal interests
+		'''
+}
+
+NoviteBar: {
+	DisplayName: Novite Bar
+	Tooltip: This Brassy alloy reminds you of 60s scifi
+}
+
+NoviteOre: {
+	DisplayName: Novite Ore
+	Tooltip: Brassy scrap metal from a time along ago, might be of electronical use...
+}
+
+NovusBar: {
+	DisplayName: Novus Bar
+	Tooltip:
+		'''
+		This alloy of Novus and the power of the wraiths have awakened some of its dorment power
+		May be interchanged for iron bars in some crafting recipes
+		'''
+}
+
+NovusOre: {
+	DisplayName: Novus Ore
+	Tooltip: Stone laden with doment power...
+}
+
+OverseenCrystal: {
+	DisplayName: Overseen Crystal
+	Tooltip:
+		'''
+		Celestial Shards manifested from Phaethon's creators; resonates with charged forgotten spirits
+		May be used to fuse several strong materials together with ease
+		Surely a shady dealer will also be interested in trading for these...
+		'''
+}
+
+Photosyte: {
+	DisplayName: Photosyte
+	Tooltip:
+		'''
+		'Parasitic plant matter'
+		Is found largely infesting clouds where it can gain the most sunlight
+		'''
+}
+
+PhotosyteBar: {
+	DisplayName: Photosyte Bar
+	Tooltip: A hardened bar made from parasitic biomass reacting from murky gel and moss
+}
+
+PrismalBar: {
+	DisplayName: Prismal Bar
+	Tooltip: It radiates the true energy of Novus
+}
+
+PrismalOre: {
+	DisplayName: Prismal Ore
+	Tooltip: The power inside is cracked wide open, ready to be used
+}
+
+StarMetalBar: {
+	DisplayName: Star Metal Bar
+	Tooltip: "'This bar is a glimming white sliver that shimmers with stars baring the color of pillars'"
+}
+
+StarMetalMold: {
+	DisplayName: Star Metal Mold
+	Tooltip:
+		'''
+		A mold used to make Wraith Cores, it seems fit to mold bars from heaven
+		Is not consumed in crafting Star Metal Bars
+		'''
+}
+
+VibraniumBar: {
+	DisplayName: Vibranium Bar
+	Tooltip: "'This alloy is just barely stable enough to not phase out of existance'"
+}
+
+VibraniumCrystal: {
+	DisplayName: Vibranium Crystal
+	Tooltip: "'Makes a humming sound while almost shaking out your hands'"
+}
+
+VibraniumPlating: {
+	DisplayName: Vibranium Plating
+	Tooltip: "'Dark cold steel; it constantly vibrates to the touch'"
+}
+
+VirulentBar: {
+	DisplayName: Virulent Bar
+	Tooltip: Condensed life essence in bar form
+}
+
+VirulentOre: {
+	DisplayName: Virulent Ore
+	Tooltip: ""
+}
+
+WovenEntrophite: {
+	DisplayName: Woven Entrophite
+	Tooltip: Suprisingly strong, after being interlaced with souls
+}
+
+ExpertiseItem: {
+	DisplayName: Expertise Item
+	Tooltip:
+		'''
+		Earn Expertise by slaying certain enemies!
+		Spend Expertise at the Draken's shop!
+		'''
+}
+
+PrismalExtractor: {
+	DisplayName: Prismal Extractor
+	Tooltip:
+		'''
+		It would seem the Lihzahrds knew a way to awaken Novus involving Novite to their full potiental...
+		Allows transmuting of a Novus + Novite alloy into Prismal ore
+		'''
+}
+
+ReverseEngineeringStation: {
+	DisplayName: Reverse Engineering Station
+	Tooltip:
+		'''
+		Allows weaponization of unusual tidbits and crafting of advanced machinery
+		Some formerly uncraftable items may be crafted here
+		Doubles as a Tinkerer's Workbench
+		'''
+}
+
+AcidicEgg: {
+	DisplayName: Acidic Egg
+	Tooltip:
+		'''
+		'No words for this...'
+		Summons the Spider Queen
+		Rotten Eggs drop from spiders
+		'''
+}
+
+VialOfAcid: {
+	DisplayName: Vial of Acid
+	Tooltip: Highly Corrosive
+}
+
+CorrodedSkull: {
+	DisplayName: Corroded Skull
+	Tooltip:
+		'''
+		Grants immunity against Acid Burn
+		Grants 25% increased radiation resistance
+		'It seems surprisingly intact, yet corroded by the Spider Queen'
+		'''
+}
+
+AlkalescentHeart: {
+	DisplayName: Alkalescent Heart
+	Tooltip:
+		'''
+		#TODO not implemented
+
+		Dealing crits debuff enemies, doing more damage while they are debuffed as follows:
+		While not poisoned, poison enemies
+		While poisoned, do 5% more damage and next crit Venoms
+		While Venomed, do 10% more damage and next crit Acid Burns
+		While Acid Burned, do 15% more damage
+		These damage boosts do not stack; highest takes priority
+		Minions may inflict this based off your highest crit chance
+		'The Spider Queen's toxic blood pumps through you!'
+		'''
+}
+
+TreasureBagSpiderQueen: {
+	DisplayName: Treasure Bag (Spider Queen)
+	Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+}
+
+SpiderQueenMask: {
+	DisplayName: Spider Queen Mask
+	Tooltip: ""
+}
+
+AncientHallowedVisor: {
+	DisplayName: Ancient Hallowed Visor
+	Tooltip:
+		'''
+		12% increased throwing damage
+		10% increased throwing crit
+		20% increased throwing velocity
+		'''
+}
+
+HallowedVisor: {
+	DisplayName: Hallowed Visor
+	Tooltip: "{$Mods.SGAmod.Items.AncientHallowedVisor.Tooltip}"
+}
+
+AncientSpaceDiverHelm: {
+	DisplayName: Ancient Space Diver Helm
+	Tooltip: ""
+}
+
+AncientSpaceDiverChestplate: {
+	DisplayName: Ancient Space Diver Chestplate
+	Tooltip: ""
+}
+
+AncientSpaceDiverLeggings: {
+	DisplayName: Ancient Space Diver Leggings
+	Tooltip: ""
+}
+
+AncientUnmanedHood: {
+	DisplayName: Ancient Unmaned Hood
+	Tooltip: ""
+}
+
+AncientUnmanedBreastplate: {
+	DisplayName: Ancient Unmaned Breastplate
+	Tooltip: ""
+}
+
+AncientUnmanedLeggings: {
+	DisplayName: Ancient Unmaned Leggings
+	Tooltip: ""
+}
+
+HellionsCrown: {
+	DisplayName: Hellions Crown
+	Tooltip: ""
+}
+
+MasterfullyCraftedHatOfTheDragonGods: {
+	DisplayName: Masterfully Crafted Hat of the Dragon Gods
+	Tooltip: ""
+}
+
+DankCore: {
+	DisplayName: Dank Core
+	Tooltip: "'Dark, Dank, Dangerous...'"
+}
+
+BrokenDankWoodFence: {
+	DisplayName: Broken Dank Wood Fence
+	Tooltip: ""
+}
+
+DankDoorItem: {
+	DisplayName: Dank Door
+	Tooltip: Confuses hostile mobs when hit due to the released stench
+}
+
+DankWoodBathtub: {
+	DisplayName: Dank Wood Bathtub
+	Tooltip: ""
+}
+
+DankWoodBed: {
+	DisplayName: Dank Wood Bed
+	Tooltip: ""
+}
+
+DankWoodBookcase: {
+	DisplayName: Dank Wood Bookcase
+	Tooltip: ""
+}
+
+DankWoodChair: {
+	DisplayName: Dank Wood Chair
+	Tooltip: ""
+}
+
+DankWoodClock: {
+	DisplayName: Dank Wood Clock
+	Tooltip: ""
+}
+
+DankWoodDresser: {
+	DisplayName: Dank Wood Dresser
+	Tooltip: ""
+}
+
+DankWoodFence: {
+	DisplayName: Dank Wood Fence
+	Tooltip: ""
+}
+
+DankWoodItem: {
+	DisplayName: Dank Wood Item
+	Tooltip: "'It smells odd...'"
+}
+
+DankWoodLamp: {
+	DisplayName: Dank Wood Lamp
+	Tooltip: ""
+}
+
+DankWoodLantern: {
+	DisplayName: Dank Wood Lantern
+	Tooltip: ""
+}
+
+DankWoodPiano: {
+	DisplayName: Dank Wood Piano
+	Tooltip: ""
+}
+
+DankWoodPlatform: {
+	DisplayName: Dank Wood Platform
+	Tooltip: "'It still smells funny...'"
+}
+
+DankWoodSink: {
+	DisplayName: Dank Wood Sink
+	Tooltip: ""
+}
+
+DankWoodSofa: {
+	DisplayName: Dank Wood Sofa
+	Tooltip: ""
+}
+
+DankWoodTable: {
+	DisplayName: Dank Wood Table
+	Tooltip: ""
+}
+
+DankWoodToilet: {
+	DisplayName: Dank Wood Toilet
+	Tooltip: ""
+}
+
+DankWoodTorch: {
+	DisplayName: Dank Wood Torch
+	Tooltip: ""
+}
+
+DankWoodWall: {
+	DisplayName: Dank Wood Wall
+	Tooltip: ""
+}
+
+DankWoodWorkbench: {
+	DisplayName: Dank Wood Workbench
+	Tooltip: ""
+}
+
+NoviteCandelabra: {
+	DisplayName: Novite Candelabra
+	Tooltip: ""
+}
+
+NoviteCandle: {
+	DisplayName: Novite Candle
+	Tooltip: ""
+}
+
+NoviteChandelier: {
+	DisplayName: Novite Chandelier
+	Tooltip: ""
+}
+
+SwampWall: {
+	DisplayName: Debug - Swamp Wall
+	Tooltip: Use this in case your Dank Shrines get messed up to fix them
+}
+
+SwampWoodWall: {
+	DisplayName: Swamp Wood Wall
+	Tooltip: "'For when you wanna bit a bit closer to Nature'"
+}
+
+MoistSand: {
+	DisplayName: Moist Sand
+	Tooltip:
+		'''
+		Place a Cactus block under sand to stop it from becoming moist in water
+		'Expect nothing else from sand thrown into water'
+		'''
+}
+
+MoistStone: {
+	DisplayName: Moist Stone
+	Tooltip: ""
+}
+
+DankWoodCampfire: {
+	DisplayName: Dank Wood Campfire
+	Tooltip: "{$ItemTooltip.Campfire}"
+}

@@ -16,11 +16,11 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Drakenite Bar");
 			// Tooltip.SetDefault("A Bar forged from the same powers that created Draken...");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
+			Item.ResearchUnlockCount = 25;
 		}
 		public override void SetDefaults()
 		{
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 20;
 			Item.height = 20;
 			Item.value = Item.sellPrice(0, 1, 0, 0);

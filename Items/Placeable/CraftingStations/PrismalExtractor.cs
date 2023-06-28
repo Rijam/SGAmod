@@ -1,3 +1,4 @@
+using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 
@@ -12,7 +13,7 @@ namespace SGAmod.Items.Placeable.CraftingStations
 		}
 		public override void SetDefaults()
 		{
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 26;
 			Item.height = 14;
 			Item.value = 0;

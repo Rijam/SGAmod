@@ -5,12 +5,12 @@ using Terraria.GameContent.Creative;
 
 namespace SGAmod.Items.Materials.Bars
 {
-	public class VirulentOre : ModItem
+	public class VirulentOre : ModItem, IFormerHavocItem
 	{
 		public override void SetStaticDefaults()
 		{
 			// DisplayName.SetDefault("Virulent Ore");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
+			Item.ResearchUnlockCount = 100;
 			ItemSets.havocItem.Add(Type);
 		}
 
@@ -18,7 +18,7 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			Item.width = 16;
 			Item.height = 16;
-			Item.maxStack = 99;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.value = 100;
 			Item.rare = ItemRarityID.Pink;
 			Item.alpha = 0;
@@ -31,13 +31,13 @@ namespace SGAmod.Items.Materials.Bars
 			Item.createTile = ModContent.TileType<Tiles.Bars.VirulentOre>();
 		}
 	}
-	public class VirulentBar : ModItem
+	public class VirulentBar : ModItem, IFormerHavocItem
 	{
 		public override void SetStaticDefaults()
 		{
 			// DisplayName.SetDefault("Virulent Bar");
 			// Tooltip.SetDefault("Condensed life essence in bar form");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
+			Item.ResearchUnlockCount = 25;
 			ItemSets.havocItem.Add(Type);
 		}
 
@@ -45,7 +45,7 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			Item.width = 18;
 			Item.height = 14;
-			Item.maxStack = 99;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.value = 1000;
 			Item.rare = ItemRarityID.Pink;
 			Item.alpha = 0;

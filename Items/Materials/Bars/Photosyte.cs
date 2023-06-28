@@ -11,7 +11,7 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Photosyte");
 			// Tooltip.SetDefault("'Parasitic plant matter'\nIs found largely infesting clouds where it can gain the most sunlight");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
+			Item.ResearchUnlockCount = 100;
 			ItemSets.havocItem.Add(Type);
 		}
 
@@ -20,7 +20,7 @@ namespace SGAmod.Items.Materials.Bars
 
 			Item.width = 16;
 			Item.height = 16;
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.useTurn = true;
 			Item.autoReuse = true;
 			Item.useAnimation = 15;
@@ -37,7 +37,7 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Photosyte Bar");
 			// Tooltip.SetDefault("A hardened bar made from parasitic biomass reacting from murky gel and moss");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
+			Item.ResearchUnlockCount = 25;
 			ItemSets.havocItem.Add(Type);
 		}
 
@@ -45,7 +45,7 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			Item.width = 18;
 			Item.height = 14;
-			Item.maxStack = 99;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.value = 100;
 			Item.rare = ItemRarityID.Green;
 			Item.useTurn = true;

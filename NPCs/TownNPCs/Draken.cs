@@ -30,6 +30,9 @@ namespace SGAmod.NPCs.TownNPCs
 		int confort = 0;
 		public int PartyVictum => BirthdayParty.CelebratingNPCs.FirstOrDefault(type => type == NPC.whoAmI);
 
+		internal static int ShimmerHeadIndex;
+		private static ITownNPCProfile NPCProfile;
+
 		public override void SetStaticDefaults()
 		{
 			Main.npcFrameCount[NPC.type] = 25;
@@ -40,6 +43,7 @@ namespace SGAmod.NPCs.TownNPCs
 			NPCID.Sets.AttackTime[NPC.type] = 90;
 			NPCID.Sets.AttackAverageChance[NPC.type] = 30;
 			NPCID.Sets.HatOffsetY[NPC.type] = 4;
+			NPCID.Sets.ShimmerTownTransform[NPC.type] = true;
 
 			// Influences how the NPC looks in the Bestiary
 			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new(0)
@@ -51,7 +55,7 @@ namespace SGAmod.NPCs.TownNPCs
 				Velocity = 1f, // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
 				Direction = -1,
 				//Frame = 0,
-				Position = new Vector2(-5, 0) // Small picture
+				Position = new Vector2(24, 5) // Effects both the small picture and big picture
 			};
 
 			NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
@@ -59,8 +63,16 @@ namespace SGAmod.NPCs.TownNPCs
 			NPC.Happiness
 				.SetBiomeAffection<ForestBiome>(AffectionLevel.Like)
 				.SetNPCAffection(ModContent.NPCType<Goat>(), AffectionLevel.Love)
+				.SetNPCAffection(NPCID.BestiaryGirl, AffectionLevel.Like)
+				.SetNPCAffection(NPCID.Dryad, AffectionLevel.Like)
+				.SetNPCAffection(NPCID.Guide, AffectionLevel.Like)
+				.SetNPCAffection(NPCID.ArmsDealer, AffectionLevel.Dislike)
+				.SetNPCAffection(NPCID.Merchant, AffectionLevel.Dislike)
+				.SetNPCAffection(NPCID.TaxCollector, AffectionLevel.Dislike)
 			//Princess is automatically set
 			; // < Mind the semicolon!
+
+			NPCProfile = new DergonProfile();
 		}
 
 		public override void SetDefaults()
@@ -86,7 +98,7 @@ namespace SGAmod.NPCs.TownNPCs
 			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
 			{
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-				new FlavorTextBestiaryInfoElement("A dragon with a troubled past.")
+				new FlavorTextBestiaryInfoElement("Mods." + Mod + ".NPCs." + Name + ".Bestiary")
 			});
 		}
 
@@ -136,7 +148,7 @@ namespace SGAmod.NPCs.TownNPCs
 
 		public override ITownNPCProfile TownNPCProfile()
 		{
-			return new DergonProfile();
+			return NPCProfile;
 		}
 
 		public override List<string> SetNPCNameList()
@@ -146,6 +158,9 @@ namespace SGAmod.NPCs.TownNPCs
 				"Draken"
 			};
 		}
+
+		private readonly Asset<Texture2D> textureFly = ModContent.Request<Texture2D>("SGAmod/NPCs/TownNPCs/DrakenFly");
+		private readonly Asset<Texture2D> textureFlyShimmered = ModContent.Request<Texture2D>("SGAmod/NPCs/TownNPCs/Shimmered/DrakenFly");
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
 		{
@@ -160,7 +175,11 @@ namespace SGAmod.NPCs.TownNPCs
 			// Falling down (or up)
 			if (Math.Abs(NPC.velocity.Y) >= 2f)
 			{
-				Texture2D tex = ModContent.Request<Texture2D>(Mod.Name + "/NPCs/TownNPCs/DrakenFly").Value;
+				Texture2D tex = textureFly.Value;
+				if (NPC.IsShimmerVariant)
+				{
+					tex = textureFlyShimmered.Value;
+				}
 				Vector2 drawOrigin = new Vector2(tex.Width, tex.Height / 4) / 2f;
 				Vector2 drawPos = ((NPC.Center - Main.screenPosition)) + new Vector2(0f, -12f);
 				Color color = drawColor;
@@ -1031,7 +1050,7 @@ namespace SGAmod.NPCs.TownNPCs
 		public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
 		{
 			projType = ProjectileID.Flames;
-			attackDelay = 1;
+			attackDelay = 15;
 		}
 
 		public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset)
@@ -1040,9 +1059,12 @@ namespace SGAmod.NPCs.TownNPCs
 			randomOffset = 3f;
 		}
 
-		// Detour the emote position drawing function.
 		public override void Load()
 		{
+			// Adds our Shimmer Head to the NPCHeadLoader.
+			ShimmerHeadIndex = Mod.AddNPCHeadTexture(Type, GetType().Namespace.Replace('.', '/') + "/Shimmered/" + Name + "_Head");
+
+			// Detour the emote position drawing function.
 			Terraria.GameContent.UI.On_EmoteBubble.GetPosition += EmoteBubble_Hook_GetPosition;
 		}
 
@@ -1068,18 +1090,32 @@ namespace SGAmod.NPCs.TownNPCs
 
 	public class DergonProfile : ITownNPCProfile
 	{
-		public string Path => (GetType().Namespace + "." + GetType().Name.Split("Profile")[0]).Replace('.', '/');
+		private string Namespace => GetType().Namespace.Replace('.', '/');
+		private string NPCName => (GetType().Name.Split("Profile")[0]).Replace('.', '/');
+		private string Path => (Namespace + "/" + NPCName);
 
 		public int RollVariation() => 0;
 		public string GetNameForVariant(NPC npc) => npc.getNewNPCName();
 
 		public Asset<Texture2D> GetTextureNPCShouldUse(NPC npc)
 		{
+			if (npc.IsABestiaryIconDummy && !npc.ForcePartyHatOn)
+			{
+				return ModContent.Request<Texture2D>(Path);
+			}
+			if (npc.IsShimmerVariant && npc.altTexture != 1)
+			{
+				return ModContent.Request<Texture2D>(Namespace + "/Shimmered/" + NPCName);
+			}
 			return ModContent.Request<Texture2D>(Path);
 		}
 
 		public int GetHeadTextureIndex(NPC npc)
 		{
+			if (npc.IsShimmerVariant)
+			{
+				return Dergon.ShimmerHeadIndex;
+			}
 			return ModContent.GetModHeadSlot(Path + "_Head");
 		}
 	}

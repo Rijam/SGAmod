@@ -17,7 +17,7 @@ namespace SGAmod.Items.Misc
 		{
 			Item.width = 16;
 			Item.height = 16;
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.rare = ItemRarityID.White;
 			Item.value = 0;
 		}

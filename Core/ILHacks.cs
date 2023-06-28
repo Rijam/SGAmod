@@ -57,12 +57,14 @@ namespace SGAmod
 			{
 				int tile = ModContent.TileType<NPCs.Bosses.SpiderQueen.AcidicWebTile>();
 
-				for (int x = 0; x < 2; x += 1)
+				for (int x = 0; x < 2; x++)
 				{
-					for (int y = 0; y < 2; y += 1)
+					for (int y = 0; y < 2; y++)
 					{
-						Vector2 here = (player.position / 16) + new Vector2(x, y);
-
+						Vector2 here = (player.position / 16f) + new Vector2(x, y);
+						// Make sure the tiles are inside the world.
+						here.X = Math.Clamp(here.X, 0, Main.maxTilesX);
+						here.Y = Math.Clamp(here.Y, 0, Main.maxTilesY);
 						if (Main.tile[(int)here.X, (int)here.Y].TileType == tile)
 						{
 							sticky = here;

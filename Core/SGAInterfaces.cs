@@ -11,9 +11,19 @@ namespace SGAmod
 		(string, string) DevName();
 
 	}
-	public interface IDedicatedItem
+	public interface IFormerHavocItem
 	{
-		string DedicatedItem();
+
+	}
+
+	public interface IFormerThrowingItem
+	{
+
+	}
+
+	public interface IDedicatedPhilBill
+	{
+
 	}
 	public interface IRadioactiveItem
 	{

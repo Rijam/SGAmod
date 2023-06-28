@@ -1,0 +1,82 @@
+ContrabandMerchant: {
+	DisplayName: Contraband Merchant
+
+	TownNPCMood: {
+		Content: I feel content.
+		NoHome: I would like a home.
+		FarFromHome: I am far from my home.
+		LoveSpace: I love how there is so much space.
+		HateCrowded: I hate the crowd.
+		LikeBiome: I like {BiomeName}.
+		LoveBiome: I love {BiomeName}.
+		DislikeBiome: I dislike {BiomeName}.
+		HateBiome: I hate {BiomeName}.
+		LikeNPC: I like {NPCName}.
+		LikeNPC_Princess: I like {NPCName}.
+		LoveNPC: I love {NPCName}.
+		DislikeNPC: I dislike {NPCName}.
+		HateNPC: I hate {NPCName}.
+		Princess_LovesNPC: I love {NPCName}.
+		DislikeCrowded: I dislike how crowded I am.
+	}
+
+	Bestiary: A man who shows up near the edge of your town at night to sell you illegal items.
+	Census.SpawnCondition: At night. Leaves during the day.
+}
+
+Dergon: {
+	DisplayName: Dergon
+
+	TownNPCMood: {
+		Content: I feel content.
+		NoHome: I would like a home.
+		FarFromHome: I am far from my home.
+		LoveSpace: I love how there is so much space.
+		HateCrowded: I hate the crowd.
+		LikeBiome: I like {BiomeName}.
+		LoveBiome: I love {BiomeName}.
+		DislikeBiome: I dislike {BiomeName}.
+		HateBiome: I hate {BiomeName}.
+		LikeNPC: I like {NPCName}.
+		LikeNPC_Princess: I like {NPCName}.
+		LoveNPC: I love {NPCName}.
+		DislikeNPC: I dislike {NPCName}.
+		HateNPC: I hate {NPCName}.
+		Princess_LovesNPC: I love {NPCName}.
+		DislikeCrowded: I dislike how crowded I am.
+	}
+
+	Bestiary: A dragon with a troubled past.
+	Census.SpawnCondition: Obtain any amount of Expertise.
+}
+
+Goat: {
+	DisplayName: Goat
+
+	TownNPCMood: {
+		Content: I feel content.
+		NoHome: I would like a home.
+		FarFromHome: I am far from my home.
+		LoveSpace: I love how there is so much space.
+		HateCrowded: I hate the crowd.
+		LikeBiome: I like {BiomeName}.
+		LoveBiome: I love {BiomeName}.
+		DislikeBiome: I dislike {BiomeName}.
+		HateBiome: I hate {BiomeName}.
+		LikeNPC: I like {NPCName}.
+		LikeNPC_Princess: I like {NPCName}.
+		LoveNPC: I love {NPCName}.
+		DislikeNPC: I dislike {NPCName}.
+		HateNPC: I hate {NPCName}.
+		Princess_LovesNPC: I love {NPCName}.
+		DislikeCrowded: I dislike how crowded I am.
+	}
+
+	Bestiary: Draken's great friend.
+	Census.SpawnCondition: When Draken is present and WIP.
+}
+
+SpiderQueen: {
+	DisplayName: Spider Queen
+	Bestiary: Spider Queen Bestiary Entry
+}

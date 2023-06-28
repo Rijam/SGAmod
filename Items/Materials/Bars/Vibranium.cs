@@ -13,11 +13,11 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Vibranium Crystal");
 			// Tooltip.SetDefault("'Makes a humming sound while almost shaking out your hands'");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
+			Item.ResearchUnlockCount = 100;
 		}
 		public override void SetDefaults()
 		{
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 16;
 			Item.height = 16;
 			Item.value = 500;
@@ -48,12 +48,12 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Vibranium Plating");
 			// Tooltip.SetDefault("'Dark cold steel; it constantly vibrates to the touch'");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
+			Item.ResearchUnlockCount = 25;
 		}
 
 		public override void SetDefaults()
 		{
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 16;
 			Item.height = 16;
 			Item.value = 400;
@@ -78,7 +78,7 @@ namespace SGAmod.Items.Materials.Bars
 
 		public override void SetDefaults()
 		{
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 16;
 			Item.height = 16;
 			Item.value = 2500;

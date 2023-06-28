@@ -13,13 +13,13 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Novite Ore");
 			// Tooltip.SetDefault("Brassy scrap metal from a time along ago, might be of electronical use...");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
+			Item.ResearchUnlockCount = 100;
 		}
 		public override void SetDefaults()
 		{
 			Item.width = 16;
 			Item.height = 16;
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.value = 10;
 			Item.rare = ItemRarityID.Blue;
 			Item.alpha = 0;
@@ -39,11 +39,11 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Novite Bar");
 			// Tooltip.SetDefault("This Brassy alloy reminds you of 60s scifi");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
+			Item.ResearchUnlockCount = 25;
 		}
 		public override void SetDefaults()
 		{
-			Item.maxStack = 99;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 16;
 			Item.height = 16;
 			Item.value = 25;
@@ -75,12 +75,12 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Advanced Plating");
 			// Tooltip.SetDefault("Advanced for the land of Terraria's standards, that is");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
+			Item.ResearchUnlockCount = 25;
 		}
 
 		public override void SetDefaults()
 		{
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 26;
 			Item.height = 14;
 			Item.value = 1000;

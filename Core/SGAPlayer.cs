@@ -45,6 +45,7 @@ namespace SGAmod
 
 		// World
 		public bool Drakenshopunlock = false;
+		public bool DankShrineZone = false;
 
 		public override void Initialize()
 		{
@@ -60,6 +61,7 @@ namespace SGAmod
 
 			cobwebRepellent = 0;
 			Drakenshopunlock = false;
+			DankShrineZone = false;
 		}
 
 		public override void CopyClientState(ModPlayer targetCopy)

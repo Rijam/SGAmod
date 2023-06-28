@@ -13,13 +13,13 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Prismal Ore");
 			// Tooltip.SetDefault("The power inside is cracked wide open, ready to be used");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
+			Item.ResearchUnlockCount = 100;
 		}
 		public override void SetDefaults()
 		{
 			Item.width = 16;
 			Item.height = 16;
-			Item.maxStack = 99;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.value = 7500;
 			Item.rare = ItemRarityID.Yellow;
 			Item.alpha = 0;
@@ -55,11 +55,11 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Prismal Bar");
 			// Tooltip.SetDefault("It radiates the true energy of Novus");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
+			Item.ResearchUnlockCount = 25;
 		}
 		public override void SetDefaults()
 		{
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 20;
 			Item.height = 20;
 			Item.value = Item.sellPrice(0, 0, 40, 0);

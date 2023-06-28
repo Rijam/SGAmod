@@ -13,12 +13,12 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Glowrock");
 			// Tooltip.SetDefault("These rocks seem to give the Asteriods a glow; Curious.\nExtract it via an Extractinator for some goodies!\nDoesn't have much other use, outside of illegal interests");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
+			Item.ResearchUnlockCount = 100;
 			ItemID.Sets.ExtractinatorMode[Item.type] = Item.type;
 		}
 		public override void SetDefaults()
 		{
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 16;
 			Item.height = 16;
 			Item.useTime = 10;
@@ -183,11 +183,11 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Celestine Chunk");
 			// Tooltip.SetDefault("Inert and radioactive Luminite...");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
+			Item.ResearchUnlockCount = 100;
 		}
 		public override void SetDefaults()
 		{
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 16;
 			Item.height = 16;
 			Item.useTime = 10;
@@ -240,11 +240,11 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Overseen Crystal");
 			// Tooltip.SetDefault("Celestial Shards manifested from Phaethon's creators; resonates with charged forgotten spirits\nMay be used to fuse several strong materials together with ease\nSurely a shady dealer will also be interested in trading for these...");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
+			Item.ResearchUnlockCount = 100;
 		}
 		public override void SetDefaults()
 		{
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 16;
 			Item.height = 16;
 			Item.value = 1000;

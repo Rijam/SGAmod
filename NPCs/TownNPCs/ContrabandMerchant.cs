@@ -110,7 +110,7 @@ namespace SGAmod.NPCs.TownNPCs
 			{
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
-				new FlavorTextBestiaryInfoElement("A man who shows up near the edge of your town at night to sell you illegal items.")
+				new FlavorTextBestiaryInfoElement("Mods." + Mod + ".NPCs." + Name + ".Bestiary")
 			});
 		}
 
@@ -524,7 +524,7 @@ namespace SGAmod.NPCs.TownNPCs
 		}
 		public override void SetDefaults()
 		{
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 16;
 			Item.height = 16;
 			Item.value = 250;

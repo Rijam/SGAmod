@@ -16,7 +16,7 @@ namespace SGAmod.Items.Placeable.CraftingStations
 		}
 		public override void SetDefaults()
 		{
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 26;
 			Item.height = 14;
 			Item.value = Item.sellPrice(0,0,75,0);

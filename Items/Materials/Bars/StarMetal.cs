@@ -13,7 +13,7 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Star Metal Mold");
 			// Tooltip.SetDefault("A mold used to make Wraith Cores, it seems fit to mold bars from heaven\nIs not consumed in crafting Star Metal Bars");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+			Item.ResearchUnlockCount = 1;
 		}
 		public override void SetDefaults()
 		{
@@ -31,11 +31,11 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Star Metal Bar");
 			// Tooltip.SetDefault("'This bar is a glimming white sliver that shimmers with stars baring the color of pillars'");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
+			Item.ResearchUnlockCount = 25;
 		}
 		public override void SetDefaults()
 		{
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 20;
 			Item.height = 20;
 			Item.value = Item.sellPrice(0, 0, 25, 0);

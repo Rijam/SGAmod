@@ -1,0 +1,12 @@
+ContrabandMerchantPoof.DisplayName: Contra poof! Annnndd he's gone! Bummer for you!
+DD2DrakinShotFriendly.DisplayName: Jubia's Magic
+
+TrappingWeb: {
+	$parentVal: Trapping Web
+	DisplayName: Trapping Web
+}
+
+SpiderVenom: {
+	$parentVal: Spider Venom
+	DisplayName: Spider Venom
+}

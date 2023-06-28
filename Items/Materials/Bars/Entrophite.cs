@@ -11,7 +11,7 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Entrophite");
 			// Tooltip.SetDefault("Corrupted beyond the veils of life");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
+			Item.ResearchUnlockCount = 100;
 		}
 		public override void SetDefaults()
 		{
@@ -19,7 +19,7 @@ namespace SGAmod.Items.Materials.Bars
 			Item.rare = ItemRarityID.Lime;
 			Item.width = 16;
 			Item.height = 16;
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.useTurn = true;
 			Item.autoReuse = true;
 			Item.useAnimation = 15;
@@ -36,7 +36,7 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Woven Entrophite");
 			// Tooltip.SetDefault("Suprisingly strong, after being interlaced with souls");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
+			Item.ResearchUnlockCount = 25;
 		}
 
 		public override void SetDefaults()
@@ -45,7 +45,7 @@ namespace SGAmod.Items.Materials.Bars
 			Item.rare = ItemRarityID.Lime;
 			Item.width = 16;
 			Item.height = 16;
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.useTurn = true;
 			Item.autoReuse = true;
 			Item.useAnimation = 15;

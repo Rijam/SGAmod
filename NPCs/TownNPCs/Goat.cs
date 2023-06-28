@@ -76,7 +76,7 @@ namespace SGAmod.NPCs.TownNPCs
 			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
 			{
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-				new FlavorTextBestiaryInfoElement("Draken's great friend.")
+				new FlavorTextBestiaryInfoElement("Mods." + Mod + ".NPCs." + Name + ".Bestiary")
 			});
 		}
 
@@ -179,6 +179,9 @@ namespace SGAmod.NPCs.TownNPCs
 
 		public override void AddShops()
 		{
+			NPCShop npcShop = new NPCShop(Type, Shop1)
+
+
 			/*
 			shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("DergPainting").Type);
 			shop.item[nextSlot].value = Item.buyPrice(0, 1);
@@ -204,21 +207,17 @@ namespace SGAmod.NPCs.TownNPCs
 				shop.item[nextSlot].value = Item.buyPrice(1, 0);
 				nextSlot += 1;
 			}
-			shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("AncientSpaceDiverHelmet").Type);
-			nextSlot += 1; 		
-			shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("AncientSpaceDiverChestplate").Type);
-			nextSlot += 1; 		
-			shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("AncientSpaceDiverLeggings").Type);
-			nextSlot += 1;
-			shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("AncientUnmanedHood").Type);
-			nextSlot += 1; 		
-			shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("AncientUnmanedBreastplate").Type);
-			nextSlot += 1; 		
-			shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("AncientUnmanedLeggings").Type);
-			nextSlot += 1;
-
-			shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("MasterfullyCraftedHatOfTheDragonGods").Type);
-			nextSlot += 1;
+			*/
+				.Add(ModContent.ItemType<Items.Armor.Vanity.AncientSpaceDiver.AncientSpaceDiverHelm>())
+				.Add(ModContent.ItemType<Items.Armor.Vanity.AncientSpaceDiver.AncientSpaceDiverChestplate>())
+				.Add(ModContent.ItemType<Items.Armor.Vanity.AncientSpaceDiver.AncientSpaceDiverLeggings>())
+				.Add(ModContent.ItemType<Items.Armor.Vanity.AncientUnmaned.AncientUnmanedHood>())
+				.Add(ModContent.ItemType<Items.Armor.Vanity.AncientUnmaned.AncientUnmanedBreastplate>())
+				.Add(ModContent.ItemType<Items.Armor.Vanity.AncientUnmaned.AncientUnmanedLeggings>())
+				.Add(ModContent.ItemType<Items.Armor.Vanity.MasterfullyCraftedHatOfTheDragonGods>())
+				.Add(ModContent.ItemType<Items.Armor.HallowedVisor.HallowedVisor>(), Condition.DownedMechBossAll)
+				.Add(ModContent.ItemType<Items.Armor.HallowedVisor.AncientHallowedVisor>(), Condition.DownedMechBossAll);
+			/*
 			shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("JoyfulShroom").Type);
 			shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 10, 0, 0);
 			nextSlot += 1;			
@@ -262,6 +261,7 @@ namespace SGAmod.NPCs.TownNPCs
 				nextSlot++;
 			}
 			*/
+			npcShop.Register();
 		}
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)

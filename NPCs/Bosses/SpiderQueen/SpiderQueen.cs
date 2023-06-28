@@ -88,7 +88,7 @@ namespace SGAmod.NPCs.Bosses.SpiderQueen
 			// Sets the description of this NPC that is listed in the bestiary
 			bestiaryEntry.Info.AddRange(new List<IBestiaryInfoElement> {
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Caverns,
-				new FlavorTextBestiaryInfoElement("Mods.SGAmod.Bestiary.SpiderQueen")
+				new FlavorTextBestiaryInfoElement("Mods." + Mod + ".NPCs." + Name + ".Bestiary")
 			});
 		}
 

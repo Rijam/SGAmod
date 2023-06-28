@@ -13,13 +13,13 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Novus Ore");
 			// Tooltip.SetDefault("Stone laden with doment power...");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
+			Item.ResearchUnlockCount = 100;
 		}
 		public override void SetDefaults()
 		{
 			Item.width = 16;
 			Item.height = 16;
-			Item.maxStack = 999;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.value = 10;
 			Item.rare = ItemRarityID.Blue;
 			Item.alpha = 0;
@@ -39,11 +39,11 @@ namespace SGAmod.Items.Materials.Bars
 		{
 			// DisplayName.SetDefault("Novus Bar");
 			// Tooltip.SetDefault("This alloy of Novus and the power of the wraiths have awakened some of its dorment power\nMay be interchanged for iron bars in some crafting recipes");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
+			Item.ResearchUnlockCount = 25;
 		}
 		public override void SetDefaults()
 		{
-			Item.maxStack = 99;
+			Item.maxStack = Item.CommonMaxStack;
 			Item.width = 16;
 			Item.height = 16;
 			Item.value = 25;
