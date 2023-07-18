@@ -23,12 +23,6 @@ namespace SGAmod
 {
 	public partial class SGAPlayer : ModPlayer
 	{
-
-		// Apocalyptical related
-		public double[] apocalypticalChance = { 0, 0, 0, 0 };
-		public float apocalypticalStrength = 1f;
-		public float lifestealentropy = 0f;
-
 		public bool dragonFriend = false;
 
 		public List<int> ExpertisePointsFromBosses;
@@ -43,9 +37,24 @@ namespace SGAmod
 		// Accessories
 		public byte cobwebRepellent = 0;
 
+		// Armor
+		public int sandStormTimer = 0;
+
+		//Stat Related
+		public float UseTimeMul = 1f;
+		public float UseTimeMulPickaxe = 1f;
+		public float DoTResist = 1f;
+
 		// World
 		public bool Drakenshopunlock = false;
 		public bool DankShrineZone = false;
+
+		protected float _critDamage = 0f;
+		public float CritDamage
+		{
+			get { return _critDamage; }
+			set { _critDamage = value; }
+		}
 
 		public override void Initialize()
 		{
@@ -58,10 +67,16 @@ namespace SGAmod
 		{
 			Player.breathMax = 200;
 			acidBurn = false;
+			sandStormTimer = Math.Max(sandStormTimer - 1, 0);
+			UseTimeMul = 1f;
+			UseTimeMulPickaxe = 1f;
+			DoTResist = 1f;
 
 			cobwebRepellent = 0;
 			Drakenshopunlock = false;
 			DankShrineZone = false;
+
+			ActionCooldownStack_ResetEffects();
 		}
 
 		public override void CopyClientState(ModPlayer targetCopy)
@@ -116,7 +131,7 @@ namespace SGAmod
 			tag["dragonFriend"] = dragonFriend;
 			tag["Drakenshopunlock"] = Drakenshopunlock;
 
-			SaveExpertise(ref tag);
+			Expertise_SaveExpertise(ref tag);
 		}
 
 		public override void LoadData(TagCompound tag)
@@ -124,7 +139,8 @@ namespace SGAmod
 			dragonFriend = tag.ContainsKey("dragonFriend");
 			Drakenshopunlock = tag.ContainsKey("Drakenshopunlock");
 
-			LoadExpertise(tag);
+			Expertise_LoadExpertise(tag);
+			ActionCooldownStack_LoadData(tag);
 		}
 
 		public override void UpdateBadLifeRegen()
@@ -151,6 +167,16 @@ namespace SGAmod
 				b *= 0.1f;
 				fullBright = true;
 			}
+		}
+
+		public override void PreUpdate()
+		{
+			ActionCooldownStack_PreUpdate();
+		}
+
+		public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
+		{
+			Apocalyptical_Kill(damage, hitDirection, pvp, damageSource);
 		}
 	}
 }

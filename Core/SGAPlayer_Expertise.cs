@@ -22,7 +22,7 @@ namespace SGAmod
 {
     public partial class SGAPlayer : ModPlayer
     {
-        protected void SaveExpertise(ref TagCompound tag)
+        protected void Expertise_SaveExpertise(ref TagCompound tag)
         {
             if (ExpertisePointsFromBosses != null)
             {
@@ -40,7 +40,7 @@ namespace SGAmod
             }
         }
 
-        protected void LoadExpertise(TagCompound tag)
+        protected void Expertise_LoadExpertise(TagCompound tag)
         {
 
             ExpertiseCollected = tag.GetAsLong("ZZZExpertiseCollectedZZZ");
@@ -53,14 +53,14 @@ namespace SGAmod
 
             if (maybeExpertiseCollected < 1 || (!tag.ContainsKey("resetver")))
             {
-                GenerateNewBossList();
+                Expertise_GenerateNewBossList();
             }
             else
             {
                 int maxx = tag.GetInt("enemyvaluesTotal");
                 if (maxx < 1)
                 {
-                    GenerateNewBossList();
+                    Expertise_GenerateNewBossList();
                 }
                 else
                 {
@@ -80,7 +80,7 @@ namespace SGAmod
 
         }
 
-        public int? FindBossEXP(int npcid, NPC npc)
+        public int? Expertise_FindBossEXP(int npcid, NPC npc)
         {
             int? found = -1;
             // int? foundpre = -1;
@@ -146,7 +146,7 @@ namespace SGAmod
             return found;
         }
 
-        public void DoExpertiseCheck(NPC npc, bool tempc = false)
+        public void Expertise_DoExpertiseCheck(NPC npc, bool tempc = false)
         {
             if (tempc == false)
             {
@@ -168,7 +168,7 @@ namespace SGAmod
 
             int npcid = npc.type;
 
-            int? found = FindBossEXP(npcid, npc);
+            int? found = Expertise_FindBossEXP(npcid, npc);
 
             if (found != null && found > -1)
             {
@@ -185,13 +185,13 @@ namespace SGAmod
                     collected = (int)(collected * 0.80);
                 }
 
-                AddExpertise(collected);
+                Expertise_AddExpertise(collected);
 
                 ExpertisePointsFromBosses.RemoveAt((int)found);
                 ExpertisePointsFromBossesPoints.RemoveAt((int)found);
                 ExpertisePointsFromBossesModded.RemoveAt((int)found);
 
-                int? findagain = FindBossEXP(npcid, npc);
+                int? findagain = Expertise_FindBossEXP(npcid, npc);
 
                 if (findagain == null || findagain < 0)
                 {
@@ -203,7 +203,7 @@ namespace SGAmod
             }
         }
 
-        public void AddExpertise(int ammount)
+        public void Expertise_AddExpertise(int ammount)
         {
             ExpertiseCollected += ammount;
             ExpertiseCollectedTotal += ammount;
@@ -211,13 +211,13 @@ namespace SGAmod
             CombatText.NewText(new Rectangle((int)Player.position.X, (int)Player.position.Y, Player.width, Player.height), Color.LimeGreen, "+" + ammount + " Expertise", false, false);
         }
 
-        public void addtolist(int value, int s2ndvalue)
+        public void Expertise_AddToList(int value, int s2ndvalue)
         {
             ExpertisePointsFromBosses.Add(value);
             ExpertisePointsFromBossesPoints.Add(s2ndvalue);
             ExpertisePointsFromBossesModded.Add("");
         }
-        public void addtolistmodded(string value, int s2ndvalue)
+        public void Expertise_AddToListModded(string value, int s2ndvalue)
         {
             ExpertisePointsFromBosses.Add(-1);
             ExpertisePointsFromBossesPoints.Add(s2ndvalue);
@@ -225,69 +225,69 @@ namespace SGAmod
         }
 
 
-        public void GenerateNewBossList()
+        public void Expertise_GenerateNewBossList()
         {
 
             //Prehardmode Bosses
 
             // addtolistmodded("CopperWraith", 100);
 
-            addtolist(NPCID.KingSlime, 100);
+            Expertise_AddToList(NPCID.KingSlime, 100);
 
-            addtolist(NPCID.EyeofCthulhu, 100);
+            Expertise_AddToList(NPCID.EyeofCthulhu, 100);
 
             // addtolistmodded("CaliburnGuardian", 75);
 
             for (int i = 0; i < 50; i += 1)
             {
-                addtolist(NPCID.EaterofWorldsHead, 3);
+                Expertise_AddToList(NPCID.EaterofWorldsHead, 3);
             }
 
             // addtolistmodded("CaliburnGuardian", 100);
 
-            addtolist(NPCID.BrainofCthulhu, 150);
+            Expertise_AddToList(NPCID.BrainofCthulhu, 150);
 
-            addtolist(NPCID.QueenBee, 150);
+            Expertise_AddToList(NPCID.QueenBee, 150);
 
             // addtolistmodded("SpiderQueen", 250);
 
             // addtolistmodded("CaliburnGuardian", 125);
 
-            addtolist(NPCID.SkeletronHead, 200);
+            Expertise_AddToList(NPCID.SkeletronHead, 200);
 
-            addtolist(NPCID.Deerclops, 200);
+            Expertise_AddToList(NPCID.Deerclops, 200);
 
             // addtolistmodded("BossFlyMiniboss1", 200);
 
             // addtolistmodded("Murk", 300);
 
-            addtolist(NPCID.WallofFlesh, 500);
+            Expertise_AddToList(NPCID.WallofFlesh, 500);
 
 
             //Hardmode Bosses
 
             // addtolistmodded("CobaltWraith", 300);
             // addtolistmodded("Cirno", 300);
-            addtolist(NPCID.QueenSlimeBoss, 300);
-            addtolist(NPCID.TheDestroyer, 300);
-            addtolist(NPCID.SkeletronPrime, 300);
-            addtolist(NPCID.Spazmatism, 150);
-            addtolist(NPCID.Retinazer, 150);
+            Expertise_AddToList(NPCID.QueenSlimeBoss, 300);
+            Expertise_AddToList(NPCID.TheDestroyer, 300);
+            Expertise_AddToList(NPCID.SkeletronPrime, 300);
+            Expertise_AddToList(NPCID.Spazmatism, 150);
+            Expertise_AddToList(NPCID.Retinazer, 150);
             // addtolistmodded("SharkvernHead", 500);
-            addtolist(NPCID.Plantera, 600);//2600
+            Expertise_AddToList(NPCID.Plantera, 600);//2600
             // addtolistmodded("Cratrosity", 700);
-            addtolist(NPCID.Golem, 400);
-            addtolist(NPCID.HallowBoss, 600);
-            addtolist(NPCID.DukeFishron, 600);
-            addtolist(NPCID.DD2Betsy, 700);
-            addtolist(NPCID.CultistBoss, 500);//5000
+            Expertise_AddToList(NPCID.Golem, 400);
+            Expertise_AddToList(NPCID.HallowBoss, 600);
+            Expertise_AddToList(NPCID.DukeFishron, 600);
+            Expertise_AddToList(NPCID.DD2Betsy, 700);
+            Expertise_AddToList(NPCID.CultistBoss, 500);//5000
             // addtolistmodded("TPD", 800);
             // addtolistmodded("SpaceBoss", 700);
-            addtolist(NPCID.LunarTowerNebula, 200);
-            addtolist(NPCID.LunarTowerSolar, 200);
-            addtolist(NPCID.LunarTowerStardust, 200);
-            addtolist(NPCID.LunarTowerVortex, 200);
-            addtolist(NPCID.MoonLordCore, 1000);//8500
+            Expertise_AddToList(NPCID.LunarTowerNebula, 200);
+            Expertise_AddToList(NPCID.LunarTowerSolar, 200);
+            Expertise_AddToList(NPCID.LunarTowerStardust, 200);
+            Expertise_AddToList(NPCID.LunarTowerVortex, 200);
+            Expertise_AddToList(NPCID.MoonLordCore, 1000);//8500
 
             //Post-moonlord Bosses
 
@@ -299,58 +299,58 @@ namespace SGAmod
             //Not bosses
             for (int i = 0; i < 75; i += 1)
             {
-                addtolist(NPCID.GoblinPeon, 2);
+                Expertise_AddToList(NPCID.GoblinPeon, 2);
             }
 
-            addtolist(NPCID.Pinky, 25);
-            addtolist(NPCID.Tim, 50);
-            addtolist(NPCID.DoctorBones, 50);
-            addtolist(NPCID.Nymph, 50);
-            addtolist(NPCID.TheGroom, 25);
-            addtolist(NPCID.TheBride, 25);
-            addtolist(NPCID.DD2DarkMageT1, 75);
+            Expertise_AddToList(NPCID.Pinky, 25);
+            Expertise_AddToList(NPCID.Tim, 50);
+            Expertise_AddToList(NPCID.DoctorBones, 50);
+            Expertise_AddToList(NPCID.Nymph, 50);
+            Expertise_AddToList(NPCID.TheGroom, 25);
+            Expertise_AddToList(NPCID.TheBride, 25);
+            Expertise_AddToList(NPCID.DD2DarkMageT1, 75);
             // addtolistmodded("TidalElemental", 75);
 
             //Not bosses: Hardmode (+3000 total)
             for (int i = 0; i < 2; i += 1)//1050
             {
-                addtolist(NPCID.GoblinSummoner, 25);
-                addtolist(NPCID.Mothron, 50);
-                addtolist(NPCID.Mimic, 25);
-                addtolist(NPCID.Medusa, 50);
-                addtolist(NPCID.IceGolem, 50);
-                addtolist(NPCID.SandElemental, 50);
-                addtolist(NPCID.MartianSaucerCore, 150);
-                addtolist(NPCID.PirateShip, 75);
-                addtolist(NPCID.PirateCaptain, 50);
+                Expertise_AddToList(NPCID.GoblinSummoner, 25);
+                Expertise_AddToList(NPCID.Mothron, 50);
+                Expertise_AddToList(NPCID.Mimic, 25);
+                Expertise_AddToList(NPCID.Medusa, 50);
+                Expertise_AddToList(NPCID.IceGolem, 50);
+                Expertise_AddToList(NPCID.SandElemental, 50);
+                Expertise_AddToList(NPCID.MartianSaucerCore, 150);
+                Expertise_AddToList(NPCID.PirateShip, 75);
+                Expertise_AddToList(NPCID.PirateCaptain, 50);
             }
 
-            addtolist(NPCID.BigMimicCorruption, 100);
-            addtolist(NPCID.BigMimicHallow, 100);
-            addtolist(NPCID.BigMimicJungle, 100);
-            addtolist(NPCID.Clown, 25);
-            addtolist(NPCID.RainbowSlime, 25);
+            Expertise_AddToList(NPCID.BigMimicCorruption, 100);
+            Expertise_AddToList(NPCID.BigMimicHallow, 100);
+            Expertise_AddToList(NPCID.BigMimicJungle, 100);
+            Expertise_AddToList(NPCID.Clown, 25);
+            Expertise_AddToList(NPCID.RainbowSlime, 25);
             // addtolistmodded("EliteBat", 50);
-            addtolist(NPCID.PresentMimic, 25);
-            addtolist(NPCID.RuneWizard, 50);
-            addtolist(NPCID.Moth, 50);
-            addtolist(NPCID.DD2OgreT2, 50);
+            Expertise_AddToList(NPCID.PresentMimic, 25);
+            Expertise_AddToList(NPCID.RuneWizard, 50);
+            Expertise_AddToList(NPCID.Moth, 50);
+            Expertise_AddToList(NPCID.DD2OgreT2, 50);
             // addtolistmodded("PrismBanshee", 300);
 
             for (int i = 0; i < 3; i += 1)
             {
-                addtolist(NPCID.MourningWood, 50);
-                addtolist(NPCID.Pumpking, 100);
-                addtolist(NPCID.Everscream, 50);
-                addtolist(NPCID.SantaNK1, 75);
-                addtolist(NPCID.IceQueen, 125);
+                Expertise_AddToList(NPCID.MourningWood, 50);
+                Expertise_AddToList(NPCID.Pumpking, 100);
+                Expertise_AddToList(NPCID.Everscream, 50);
+                Expertise_AddToList(NPCID.SantaNK1, 75);
+                Expertise_AddToList(NPCID.IceQueen, 125);
             }
 
 
             for (int i = 0; i < 100; i += 1)
             {
                 // ignore this, it's filler to keep the list from running out
-                addtolist(NPCID.CultistArcherWhite, 1);
+                Expertise_AddToList(NPCID.CultistArcherWhite, 1);
             }
         }
     }

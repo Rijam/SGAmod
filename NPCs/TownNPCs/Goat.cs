@@ -76,7 +76,7 @@ namespace SGAmod.NPCs.TownNPCs
 			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
 			{
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-				new FlavorTextBestiaryInfoElement("Mods." + Mod + ".NPCs." + Name + ".Bestiary")
+				new FlavorTextBestiaryInfoElement("Mods." + Mod.Name + ".NPCs." + Name + ".Bestiary")
 			});
 		}
 

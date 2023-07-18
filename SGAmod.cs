@@ -109,6 +109,9 @@ namespace SGAmod
 
         public static int ExpertiseCustomCurrencyID;
         public static CustomCurrencySystem ExpertiseCustomCurrencySystem;
+
+		public static readonly BindingFlags UniversalBindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
+
 #pragma warning restore CA2211 // Non-constant fields should not be visible
 
 		public override void Load()
@@ -117,6 +120,15 @@ namespace SGAmod
 
             ExpertiseCustomCurrencySystem = new ExpertiseCurrency(ModContent.ItemType<Items.Misc.ExpertiseItem>(), 999L);
             ExpertiseCustomCurrencyID = CustomCurrencyManager.RegisterCurrency(ExpertiseCustomCurrencySystem);
+
+			if (!Main.dedServ)
+			{
+				Ref<Effect> screenRef = new(Assets.Request<Effect>("Effects/Shockwave", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value);
+				Filters.Scene["SGAmod:Shockwave"] = new Filter(new ScreenShaderData(screenRef, "Shockwave"), EffectPriority.VeryHigh);
+				Filters.Scene["SGAmod:ShockwaveBanshee"] = new Filter(new ScreenShaderData(screenRef, "Shockwave"), EffectPriority.VeryHigh);
+
+				//Overlays.Scene["SGAmod:ScreenExplosions"] = new SGAScreenExplosionsOverlay(); TODO
+			}
 
 			SGAILHacks.Patch();
 		}

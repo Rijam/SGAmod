@@ -110,7 +110,7 @@ namespace SGAmod.NPCs.TownNPCs
 			{
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
-				new FlavorTextBestiaryInfoElement("Mods." + Mod + ".NPCs." + Name + ".Bestiary")
+				new FlavorTextBestiaryInfoElement("Mods." + Mod.Name + ".NPCs." + Name + ".Bestiary")
 			});
 		}
 

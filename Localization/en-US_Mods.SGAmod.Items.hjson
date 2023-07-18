@@ -451,3 +451,138 @@ DankWoodCampfire: {
 	DisplayName: Dank Wood Campfire
 	Tooltip: "{$ItemTooltip.Campfire}"
 }
+
+BlazewyrmBreastplate: {
+	DisplayName: Blazewyrm Breastplate
+	Tooltip: ""
+}
+
+BlazewyrmHelm: {
+	DisplayName: Blazewyrm Helm
+	Tooltip: ""
+}
+
+BlazewyrmLeggings: {
+	DisplayName: Blazewyrm Leggings
+	Tooltip: ""
+}
+
+DankWoodChestplate: {
+	DisplayName: Dank Wood Chestplate
+	Tooltip: ""
+}
+
+DankWoodHelmet: {
+	DisplayName: Dank Wood Helmet
+	Tooltip: ""
+}
+
+DankWoodLeggings: {
+	DisplayName: Dank Wood Leggings
+	Tooltip: ""
+}
+
+EngineerChestplate: {
+	DisplayName: Engineer Chestplate
+	Tooltip: ""
+}
+
+EngineerHelmet: {
+	DisplayName: Engineer Helmet
+	Tooltip: ""
+}
+
+EngineerLeggings: {
+	DisplayName: Engineer Leggings
+	Tooltip: ""
+}
+
+FamesChestplate: {
+	DisplayName: Fames Chestplate
+	Tooltip: ""
+}
+
+FamesHelmet: {
+	DisplayName: Fames Helmet
+	Tooltip: ""
+}
+
+FamesLeggings: {
+	DisplayName: Fames Leggings
+	Tooltip: ""
+}
+
+ManifestedSandTosser: {
+	DisplayName: Manifested Sand Tosser
+	Tooltip: ""
+}
+
+NomadicHood: {
+	DisplayName: Nomadic Hood
+	Tooltip: ""
+}
+
+NomadicPants: {
+	DisplayName: Nomadic Pants
+	Tooltip: ""
+}
+
+NomadicShirt: {
+	DisplayName: Nomadic Shirt
+	Tooltip: ""
+}
+
+NoviteChestplate: {
+	DisplayName: Novite Chestplate
+	Tooltip: ""
+}
+
+NoviteHelmet: {
+	DisplayName: Novite Helmet
+	Tooltip: ""
+}
+
+NoviteLeggings: {
+	DisplayName: Novite Leggings
+	Tooltip: ""
+}
+
+NovusBreastplate: {
+	DisplayName: Novus Breastplate
+	Tooltip: ""
+}
+
+NovusHood: {
+	DisplayName: Novus Hood
+	Tooltip: ""
+}
+
+NovusLeggings: {
+	DisplayName: Novus Leggings
+	Tooltip: ""
+}
+
+FieryShard: {
+	DisplayName: Fiery Shard
+	Tooltip: ""
+}
+
+Fridgeflame: {
+	DisplayName: Fridgeflame
+	Tooltip: ""
+}
+
+FrigidShard: {
+	DisplayName: Frigid Shard
+	Tooltip: ""
+}
+
+IceFairyDust: {
+	DisplayName: Ice Fairy Dust
+	Tooltip: ""
+}
+
+IlluminantEssence: {
+	DisplayName: Illuminant Essence
+	Tooltip: ""
+}

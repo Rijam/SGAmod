@@ -14,7 +14,7 @@ namespace SGAmod
 	/// <summary>
 	/// <br>Adapted from Clicker Class DrawLayers/HeadLayer.cs</br>
 	/// <br>Usage: In the item's SetStaticDefaults(), Check for !Main.dedServ first, then add:</br>
-	/// <br><code>ArmorUseGlowLegs.RegisterData(Item.legSlot, Texture + "_Legs_Glowmask", Color.White);</code></br>
+	/// <br><code>ArmorUseGlowLegs.RegisterData(Item.legSlot, Texture + "_Legs_Glow", Color.White);</code></br>
 	/// <br>The key value is the slot. Item.legSlot</br>
 	/// <br>The string is the texture to draw</br>
 	/// <br>The color is the color to draw</br>

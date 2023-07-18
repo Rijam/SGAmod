@@ -11,7 +11,7 @@ namespace SGAmod
 	/// <summary>
 	/// <br>Adapted from Clicker Class Core/BodyGlowmaskPlayer.cs</br>
 	/// <br>Usage: In the item's SetStaticDefaults(), Check for !Main.dedServ first, then add:</br>
-	/// <br><code>ArmorGlowmaskBody.RegisterData(Item.bodySlot, Color.White);</code></br>
+	/// <br><code>ArmorUseGlowBody.RegisterData(Item.bodySlot, Color.White);</code></br>
 	/// <br>The key value is the slot. Item.bodySlot</br>
 	/// <br>The second value can be any color</br>
 	/// </summary>
