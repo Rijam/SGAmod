@@ -77,7 +77,7 @@ namespace SGAmod.NPCs.TownNPCs
 			NPCID.Sets.HatOffsetY[NPC.type] = 4;
 
 			// Influences how the NPC looks in the Bestiary
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new(0)
+			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new()
 			{
 				Velocity = 1f, // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
 				Direction = -1

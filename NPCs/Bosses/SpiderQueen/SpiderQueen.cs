@@ -38,17 +38,11 @@ namespace SGAmod.NPCs.Bosses.SpiderQueen
 			NPCID.Sets.BossBestiaryPriority.Add(Type);
 
 			// Specify the debuffs it is immune to
-			NPCDebuffImmunityData debuffData = new()
-			{
-				SpecificallyImmuneTo = new int[] {
-					BuffID.Confused, // Most NPCs have this
-					ModContent.BuffType<AcidBurn>()
-				}
-			};
-			NPCID.Sets.DebuffImmunitySets.Add(Type, debuffData);
+			NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.Confused] = true;
+			NPCID.Sets.SpecificDebuffImmunity[Type][ModContent.BuffType<AcidBurn>()] = true;
 
 			// Influences how the NPC looks in the Bestiary
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new(0)
+			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new()
 			{
 				CustomTexturePath = GetType().Namespace.Replace('.', '/') + "/SpiderQueenLog",
 				PortraitScale = 0.6f, // Portrait refers to the full picture when clicking on the icon in the bestiary

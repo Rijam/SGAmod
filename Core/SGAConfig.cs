@@ -11,6 +11,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using Terraria.ModLoader.Config.UI;
@@ -127,14 +128,14 @@ namespace SGAmod
 			return false;
 		}
 
-		public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref string message)
+		public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref NetworkText message)
 		{
 			if (Main.netMode == NetmodeID.SinglePlayer)
 				return true;
 
 			if (!IsPlayerLocalServerOwner(whoAmI))
 			{
-				message = "You are not the server owner so you can not change this config";
+				message = NetworkText.FromLiteral("You are not the server owner so you can not change this config");
 				return false;
 			}
 			return base.AcceptClientChanges(pendingConfig, whoAmI, ref message);

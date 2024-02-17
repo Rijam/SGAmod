@@ -37,11 +37,11 @@ namespace SGAmod.Projectiles.Magic
 			Texture2D texz = TextureAssets.Projectile[Projectile.type].Value;
 
 				//Redraw the projectile with the color not influenced by light
-				Vector2 drawOrigin = new Vector2(texz.Width * 0.5f, texz.Height * 0.5f);
+				Vector2 drawOrigin = new(texz.Width * 0.5f, texz.Height * 0.5f);
 
 			ArmorShaderData stardustsshader = GameShaders.Armor.GetShaderFromItemId(ItemID.StardustDye);
 
-			DrawData value8 = new DrawData(texz, new Vector2(Main.GlobalTimeWrappedHourly*6f, 64f), new Microsoft.Xna.Framework.Rectangle?(new Microsoft.Xna.Framework.Rectangle(0, 0, 96, 48)), Microsoft.Xna.Framework.Color.White, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
+			DrawData value8 = new(texz, new Vector2(Main.GlobalTimeWrappedHourly*6f, 64f), new Microsoft.Xna.Framework.Rectangle?(new Microsoft.Xna.Framework.Rectangle(0, 0, 96, 48)), Microsoft.Xna.Framework.Color.White, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
 			stardustsshader.UseColor(Color.Purple.ToVector3());
 			stardustsshader.UseOpacity(0.5f);
 			stardustsshader.Apply(null, new DrawData?(value8));
@@ -70,7 +70,7 @@ namespace SGAmod.Projectiles.Magic
 			return false;
         }
 
-        public override void Kill(int timeLeft)
+        public override void OnKill(int timeLeft)
 		{
 			for (int i = 0; i < 30; i++)
 			{

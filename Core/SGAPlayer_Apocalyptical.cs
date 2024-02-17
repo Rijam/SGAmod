@@ -584,7 +584,7 @@ namespace SGAmod
 			Projectile.localAI[1] += 1f;
 		}
 
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Filters.Scene["SGAmod:Shockwave"].Deactivate(new object[0]);
 		}

@@ -46,7 +46,7 @@ namespace SGAmod.NPCs.TownNPCs
 			NPCID.Sets.ShimmerTownTransform[NPC.type] = true;
 
 			// Influences how the NPC looks in the Bestiary
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new(0)
+			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new()
 			{
 				//CustomTexturePath = Mod.Name + "/NPCs/TownNPCs/Dergon", // If the NPC is multiple parts like a worm, a custom texture for the Bestiary is encouraged.
 				// Position = new Vector2(40f, 24f),
