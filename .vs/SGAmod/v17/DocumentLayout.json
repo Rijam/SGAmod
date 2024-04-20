@@ -3,16 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\core\\itemuseglow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:core\\itemuseglow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\items\\weapons\\almighty\\nuclearoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:items\\weapons\\almighty\\nuclearoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\core\\sgaplayer_abilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:core\\sgaplayer_abilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\localization\\en-us.hjson||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:localization\\en-us.hjson||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\items\\accessories\\technological\\blinktech.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:items\\accessories\\technological\\blinktech.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\core\\sgaplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:core\\sgaplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\items\\accessories\\technological\\transformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:items\\accessories\\technological\\transformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\core\\sgautils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:core\\sgautils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\items\\weapons\\almighty\\megido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:items\\weapons\\almighty\\megido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\localization\\en-us.hjson||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:localization\\en-us.hjson||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\core\\sgaplayer_justblock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,14 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\localization\\en-us_mods.sgamod.items.hjson||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:localization\\en-us_mods.sgamod.items.hjson||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\items\\accessories\\technological\\blinktech.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:items\\accessories\\technological\\blinktech.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\items\\weapons\\almighty\\nuclearoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:items\\weapons\\almighty\\nuclearoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\sgamod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -91,10 +107,6 @@
       "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:core\\ilhacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\core\\sgautils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:core\\sgautils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\core\\rendertargetstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:core\\rendertargetstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -109,10 +121,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\npcs\\bosses\\spiderqueen\\trappingweb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:npcs\\bosses\\spiderqueen\\trappingweb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\items\\weapons\\almighty\\megido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:items\\weapons\\almighty\\megido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\projectiles\\npcs\\spinky\\pinkyminionkilledproj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -137,10 +145,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\items\\materials\\crafted\\craftedmaterials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:items\\materials\\crafted\\craftedmaterials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\items\\accessories\\technological\\transformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|solutionrelative:items\\accessories\\technological\\transformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C389A3DE-1368-4744-B15C-8FB084450197}|SGAmod.csproj|c:\\users\\sylvain\\documents\\my games\\terraria\\tmodloader\\modsources\\sgamod\\core\\sgaplayer_expertise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -217,50 +221,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SGAmod.cs",
-              "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\SGAmod.cs",
-              "RelativeDocumentMoniker": "SGAmod.cs",
-              "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\SGAmod.cs",
-              "RelativeToolTip": "SGAmod.cs",
-              "ViewState": "AQIAAMEAAAAAAAAAAAAxwNMAAACCAAAA",
+              "DocumentIndex": 0,
+              "Title": "ItemUseGlow.cs",
+              "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\ItemUseGlow.cs",
+              "RelativeDocumentMoniker": "Core\\ItemUseGlow.cs",
+              "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\ItemUseGlow.cs",
+              "RelativeToolTip": "Core\\ItemUseGlow.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACYAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-25T02:58:41.166Z",
+              "WhenOpened": "2024-04-20T00:18:22.018Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "en-US_Mods.SGAmod.Items.hjson",
-              "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Localization\\en-US_Mods.SGAmod.Items.hjson",
-              "RelativeDocumentMoniker": "Localization\\en-US_Mods.SGAmod.Items.hjson",
-              "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Localization\\en-US_Mods.SGAmod.Items.hjson",
-              "RelativeToolTip": "Localization\\en-US_Mods.SGAmod.Items.hjson",
-              "ViewState": "AQIAAJ8CAAAAAAAAAAAAAAADAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-03-02T19:22:29.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "SGAPlayer.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGAPlayer.cs",
               "RelativeDocumentMoniker": "Core\\SGAPlayer.cs",
               "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGAPlayer.cs",
               "RelativeToolTip": "Core\\SGAPlayer.cs",
-              "ViewState": "AQIAAFwBAAAAAAAAAAAAAHcBAAAMAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAMwCsAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T02:32:34.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-23T02:32:34.966Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "SludgeProj.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Projectiles\\ExThrown\\SludgeProj.cs",
               "RelativeDocumentMoniker": "Projectiles\\ExThrown\\SludgeProj.cs",
@@ -268,12 +258,11 @@
               "RelativeToolTip": "Projectiles\\ExThrown\\SludgeProj.cs",
               "ViewState": "AQIAAFMAAAAAAAAAAAAiwHYAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-18T01:39:55.732Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-18T01:39:55.732Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "FlavorTooltips.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\FlavorTooltips.cs",
               "RelativeDocumentMoniker": "Items\\FlavorTooltips.cs",
@@ -281,25 +270,24 @@
               "RelativeToolTip": "Items\\FlavorTooltips.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAACPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T21:42:48.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-08T21:42:48.954Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SGAPlayer_Abilities.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGAPlayer_Abilities.cs",
               "RelativeDocumentMoniker": "Core\\SGAPlayer_Abilities.cs",
               "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGAPlayer_Abilities.cs",
               "RelativeToolTip": "Core\\SGAPlayer_Abilities.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABsAAAAfAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACoAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-04T18:05:58.009Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "SGAPlayer_JustBlock.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGAPlayer_JustBlock.cs",
               "RelativeDocumentMoniker": "Core\\SGAPlayer_JustBlock.cs",
@@ -307,25 +295,24 @@
               "RelativeToolTip": "Core\\SGAPlayer_JustBlock.cs",
               "ViewState": "AQIAAC0AAAAAAAAAAAAmwEEAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T21:50:01.193Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-26T21:50:01.193Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "NuclearOption.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Weapons\\Almighty\\NuclearOption.cs",
               "RelativeDocumentMoniker": "Items\\Weapons\\Almighty\\NuclearOption.cs",
               "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Weapons\\Almighty\\NuclearOption.cs",
               "RelativeToolTip": "Items\\Weapons\\Almighty\\NuclearOption.cs",
-              "ViewState": "AQIAAKkAAAAAAAAAAAAYwL0AAABXAAAA",
+              "ViewState": "AQIAAMUAAAAAAAAAAAAywL0AAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-02T21:52:46.512Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "en-US.hjson",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Localization\\en-US.hjson",
               "RelativeDocumentMoniker": "Localization\\en-US.hjson",
@@ -333,25 +320,83 @@
               "RelativeToolTip": "Localization\\en-US.hjson",
               "ViewState": "AQIAAFEAAAAAAAAAAAAAAFEAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-03-03T16:36:59.327Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-03T16:36:59.327Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Transformer.cs",
+              "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Accessories\\Technological\\Transformer.cs",
+              "RelativeDocumentMoniker": "Items\\Accessories\\Technological\\Transformer.cs",
+              "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Accessories\\Technological\\Transformer.cs",
+              "RelativeToolTip": "Items\\Accessories\\Technological\\Transformer.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAqwCUAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T17:07:39.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "BlinkTech.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Accessories\\Technological\\BlinkTech.cs",
               "RelativeDocumentMoniker": "Items\\Accessories\\Technological\\BlinkTech.cs",
               "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Accessories\\Technological\\BlinkTech.cs",
               "RelativeToolTip": "Items\\Accessories\\Technological\\BlinkTech.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAAB0AAAAqAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB0AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-19T21:51:22.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-19T21:51:22.041Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "en-US_Mods.SGAmod.Items.hjson",
+              "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Localization\\en-US_Mods.SGAmod.Items.hjson",
+              "RelativeDocumentMoniker": "Localization\\en-US_Mods.SGAmod.Items.hjson",
+              "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Localization\\en-US_Mods.SGAmod.Items.hjson",
+              "RelativeToolTip": "Localization\\en-US_Mods.SGAmod.Items.hjson",
+              "ViewState": "AQIAAJ8CAAAAAAAAAAAAAAADAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-03-02T19:22:29.943Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Megido.cs",
+              "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Weapons\\Almighty\\Megido.cs",
+              "RelativeDocumentMoniker": "Items\\Weapons\\Almighty\\Megido.cs",
+              "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Weapons\\Almighty\\Megido.cs",
+              "RelativeToolTip": "Items\\Weapons\\Almighty\\Megido.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAywFIAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T21:53:16.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SGAUtils.cs",
+              "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGAUtils.cs",
+              "RelativeDocumentMoniker": "Core\\SGAUtils.cs",
+              "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGAUtils.cs",
+              "RelativeToolTip": "Core\\SGAUtils.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAowA8AAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T21:25:26.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SGAmod.cs",
+              "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\SGAmod.cs",
+              "RelativeDocumentMoniker": "SGAmod.cs",
+              "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\SGAmod.cs",
+              "RelativeToolTip": "SGAmod.cs",
+              "ViewState": "AQIAAMEAAAAAAAAAAAAxwNMAAACCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-25T02:58:41.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "SGANPCs.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGANPCs.cs",
               "RelativeDocumentMoniker": "Core\\SGANPCs.cs",
@@ -359,12 +404,11 @@
               "RelativeToolTip": "Core\\SGANPCs.cs",
               "ViewState": "AQIAAD0AAAAAAAAAAAAQwFUAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T01:59:17.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-23T01:59:17.508Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "RadioDebuff.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Buffs\\Debuffs\\RadioDebuff.cs",
               "RelativeDocumentMoniker": "Buffs\\Debuffs\\RadioDebuff.cs",
@@ -372,12 +416,11 @@
               "RelativeToolTip": "Buffs\\Debuffs\\RadioDebuff.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T23:58:11.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-17T23:58:11.322Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "SGAProjectile.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGAProjectile.cs",
               "RelativeDocumentMoniker": "Core\\SGAProjectile.cs",
@@ -385,12 +428,11 @@
               "RelativeToolTip": "Core\\SGAProjectile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T23:30:10.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-17T23:30:10.904Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "RaysOfControl.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Weapons\\Almighty\\RaysOfControl.cs",
               "RelativeDocumentMoniker": "Items\\Weapons\\Almighty\\RaysOfControl.cs",
@@ -398,12 +440,11 @@
               "RelativeToolTip": "Items\\Weapons\\Almighty\\RaysOfControl.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAmwH8AAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T00:34:36.654Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-17T00:34:36.654Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "Draken.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\NPCs\\TownNPCs\\Draken.cs",
               "RelativeDocumentMoniker": "NPCs\\TownNPCs\\Draken.cs",
@@ -411,12 +452,11 @@
               "RelativeToolTip": "NPCs\\TownNPCs\\Draken.cs",
               "ViewState": "AQIAAHUDAAAAAAAAAAAowI4DAACZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T22:48:00.762Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-12T22:48:00.762Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "TrailHelper.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Effects\\TrailHelper.cs",
               "RelativeDocumentMoniker": "Effects\\TrailHelper.cs",
@@ -424,12 +464,11 @@
               "RelativeToolTip": "Effects\\TrailHelper.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T22:58:38.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-10T22:58:38.713Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "TrappingWeb.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\NPCs\\Bosses\\SpiderQueen\\TrappingWeb.cs",
               "RelativeDocumentMoniker": "NPCs\\Bosses\\SpiderQueen\\TrappingWeb.cs",
@@ -437,12 +476,11 @@
               "RelativeToolTip": "NPCs\\Bosses\\SpiderQueen\\TrappingWeb.cs",
               "ViewState": "AQIAAIwAAAAAAAAAAAASwJwAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T19:24:56.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T19:24:56.716Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "DebugItems.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Consumables\\Debug\\DebugItems.cs",
               "RelativeDocumentMoniker": "Items\\Consumables\\Debug\\DebugItems.cs",
@@ -450,12 +488,11 @@
               "RelativeToolTip": "Items\\Consumables\\Debug\\DebugItems.cs",
               "ViewState": "AQIAALAAAAAAAAAAAAAmwLwAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T21:35:23.761Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T21:35:23.761Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "BossDrops.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Materials\\BossDrops\\BossDrops.cs",
               "RelativeDocumentMoniker": "Items\\Materials\\BossDrops\\BossDrops.cs",
@@ -463,12 +500,11 @@
               "RelativeToolTip": "Items\\Materials\\BossDrops\\BossDrops.cs",
               "ViewState": "AQIAADAAAAAAAAAAAAA6wEkAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T00:33:50.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-12T00:33:50.508Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "trailShaders.fx",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Effects\\trailShaders.fx",
               "RelativeDocumentMoniker": "Effects\\trailShaders.fx",
@@ -476,12 +512,11 @@
               "RelativeToolTip": "Effects\\trailShaders.fx",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-04-16T22:10:31.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-16T22:10:31.234Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "ILHacks.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\ILHacks.cs",
               "RelativeDocumentMoniker": "Core\\ILHacks.cs",
@@ -489,12 +524,11 @@
               "RelativeToolTip": "Core\\ILHacks.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAADoAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T23:52:41.18Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-13T23:52:41.18Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "WVP.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Effects\\WVP.cs",
               "RelativeDocumentMoniker": "Effects\\WVP.cs",
@@ -502,12 +536,11 @@
               "RelativeToolTip": "Effects\\WVP.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAUwCoAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T23:35:50.498Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-10T23:35:50.498Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "SGAOverlays.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGAOverlays.cs",
               "RelativeDocumentMoniker": "Core\\SGAOverlays.cs",
@@ -515,12 +548,11 @@
               "RelativeToolTip": "Core\\SGAOverlays.cs",
               "ViewState": "AQIAAA4BAAAAAAAAAAAywCABAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T02:18:43.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-24T02:18:43.102Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "SPinky.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\NPCs\\Bosses\\Pinky\\SPinky.cs",
               "RelativeDocumentMoniker": "NPCs\\Bosses\\Pinky\\SPinky.cs",
@@ -528,12 +560,11 @@
               "RelativeToolTip": "NPCs\\Bosses\\Pinky\\SPinky.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T22:11:08.291Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T22:11:08.291Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "MonoModMadness.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\MonoModMadness.cs",
               "RelativeDocumentMoniker": "Core\\MonoModMadness.cs",
@@ -541,25 +572,11 @@
               "RelativeToolTip": "Core\\MonoModMadness.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAAAJMAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-29T01:10:00.327Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-29T01:10:00.327Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "SGAUtils.cs",
-              "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGAUtils.cs",
-              "RelativeDocumentMoniker": "Core\\SGAUtils.cs",
-              "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGAUtils.cs",
-              "RelativeToolTip": "Core\\SGAUtils.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T21:25:26.69Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "RenderTargetState.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\RenderTargetState.cs",
               "RelativeDocumentMoniker": "Core\\RenderTargetState.cs",
@@ -567,12 +584,11 @@
               "RelativeToolTip": "Core\\RenderTargetState.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAowDMBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T00:32:18.105Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-15T00:32:18.105Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "PinkyMinionKilledProj.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Projectiles\\NPCS\\SPinky\\PinkyMinionKilledProj.cs",
               "RelativeDocumentMoniker": "Projectiles\\NPCS\\SPinky\\PinkyMinionKilledProj.cs",
@@ -584,20 +600,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Megido.cs",
-              "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Weapons\\Almighty\\Megido.cs",
-              "RelativeDocumentMoniker": "Items\\Weapons\\Almighty\\Megido.cs",
-              "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Weapons\\Almighty\\Megido.cs",
-              "RelativeToolTip": "Items\\Weapons\\Almighty\\Megido.cs",
-              "ViewState": "AQIAAM4AAAAAAAAAAAAgwOoAAABtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T21:53:16.585Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "CraftedMaterials.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Materials\\Crafted\\CraftedMaterials.cs",
               "RelativeDocumentMoniker": "Items\\Materials\\Crafted\\CraftedMaterials.cs",
@@ -609,7 +612,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "AcidBullet.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Projectiles\\Ranged\\AcidBullet.cs",
               "RelativeDocumentMoniker": "Projectiles\\Ranged\\AcidBullet.cs",
@@ -621,7 +624,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "ContagionProj.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Projectiles\\Melee\\ContagionProj.cs",
               "RelativeDocumentMoniker": "Projectiles\\Melee\\ContagionProj.cs",
@@ -633,7 +636,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "EmpoweredWraithCoreFragment.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Consumables\\BossSummons\\EmpoweredWraithCoreFragment.cs",
               "RelativeDocumentMoniker": "Items\\Consumables\\BossSummons\\EmpoweredWraithCoreFragment.cs",
@@ -645,7 +648,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "WraithCoreFragment.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Consumables\\BossSummons\\WraithCoreFragment.cs",
               "RelativeDocumentMoniker": "Items\\Consumables\\BossSummons\\WraithCoreFragment.cs",
@@ -657,7 +660,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "ExampleResourceBar.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModReader\\ExampleMod\\Common\\UI\\ExampleResourceUI\\ExampleResourceBar.cs",
               "RelativeDocumentMoniker": "..\\..\\ModReader\\ExampleMod\\Common\\UI\\ExampleResourceUI\\ExampleResourceBar.cs",
@@ -669,7 +672,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "SGAPlayer_Expertise.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGAPlayer_Expertise.cs",
               "RelativeDocumentMoniker": "Core\\SGAPlayer_Expertise.cs",
@@ -681,7 +684,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "CobaltWraith.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\NPCs\\Bosses\\CobaltWraith\\CobaltWraith.cs",
               "RelativeDocumentMoniker": "NPCs\\Bosses\\CobaltWraith\\CobaltWraith.cs",
@@ -693,7 +696,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "WraithTargetingGamepad.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Accessories\\Expert\\WraithTargetingGamepad.cs",
               "RelativeDocumentMoniker": "Items\\Accessories\\Expert\\WraithTargetingGamepad.cs",
@@ -705,7 +708,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "Consumables.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Consumables\\Other\\Consumables.cs",
               "RelativeDocumentMoniker": "Items\\Consumables\\Other\\Consumables.cs",
@@ -717,7 +720,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "CustomConditions.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\NPCs\\CustomConditions.cs",
               "RelativeDocumentMoniker": "NPCs\\CustomConditions.cs",
@@ -729,7 +732,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "SGARecipes.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGARecipes.cs",
               "RelativeDocumentMoniker": "Core\\SGARecipes.cs",
@@ -741,7 +744,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "CopperWraith.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\NPCs\\Bosses\\CopperWraith\\CopperWraith.cs",
               "RelativeDocumentMoniker": "NPCs\\Bosses\\CopperWraith\\CopperWraith.cs",
@@ -753,7 +756,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "CapShield.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Weapons\\Shields\\CapShield.cs",
               "RelativeDocumentMoniker": "Items\\Weapons\\Shields\\CapShield.cs",
@@ -765,7 +768,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "CorrodedShield.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Weapons\\Shields\\CorrodedShield.cs",
               "RelativeDocumentMoniker": "Items\\Weapons\\Shields\\CorrodedShield.cs",
@@ -777,7 +780,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "en-US_Mods.SGAmod.NPCs.hjson",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Localization\\en-US_Mods.SGAmod.NPCs.hjson",
               "RelativeDocumentMoniker": "Localization\\en-US_Mods.SGAmod.NPCs.hjson",
@@ -789,19 +792,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "Transformer.cs",
-              "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Accessories\\Technological\\Transformer.cs",
-              "RelativeDocumentMoniker": "Items\\Accessories\\Technological\\Transformer.cs",
-              "ToolTip": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Accessories\\Technological\\Transformer.cs",
-              "RelativeToolTip": "Items\\Accessories\\Technological\\Transformer.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAYwCgAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-04T17:07:39.298Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "en-US_Mods.SGAmod.Projectiles.hjson",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Localization\\en-US_Mods.SGAmod.Projectiles.hjson",
               "RelativeDocumentMoniker": "Localization\\en-US_Mods.SGAmod.Projectiles.hjson",
@@ -813,7 +804,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "TidalWaveProj.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Projectiles\\Melee\\TidalWaveProj.cs",
               "RelativeDocumentMoniker": "Projectiles\\Melee\\TidalWaveProj.cs",
@@ -825,7 +816,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "Credits.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\Credits.cs",
               "RelativeDocumentMoniker": "Core\\Credits.cs",
@@ -837,7 +828,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "SGAConfig.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGAConfig.cs",
               "RelativeDocumentMoniker": "Core\\SGAConfig.cs",
@@ -849,7 +840,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "GlassSword.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Items\\Weapons\\Melee\\GlassSword.cs",
               "RelativeDocumentMoniker": "Items\\Weapons\\Melee\\GlassSword.cs",
@@ -861,7 +852,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "SGANPCs_OnHit.cs",
               "DocumentMoniker": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\Core\\SGANPCs_OnHit.cs",
               "RelativeDocumentMoniker": "Core\\SGANPCs_OnHit.cs",

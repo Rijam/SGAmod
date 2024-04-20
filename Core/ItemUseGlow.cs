@@ -34,4 +34,8 @@ namespace SGAmod.Core
 
         };
     }
+    public class PlayerUseGlow : ModPlayer
+    {
+        //public static readonly PlayerDrawLayer ItemUseGlow = new PlayerDrawLayer("");
+    }
 }
