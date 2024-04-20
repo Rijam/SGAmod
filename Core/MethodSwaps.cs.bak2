@@ -1,0 +1,46 @@
+﻿using System;
+using System.Linq;
+using Terraria;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria.UI;
+using Terraria.DataStructures;
+using Terraria.GameContent.UI;
+using Idglibrary;
+using Mono.Cecil.Cil;
+using MonoMod.Cil;
+using System.Reflection;
+using Terraria.GameInput;
+using Microsoft.Xna.Framework.Audio;
+using Terraria.Graphics.Shaders;
+using Terraria.GameContent.UI.Elements;
+using Terraria.IO;
+using Terraria.ModLoader.IO;
+using Terraria.Utilities;
+using System.IO;
+using SGAmod.Credits;
+using System.Diagnostics;
+
+namespace SGAmod
+{
+    public class SGAMethodSwaps
+    {
+        private static void Main_Draw(On_Main.orig_Draw orig, Main self, GameTime gameTime)
+        {
+            if (CreditsManager.CreditsActive && !SGAmod.ForceDrawOverride) 
+            { 
+                CreditsManager.DrawCredits(gameTime);
+                return;
+            }
+            orig(self, gameTime);
+        }
+        private static void OverrideCreditsUpdate(On.Terraria.Main.orig_DoUpdate orig, Main self, GameTime gameTime)
+        {
+
+        }
+    }
+}

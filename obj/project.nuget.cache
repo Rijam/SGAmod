@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "MuKSJQ3vVj+hK6DE3jTW35cgV1LzUDRWlRMw4q88Dddp7iPtXLir42QAKL2FNAYY60X6eVhyTny5bkBN96G7CQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\SGAmod.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sylvain\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}

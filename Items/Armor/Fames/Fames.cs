@@ -1,4 +1,5 @@
 
+using Idglibrary;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using SGAmod.Items.Materials.BossDrops;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
+using Terraria.Map;
 using Terraria.ModLoader;
 
 namespace SGAmod.Items.Armor.Fames
@@ -19,7 +21,7 @@ namespace SGAmod.Items.Armor.Fames
 			// DisplayName.SetDefault("Fames Helm");
 			// Tooltip.SetDefault("6% increased Throwing crit chance and Throwing Velocity");
 			ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false;
-			ArmorUseGlowHead.RegisterData(Item.headSlot, Texture + "_Head_Glowmask", Color.White);
+			ArmorUseGlowHead.RegisterData(Item.headSlot, Texture + "_Head_Glow", Color.White);
 		}
 		public override void SetDefaults()
 		{
@@ -47,8 +49,23 @@ namespace SGAmod.Items.Armor.Fames
 				}
 			}
 		}
+        public override bool IsArmorSet(Item head, Item body, Item legs)
+        {
+            return body.type == ModContent.ItemType<FamesChestplate>() && legs.type == ModContent.ItemType<FamesLeggings>();
+        }
 
-		public override void UpdateEquip(Player player)
+        public override void UpdateArmorSet(Player player)
+        {
+            string s = "Toggle Recipe not binded!";
+            foreach (string key in SGAmod.ToggleRecipeHotKey.GetAssignedKeys())
+            {
+                s = key;
+            }
+            player.setBonus = "Press the 'Toggle Recipe' (" + s + ") Hotkey to activate Hunger of Fames for a short time\nAll weapons get coated in acid for the 1st hit, but resets your life regeneration " + Idglib.ColorText(Color.Orange, "Requires 1 Cooldown stacks, adds 60 seconds") + "\nPoison, Venom, and Acid Burn all lower enemy defense by an extra 6\n";
+            player.GetModPlayer<SGAPlayer>().AcidSet = (true, player.GetModPlayer<SGAPlayer>().AcidSet.Item2);
+        }
+
+        public override void UpdateEquip(Player player)
 		{
 			SGAPlayer sgaplayer = player.GetModPlayer<SGAPlayer>();
 			//player.Throwing().thrownCrit += 6;
@@ -150,7 +167,7 @@ namespace SGAmod.Items.Armor.Fames
 		public override void Update(Player player, ref int buffIndex)
 		{
 			SGAPlayer sgaply = player.GetModPlayer<SGAPlayer>();
-			//sgaply.acidSet = (sgaply.acidSet.Item1, true); // TODO
+			sgaply.AcidSet = (sgaply.AcidSet.Item1, true); // TODO
 			player.lifeRegenTime = 0;
 			player.lifeRegenCount = 0;
 

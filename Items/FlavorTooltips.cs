@@ -54,6 +54,17 @@ namespace SGAmod.Items
 				Color c = Main.hslToRgb((float)(Main.GlobalTimeWrappedHourly / 5f) % 1f, 0.45f, 0.65f);
 				tooltips.Add(new TooltipLine(Mod, "Dedicated", Idglib.ColorText(c, Language.GetTextValue("Mods.SGAmod.Common.Tooltip.DedicatedPhilBill"))));
 			}
-		}
+            
+				
+                if (SGAWorld.downedWraiths < 1)
+                {
+                    Color c = Main.hslToRgb(0.5f, 0.1f, 0.7f);
+                    
+					Recipe recipe = Main.recipe[item.type];
+                    if (recipe.HasTile(TileID.Furnaces) && (recipe.HasResult(ItemID.CopperBar) || recipe.HasResult(ItemID.TinBar) || recipe.HasResult(ItemID.IronBar) || recipe.HasResult(ItemID.LeadBar) || recipe.HasResult(ItemID.SilverBar) || recipe.HasResult(ItemID.TungstenBar) || recipe.HasResult(ItemID.GoldBar) || recipe.HasResult(ItemID.PlatinumBar)))
+						tooltips.Add(new TooltipLine(Mod, "WraithClue", Idglib.ColorText(c, Language.GetTextValue("Mods.SGAmod.Common.Tooltip.BarWarning"))));
+					
+                }
+        }
 	}
 }

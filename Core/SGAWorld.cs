@@ -16,14 +16,19 @@ using Terraria.ModLoader.IO;
 using Terraria.Graphics.Effects;
 using Idglibrary;
 using Terraria.WorldBuilding;
+using SGAmod.NPCs.Bosses.CopperWraith;
+using SGAmod;
+using static SGAmod.EffectsSystem;
 
 namespace SGAmod
 {
 	public class SGAWorld : ModSystem
 	{
-		//Setting up variables for invasion
+        //Setting up variables for invasion
 #pragma warning disable CA2211 // Non-constant fields should not be visible
-		public static bool downedSpiderQueen = false;
+        public static int downedWraiths = 0;
+		public static bool downedCopperWraith = false;
+        public static bool downedSpiderQueen = false;
 		public static bool WorldIsTin = false;
 		public static bool WorldIsNovus = true;
 
@@ -31,8 +36,12 @@ namespace SGAmod
 
 		public static int modtimer = 0;
 
-		public static int[] oreTypesPreHardmode = { TileID.Copper, TileID.Iron, TileID.Silver, TileID.Gold };
+        public static int craftwarning = 0;
+        public static int[] oreTypesPreHardmode = { TileID.Copper, TileID.Iron, TileID.Silver, TileID.Gold };
 		public static int[] oreTypesHardmode = { TileID.Cobalt, TileID.Mythril, TileID.Adamantite };
+
+
+
 #pragma warning restore CA2211 // Non-constant fields should not be visible
 		/*
 		public static bool customInvasionUp = false;
@@ -56,9 +65,9 @@ namespace SGAmod
 		public static int[] CaliburnAlterCoordsX = { 0, 0, 0 };
 		public static int[] CaliburnAlterCoordsY = { 0, 0, 0 };
 		public static bool downedMurklegacy = false;
-		public static bool tf2cratedrops = false;
-		public static int downedWraiths = 0;
-		public static int overalldamagedone = 0;
+		public static bool tf2cratedrops = false;*/
+		
+		/*public static int overalldamagedone = 0;
 		//public static int MoistStonecount = 0;
 		public static int tf2quest = 0;
 		public static byte highestDimDungeonFloor = 0;
@@ -81,7 +90,7 @@ namespace SGAmod
 		public static int golemchecker = 0;
 		public static int stolecrafting = 0;
 		//public static int modtimer = 0;
-		public static int craftwarning = 0;
+		
 		public static bool GennedVirulent = false;
 		public static bool tidalCharmUnlocked = false;
 		//public static int[] oretypesprehardmode = { TileID.Copper, TileID.Iron, TileID.Silver, TileID.Gold };
@@ -111,6 +120,7 @@ namespace SGAmod
 		public override void OnWorldLoad()
 		{
 			downedSpiderQueen = false;
+			downedCopperWraith = false;
 
 			modtimer = 0;
 			Instance = this;
@@ -239,7 +249,7 @@ namespace SGAmod
 		}
 		*/
 
-		/*
+		
 		public static void CraftWarning()
 		{
 			if ((SGAWorld.downedWraiths < 1))
@@ -247,11 +257,11 @@ namespace SGAmod
 				SGAWorld.craftwarning += 1;
 				if (SGAWorld.craftwarning % 31 == 0)
 				{
-					NPC.SpawnOnPlayer(Main.LocalPlayer.whoAmI, SGAmod.Instance.Find<ModNPC>("CopperWraith").Type);
+					NPC.SpawnOnPlayer(Main.LocalPlayer.whoAmI, ModContent.NPCType<CopperWraith>());
 				}
 			}
 		}
-		*/
+		
 
 		public override void PostUpdateWorld()
 		{
@@ -364,7 +374,12 @@ namespace SGAmod
 		{
 			if (WorldIsNovus) { tag["WorldIsNovus"] = true; };
 			if (downedSpiderQueen) { tag["downedSpiderQuene"] = true; };
-			/*
+			if (downedCopperWraith) { tag["downedCopperWraith"] = true; };
+            tag["downedWraiths"] = downedWraiths;
+
+            tag["craftwarning"] = craftwarning;
+            
+            /*
 			//var downed = new List<string>();
 			// if (downedCustomInvasion) downed.Add("customInvasion");
 			//if (downedSPinky) downed.Add("downedSPinky");
@@ -387,9 +402,9 @@ namespace SGAmod
 			tag["downedMurk"] = downedMurklegacy;
 			tag["downedMurk2"] = downedMurk;
 			tag["downedHellion"] = downedHellion;
-			tag["downedWraiths"] = downedWraiths;
+			
 			tag["tf2quest"] = tf2quest;
-			tag["craftwarning"] = craftwarning;
+			
 			tag["bossprgressor"] = bossprgressor;
 			tag["portalcanmovein"] = portalcanmovein;
 			tag["GennedVirulent"] = GennedVirulent;
@@ -429,11 +444,11 @@ namespace SGAmod
 				tag[tagname] = oretypeshardmode[x];
 			}
 			*/
-			//return tag;
-			//return new TagCompound {
-			//	{"downed", downed}
-			//};
-		}
+            //return tag;
+            //return new TagCompound {
+            //	{"downed", downed}
+            //};
+        }
 
 		//Load downed data
 		public override void LoadWorldData(TagCompound tag)
@@ -441,8 +456,12 @@ namespace SGAmod
 			WorldIsTin = WorldGen.SavedOreTiers.Copper == TileID.Tin;
 			WorldIsNovus = tag.ContainsKey("WorldIsNovus");
 			downedSpiderQueen = tag.ContainsKey("downedSpiderQueen");
-			//var downed = tag.GetList<string>("downed");
-			/*
+			downedCopperWraith = tag.ContainsKey("downedCopperWraith");
+
+            if (tag.ContainsKey("craftwarning")) { craftwarning = tag.GetInt("craftwarning"); }
+            if (tag.ContainsKey("downedWraiths")) { downedWraiths = tag.GetInt("downedWraiths"); }
+            //var downed = tag.GetList<string>("downed");
+            /*
 			if (tag.ContainsKey("WorldIsNovus"))
 				WorldIsNovus = tag.GetBool("WorldIsNovus");
 			if (tag.ContainsKey("darknessVision"))
@@ -510,13 +529,13 @@ namespace SGAmod
 			}
 			SGAmod.exitingSubworld = false;
 			*/
-		}
+        }
 
 		//Sync downed data
 		public override void NetSend(BinaryWriter writer)
 		{
 			var downedBosses = new BitsByte();
-			//downedBosses[0] = downedCopperWraith;
+			downedBosses[0] = downedCopperWraith;
 			//downedBosses[1] = downedSpiritsOfCaliburn;
 			downedBosses[2] = downedSpiderQueen;
 			writer.Write(downedBosses);
@@ -570,6 +589,7 @@ namespace SGAmod
 		public override void NetReceive(BinaryReader reader)
 		{
 			BitsByte downedBosses = reader.ReadByte();
+			downedCopperWraith = downedBosses[0];
 			downedSpiderQueen = downedBosses[2];
 
 			modtimer = reader.ReadInt32();
@@ -1011,14 +1031,6 @@ namespace SGAmod
 			*/
 		}
 
-		public delegate void PostUpdateEverythingDelegate();
-		public static event PostUpdateEverythingDelegate PostUpdateEverythingEvent;
-
-		public override void PostUpdateEverything()
-		{
-			PostUpdateEverythingEvent?.Invoke();
-
-			SGAWorld.modtimer += 1;
-		}
+		
 	}
 }

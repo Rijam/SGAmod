@@ -140,4 +140,6 @@ namespace SGAmod.Items.Materials.Environment
 			Item.rare = ItemRarityID.Purple;
 		}
 	}
+
+	
 }

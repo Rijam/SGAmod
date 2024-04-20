@@ -154,7 +154,7 @@ namespace SGAmod.NPCs.Bosses.SpiderQueen
 
 		public override bool IsLoadingEnabled(Mod mod)
 		{
-			SGAWorld.PostUpdateEverythingEvent += RemoveWebs;
+			SGAmodSystem.PostUpdateEverythingEvent += RemoveWebs;
 			return true;
 		}
 		public override void SetStaticDefaults()

@@ -69,13 +69,13 @@ namespace SGAmod
 		[ReloadRequired]
 		[DefaultValue(false)]
 		public bool BestPrefixes { get; set; }
-
+		
 		[Label("Update/Draw Detours")]
 		[ReloadRequired]
 		[Tooltip("Enables/Disables Core Monogame detours, turning these may be required to get better logs/stablize the game\nThese are used for SGAmod's credit sequence")]
 		[DefaultValue(true)]
 		public bool QuestionableDetours { get; set; }
-
+		
 		[Header("Vanilla Changes")]
 		[Label("Improved Golem")]
 		[Tooltip("Enables/Disables the changed Golem fight, this is presented as an option in the case of other mods who alter golem, to avoid issues")]

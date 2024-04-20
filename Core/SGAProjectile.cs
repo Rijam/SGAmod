@@ -8,6 +8,8 @@ namespace SGAmod
 	{
 		public override bool InstancePerEntity => true;
 
+		public bool raindown = false;
+		public bool grazed = false;
 		public double extraApocalypticalChance = 0;
 
 		public Player myPlayer = null;

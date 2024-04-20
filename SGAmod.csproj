@@ -6,14 +6,21 @@
     <TargetFramework>net6.0</TargetFramework>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <LangVersion>latest</LangVersion>
-    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Items\Materials\Crafted\ManaBattery.png" />
+    <None Remove="Items\Weapons\Almighty\NuclearOption.png" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Idglibrary">
-      <HintPath>..\..\..\tModLoader-dev\ModReader\Idglibrary\Idglibrary.dll</HintPath>
+      <HintPath>..\..\ModReader\Idglibrary\Idglibrary.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Items\Weapons\ExThrown\" />
+    <Folder Include="Textures\Clouds\" />
   </ItemGroup>
 </Project>
