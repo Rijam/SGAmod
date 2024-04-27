@@ -278,6 +278,7 @@ namespace SGAmod.NPCs.Bosses.CobaltWraith
             AnimationType = 0;
             NPC.noTileCollide = true;
             NPC.noGravity = true;
+			
         }
 
         public override void AI()
@@ -307,13 +308,13 @@ namespace SGAmod.NPCs.Bosses.CobaltWraith
                     {
                         Vector2 cas = new Vector2(NPC.position.X - p.position.X, NPC.position.Y - p.position.Y);
                         double dist = cas.Length();
-                        float rotation = (float)Math.Atan2(NPC.position.Y - p.position.Y - (dist * 0.05f) + (p.height * 0.5f) , NPC.position.X - p.position.X + (p.width * 0.5f));
+						float rotation = (float)Math.Atan2(-(NPC.position.Y - p.position.Y - (dist * 0.05f) + (p.height * 0.5f)), -(NPC.position.X - p.position.X + (p.width * 0.5f)));
                         NPC.rotation = rotation;
                         NPC.velocity = NPC.velocity * 0.86f;
                         if (NPC.ai[0] % 20 == 0 && NPC.ai[0] % 900 > 650)
                         {
                             int arrowtype = ProjectileID.WoodenArrowHostile;
-                            List<Projectile> one = Idglib.Shattershots(NPC.Center, NPC.Center + new Vector2(-15 * NPC.spriteDirection, 0), Vector2.Zero, arrowtype, 20,20, 0, 1, true, (Main.rand.Next(-100,100) * 0.000f) - NPC.rotation, true, 300);
+                            List<Projectile> one = Idglib.Shattershots(NPC.Center, NPC.Center + new Vector2(-15 * -NPC.spriteDirection, 0), Vector2.Zero, arrowtype, 20,20, 0, 1, true, (Main.rand.Next(-100,100) * 0.000f) - NPC.rotation, true, 300);
                             one[0].hostile = true;
                             one[0].friendly = false;
                             one[0].localAI[0] = p.whoAmI;
@@ -470,7 +471,7 @@ namespace SGAmod.NPCs.Bosses.CobaltWraith
                 if (NPC.ai[0] % 600 > 350)
                 {
                     NPC.damage = (int)NPC.defDamage * 3;
-                    itt = itt = p.position - NPC.position + new Vector2(NPC.ai[1] * -NPC.spriteDirection, -8);
+					itt = p.Center - NPC.Center + new Vector2(NPC.ai[1] * NPC.spriteDirection, -8);
                     /*if (NPC.ai[0] % 160 == 0 && SGAmod.DRMMode)
                {
                    Vector2 zxx = itt;

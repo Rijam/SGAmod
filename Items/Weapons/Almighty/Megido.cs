@@ -89,7 +89,7 @@ namespace SGAmod.Items.Weapons.Almighty
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            SoundEngine.PlaySound(new SoundStyle("SGAmod/Sounds/MegidoSnd").WithVolumeScale(.7f).WithPitchOffset(.15f), player.Center);
+            SoundEngine.PlaySound(new SoundStyle("SGAmod/Sounds/Custom/MegidoSnd").WithVolumeScale(.7f).WithPitchOffset(.15f), player.Center);
             UseStacks(player.GetModPlayer<SGAPlayer>(), 60 * 20);
 
             for (int i = 0; i < 4; i++)

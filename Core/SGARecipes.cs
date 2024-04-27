@@ -139,7 +139,7 @@ namespace SGAmod
 	{
 		public static void WraithWarning(Recipe recipe, Item item, List<Item> consumedItems, Item destinationStack)
 		{
-			if ((recipe.HasTile(TileID.Furnaces) || recipe.requiredTile.Any(tile => tile == TileID.Furnaces)) && SGAWorld.downedWraiths < 1)
+			if ((recipe.HasTile(TileID.Furnaces) || recipe.requiredTile.Any(tile => tile == TileID.Furnaces)) && !SGAWorld.downedCopperWraith)
 			{
 				if (!NPC.AnyNPCs(ModContent.NPCType<CopperWraith>()))
 				{

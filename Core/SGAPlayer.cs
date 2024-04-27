@@ -368,7 +368,7 @@ namespace SGAmod
                 }
                 if (ShieldDamageCheck(Main.projectile[damageSource.SourceProjectileLocalIndex].Center, Main.projectile[damageSource.SourceProjectileLocalIndex].damage, -(damageSource.SourceProjectileLocalIndex - 1)))
 				{
-                    Player.AddImmuneTime(ImmunityCooldownID.General, 20);
+                    
                     return true;
                 }
 					
@@ -379,6 +379,10 @@ namespace SGAmod
         }
         public override void OnHurt(Player.HurtInfo info)
         {
+			foreach (SGAnpcs sganpc in Main.npc.Where(testby => testby.active).Select(testby => testby.GetGlobalNPC<SGAnpcs>()))
+			{
+				sganpc.NoHit = false;
+			}
 			Player.GetModPlayer<NOPlayer>().Charge /= 2;
 
             

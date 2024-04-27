@@ -135,3 +135,4 @@ C:\Users\Sylvain\Documents\My Games\Terraria\tModLoader\ModSources\SGAmod\obj\De
 C:\Users\Sylvain\Documents\My Games\Terraria\tModLoader\ModSources\SGAmod\obj\Debug\net6.0\refint\SGAmod.dll
 C:\Users\Sylvain\Documents\My Games\Terraria\tModLoader\ModSources\SGAmod\obj\Debug\net6.0\SGAmod.pdb
 C:\Users\Sylvain\Documents\My Games\Terraria\tModLoader\ModSources\SGAmod\obj\Debug\net6.0\ref\SGAmod.dll
+C:\Users\Sylvain\Documents\My Games\Terraria\tModLoader\ModSources\SGAmod\obj\Debug\net6.0\SGAmod.sourcelink.json

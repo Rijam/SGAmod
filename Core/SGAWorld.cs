@@ -119,6 +119,7 @@ namespace SGAmod
 		//Initialize all variables to their default values
 		public override void OnWorldLoad()
 		{
+			downedWraiths = 0;
 			downedSpiderQueen = false;
 			downedCopperWraith = false;
 
