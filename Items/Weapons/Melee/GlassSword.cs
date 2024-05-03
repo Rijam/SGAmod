@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
 using Terraria.Audio;
 using SGAmod.Buffs.Debuffs;
+using SGAmod.Core;
 
 namespace SGAmod.Items.Weapons.Melee
 {
@@ -26,7 +27,7 @@ namespace SGAmod.Items.Weapons.Melee
             Item.height = 54;
             Item.useTime = 2;
             Item.useAnimation = 22;
-            Item.reuseDelay = 30;
+            Item.reuseDelay = 11; //Make sure it is exactly half of UseAnimation, else prepare for rotation shenanigans
             Item.consumable = true;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 2;
@@ -45,7 +46,7 @@ namespace SGAmod.Items.Weapons.Melee
         {
             if (!Main.dedServ)
             {
-                //Item.GetGlobalItem<ItemUseGlow>().glowTexture = ModContent.Request<Texture2D>("Items/Weapons/Melee/GlassSword");
+                Item.GetGlobalItem<ItemUseGlow>().glowTexture = ModContent.Request<Texture2D>("SGAmod/Items/Weapons/Melee/GlassSword").Value;
                 TextureAssets.Item[Item.type] = ModContent.Request<Texture2D>("SGAmod/Items/Weapons/Melee/GlassSword");
             }
             Item.width = 54;
@@ -67,14 +68,14 @@ namespace SGAmod.Items.Weapons.Melee
                 for (int i = 0; i < 80; i += 20)
                 {
                     Vector2 position = player.Center;
-                    Vector2 eree = player.itemRotation.ToRotationVector2().RotatedBy(MathHelper.ToRadians(-45f * player.direction));
+					Vector2 eree = player.itemRotation.ToRotationVector2().RotatedBy(MathHelper.ToRadians(-45f * player.direction));
                     eree *= player.direction;
                     position += eree * i;
                     int thisoned = Projectile.NewProjectile(player.GetSource_ItemUse(Item), position, new Vector2(eree.X * Main.rand.NextFloat(2.4f, 5f), eree.X * Main.rand.NextFloat(0.5f, 2f)), ModContent.ProjectileType<BrokenGlass>(), damageDone, 0f, Main.myPlayer);
                 }
                 if (!Main.dedServ)
                 {
-                    //Item.GetGlobalItem<ItemUseGlow>().glowTexture = ModContent.Request<Texture2D>("Items/Weapons/Melee/GlassSwordBreak");
+                    Item.GetGlobalItem<ItemUseGlow>().glowTexture = ModContent.Request<Texture2D>("SGAmod/Items/Weapons/Melee/GlassSwordBreak").Value;
                 }
             }
             else

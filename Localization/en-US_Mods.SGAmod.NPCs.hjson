@@ -81,24 +81,28 @@ SpiderQueen: {
 	Bestiary: Spider Queen Bestiary Entry
 }
 
-CopperArmorBow.DisplayName: Copper Armor Bow
-CopperArmorChainmail.DisplayName: Copper Armor Chainmail
-CopperArmorGreaves.DisplayName: Copper Armor Greaves
-CopperArmorHelmet.DisplayName: Copper Armor Helmet
-CopperArmorPiece.DisplayName: Copper Armor Piece
-CopperArmorSword.DisplayName: Copper Armor Sword
+CopperArmorBow.DisplayName: Copper Bow
+CopperArmorChainmail.DisplayName: Chainmail
+CopperArmorGreaves.DisplayName: Greaves
+CopperArmorHelmet.DisplayName: Helmet
+CopperArmorPiece.DisplayName: Armor Piece
+CopperArmorSword.DisplayName: Copper Sword
 
 CopperWraith: {
 	DisplayName: Copper Wraith
 	Bestiary: Copper Wraith Bestiary Entry
 }
 
-CobaltArmorBow.DisplayName: Cobalt Armor Bow
-CobaltArmorBricks.DisplayName: Cobalt Armor Bricks
-CobaltArmorChainmail.DisplayName: Cobalt Armor Chainmail
-CobaltArmorGreaves.DisplayName: Cobalt Armor Greaves
-CobaltArmorHelmet.DisplayName: Cobalt Armor Helmet
-CobaltArmorSword.DisplayName: Cobalt Armor Sword
-CobaltBrickArmorNexus.DisplayName: Cobalt Brick Armor Nexus
-CobaltChainSawPiece.DisplayName: Cobalt Chain Saw Piece
-CobaltWraith.DisplayName: Cobalt Wraith
+CobaltArmorBow.DisplayName: Cobalt Repeater
+CobaltArmorBricks.DisplayName: Leggings
+CobaltArmorChainmail.DisplayName: Breastplate
+CobaltArmorGreaves.DisplayName: Leggings
+CobaltArmorHelmet.DisplayName: Helmet
+CobaltArmorSword.DisplayName: Cobalt Sword
+CobaltBrickArmorNexus.DisplayName: Leggings
+CobaltChainSawPiece.DisplayName: Cobalt Chainsaw
+
+CobaltWraith: {
+	DisplayName: Cobalt Wraith
+	Bestiary: Cobalt Wraith Bestiary Entry
+}

@@ -21,16 +21,16 @@ namespace SGAmod.Items.Weapons.Almighty
     [Autoload(true)]
     public class Megido : AlmightyWeapon
     {
-        public override void SetStaticDefaults()
+        public override void SetDefaults()
         {
-            base.SetDefaults();
+            
             Item.damage = 150;
             Item.width = 48;
             Item.height = 48;
             Item.useTurn = true;
             Item.rare = ItemRarityID.Orange;
             Item.value = 500;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.useAnimation = 50;
             Item.useTime = 50;
             Item.knockBack = 8;
@@ -76,20 +76,21 @@ namespace SGAmod.Items.Weapons.Almighty
             }
             return sgaply.ActionCooldownStack_AddCooldownStack((int)(time * (sgaply.personaDeck ? 0.5f : 1f)), count);
         }
-        public override bool CanUseItem(Player player)
-        {
-            if (player.GetModPlayer<SGAPlayer>().ActionCooldownStack_AddCooldownStack(120, testOnly: true))
-            {
-                NPC[] findnpc = SGAUtils.ClosestEnemies(player.Center, 1500, checkWalls: false, checkCanChase: true)?.ToArray();
-                if (findnpc != null && findnpc.Length > 0)
-                    return true;
-            }
-            return false;
-        }
 
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+		public override bool CanUseItem(Player player)
+		{
+			if (player.GetModPlayer<SGAPlayer>().ActionCooldownStack_AddCooldownStack(100, testOnly: true))
+			{
+				NPC[] findnpc = SGAUtils.ClosestEnemies(player.Center, 1500, checkWalls: false, checkCanChase: true)?.ToArray();
+				if (findnpc != null && findnpc.Length > 0)
+					return true;
+			}
+			return false;
+		}
+
+		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            SoundEngine.PlaySound(new SoundStyle("SGAmod/Sounds/MegidoSnd").WithVolumeScale(.7f).WithPitchOffset(.15f), player.Center);
+            SoundEngine.PlaySound(new SoundStyle("SGAmod/Sounds/Custom/MegidoSnd").WithVolumeScale(.7f).WithPitchOffset(.15f), player.Center);
             UseStacks(player.GetModPlayer<SGAPlayer>(), 60 * 20);
 
             for (int i = 0; i < 4; i++)
@@ -97,7 +98,7 @@ namespace SGAmod.Items.Weapons.Almighty
                 NPC[] findnpc = SGAUtils.ClosestEnemies(player.Center, 1500, Main.MouseWorld, checkWalls: false, checkCanChase: true)?.ToArray();
                 NPC target = findnpc[i % findnpc.Count()];
 
-                Projectile proj = Projectile.NewProjectileDirect(player.GetSource_FromThis(), player.Center, Vector2.UnitX.RotatedBy(MathHelper.PiOver4 + (i * (MathHelper.TwoPi / 4f))) * 8f, ModContent.ProjectileType<MegidoProj>(), damage, knockback, player.whoAmI, 0, target.whoAmI);
+                Projectile proj = Projectile.NewProjectileDirect(Item.GetSource_FromThis(), player.Center, Vector2.UnitX.RotatedBy(MathHelper.PiOver4 + (i * (MathHelper.TwoPi / 4f))) * 8f, ModContent.ProjectileType<MegidoProj>(), damage, knockback, player.whoAmI, 0, target.whoAmI);
                 proj.ai[1] = target.whoAmI;
                 proj.netUpdate = true;
             }
@@ -186,7 +187,7 @@ namespace SGAmod.Items.Weapons.Almighty
         {
             if (startingloc == default)
                 startingloc = Projectile.Center;
-            Projectile.ai[0] += 0.25f;
+            Projectile.localAI[0] += 0.25f;
 
             List<Point> WeightedPoints2 = new List<Point>();
 

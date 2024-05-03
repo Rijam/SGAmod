@@ -53,7 +53,9 @@ namespace SGAmod
 		public const string EvilBossMaterials = "SGAmod:EvilBossMaterials";
 		/// <summary> ItemID.CobaltOre, ItemID.PalladiumOre</summary>
 		public const string Tier1HardmodeOre = "SGAmod:Tier1HardmodeOre";
-
+		/// <summary> ItemID.SolarFragment, ItemID.VortexFragment, ItemID.NebulaFragment, ItemID.StardustFragment </summary>
+		public const string CelestialFragments = "SGAmod:CelestialFragments";
+		
 		public override void AddRecipeGroups()
 		{
 			List<int> chests = new List<int>();
@@ -127,6 +129,14 @@ namespace SGAmod
 				ItemID.PalladiumOre
 			});
 			RecipeGroup.RegisterGroup(Tier1HardmodeOre, group);
+			group = new(() => Language.GetTextValue("LegacyMisc.37" + "Lunar Fragments"), new int[]
+			{
+				ItemID.FragmentSolar,
+				ItemID.FragmentVortex,
+				ItemID.FragmentNebula,
+				ItemID.FragmentStardust
+			});
+			RecipeGroup.RegisterGroup(CelestialFragments, group);
 		}
 
         public override void PostAddRecipes()
@@ -139,7 +149,7 @@ namespace SGAmod
 	{
 		public static void WraithWarning(Recipe recipe, Item item, List<Item> consumedItems, Item destinationStack)
 		{
-			if ((recipe.HasTile(TileID.Furnaces) || recipe.requiredTile.Any(tile => tile == TileID.Furnaces)) && SGAWorld.downedWraiths < 1)
+			if ((recipe.HasTile(TileID.Furnaces) || recipe.requiredTile.Any(tile => tile == TileID.Furnaces)) && !SGAWorld.downedCopperWraith)
 			{
 				if (!NPC.AnyNPCs(ModContent.NPCType<CopperWraith>()))
 				{

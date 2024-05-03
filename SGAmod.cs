@@ -239,7 +239,7 @@ namespace SGAmod
 			SGAILHacks.Unpatch();
             if (!Main.dedServ)
             {
-                Items.Weapons.Almighty.CataLogo.Unload();
+                //Items.Weapons.Almighty.CataLogo.Unload();
             }
 		}
 

@@ -692,13 +692,26 @@ EnergizerBattery: {
 }
 
 CorrodedShield: {
-	Tooltip: ""
+	Tooltip:
+		'''
+		"Treasure belonging to a former adventurer. You'd rather not use it, but it looks powerful"
+		Attack with the shield to bash-dash, gaining invulnerability frames and hit enemies are Acid Burned
+		Can only hit 5 targets, bash-dash ends prematurely after the 5th
+		'''
 	DisplayName: Corroded Shield
 }
 
 CapShield: {
-	Tooltip: ""
-	DisplayName: Cap Shield
+	Tooltip:
+		'''
+		Performing a Just Block grants a few seconds of Striking Moment
+		Charge up to initiate a powerful dash-bash!
+		This bash-dash may be canceled early by unequipping the shield
+		Alt fire lets you throw the shield, which will bounce between nearby enemies
+		You can't use the shield while it is thrown, and the trhow gains a bounce per 30 defense
+		"Stars and Stripes!"
+		'''
+	DisplayName: Captain America's Shield
 }
 
 CopperWraithNotch: {
@@ -717,12 +730,12 @@ TrueCopperWraithNotch: {
 
 CopperWraithShard: {
 	DisplayName: Copper Wraith Shard
-	Tooltip: ""
+	Tooltip: The remains of a weak wraith; it is light and conductive
 }
 
 BronzeWraithShard: {
-	Tooltip: ""
-	DisplayName: Bronze Wraith Shard
+	Tooltip: Tin and copper combined through the fire of a hellforge; thus stronger than a standard shard
+	DisplayName: Bronze Alloy Wraith Shard
 }
 
 WraithTargetingGamepad: {
@@ -732,37 +745,37 @@ WraithTargetingGamepad: {
 
 TinWraithShard: {
 	DisplayName: Tin Wraith Shard
-	Tooltip: ""
+	Tooltip: The remains of a weak wraith; it is soft and malleable
 }
 
 CobaltWraithNotch: {
-	Tooltip: ""
+	Tooltip: Intact remains of the Cobalt Wraith's animated armor, stronger than before
 	DisplayName: Cobalt Wraith Notch
 }
 
 CobaltWraithShard: {
 	DisplayName: Cobalt Wraith Shard
-	Tooltip: ""
+	Tooltip: The remains of a stronger wraith; applyable uses in alloys and highly resistant to corrosion
 }
 
 EmpoweredWraithCoreFragment: {
 	DisplayName: Empowered Wraith Core Fragment
-	Tooltip: ""
+	Tooltip: Summons forth the second of the Wraiths
 }
 
 WraithCoreFragment: {
 	DisplayName: Wraith Core Fragment
-	Tooltip: ""
+	Tooltip: Summons forth the first of the Wraiths, who watches you craft bars with envy...
 }
 
 BottledMud: {
 	DisplayName: Bottled Mud
-	Tooltip: ""
+	Tooltip: Brown and full of sedimental value
 }
 
 ManaBattery: {
 	DisplayName: Mana Battery
-	Tooltip: ""
+	Tooltip: Encapsulated mana to be used as a form of energy for technological weapons
 }
 
 Almighty: {
@@ -785,7 +798,7 @@ Megido: {
 
 Debug10: {
 	Tooltip: ""
-	DisplayName: Debug10
+	DisplayName: Debug-Cataclysmic Mothron Head to Unlimited Brit Power of supreme Destruction
 }
 
 NuclearOption: {
@@ -826,15 +839,23 @@ CardDeckPersona: {
 
 MorningStar: {
 	DisplayName: Morning Star
-	Tooltip: ""
+	Tooltip:
+		'''
+		Calls down Lucifer's signature move to bring massive destruction in a wide area
+		[c/FFA500:Requires 4 Cooldown stack, adds 80 seconds each]
+		'''
 }
 
 AssemblyStar: {
 	DisplayName: Assembly Star
-	Tooltip: ""
+	Tooltip:
+		'''
+		Raw assembly code forged directly by Draken
+		Can be used to craft previously uncraftable items
+		'''
 }
 
 StygianCore: {
 	DisplayName: Stygian Core
-	Tooltip: ""
+	Tooltip: Torn from Stygian Veins with a mining tool, this star is burning manifested fabric...
 }

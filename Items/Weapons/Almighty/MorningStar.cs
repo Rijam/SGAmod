@@ -15,6 +15,7 @@ using Microsoft.Xna.Framework.Graphics;
 using SGAmod.Effects;
 using Terraria.Utilities;
 using Terraria.DataStructures;
+using SGAmod.Items.Materials.Environment;
 
 namespace SGAmod.Items.Weapons.Almighty
 {
@@ -43,7 +44,7 @@ namespace SGAmod.Items.Weapons.Almighty
         }
         public override bool CanUseItem(Player player)
         {
-            if (player.GetModPlayer<SGAPlayer>().ActionCooldownStack_AddCooldownStack(100, 1, true))
+            if (player.GetModPlayer<SGAPlayer>().ActionCooldownStack_AddCooldownStack(100, 4, true))
                 return true;
             return false;
         }
@@ -58,7 +59,16 @@ namespace SGAmod.Items.Weapons.Almighty
             }
             return false;
         }
-    }
+		public override void AddRecipes()
+		{
+			CreateRecipe()
+				//.AddIngredient(ModContent.ItemType<Megadoloan>())
+				.AddIngredient(ModContent.ItemType<IlluminantEssence>())
+				.AddRecipeGroup("SGAmod:CelestialFragments")
+				.AddTile(TileID.LunarCraftingStation)
+				.Register();
+		}
+	}
     public class MorningStarProj : MegidoProj
     {
         public class CloudBoom

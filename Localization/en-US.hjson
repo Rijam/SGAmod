@@ -39,7 +39,7 @@ Mods: {
 					Consecutive attacks will stack the debuff, making the slowing effect stronger, but this soft caps after a point
 					Does not affect bosses or enemies who are immune to poisoned
 					'''
-				SlowPrompt: (Hlod LEFT CONTROL for more info on Dank Slow)
+				SlowPrompt: (Hold LEFT CONTROL for more info on Dank Slow)
 			}
 
 			AcidBurn: {

@@ -168,7 +168,7 @@ namespace SGAmod.Items.Weapons.Shields
         {
             DrawAdd();
         }
-        public virtual void DrawNormal(SpriteBatch spriteBatch, Color drawcolor)
+        public override void DrawNormal(SpriteBatch spriteBatch, Color drawcolor)
         {
             bool facingleft = Projectile.velocity.X > 0;
             SpriteEffects effect = SpriteEffects.None;
