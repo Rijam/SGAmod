@@ -11,13 +11,32 @@ Mods: {
 				FormerThrowingItem: Former Throwing class item
 				FormerHavocItem: Former Havoc mod item
 				DedicatedPhilBill: Dedicated to PhilBill44, and preserving his work
+<<<<<<< Updated upstream
 				BarWarning: Crafting this will anger something...
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 			}
 
 			Conditions.NotWarned: Don't anger the Copper Wraith.
 		}
 
 		Buffs: {
+<<<<<<< Updated upstream
+=======
+=======
+				BarWarning: Crafting this will anger something...
+				ForgeLock: This recipe has been disabled by a powerful entity...
+			}
+
+			Conditions: {
+				NotWarned: Don't anger the Copper Wraith.
+				CobaltWraith: Defeat the Cobalt Wraith.
+			}
+		}
+
+		Buffs: {
+>>>>>>> Stashed changes
 			RadioBuff: {
 				DisplayName: Irridiated
 				Description: Nor for players to see!
@@ -42,6 +61,10 @@ Mods: {
 				SlowPrompt: (Hold LEFT CONTROL for more info on Dank Slow)
 			}
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 			AcidBurn: {
 				DisplayName: Acid Burn
 				Description: Reduced Defense and your defense works again your life
@@ -188,6 +211,11 @@ Mods: {
 				}
 			}
 		}
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 
 		IFormerHavocItem: {
 			DankWaveStaff: {
@@ -198,8 +226,14 @@ Mods: {
 
 		Keybinds: {
 			"Abilities/Cycle Recipes.DisplayName": Abilities/Cycle Recipes
+<<<<<<< Updated upstream
 			"Cycle Aiming Style.DisplayName": Cycle  Aiming  Style
 		}
+=======
+			"Cycle Aiming Style.DisplayName": Cycle Aiming Style
+		}
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 	}
 }
 

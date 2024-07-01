@@ -98,7 +98,11 @@ namespace SGAmod.Items.Weapons.Almighty
 
             Effect effect = SGAmod.TextureBlendEffect;
 
+<<<<<<< Updated upstream
             effect.Parameters["Texture"].SetValue(ModContent.Request<Texture2D>("SGAmod/Texture/TiledPerlin").Value);
+=======
+            effect.Parameters["Texture"].SetValue(ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/TiledPerlin").Value);
+>>>>>>> Stashed changes
             effect.Parameters["noiseTexture"].SetValue(glowOrb);
             effect.Parameters["coordMultiplier"].SetValue(new Vector2(1f,1f));
             effect.Parameters["coordOffset"].SetValue(new Vector2(0f, 0f));

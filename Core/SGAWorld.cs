@@ -26,9 +26,20 @@ namespace SGAmod
 	{
         //Setting up variables for invasion
 #pragma warning disable CA2211 // Non-constant fields should not be visible
+<<<<<<< Updated upstream
         public static int downedWraiths = 0;
 		public static bool downedCopperWraith = false;
         public static bool downedSpiderQueen = false;
+=======
+<<<<<<< Updated upstream
+		public static bool downedSpiderQueen = false;
+=======
+        public static int downedWraiths = 0;
+		public static bool downedCopperWraith = false;
+        public static bool downedSpiderQueen = false;
+		public static bool downedCobaltWraith = false;
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 		public static bool WorldIsTin = false;
 		public static bool WorldIsNovus = true;
 
@@ -121,7 +132,15 @@ namespace SGAmod
 		{
 			downedWraiths = 0;
 			downedSpiderQueen = false;
+<<<<<<< Updated upstream
 			downedCopperWraith = false;
+=======
+<<<<<<< Updated upstream
+=======
+			downedCopperWraith = false;
+			downedCobaltWraith= false;
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 			modtimer = 0;
 			Instance = this;
@@ -375,12 +394,24 @@ namespace SGAmod
 		{
 			if (WorldIsNovus) { tag["WorldIsNovus"] = true; };
 			if (downedSpiderQueen) { tag["downedSpiderQuene"] = true; };
+<<<<<<< Updated upstream
 			if (downedCopperWraith) { tag["downedCopperWraith"] = true; };
             tag["downedWraiths"] = downedWraiths;
+=======
+<<<<<<< Updated upstream
+			/*
+=======
+			if (downedCopperWraith) { tag["downedCopperWraith"] = true; };
+			if (downedCobaltWraith) { tag["downedCobaltWraith"] = true;};
+>>>>>>> Stashed changes
 
             tag["craftwarning"] = craftwarning;
             
             /*
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 			//var downed = new List<string>();
 			// if (downedCustomInvasion) downed.Add("customInvasion");
 			//if (downedSPinky) downed.Add("downedSPinky");
@@ -457,12 +488,27 @@ namespace SGAmod
 			WorldIsTin = WorldGen.SavedOreTiers.Copper == TileID.Tin;
 			WorldIsNovus = tag.ContainsKey("WorldIsNovus");
 			downedSpiderQueen = tag.ContainsKey("downedSpiderQueen");
+<<<<<<< Updated upstream
 			downedCopperWraith = tag.ContainsKey("downedCopperWraith");
 
             if (tag.ContainsKey("craftwarning")) { craftwarning = tag.GetInt("craftwarning"); }
             if (tag.ContainsKey("downedWraiths")) { downedWraiths = tag.GetInt("downedWraiths"); }
             //var downed = tag.GetList<string>("downed");
             /*
+=======
+<<<<<<< Updated upstream
+			//var downed = tag.GetList<string>("downed");
+			/*
+=======
+			downedCopperWraith = tag.ContainsKey("downedCopperWraith");
+			downedCobaltWraith = tag.ContainsKey("downedCobaltWraith");
+
+            if (tag.ContainsKey("craftwarning")) { craftwarning = tag.GetInt("craftwarning"); }
+            
+            //var downed = tag.GetList<string>("downed");
+            /*
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 			if (tag.ContainsKey("WorldIsNovus"))
 				WorldIsNovus = tag.GetBool("WorldIsNovus");
 			if (tag.ContainsKey("darknessVision"))
@@ -539,7 +585,9 @@ namespace SGAmod
 			downedBosses[0] = downedCopperWraith;
 			//downedBosses[1] = downedSpiritsOfCaliburn;
 			downedBosses[2] = downedSpiderQueen;
-			writer.Write(downedBosses);
+
+
+			downedBosses[5] = downedCobaltWraith;
 
 			writer.Write(modtimer);
 
@@ -592,6 +640,7 @@ namespace SGAmod
 			BitsByte downedBosses = reader.ReadByte();
 			downedCopperWraith = downedBosses[0];
 			downedSpiderQueen = downedBosses[2];
+			downedCobaltWraith = downedBosses[5];
 
 			modtimer = reader.ReadInt32();
 

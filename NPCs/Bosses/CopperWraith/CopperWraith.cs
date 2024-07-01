@@ -17,6 +17,10 @@ using Terraria.GameContent.Personalities;
 using SGAmod.Items.Materials.BossDrops;
 using SGAmod.Items.Consumables.Other;
 using SGAmod.NPCs.Bosses.CobaltWraith;
+<<<<<<< Updated upstream
+=======
+using Terraria.Chat;
+>>>>>>> Stashed changes
 
 namespace SGAmod.NPCs.Bosses.CopperWraith
 {
@@ -535,6 +539,7 @@ namespace SGAmod.NPCs.Bosses.CopperWraith
         {
             potionType = ItemID.LesserHealingPotion;
         }
+<<<<<<< Updated upstream
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             List<int> types = new List<int>();
@@ -544,6 +549,22 @@ namespace SGAmod.NPCs.Bosses.CopperWraith
                 Idglib.Chat("You may now craft bars without being attacked", 150, 150, 70);
             }
 
+=======
+
+		public override void OnKill()
+		{
+			if (!SGAWorld.downedCopperWraith)
+			{
+				SGAWorld.downedCopperWraith = true;
+				Idglib.Chat("You may now craft bars without being attacked", 150, 150, 70);
+			}
+		}
+		public override void ModifyNPCLoot(NPCLoot npcLoot)
+        {
+            List<int> types = new List<int>();
+            
+			
+>>>>>>> Stashed changes
             int shardtype = ModContent.ItemType<CopperWraithShard>();
             
             npcLoot.Add(ItemDropRule.ByCondition(new NotWarned(), ModContent.ItemType<TrueCopperWraithNotch>()));
@@ -690,7 +711,11 @@ namespace SGAmod.NPCs.Bosses.CopperWraith
                 if ((NPC.ai[0] == 1 || NPC.ai[0] == -1) && NPC.ai[1] < 1)
                 {
                     float mul = (NPC.ai[0] < 0 ? 0.10f : 0.45f);
+<<<<<<< Updated upstream
                     if(NPC.CountNPCS(ModContent.NPCType<CopperArmorChainmail>()) < 1|| NPC.CountNPCS(ModContent.NPCType<CobaltArmorChainmail>()) < 1) //oh boy here we go again
+=======
+                    if(NPC.CountNPCS(ModContent.NPCType<CopperArmorChainmail>()) < 1) //oh boy here we go again
+>>>>>>> Stashed changes
                     {
                         int newguy = NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y - 10, level > 0 ? ModContent.NPCType<CobaltArmorChainmail>() : ModContent.NPCType<CopperArmorChainmail>());
                         NPC newguy2 = Main.npc[newguy];
@@ -701,7 +726,11 @@ namespace SGAmod.NPCs.Bosses.CopperWraith
                         newguy2.knockBackResist = 0.85f;
                         newguy2.netUpdate = true;
                     }
+<<<<<<< Updated upstream
                     if (NPC.CountNPCS(ModContent.NPCType<CopperArmorSword>()) < 1 || NPC.CountNPCS(ModContent.NPCType<CobaltArmorSword>()) < 1)
+=======
+                    if (NPC.CountNPCS(ModContent.NPCType<CopperArmorSword>()) < 1)
+>>>>>>> Stashed changes
                     {
                         int newguy = NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int) NPC.Center.Y - 10, level > 0 ? ModContent.NPCType<CobaltArmorSword>() : ModContent.NPCType<CopperArmorSword>());
                         NPC newguy2 = Main.npc[newguy];
@@ -714,7 +743,11 @@ namespace SGAmod.NPCs.Bosses.CopperWraith
                         newguy2.knockBackResist = 0.75f;
                         newguy2.netUpdate = true;
                     }
+<<<<<<< Updated upstream
                     if (NPC.CountNPCS(ModContent.NPCType<CopperArmorHelmet>()) < 1 || NPC.CountNPCS(ModContent.NPCType<CobaltArmorHelmet>()) < 1)
+=======
+                    if (NPC.CountNPCS(ModContent.NPCType<CopperArmorHelmet>()) < 1)
+>>>>>>> Stashed changes
                     {
                         int newguy = NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y - 10, level > 0 ? ModContent.NPCType<CobaltArmorHelmet>() : ModContent.NPCType<CopperArmorHelmet>());
                         NPC newguy2 = Main.npc[newguy];
@@ -726,7 +759,11 @@ namespace SGAmod.NPCs.Bosses.CopperWraith
                         newguy2.knockBackResist = 0.8f;
                         newguy2.netUpdate = true;
                     }
+<<<<<<< Updated upstream
                     if(NPC.CountNPCS(ModContent.NPCType<CopperArmorGreaves>()) < 1 || NPC.CountNPCS(ModContent.NPCType<CobaltArmorGreaves>()) < 1)
+=======
+                    if(NPC.CountNPCS(ModContent.NPCType<CopperArmorGreaves>()) < 1)
+>>>>>>> Stashed changes
                     {
                         int newguy = NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y - 10, level > 0 ? ModContent.NPCType<CobaltArmorGreaves>() : ModContent.NPCType<CopperArmorGreaves>());
                         NPC newguy2 = Main.npc[newguy];
@@ -739,7 +776,11 @@ namespace SGAmod.NPCs.Bosses.CopperWraith
                         newguy2.netUpdate = true;
 
                     }
+<<<<<<< Updated upstream
                     if(NPC.CountNPCS(ModContent.NPCType<CopperArmorBow>()) < 1 || NPC.CountNPCS(ModContent.NPCType<CobaltArmorBow>()) < 1)
+=======
+                    if(NPC.CountNPCS(ModContent.NPCType<CopperArmorBow>()) < 1)
+>>>>>>> Stashed changes
                     {
                         int newguy = NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y - 10, level > 0 ? ModContent.NPCType<CobaltArmorSword>() : ModContent.NPCType<CopperArmorBow>());
                         NPC newguy2 = Main.npc[newguy];

@@ -11,6 +11,7 @@ using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using Terraria.WorldBuilding;
 
 
 namespace SGAmod
@@ -20,6 +21,7 @@ namespace SGAmod
 		public override void AddRecipes()
 		{
 			base.AddRecipes();
+<<<<<<< Updated upstream
             for (int i = 0; i < Recipe.numRecipes; i++)
             {
                 Recipe recipe = Main.recipe[i];
@@ -29,10 +31,20 @@ namespace SGAmod
                     recipe.AddOnCraftCallback(SGARecipeCallbacks.WraithWarning);
                 }
             }
+=======
+<<<<<<< Updated upstream
+		}
+=======
+            
+>>>>>>> Stashed changes
         }
 		
 
 		
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 		// Instead of writing the string in the AddRecipeGroup, add the constant here.
 		// Example: SGARecipes.EvilBossMaterials
@@ -51,11 +63,21 @@ namespace SGAmod
 		public const string NoviteNovusBars = "SGAmod:NoviteNovusBars";
 		/// <summary> ItemID.ShadowScale, ItemID.TissueSample </summary>
 		public const string EvilBossMaterials = "SGAmod:EvilBossMaterials";
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
 		/// <summary> ItemID.CobaltOre, ItemID.PalladiumOre</summary>
 		public const string Tier1HardmodeOre = "SGAmod:Tier1HardmodeOre";
 		/// <summary> ItemID.SolarFragment, ItemID.VortexFragment, ItemID.NebulaFragment, ItemID.StardustFragment </summary>
 		public const string CelestialFragments = "SGAmod:CelestialFragments";
 		
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 		public override void AddRecipeGroups()
 		{
 			List<int> chests = new List<int>();
@@ -123,6 +145,11 @@ namespace SGAmod
 				ItemID.TissueSample
 			});
 			RecipeGroup.RegisterGroup(EvilBossMaterials, group);
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 			group = new(() => Language.GetTextValue("LegacyMisc.37" + " Cobalt or Palladium ore"), new int[]
 			{
 				ItemID.CobaltOre,
@@ -141,19 +168,45 @@ namespace SGAmod
 
         public override void PostAddRecipes()
         {
+<<<<<<< Updated upstream
             
         }
     }
 
+=======
+			for (int i = 0; i < Recipe.numRecipes; i++)
+			{
+				Recipe recipe = Main.recipe[i];
+
+				if ((recipe.HasTile(TileID.Furnaces) || recipe.requiredTile.Any(tile => tile == TileID.Furnaces)) && !SGAWorld.downedCopperWraith)
+				{
+					recipe.AddOnCraftCallback(SGARecipeCallbacks.WraithWarning);
+				}
+				if ((recipe.HasResult(ItemID.TitaniumForge) || recipe.HasResult(ItemID.AdamantiteForge)) && !SGAWorld.downedCobaltWraith)
+				{
+					recipe.AddCondition(new Condition("Mods.SGAmod.Common.Conditions.CobaltWraith", () => SGAWorld.downedCobaltWraith));
+				}
+			}
+			
+		}
+    }
+	
+>>>>>>> Stashed changes
 	public static class SGARecipeCallbacks
 	{
 		public static void WraithWarning(Recipe recipe, Item item, List<Item> consumedItems, Item destinationStack)
 		{
+<<<<<<< Updated upstream
 			if ((recipe.HasTile(TileID.Furnaces) || recipe.requiredTile.Any(tile => tile == TileID.Furnaces)) && !SGAWorld.downedCopperWraith)
 			{
 				if (!NPC.AnyNPCs(ModContent.NPCType<CopperWraith>()))
 				{
 					if(Main.netMode > NetmodeID.SinglePlayer)
+=======
+				if (!NPC.AnyNPCs(ModContent.NPCType<CopperWraith>()))
+				{
+					if(Main.netMode > NetmodeID.MultiplayerClient)
+>>>>>>> Stashed changes
 					{
 						
 					}
@@ -162,7 +215,11 @@ namespace SGAmod
 						SGAWorld.CraftWarning();
 					}
 				}
+<<<<<<< Updated upstream
 			}
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 		}
 	}
 }

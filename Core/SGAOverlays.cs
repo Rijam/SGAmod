@@ -42,6 +42,11 @@ namespace SGAmod
             Texture2D texture = ModContent.Request<Texture2D>("SGAmod/Core/ActionCooldown").Value;// ModContent.Request<Texture2D>("BoostBar")
             int offsetY = -texture.Height + SGAConfigClient.Instance.HUDDisplacement;
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 
             if (modply.CooldownStacks != null && modply.CooldownStacks.Count > 0)
             {
@@ -168,13 +173,21 @@ namespace SGAmod
                     SGAmod mod = SGAmod.Instance;
                     SGAPlayer modply = locply.GetModPlayer<SGAPlayer>();
                     float perc = 100; //(float)modply.boosterPowerLeft / (float)modply.boosterPowerLeftMax;
+<<<<<<< Updated upstream
                     Texture2D texture = ModContent.Request<Texture2D>("SGAmod/Core/ActionCooldown").Value;// ModContent.Request<Texture2D>("BoostBar").Value;
+=======
+                    Texture2D texture = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/ActionCooldown").Value;// ModContent.Request<Texture2D>("BoostBar").Value;
+>>>>>>> Stashed changes
                     int offsetY = -texture.Height + SGAConfigClient.Instance.HUDDisplacement;
 
 
                     if (modply.CooldownStacks != null && modply.CooldownStacks.Count > 0)
                     {
+<<<<<<< Updated upstream
                         texture = ModContent.Request<Texture2D>("SGAmod/Core/ActionCooldown").Value;
+=======
+                        texture = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/ActionCooldown").Value;
+>>>>>>> Stashed changes
                         int drawx = (int)(-texture.Width / 4f);
                         int drawy = (int)(48 + offsetY);
 
@@ -330,4 +343,8 @@ namespace SGAmod
             return draw;
         }
     }
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }

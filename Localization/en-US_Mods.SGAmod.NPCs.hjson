@@ -79,7 +79,14 @@ Goat: {
 SpiderQueen: {
 	DisplayName: Spider Queen
 	Bestiary: Spider Queen Bestiary Entry
+	SpawnInfo: Use a [i:SGAmod/AcidicEgg] underground, anytime
+	DespawnMessage: The Spider Queen will be feasting quite well tonight
 }
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 
 CopperArmorBow.DisplayName: Copper Bow
 CopperArmorChainmail.DisplayName: Chainmail
@@ -91,6 +98,11 @@ CopperArmorSword.DisplayName: Copper Sword
 CopperWraith: {
 	DisplayName: Copper Wraith
 	Bestiary: Copper Wraith Bestiary Entry
+<<<<<<< Updated upstream
+=======
+	SpawnInfo: Use a [i:SGAmod/WraithCoreFragment] at anytime, will also spawn should you craft too many bars at a furnace before beating it
+	DespawnMessage: The Copper Wraith makes a hasty retreat
+>>>>>>> Stashed changes
 }
 
 CobaltArmorBow.DisplayName: Cobalt Repeater
@@ -105,4 +117,11 @@ CobaltChainSawPiece.DisplayName: Cobalt Chainsaw
 CobaltWraith: {
 	DisplayName: Cobalt Wraith
 	Bestiary: Cobalt Wraith Bestiary Entry
+<<<<<<< Updated upstream
 }
+=======
+	SpawnInfo: Use a [i:SGAmod/EmpoweredWraithCoreFragment] at anytime. Defeat this boss to unlock crafting a hardmode forge, as well as anything crafted at one
+	DespawnMessage: Cobalt Wraith completes its mission
+}
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes

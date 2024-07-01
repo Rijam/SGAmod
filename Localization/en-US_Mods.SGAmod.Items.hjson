@@ -588,6 +588,11 @@ IlluminantEssence: {
 	DisplayName: Illuminant Essence
 	Tooltip: ""
 }
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 
 MidasTouch: {
 	Tooltip:
@@ -859,3 +864,12 @@ StygianCore: {
 	DisplayName: Stygian Core
 	Tooltip: Torn from Stygian Veins with a mining tool, this star is burning manifested fabric...
 }
+<<<<<<< Updated upstream
+=======
+
+Debug11: {
+	DisplayName: Debug11
+	Tooltip: ""
+}
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes

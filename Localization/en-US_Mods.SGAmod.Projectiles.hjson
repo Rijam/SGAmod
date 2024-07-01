@@ -12,6 +12,11 @@ SpiderVenom: {
 }
 
 RippleBoom.DisplayName: Ripple Boom
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 BrokenGlass.DisplayName: Broken Glass
 SwampWave.DisplayName: Swampwave
 AcidSpear.DisplayName: Acid Spear
@@ -33,3 +38,7 @@ MorningStarProj.DisplayName: Morning Star Proj
 NuclearOptionProj.DisplayName: Nuclear Option Proj
 RadioactivePool.DisplayName: Pool of Radioactive Sludge
 SludgeProj.DisplayName: Ew Gross!
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes

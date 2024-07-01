@@ -1,6 +1,20 @@
 displayName = SGAmod: [c/FF0000:IN DEVELOPMENT VERSION]
 author = IDGCaptainUkraine & Rijam
+<<<<<<< Updated upstream
 version = 0.0.0.84
+=======
+<<<<<<< Updated upstream
+version = 0.0.0.7
+buildIgnore = .vs\*, .git\*, ignore\*, .gitignore, .gitattributes, .zip, Effects\fxcompiler,*.exe,*.zip,*.gif, *.xcf, *.idg, *.MD, *.csproj, *.user, obj\*, bin\*, vs\*, git\*
+hideCode = false
+hideResources = false
+=======
+version = 0.0.0.84
+homepage = https://discord.gg/aGy34Xw
+modReferences = Idglibrary
+>>>>>>> Stashed changes
+includeSource = true
+>>>>>>> Stashed changes
 homepage = https://discord.gg/aGy34Xw
 modReferences = Idglibrary
 includeSource = true

@@ -16,6 +16,10 @@ using SGAmod.Effects;
 using Terraria.Utilities;
 using Terraria.DataStructures;
 using SGAmod.Items.Materials.Environment;
+<<<<<<< Updated upstream
+=======
+using Microsoft.Build.Evaluation;
+>>>>>>> Stashed changes
 
 namespace SGAmod.Items.Weapons.Almighty
 {
@@ -44,7 +48,11 @@ namespace SGAmod.Items.Weapons.Almighty
         }
         public override bool CanUseItem(Player player)
         {
+<<<<<<< Updated upstream
             if (player.GetModPlayer<SGAPlayer>().ActionCooldownStack_AddCooldownStack(100, 4, true))
+=======
+            if (player.GetModPlayer<SGAPlayer>().ActionCooldownStack_AddCooldownStack(100, 1, true))
+>>>>>>> Stashed changes
                 return true;
             return false;
         }
@@ -196,9 +204,15 @@ namespace SGAmod.Items.Weapons.Almighty
         public override bool PreDraw(ref Color lightColor)
         {
             float alpha = 1f;
+<<<<<<< Updated upstream
             Texture2D statTex = ModContent.Request<Texture2D>("SGAmod/Textures/Extra_57b").Value;
             Texture2D beamTex = ModContent.Request<Texture2D>("SGAmod/Textures/LightBeam").Value;
             Texture2D glowOrb = ModContent.Request<Texture2D>("SGAmod/Textures/GlowOrb").Value;
+=======
+            Texture2D statTex = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/Extra_57b").Value;
+            Texture2D beamTex = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/LightBeam").Value;
+            Texture2D glowOrb = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/GlowOrb").Value;
+>>>>>>> Stashed changes
             Vector2 offsetbeam = new Vector2(beamTex.Width / 2f, beamTex.Height / 4f);
 
             Vector2 starHalf = statTex.Size() / 2f;
@@ -260,11 +274,19 @@ namespace SGAmod.Items.Weapons.Almighty
                 {
                     List<Vector2> poses = new List<Vector2>();
                     for (float f = 0; f < 2200; f += 25)
+<<<<<<< Updated upstream
                     {
                         poses.Add(new Vector2(Projectile.Center.X + (float)Math.Sin((ii * (MathHelper.TwoPi / max)) + (Main.GlobalTimeWrappedHourly * 12f) + (f / 400f)) * 90f, (Projectile.Center.Y - f)));
                     }
 
                     TrailHelper trail = new TrailHelper("BasicEffectAlphaPass", ModContent.Request<Texture2D>("SGAmod/Textures/TrailEffect").Value);
+=======
+					{
+						poses.Add(new Vector2(Projectile.Center.X + (float)Math.Sin((ii * (MathHelper.TwoPi / max)) + (Main.GlobalTimeWrappedHourly * 12f) + (f / 400f)) * 90f, (Projectile.Center.Y - f)));
+					}
+
+                    TrailHelper trail = new TrailHelper("BasicEffectAlphaPass", ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/TrailEffect").Value);
+>>>>>>> Stashed changes
                     //UnifiedRandom rando = new UnifiedRandom(projectile.whoAmI);
                     Color colorz = Color.Aqua;
                     trail.projsize = Projectile.Hitbox.Size() / 2f;
@@ -315,7 +337,11 @@ namespace SGAmod.Items.Weapons.Almighty
 
                 foreach (CloudBoom cb in boomOfClouds.Where(testby => testby.timeLeft > 0))
                 {
+<<<<<<< Updated upstream
                     Texture2D cloudTex = ModContent.Request<Texture2D>("SGAmod/Textures/Clouds/Clouds" + cb.cloudType).Value;
+=======
+                    Texture2D cloudTex = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Clouds/Clouds" + cb.cloudType).Value;
+>>>>>>> Stashed changes
                     float cbalpha = MathHelper.Clamp(cb.timeLeft / (float)cb.timeLeftMax, 0f, 1f);
                     float cloudfadeAlpha = Math.Min((cb.timeLeftMax - cb.timeLeft) / 12f, 1f) * 0.75f;
 

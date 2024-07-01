@@ -164,7 +164,11 @@ namespace SGAmod.Items.Weapons.Shields
             float alpha = MathHelper.Clamp((30 - Blocktimer) / 8f, 0f, 1f);
             if (alpha > 0f) Main.spriteBatch.Draw(texture, Projectile.Center - Main.screenPosition, new Rectangle?(), Main.hslToRgb((Main.GlobalTimeWrappedHourly * 3f) % 1f, 1f, 0.85f) * alpha, (Projectile.velocity.ToRotation() + facing) + (facingleft ? 0 : MathHelper.Pi) + VisualAngle, origin, Projectile.scale + 0.25f, facingleft ? effect : SpriteEffects.FlipHorizontally, 0);
         }
+<<<<<<< Updated upstream
         public void DrawAdditive(SpriteBatch spriteBatch)
+=======
+        public new void DrawAdditive(SpriteBatch spriteBatch)
+>>>>>>> Stashed changes
         {
             DrawAdd();
         }

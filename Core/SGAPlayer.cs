@@ -269,6 +269,12 @@ namespace SGAmod
 		{
 			Apocalyptical_Kill(damage, hitDirection, pvp, damageSource);
 		}
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+	}
+=======
+>>>>>>> Stashed changes
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
 			
@@ -389,4 +395,8 @@ namespace SGAmod
         }
 
     }
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }
