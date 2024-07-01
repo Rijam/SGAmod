@@ -18,6 +18,8 @@ using Terraria.ModLoader.IO;
 using Terraria.Graphics.Shaders;
 using Terraria.Utilities;
 using SGAmod.Buffs.Debuffs;
+using SGAmod.Items.Weapons.Shields;
+using SGAmod.Items.Weapons.Almighty;
 
 namespace SGAmod
 {
@@ -33,21 +35,60 @@ namespace SGAmod
 
 		// Buffs
 		public bool acidBurn = false;
+		public bool MassiveBleeding = false;
 
 		// Accessories
 		public byte cobwebRepellent = 0;
+		public bool alkalescentHeart = false;
+		public int gamePadAutoAim = 0;
+		public bool transformerAccessory = false;
+		public bool personaDeck = false;
 
-		// Armor
-		public int sandStormTimer = 0;
+        // Armor
+        public int sandStormTimer = 0;
+		public (bool,bool) AcidSet = (false,false);
+		public bool jellybruSet = false;
+
+		//Shield related
+		public bool tpdcpu = false;
+		public bool ShieldBreak = false;
+		public int ShieldType = 0;
+		public int ShieldTypeDelay = 0;
+		public int shieldBlockTime = 0;
+		public float shieldBlockAngle = 0;
+		public float shieldDamageReduce = 0f;
+		public float shieldDamageBoost = 0f;
+		public int heldShield = -1;
+		public int heldShieldReset = 0;
+		public static Dictionary<int,int> ShieldTypes = new Dictionary<int, int>();
+		public (int, int, int) energyShieldAmountAndRecharge = (0, 0, 0);
+		public (int, int) GetEnergyShieldAmountAndRecharge => ((int)(energyShieldAmountAndRecharge.Item1 * techDamage), (int)(energyShieldAmountAndRecharge.Item2 * techDamage));
 
 		//Stat Related
 		public float UseTimeMul = 1f;
 		public float UseTimeMulPickaxe = 1f;
 		public float DoTResist = 1f;
+		public int realIFrames = 0;
 
-		// World
-		public bool Drakenshopunlock = false;
+		//Technology related
+		public int maxBlink = 0;
+		public int electricCharge = 0;
+		public int electricChargeMax = 0;
+		public float electricChargeCost = 1f;
+        public float electricChargeReducedDelay = 1f;
+        public float electricdelay = -500;
+        public int electricRechargeRate = 1;
+        public float electricRechargeRateMul = 1f;
+        public int electricpermboost = 0;
+		public float techDamage = 1f;
+
+        // World
+        public bool Drakenshopunlock = false;
 		public bool DankShrineZone = false;
+
+		// Other
+		public bool noModTeleport = false;
+		
 
 		protected float _critDamage = 0f;
 		public float CritDamage
@@ -67,12 +108,49 @@ namespace SGAmod
 		{
 			Player.breathMax = 200;
 			acidBurn = false;
+			MassiveBleeding = false;
 			sandStormTimer = Math.Max(sandStormTimer - 1, 0);
+			AcidSet = (false,false);
 			UseTimeMul = 1f;
 			UseTimeMulPickaxe = 1f;
 			DoTResist = 1f;
+			techDamage = 1f;
+			shieldDamageReduce = 0f;
+			shieldDamageBoost = 0f;
+			shieldBlockTime = 0;
+			shieldBlockAngle = 0f;
+			realIFrames -= 1;
+			
+			
+
+			gamePadAutoAim = 0;
+
+
+			heldShieldReset--;
+			if (heldShieldReset < 1) heldShield = -1;
 
 			cobwebRepellent = 0;
+			alkalescentHeart = false;
+			transformerAccessory = false;
+			personaDeck = false;
+			noModTeleport = false;
+            tpdcpu = false;
+
+            if (!ShieldBreak) electricdelay -= 1;
+			electricCharge = Math.Min(electricCharge + (electricdelay < 1 ? (int)(electricRechargeRate * electricRechargeRateMul):0),electricChargeMax);
+			electricChargeMax = electricpermboost;
+			electricRechargeRate = 0;
+			electricRechargeRateMul = 1f;
+			electricChargeCost = 1f;
+			electricChargeReducedDelay = 1f;
+			maxBlink = 0;
+			ShieldBreak = false;
+
+			if (ShieldTypeDelay > 0)
+				ShieldTypeDelay--;
+			else
+				ShieldType = 0;
+
 			Drakenshopunlock = false;
 			DankShrineZone = false;
 
@@ -150,6 +228,18 @@ namespace SGAmod
 				Player.lifeRegen -= 15 + (int)(Player.statDefense * 0.90f);
 				Player.statDefense -= 5;
 			}
+			if (MassiveBleeding)
+			{
+				if (Player.lifeRegen > 0)
+					Player.lifeRegen = 0;
+				Player.lifeRegenTime = 0;
+				Player.lifeRegen -= 10;
+			}
+
+			if ((ShieldType < 1 && ShieldBreak) /*|| (Pressured && !SpaceDiverSet)*/)
+			{
+				Player.lifeRegen -= 250;
+			}
 		}
 		public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
 		{
@@ -174,13 +264,22 @@ namespace SGAmod
 			ActionCooldownStack_PreUpdate();
 		}
 
-		public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
+
+        public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
 		{
 			Apocalyptical_Kill(damage, hitDirection, pvp, damageSource);
 		}
 <<<<<<< Updated upstream
+<<<<<<< HEAD
 	}
 =======
+=======
+=======
+<<<<<<< Updated upstream
+	}
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
 			
@@ -301,5 +400,11 @@ namespace SGAmod
         }
 
     }
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 >>>>>>> Stashed changes
 }

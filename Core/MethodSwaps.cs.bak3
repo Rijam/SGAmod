@@ -1,0 +1,78 @@
+﻿using System;
+using System.Linq;
+using Terraria;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria.UI;
+using Terraria.DataStructures;
+using Terraria.GameContent.UI;
+using Idglibrary;
+using Mono.Cecil.Cil;
+using MonoMod.Cil;
+using System.Reflection;
+using Terraria.GameInput;
+using Microsoft.Xna.Framework.Audio;
+using Terraria.Graphics.Shaders;
+using Terraria.GameContent.UI.Elements;
+using Terraria.IO;
+using Terraria.ModLoader.IO;
+using Terraria.Utilities;
+using System.IO;
+using SGAmod.Credits;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using Terraria.Server;
+using tModPorter;
+using Humanizer;
+
+namespace SGAmod
+{
+    public class SGAMethodSwaps
+    {
+        internal static void Apply()
+        {
+            if (/*SGAConfig.Instance.QuestionableDetours*/ true)
+            {
+                SGAmod.Instance.Logger.Debug("Loading Monogame detours, these can be disabled in configs");
+                On_Main.DoUpdate += OverrideCreditsUpdate;
+                On_Main.Draw += Main_Draw;
+            }
+        }
+        private static void Main_Draw(On_Main.orig_Draw orig, Main self, GameTime gameTime)
+        {
+            // 'orig' is a delegate that lets you call back into the original method.
+            // 'self' is the 'this' parameter that would have been passed to the original method.
+            if (CreditsManager.CreditsActive && !SGAmod.ForceDrawOverride) 
+            { 
+                CreditsManager.DrawCredits(gameTime);
+                return;
+            }
+            orig(self, gameTime);
+        }
+        private static void OverrideCreditsUpdate(On_Main.orig_DoUpdate orig, Main self, ref GameTime gameTime)
+        {
+            SGAmod.lastTime = gameTime;
+            if (CreditsManager.queuedCredits)
+            {
+                CreditsManager.RollCredits();
+                CreditsManager.queuedCredits = false;
+            }
+            if (CreditsManager.CreditsActive)
+            {
+                CreditsManager.UpdateCredits(gameTime);
+                return;
+            }
+            orig(self, ref gameTime);
+        }
+
+        public static void RecreateRenderTargetsOnScreenChange(On.Terraria.Main.orig_SetDisplayMode orig, int width, int height, bool fullscreen)
+        {
+            SGAmod.CreateRenderTarget2Ds(width, height, fullscreen);
+            orig(width, height, fullscreen);
+        }
+    }
+}

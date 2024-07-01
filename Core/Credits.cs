@@ -64,7 +64,15 @@ namespace SGAmod.Credits
             line.bufferSpace = 200;
             line.customDrawData = delegate (CreditsLine liner)
             {
+<<<<<<< HEAD
                 Texture2D logo = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/logo_space2_double").Value;
+=======
+<<<<<<< Updated upstream
+                Texture2D logo = ModContent.Request<Texture2D>("logo_space2_double").Value;
+=======
+                Texture2D logo = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/logo_space2_double").Value;
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                 Main.spriteBatch.Draw(logo, liner.position, null, Color.White, 0, logo.Size() / 2f, 1f, default, 0);
             };
             line.font = FontAssets.DeathText.Value;
@@ -76,25 +84,55 @@ namespace SGAmod.Credits
             line.font = FontAssets.DeathText.Value;
             creditsToSpawn.Add(line);
 
+<<<<<<< HEAD
             line = new CreditsLineRainbowFlavor(("IDGCaptainRussia94", "Owner, Director, Lead Coder", "'I'm not weird, you're too normal'"), top);
+=======
+<<<<<<< Updated upstream
+            line = new CreditsLineRainbowFlavor(("IDGCaptainRussia94", "Owner, Director, Lead Coder", "'I'm not weird, your too normal'"), top);
+=======
+            line = new CreditsLineRainbowFlavor(("IDGCaptainRussia94", "Owner, Director, Lead Coder", "'I'm not weird, you're too normal'"), top);
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
             line._colors.Item3 = Color.Lime;
             line.bufferSpace += 64;
             line.customDrawData = delegate (CreditsLine liner)
             {
                 int frame = (int)(CreditsManager.timePassed / 7f) % 7;
 
+<<<<<<< HEAD
                 Texture2D Draken = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/TrueDergon").Value;
+=======
+<<<<<<< Updated upstream
+                Texture2D Draken = Terraria.ModLoader.ModContent.Request<Texture2D>("SGAmod/NPCs/TownNPCs/TrueDergon").Value;
+=======
+                Texture2D Draken = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/TrueDergon").Value;
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                 Vector2 frameSize = new Vector2(Draken.Width, Draken.Height);
 
                 Rectangle rect = new Rectangle(0, (int)(frame * (frameSize.Y / 7)), (int)frameSize.X, (int)(frameSize.Y / 7));
 
                 Main.spriteBatch.Draw(Draken, liner.position + new Vector2(0, -24), rect, Color.White, 0, rect.Size() / 2f, 1f, default, 0);
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+                Texture2D dev = ModContent.Request<Texture2D>("Items/Weapons/DragonCommanderStaff").Value;
+                Main.spriteBatch.Draw(dev, liner.position + new Vector2(0, 122), null, Color.White, 0, dev.Size() / 2f, 1f, SpriteEffects.None, 0);
+                dev = ModContent.Request<Texture2D>("Items/Weapons/DragonRevolver").Value;
+                Main.spriteBatch.Draw(dev, liner.position + new Vector2(120, 50), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
+                dev = ModContent.Request<Texture2D>("Items/Armors/Dev/IDGSet").Value;
+=======
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                 /*Texture2D dev = ModContent.Request<Texture2D>("Items/Weapons/DragonCommanderStaff").Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(0, 122), null, Color.White, 0, dev.Size() / 2f, 1f, SpriteEffects.None, 0);
                 dev = ModContent.Request<Texture2D>("Items/Weapons/DragonRevolver").Value;*
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(120, 50), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);*/
                 Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Items/Armor/IDG/IDGSet").Value;
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(-108, 54), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
 
             };
@@ -109,12 +147,27 @@ namespace SGAmod.Credits
             line.bufferSpace += 64;
             line.customDrawData = delegate (CreditsLine liner)
             {
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+                Texture2D dev = ModContent.Request<Texture2D>("Items/Armors/Dev/Jellybru_Armor_dev_vanity_Idle").Value;
+                Main.spriteBatch.Draw(dev, liner.position + new Vector2(-64, 48f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
+                dev = ModContent.Request<Texture2D>("Items/Weapons/Shields/AegisaltAetherstone").Value;
+                Main.spriteBatch.Draw(dev, liner.position + new Vector2(64, 48f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
+                dev = ModContent.Request<Texture2D>("Items/Weapons/TheJellyBrew").Value;
+                Main.spriteBatch.Draw(dev, liner.position + new Vector2(0, 116f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
+=======
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                 Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Items/Armor/JellyBru/Jellybru_Armor_dev_vanity_Idle").Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(-64, 48f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
                 /*dev = ModContent.Request<Texture2D>("Items/Weapons/Shields/AegisaltAetherstone").Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(64, 48f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
                 dev = ModContent.Request<Texture2D>("Items/Weapons/TheJellyBrew").Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(0, 116f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);*/
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
             };
             creditsToSpawn.Add(line);
 
@@ -154,12 +207,27 @@ namespace SGAmod.Credits
             line._colors.Item3 = Color.Green;
             line.customDrawData = delegate (CreditsLine liner)
             {
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+                Texture2D dev = ModContent.Request<Texture2D>("Items/Armors/Dev/CreeperSet").Value;
+                Main.spriteBatch.Draw(dev, liner.position + new Vector2(110, 48f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
+                dev = ModContent.Request<Texture2D>("Items/Weapons/CreepersThrow").Value;
+                Main.spriteBatch.Draw(dev, liner.position + new Vector2(-110, 48f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
+                dev = ModContent.Request<Texture2D>("Items/Weapons/Stormbreaker").Value;
+                Main.spriteBatch.Draw(dev, liner.position + new Vector2(-160, 48f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
+=======
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                 Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Items/Armor/MisterCreeper/CreeperSet").Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(110, 48f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
                 /*dev = ModContent.Request<Texture2D>("Items/Weapons/CreepersThrow").Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(-110, 48f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
                 dev = ModContent.Request<Texture2D>("Items/Weapons/Stormbreaker").Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(-160, 48f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);*/
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
             };
             creditsToSpawn.Add(line);
 
@@ -169,10 +237,23 @@ namespace SGAmod.Credits
             line.bufferSpace += 96;
             line.customDrawData = delegate (CreditsLine liner)
             {
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+                Texture2D dev = ModContent.Request<Texture2D>("iconOld").Value;
+                Main.spriteBatch.Draw(dev, liner.position + new Vector2(0, 140), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
+                dev = ModContent.Request<Texture2D>("Items/Weapons/WaveBeam").Value;
+                Main.spriteBatch.Draw(dev, liner.position + new Vector2(62, 60), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
+=======
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                 Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/iconOld").Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(0, 140), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
                 /*dev = ModContent.Request<Texture2D>("Items/Weapons/WaveBeam").Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(62, 60), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);*/
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
             };
             creditsToSpawn.Add(line);
 
@@ -202,7 +283,15 @@ namespace SGAmod.Credits
             line.bufferSpace += 96;
             line.customDrawData = delegate (CreditsLine liner)
             {
+<<<<<<< HEAD
                 Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/icon").Value;
+=======
+<<<<<<< Updated upstream
+                Texture2D dev = ModContent.Request<Texture2D>("icon").Value;
+=======
+                Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/icon").Value;
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(0, 140), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
             };
             creditsToSpawn.Add(line);
@@ -298,7 +387,15 @@ namespace SGAmod.Credits
                 int totalFrames = Main.npcFrameCount[Terraria.ID.NPCID.Guide];
                 int frame = (int)(CreditsManager.timePassed / 7f) % totalFrames;
 
+<<<<<<< HEAD
                 Texture2D Jubia = ModContent.Request<Texture2D>("SGAmod/NPCs/TownNPCs/Goat").Value;
+=======
+<<<<<<< Updated upstream
+                Texture2D Jubia = ModContent.Request<Texture2D>("NPCs/TownNPCs/Goat").Value;
+=======
+                Texture2D Jubia = ModContent.Request<Texture2D>("SGAmod/NPCs/TownNPCs/Goat").Value;
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                 Vector2 frameSize = new Vector2(Jubia.Width, Jubia.Height);
 
                 Rectangle rect = new Rectangle(0, (int)(frame * (frameSize.Y / totalFrames)), (int)frameSize.X, (int)(frameSize.Y / totalFrames));
@@ -319,17 +416,38 @@ namespace SGAmod.Credits
             line.delayTimer = 20;
             line.customDrawData = delegate (CreditsLine liner)
             {
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+                Texture2D dedicated = ModContent.Request<Texture2D>("Items/Weapons/Almighty/NuclearOption").Value;
+                Main.spriteBatch.Draw(dedicated, liner.position + new Vector2(-106, 42), null, Color.White, 0, dedicated.Size() / 2f, 1f, default, 0);
+
+                int frame = (int)(CreditsManager.timePassed / 7f) % 10;
+=======
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                 Texture2D dedicated = ModContent.Request<Texture2D>("SGAmod/Items/Weapons/Almighty/NuclearOption").Value;
                 Main.spriteBatch.Draw(dedicated, liner.position + new Vector2(-106, 42), null, Color.White, 0, dedicated.Size() / 2f, 1f, default, 0);
 
                 /*int frame = (int)(CreditsManager.timePassed / 7f) % 10;
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
                 Texture2D NoHitCharm = ModContent.Request<Texture2D>("Items/Accessories/Charms/NoHitCharmlv1").Value;
                 Vector2 frameSize = new Vector2(NoHitCharm.Width, NoHitCharm.Height);
 
                 Rectangle rect = new Rectangle(0, (int)(frame * (frameSize.Y / 10)), (int)frameSize.X, (int)(frameSize.Y / 10));
 
+<<<<<<< HEAD
                 Main.spriteBatch.Draw(NoHitCharm, liner.position + new Vector2(120, 32), rect, Color.White, 0, rect.Size() / 2f, 1f, default, 0);*/
+=======
+<<<<<<< Updated upstream
+                Main.spriteBatch.Draw(NoHitCharm, liner.position + new Vector2(120, 32), rect, Color.White, 0, rect.Size() / 2f, 1f, default, 0);
+=======
+                Main.spriteBatch.Draw(NoHitCharm, liner.position + new Vector2(120, 32), rect, Color.White, 0, rect.Size() / 2f, 1f, default, 0);*/
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
             };
             creditsToSpawn.Add(line);
@@ -430,7 +548,14 @@ namespace SGAmod.Credits
             credits = new List<CreditsLine>();
             creditsToSpawn = new List<CreditsLine>();
             creditsRenderTarget = new RenderTarget2D(Main.graphics.GraphicsDevice, Main.screenWidth, Main.screenHeight, false, Main.graphics.GraphicsDevice.PresentationParameters.BackBufferFormat, DepthFormat.Depth24, 1, RenderTargetUsage.DiscardContents);
+<<<<<<< HEAD
 			
+=======
+<<<<<<< Updated upstream
+=======
+			
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
             AddCreditEntries();
 
             GraphicsDevice GD = Main.graphics.GraphicsDevice;
@@ -471,7 +596,15 @@ namespace SGAmod.Credits
             Main.musicVolume = MathHelper.Clamp(Main.musicVolume+((-0.1f - Main.musicVolume)-Main.musicVolume) * 0.005f,0f,1f);
 
             typeof(Main).GetMethod("DoUpdate_AnimateDiscoRGB", SGAmod.UniversalBindingFlags).Invoke(Main.instance, Array.Empty<object>());
+<<<<<<< HEAD
             //typeof(Main).GetMethod("UpdateAudio",SGAmod.UniversalBindingFlags).Invoke(gameTime, Array.Empty<object>());
+=======
+<<<<<<< Updated upstream
+            typeof(Main).GetMethod("UpdateAudio",SGAmod.UniversalBindingFlags).Invoke(gameTime, Array.Empty<object>());
+=======
+            //typeof(Main).GetMethod("UpdateAudio",SGAmod.UniversalBindingFlags).Invoke(gameTime, Array.Empty<object>());
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
             foreach (CreditsLine line in credits)
             {
@@ -521,7 +654,15 @@ namespace SGAmod.Credits
                 if (line.customDrawDataBefore != default) line.customDrawDataBefore(line);
 
                 DynamicSpriteFontExtensionMethods.DrawString(sb, line.font, strrole, line.position, line.Colors.Item1, 0, new Vector2(strSize1.X, 0) / 2f, 1f, SpriteEffects.None, 0);
+<<<<<<< HEAD
                 DynamicSpriteFontExtensionMethods.DrawString(sb, FontAssets.CombatText[0].Value, strname, line.position + new Vector2(0, strSize1.Y + spaceABit), line.Colors.Item2, 0, new Vector2(strSize2.X, 0) / 2f, 1f, SpriteEffects.None, 0);
+=======
+<<<<<<< Updated upstream
+                DynamicSpriteFontExtensionMethods.DrawString(sb, FontAssets.CombatText[2].Value, strname, line.position + new Vector2(0, strSize1.Y + spaceABit), line.Colors.Item2, 0, new Vector2(strSize2.X, 0) / 2f, 1f, SpriteEffects.None, 0);
+=======
+                DynamicSpriteFontExtensionMethods.DrawString(sb, FontAssets.CombatText[0].Value, strname, line.position + new Vector2(0, strSize1.Y + spaceABit), line.Colors.Item2, 0, new Vector2(strSize2.X, 0) / 2f, 1f, SpriteEffects.None, 0);
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
                 DynamicSpriteFontExtensionMethods.DrawString(sb, FontAssets.ItemStack.Value, strflavor, line.position + new Vector2(0, strSize1.Y + strSize2.Y + spaceABit * 1.2f), (line.Colors.Item3 == Color.Wheat || line.Colors.Item3 == Color.WhiteSmoke || line.Colors.Item3 == Color.AntiqueWhite) ? line.Colors.Item3 : Color.Lerp(line.Colors.Item3, Color.White, 0.5f), 0, new Vector2(strSize3.X, 0) / 2f, 1f, SpriteEffects.None, 0);
                 if (line.customDrawData != default) line.customDrawData(line);
@@ -530,7 +671,15 @@ namespace SGAmod.Credits
             float fadeInAlpha = MathHelper.Clamp(timePassed / 150f, 0f, 1f);
 
             string hinttex = "Hold Arrow keys to scroll";
+<<<<<<< HEAD
             Vector2 hinttexSize1 = FontAssets.CombatText[0].Value.MeasureString(hinttex);
+=======
+<<<<<<< Updated upstream
+            Vector2 hinttexSize1 = FontAssets.CombatText[1].Value.MeasureString(hinttex);
+=======
+            Vector2 hinttexSize1 = FontAssets.CombatText[0].Value.MeasureString(hinttex);
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
             DynamicSpriteFontExtensionMethods.DrawString(sb, FontAssets.CombatText[1].Value,hinttex,new Vector2(creditsRenderTarget.Width,creditsRenderTarget.Height), Color.White * fadeInAlpha, 0, new Vector2(hinttexSize1.X + 64, hinttexSize1.Y),1f,SpriteEffects.None, 0);
 

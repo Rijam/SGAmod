@@ -39,7 +39,15 @@ namespace SGAmod.Items.Weapons.Almighty
             Item.consumable = true;
             Item.noMelee = true;
             Item.shootSpeed = 2f;
+<<<<<<< HEAD
             Item.maxStack = 9999;
+=======
+<<<<<<< Updated upstream
+            Item.maxStack = 30;
+=======
+            Item.maxStack = 9999;
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
             Item.shoot = ModContent.ProjectileType<MegidoProj>();
         }
         public bool UseStacks(SGAPlayer sgaply, int time,  int count = 1)
@@ -227,13 +235,31 @@ namespace SGAmod.Items.Weapons.Almighty
         }
         public override bool PreDraw(ref Color lightColor)
         {
+<<<<<<< HEAD
             for (int i = 0; i < Projectile.oldPos.Length; i++)//dumb hack to get the trails to not appear at 0,0
 			{
+=======
+<<<<<<< Updated upstream
+            for (int i = 0; i < Projectile.oldPos.Length; i++)
+            {
+=======
+            for (int i = 0; i < Projectile.oldPos.Length; i++)//dumb hack to get the trails to not appear at 0,0
+			{
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                 if (Projectile.oldPos[i] == default)
                     Projectile.oldPos[i] = Projectile.position;
             }
 
+<<<<<<< HEAD
             TrailHelper trail = new TrailHelper("DefaultPass", ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/NoiseFix").Value);
+=======
+<<<<<<< Updated upstream
+            TrailHelper trail = new TrailHelper("DefaultPass", ModContent.Request<Texture2D>("SGAmod/Textures/Noise").Value);
+=======
+            TrailHelper trail = new TrailHelper("DefaultPass", ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/NoiseFix").Value);
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
             Color colorz = Color.Turquoise;
             trail.color = delegate (float percent)
@@ -247,7 +273,15 @@ namespace SGAmod.Items.Weapons.Almighty
             trail.strength = ScalePercent;
             trail.DrawTrail(Projectile.oldPos.ToList(), Projectile.Center);
 
+<<<<<<< HEAD
             trail = new TrailHelper("BasicEffectDarkPass", ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/TrailEffect").Value);
+=======
+<<<<<<< Updated upstream
+            trail = new TrailHelper("BasicEffectDarkPass", ModContent.Request<Texture2D>("SGAmod/Textures/TrailEffect").Value);
+=======
+            trail = new TrailHelper("BasicEffectDarkPass", ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/TrailEffect").Value);
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
             trail.projsize = Projectile.Hitbox.Size() / 2f;
             trail.coordMultiplier = new Vector2(1f, 2f);
             trail.coordOffset = new Vector2(0, Main.GlobalTimeWrappedHourly * -2f);
@@ -259,8 +293,18 @@ namespace SGAmod.Items.Weapons.Almighty
             Texture2D mainTex = TextureAssets.Projectile[540].Value;
             float blobSize = (MathHelper.Clamp(Projectile.localAI[0], 0f, 4f) * 0.1f) + (MathHelper.Clamp(Projectile.ai[0], 0f, 30f) * 0.150f);
 
+<<<<<<< HEAD
             Main.EntitySpriteDraw(mainTex, Projectile.Center - Main.screenPosition, null, Color.Lerp(colorz, Color.Black, 0.4f) * trail.strength, 0, mainTex.Size() / 2f, blobSize, default, 0);
             Main.EntitySpriteDraw(mainTex, Projectile.Center - Main.screenPosition, null, Color.Lerp(colorz, Color.White, 0.25f) * 0.75f * trail.strength, 0, mainTex.Size() / 2f, blobSize * 0.75f, default, 0);
+=======
+<<<<<<< Updated upstream
+            Main.spriteBatch.Draw(mainTex, Projectile.Center - Main.screenPosition, null, Color.Lerp(colorz, Color.Black, 0.4f) * trail.strength, 0, mainTex.Size() / 2f, blobSize, default, 0);
+            Main.spriteBatch.Draw(mainTex, Projectile.Center - Main.screenPosition, null, Color.Lerp(colorz, Color.White, 0.25f) * 0.75f * trail.strength, 0, mainTex.Size() / 2f, blobSize * 0.75f, default, 0);
+=======
+            Main.EntitySpriteDraw(mainTex, Projectile.Center - Main.screenPosition, null, Color.Lerp(colorz, Color.Black, 0.4f) * trail.strength, 0, mainTex.Size() / 2f, blobSize, default, 0);
+            Main.EntitySpriteDraw(mainTex, Projectile.Center - Main.screenPosition, null, Color.Lerp(colorz, Color.White, 0.25f) * 0.75f * trail.strength, 0, mainTex.Size() / 2f, blobSize * 0.75f, default, 0);
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
             UnifiedRandom random = new UnifiedRandom(Projectile.whoAmI);
             for (float f = 0; f < MathHelper.Pi; f += MathHelper.TwoPi / 22f)
@@ -268,7 +312,15 @@ namespace SGAmod.Items.Weapons.Almighty
                 float angle = random.NextFloat(MathHelper.TwoPi);
                 Vector2 loc = Vector2.UnitX.RotatedBy(angle) * (random.NextFloat(6f, 26f) * blobSize);
 
+<<<<<<< HEAD
                 Main.EntitySpriteDraw(mainTex, Projectile.Center + loc - Main.screenPosition, null, Color.Lerp(Color.Turquoise, Color.Black, 0.5f) * 0.5f * trail.strength, angle, mainTex.Size() / 2f, new Vector2(blobSize / 12f, blobSize / 6f), default, 0);
+=======
+<<<<<<< Updated upstream
+                Main.spriteBatch.Draw(mainTex, Projectile.Center + loc - Main.screenPosition, null, Color.Lerp(Color.Turquoise, Color.Black, 0.5f) * 0.5f * trail.strength, angle, mainTex.Size() / 2f, new Vector2(blobSize / 12f, blobSize / 6f), default, 0);
+=======
+                Main.EntitySpriteDraw(mainTex, Projectile.Center + loc - Main.screenPosition, null, Color.Lerp(Color.Turquoise, Color.Black, 0.5f) * 0.5f * trail.strength, angle, mainTex.Size() / 2f, new Vector2(blobSize / 12f, blobSize / 6f), default, 0);
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
             }
 
             return false;

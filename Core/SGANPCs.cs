@@ -1,26 +1,64 @@
+using Microsoft.CodeAnalysis;
 using Microsoft.Xna.Framework;
 using SGAmod.Buffs.Debuffs;
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+using SGAmod.Dusts;
+using SGAmod.Items.Weapons.Almighty;
+=======
+<<<<<<< Updated upstream
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 =======
 using SGAmod.Dusts;
 using SGAmod.Items.Weapons.Almighty;
 >>>>>>> Stashed changes
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.UI;
 
 namespace SGAmod
 {
-	public class SGAnpcs : GlobalNPC
+	public class DamageStack
+	{
+		public int time;
+		public int damage;
+
+		public DamageStack(int damage, int time)
+		{
+			this.damage = damage;
+			this.time = time;
+		}
+		public bool Update()
+		{
+			time--;
+			return time < 1;
+		}
+	}
+	public partial class SGAnpcs : GlobalNPC
 	{
 		public override bool InstancePerEntity => true;
 
+		//Debuffs
 		public bool acidBurn = false;
+		public bool gouged = false;
 		public int reducedDefense = 0; // #TODO
 <<<<<<< Updated upstream
 =======
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 		public bool MassiveBleeding = false;
 		public bool DankSlow = false;
 
@@ -63,12 +101,23 @@ namespace SGAmod
 		public int lastHitByItem = 0;
 		public bool NoHit = true;
 		
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 >>>>>>> Stashed changes
 
 		public override void ResetEffects(NPC npc)
 		{
 			acidBurn = false;
+			gouged = false;
+			MassiveBleeding = false;
 			reducedDefense = 0;
+			DankSlow = false;
+
+			damagemul = 1f;
 		}
 
 		public override void UpdateLifeRegen(NPC npc, ref int damage)
@@ -82,10 +131,66 @@ namespace SGAmod
 				if (damage < 5)
 					damage = 5;
 			}
+			if (MassiveBleeding)
+			{
+				if(npc.lifeRegen > 0)
+					npc.lifeRegen = 0;
+				npc.lifeRegen -= 40;
+				if (damage < 10)
+					damage = 10;
+			}
+			if (!npc.dontTakeDamage)
+			{
+				if (damageStacks.Count > 0)
+				{
+					for (int i = 0; i < damageStacks.Count; i++) 
+					{
+						impaled += damageStacks[i].damage;
+						if (damageStacks[i].Update())
+							damageStacks.RemoveAt(i);
+					}
+				}
+
+				impaled += nonStackingImpaled;
+				if (impaled > 0)
+				{
+					if (npc.lifeRegen > 0) npc.lifeRegen = 0;
+
+					int damageDot = (int)((npc.realLife > 0 ? (impaled * 0.1f) : impaled));
+
+					npc.lifeRegen -= damageDot;
+					damage = Math.Max(damageDot / 4, damage);
+				}
+			}
+
 		}
 
 		public override void DrawEffects(NPC npc, ref Color drawColor)
 		{
+			if (IrradiatedAmount > 0)
+			{
+				for (int i = 0; i < Math.Min(12, IrradiatedAmount / 32); i++)
+				{
+					if (Main.rand.Next(100) < 1)
+					{
+						int dust126 = Dust.NewDust(npc.Center + Main.rand.NextVector2Circular(npc.width, npc.height), 0, 0, DustID.ScourgeOfTheCorruptor, 0, 0, 140, new Color(30, 30, 30, 20), 1f);
+						Main.dust[dust126].noGravity = true;
+						Main.dust[dust126].velocity = new Vector2(Main.rand.NextFloat(-1f, 1f), Main.rand.NextFloat(-6f, 1f));
+					}
+				}
+				if (counter % 10 == 0)
+				{
+					for (int dust654 = 0; dust654 < 1; dust654++)
+					{
+						Vector2 randomcircle = new Vector2(Main.rand.Next(-8000, 8000), Main.rand.Next(-8000, 8000));
+						randomcircle.Normalize();
+						Vector2 ogcircle = randomcircle;
+						randomcircle *= (float)(dust654 / 10.00);
+						int dust655 = Dust.NewDust(npc.Center + Main.rand.NextVector2Circular(npc.width, npc.height), 0, 0, ModContent.DustType<RadioDust>(), npc.velocity.X + randomcircle.X * 1f, npc.velocity.Y + randomcircle.Y * 1f, 200, Color.Lime, 0.5f);
+						Main.dust[dust655].noGravity = true;
+					}
+				}
+			}
 			if (acidBurn)
 			{
 				if (Main.rand.Next(5) < 4)
@@ -104,9 +209,30 @@ namespace SGAmod
 				drawColor.G = (byte)(drawColor.G * 0.8f);
 				drawColor.B = (byte)(drawColor.B * 0.2f);
 			}
+			if (gouged)
+			{
+				Vector2 randomCircle = new Vector2(Main.rand.Next(-8000, 8000), Main.rand.Next(-8000, 8000));
+				int dust = Dust.NewDust(npc.Center + randomCircle, 0, 0, DustID.Blood, -npc.velocity.X * 0.3f, 4f + (npc.velocity.Y * -0.4f), 30, default, 0.85f);
+				Main.dust[dust].noGravity = true;
+				Main.dust[dust].color = Main.hslToRgb(0f, 0.5f, 0.35f);
+			}
+			if (MassiveBleeding)
+			{
+				Vector2 randomcircle = new Vector2(Main.rand.Next(-8000, 8000), Main.rand.Next(-8000, 8000));
+				randomcircle.Normalize();
+				int dust = Dust.NewDust(npc.position + randomcircle * (1.2f * (float)npc.width), npc.width + 4, npc.height + 4, 5, npc.velocity.X * 0.4f, (npc.velocity.Y - 7f) * 0.4f, 30, default, 1.5f);
+				Main.dust[dust].noGravity = true;
+				Main.dust[dust].color = Main.hslToRgb(0f, 0.5f, 0.35f);
+			}
 		}
 <<<<<<< Updated upstream
 =======
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
         public override void OnHitByItem(NPC npc, Player player, Item item, NPC.HitInfo hit, int damageDone)
         {
@@ -165,6 +291,12 @@ namespace SGAmod
 		}
 		
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 >>>>>>> Stashed changes
 	}
 }

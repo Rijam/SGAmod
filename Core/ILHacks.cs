@@ -7,6 +7,7 @@ using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using System.Reflection;
 using Microsoft.Xna.Framework;
+using Terraria.GameInput;
 
 namespace SGAmod
 {
@@ -17,18 +18,78 @@ namespace SGAmod
 		{
 			//SGAmod.Instance.Logger.Debug("Loading an unhealthy amount of IL patches");
 			SGAmod.Instance.Logger.Debug("Loading IL Edits");
-			Terraria.IL_Player.StickyMovement += AddCustomWebsCollision;
+			IL_Player.StickyMovement += AddCustomWebsCollision;
+			/*IL_LockOnHelper.Update += CursorHack;
+			IL_LockOnHelper.SetUP += CursorAimingHack;*/
 
-			//PrivateClassEdits.ApplyPatches();
+			PrivateClassEdits.ApplyPatches();
 		}
 		internal static void Unpatch()
 		{
-			//PrivateClassEdits.RemovePatches();
+			PrivateClassEdits.RemovePatches();
 		}
 
-		//Allows custom-tiles for web collisions
+		//Modifies Gamepad Lock On Functions
+		internal static void CursorHack(ILContext il)
+		{
+			ILCursor c = new ILCursor(il);
+			MethodInfo HackTheMethod = typeof(PlayerInput).GetMethod("get_UsingGamepad", BindingFlags.Public | BindingFlags.Static);
+			c.TryGotoNext(i => i.MatchCall(HackTheMethod));
+			c.RemoveRange(2); //This might be an issue.
+							  //Basically this above part deletes the "if" statement that keeps the following gamepad code from working, if this was a more modern patch of mine(IDG), I'd add an OR statement here
+							  //If any mod patches this method, 1. why tho and 2. hell will come.
 
-		private delegate int CollisionOtherCobwebsDelegate(Player player, int starterNumber);
+			HackTheMethod = typeof(LockOnHelper).GetMethod("SetActive", BindingFlags.NonPublic | BindingFlags.Static);
+			c.TryGotoNext(i => i.MatchCall(HackTheMethod));
+			c.Emit(OpCodes.Pop);
+			c.EmitDelegate<Func<bool>>(() =>
+			{
+				return PlayerInput.UsingGamepad || Main.LocalPlayer.GetModPlayer<SGAPlayer>().gamePadAutoAim > 0;
+			});
+
+			c.TryGotoNext(i => i.MatchRet());
+			c.Remove();//Another removal, this one gets rid of the return so the code can run past this point
+
+			var label = c.DefineLabel();
+
+			c.EmitDelegate<Func<bool>>(() =>
+			{
+				return !PlayerInput.UsingGamepad && Main.LocalPlayer.GetModPlayer<SGAPlayer>().gamePadAutoAim < 1;
+			});
+			c.Emit(OpCodes.Brfalse_S, label);
+			c.Emit(OpCodes.Ret);
+			c.MarkLabel(label);
+
+			HackTheMethod = typeof(LockOnHelper).GetMethod("get_PredictedPosition", BindingFlags.Public | BindingFlags.Static);
+			c.TryGotoNext(i => i.MatchCall(HackTheMethod));
+			c.Index += 1;
+			c.EmitDelegate<AutoAimOverrideDelegate>(AutoAimOverride);//This part is used to hack the "predicted" position to, not be predicted, if the item we're using is an IHitScanItem interface type
+			
+        }
+
+		static internal void CursorAimingHack (ILContext il) //Removes aim prediction with hitscan items.
+		{
+			ILCursor c = new ILCursor(il);
+			MethodInfo HackTheMethod = typeof(LockOnHelper).GetMethod("get_PredictedPosition", BindingFlags.Public | BindingFlags.Static);
+            c.TryGotoNext(i => i.MatchCall(HackTheMethod));
+            c.Index++;
+            c.EmitDelegate<AutoAimOverrideDelegate>(AutoAimOverride);//This part is used to hack the "predicted" position to, not be predicted, if the item we're using is an IHitScanItem interface type
+        }
+
+		private delegate Vector2 AutoAimOverrideDelegate(Vector2 predictedLocation);
+
+		static private AutoAimOverrideDelegate AutoAimOverride = delegate (Vector2 predictedLocation)
+		{
+			if (Main.LocalPlayer.HeldItem?.ModItem is IHitScanItem)
+			{
+				return LockOnHelper.AimedTarget.Center + LockOnHelper.AimedTarget.velocity;
+			}
+
+			return predictedLocation;
+		};
+        //Allows custom-tiles for web collisions
+
+        private delegate int CollisionOtherCobwebsDelegate(Player player, int starterNumber);
 		private static int CollisionOtherCobwebsMethod(Player player, int starterNumber)
 		{
 			if (SGAWorld.modtimer > 120)

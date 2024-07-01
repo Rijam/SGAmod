@@ -29,6 +29,13 @@ using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using System.Reflection;
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+using SGAmod.Items.Weapons.Shields;
+using static SGAmod.EffectsSystem;
+=======
+<<<<<<< Updated upstream
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 =======
 using Terraria.Graphics.CameraModifiers;
 using SGAmod.Items.Weapons.Shields;
@@ -36,6 +43,10 @@ using static SGAmod.EffectsSystem;
 using SGAmod.Items.Weapons.Almighty;
 
 >>>>>>> Stashed changes
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 /*
 using CalamityMod;
 using CalamityMod.CalPlayer;
@@ -117,37 +128,134 @@ namespace SGAmod
 
         }
 
+        //Hotkeys
+        internal static ModKeybind ToggleRecipeHotKey;
+        internal static ModKeybind ToggleGamepadKey;
+
+        //IDK
+        public static bool ForceDrawOverride = false;
+        public static GameTime lastTime = new GameTime();
+        public static (int, int, bool) ExtractedItem = (-1, -1, false);
+
+        //Shader
+        public static RenderTarget2D drawnScreen;
+        public static RenderTarget2D drawnScreenAdditiveTextures;
+        public static Effect TrailEffect;
+        public static Effect RadialEffect;
+        public static Effect CataEffect;
+        public static Effect TextureBlendEffect;
+
+        //Screenshake
+        public static float _screenShake = 0;
+        public static float ScreenShake
+        {
+            get
+            {
+                if (Main.gameMenu)
+                    return 0;
+                return Math.Max(_screenShake * (SGAConfigClient.Instance.ScreenShakeMul / 100f), 0);
+            }
+            set
+            {
+                _screenShake = value;
+            }
+        }
+        public static void AddScreenShake(float ammount, float distance = -1, Vector2 origin = default)
+        {
+            if (Main.dedServ)
+                return;
+            if (origin != default)
+            {
+                ammount *= MathHelper.Clamp((1f - (Vector2.Distance(origin, Main.LocalPlayer.Center) / distance)), 0f, 1f);
+            }
+            _screenShake += ammount;
+        }
+        public static List<ScreenExplosion> screenExplosions = new List<ScreenExplosion>();
+        public static ScreenExplosion AddScreenExplosion(Vector2 here, int time, float str, float distance = 3200)
+        {
+            if (Main.dedServ)
+                return null;
+            if (!SGAConfigClient.Instance.ScreenFlashExplosions)
+                return null;
+
+            ScreenExplosion explode = new ScreenExplosion(here, time, str);
+
+            screenExplosions.Add(explode);
+
+            Overlays.Scene.Activate("SGAmod:ScreenExplosions");
+            return explode;
+        }
+        public static RenderTarget2D screenExplosionCopy;
+
+        //Expertise
         public static int ExpertiseCustomCurrencyID;
         public static CustomCurrencySystem ExpertiseCustomCurrencySystem;
 
+        //Universal
 		public static readonly BindingFlags UniversalBindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
+
+        //Lists
+        public static Dictionary<int, Color> GemColors;
+        public static int[,] WorldOres = {{ ItemID.CopperOre, ItemID.TinOre },{ItemID.IronOre, ItemID.LeadOre},{ItemID.SilverOre,ItemID.TungstenOre},{ItemID.GoldOre,ItemID.PlatinumOre}
+        ,{ItemID.PalladiumOre,ItemID.CobaltOre},{ItemID.OrichalcumOre,ItemID.MythrilOre},{ItemID.TitaniumOre,ItemID.AdamantiteOre}};
 
 #pragma warning restore CA2211 // Non-constant fields should not be visible
 
-		public override void Load()
+        
+
+        public override void Load()
         {
+            SGAMethodSwaps.Apply();
             Instance = this;
 
             ExpertiseCustomCurrencySystem = new ExpertiseCurrency(ModContent.ItemType<Items.Misc.ExpertiseItem>(), 999L);
             ExpertiseCustomCurrencyID = CustomCurrencyManager.RegisterCurrency(ExpertiseCustomCurrencySystem);
 
+            ToggleRecipeHotKey = KeybindLoader.RegisterKeybind(Instance, "Abilities/Cycle Recipes", Microsoft.Xna.Framework.Input.Keys.V);
+            ToggleGamepadKey = KeybindLoader.RegisterKeybind(Instance, "Cycle Aiming Style", Microsoft.Xna.Framework.Input.Keys.Z);
+
 			if (!Main.dedServ)
 			{
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+
+
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 				Ref<Effect> screenRef = new(Assets.Request<Effect>("Effects/Shockwave", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value);
 				Filters.Scene["SGAmod:Shockwave"] = new Filter(new ScreenShaderData(screenRef, "Shockwave"), EffectPriority.VeryHigh);
 				Filters.Scene["SGAmod:ShockwaveBanshee"] = new Filter(new ScreenShaderData(screenRef, "Shockwave"), EffectPriority.VeryHigh);
 =======
+<<<<<<< HEAD
 
 
 				//Ref<Effect> screenRef = new(Assets.Request<Effect>("Effects/Shockwave", /*, ReLogic.Content.AssetRequestMode.ImmediateLoad*/).Value);
 				Filters.Scene["SGAmod:Shockwave"] = new Filter(new ScreenShaderData(Assets.Request<Effect>("Effects/Shockwave" , ReLogic.Content.AssetRequestMode.ImmediateLoad), "Shockwave"), EffectPriority.VeryHigh);
 				Filters.Scene["SGAmod:ShockwaveBanshee"] = new Filter(new ScreenShaderData(Assets.Request<Effect>("Effects/Shockwave" , ReLogic.Content.AssetRequestMode.ImmediateLoad), "Shockwave"), EffectPriority.VeryHigh);
 >>>>>>> Stashed changes
+=======
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
-				//Overlays.Scene["SGAmod:ScreenExplosions"] = new SGAScreenExplosionsOverlay(); TODO
-			}
 
+<<<<<<< HEAD
+=======
+				//Ref<Effect> screenRef = new(Assets.Request<Effect>("Effects/Shockwave", /*, ReLogic.Content.AssetRequestMode.ImmediateLoad*/).Value);
+				Filters.Scene["SGAmod:Shockwave"] = new Filter(new ScreenShaderData(Assets.Request<Effect>("Effects/Shockwave" , ReLogic.Content.AssetRequestMode.ImmediateLoad), "Shockwave"), EffectPriority.VeryHigh);
+				Filters.Scene["SGAmod:ShockwaveBanshee"] = new Filter(new ScreenShaderData(Assets.Request<Effect>("Effects/Shockwave" , ReLogic.Content.AssetRequestMode.ImmediateLoad), "Shockwave"), EffectPriority.VeryHigh);
+>>>>>>> Stashed changes
+
+
+<<<<<<< Updated upstream
+
+                TrailEffect = Assets.Request<Effect>("Effects/trailShaders", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+
+                RadialEffect = Assets.Request<Effect>("Effects/Radial", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+                CataEffect = Assets.Request<Effect>("Effects/CataLogo", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+=======
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 <<<<<<< Updated upstream
 			SGAILHacks.Patch();
 =======
@@ -156,6 +264,10 @@ namespace SGAmod
 
                 RadialEffect = Assets.Request<Effect>("Effects/Radial", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 CataEffect = Assets.Request<Effect>("Effects/CataLogo" , ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                 TextureBlendEffect = Assets.Request<Effect>("Effects/TextureBlend", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 
             }
@@ -178,6 +290,12 @@ namespace SGAmod
             SGAILHacks.Patch();
 
             
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 >>>>>>> Stashed changes
 		}
 
@@ -187,14 +305,38 @@ namespace SGAmod
 			SGAILHacks.Unpatch();
 <<<<<<< Updated upstream
 =======
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
             if (!Main.dedServ)
             {
                 //Items.Weapons.Almighty.CataLogo.Unload();
             }
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 >>>>>>> Stashed changes
 		}
+
+        
+        
+        
     }
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+    public class SGAmodSystem : ModSystem
+    {
+        public delegate void PostUpdateEverythingDelegate();
+=======
+<<<<<<< Updated upstream
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 =======
     public partial class SGAmodSystem : ModSystem
     {
@@ -205,10 +347,21 @@ namespace SGAmod
 			Overlays.Scene.Deactivate("SGAmod:ScreenExplosions");
 		}
 		public delegate void PostUpdateEverythingDelegate();
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
         public static event PostUpdateEverythingDelegate PostUpdateEverythingEvent;
 
         public override void PostUpdateEverything()
         {
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+            if (SGAmod._screenShake > 0)
+                SGAmod._screenShake -= 1;
+=======
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 			Terraria.Cinematics.CinematicManager.Instance.Update(new GameTime());
 			RaysOfControlOrb.UpdateAll();
 			if (SGAmod._screenShake > 0)
@@ -218,6 +371,10 @@ namespace SGAmod
 			}
 				
                
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
             PostUpdateEverythingEvent?.Invoke();
 
             if (SGAmod.screenExplosions.Count > 0)
@@ -245,6 +402,14 @@ namespace SGAmod
         {
             SGAInterface.ModifyInterfaceLayers(layers);
         }
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+    }
+
+    
+=======
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
 		public delegate void ModifyTransformMatrixDelegate(ref SpriteViewMatrix Transform);
 		public static event ModifyTransformMatrixDelegate ModifyTransformMatrixEvent;
@@ -262,4 +427,8 @@ namespace SGAmod
 
     
 >>>>>>> Stashed changes
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 }

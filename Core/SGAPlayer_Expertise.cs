@@ -225,12 +225,13 @@ namespace SGAmod
         }
 
 
+
         public void Expertise_GenerateNewBossList()
         {
 
             //Prehardmode Bosses
 
-            // addtolistmodded("CopperWraith", 100);
+            Expertise_AddToListModded("CopperWraith", 100);
 
             Expertise_AddToList(NPCID.KingSlime, 100);
 
@@ -249,7 +250,7 @@ namespace SGAmod
 
             Expertise_AddToList(NPCID.QueenBee, 150);
 
-            // addtolistmodded("SpiderQueen", 250);
+            Expertise_AddToListModded("SpiderQueen", 250);
 
             // addtolistmodded("CaliburnGuardian", 125);
 
@@ -266,7 +267,7 @@ namespace SGAmod
 
             //Hardmode Bosses
 
-            // addtolistmodded("CobaltWraith", 300);
+            Expertise_AddToListModded("CobaltWraith", 300);
             // addtolistmodded("Cirno", 300);
             Expertise_AddToList(NPCID.QueenSlimeBoss, 300);
             Expertise_AddToList(NPCID.TheDestroyer, 300);

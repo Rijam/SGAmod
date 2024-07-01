@@ -12,10 +12,34 @@ Mods: {
 				FormerHavocItem: Former Havoc mod item
 				DedicatedPhilBill: Dedicated to PhilBill44, and preserving his work
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+				BarWarning: Crafting this will anger something...
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+			}
+
+			Conditions.NotWarned: Don't anger the Copper Wraith.
+		}
+
+		Buffs: {
+<<<<<<< Updated upstream
+=======
+=======
+				BarWarning: Crafting this will anger something...
+				ForgeLock: This recipe has been disabled by a powerful entity...
+			}
+
+			Conditions: {
+				NotWarned: Don't anger the Copper Wraith.
+				CobaltWraith: Defeat the Cobalt Wraith.
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 			}
 		}
 
 		Buffs: {
+<<<<<<< HEAD
 =======
 				BarWarning: Crafting this will anger something...
 				ForgeLock: This recipe has been disabled by a powerful entity...
@@ -28,6 +52,9 @@ Mods: {
 		}
 
 		Buffs: {
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 			RadioBuff: {
 				DisplayName: Irridiated
 				Description: Nor for players to see!
@@ -52,6 +79,12 @@ Mods: {
 				SlowPrompt: (Hold LEFT CONTROL for more info on Dank Slow)
 			}
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 >>>>>>> Stashed changes
 			AcidBurn: {
 				DisplayName: Acid Burn
@@ -60,12 +93,32 @@ Mods: {
 
 			FamesHungerBuff: {
 				DisplayName: Fames Hunger Buff
-				Description: Mods.SGAmod.Buffs.FamesHungerBuff.Description
+				Description: Acidically consume everything, even yourself
 			}
 
 			SandySwiftnessBuff: {
 				DisplayName: Sandy Swiftness Buff
 				Description: Mods.SGAmod.Buffs.SandySwiftnessBuff.Description
+			}
+
+			Gouged: {
+				DisplayName: Gouged
+				Description: Mods.SGAmod.Buffs.Gouged.Description
+			}
+
+			MassiveBleeding: {
+				Description: Mods.SGAmod.Buffs.MassiveBleeding.Description
+				DisplayName: Massive Bleeding
+			}
+
+			RadioDebuff: {
+				DisplayName: Radio Debuff
+				Description: Mods.SGAmod.Buffs.RadioDebuff.Description
+			}
+
+			ShieldBreak: {
+				DisplayName: Shield Break
+				Description: Mods.SGAmod.Buffs.ShieldBreak.Description
 			}
 		}
 
@@ -77,7 +130,18 @@ Mods: {
 		}
 
 		Configs: {
-			SGAConfig.DisplayName: SGA Server Options
+			SGAConfig: {
+				DisplayName: SGA Server Options
+
+				QuestionableDetours: {
+					Tooltip:
+						'''
+						Enables/Disables Core Monogame detours, turning these may be required to get better logs/stablize the game
+						These are used for SGAmod's credit sequence
+						'''
+					Label: Update/Draw Detours
+				}
+			}
 
 			SGAConfigClient: {
 				DisplayName: SGA Client Options
@@ -170,6 +234,12 @@ Mods: {
 		}
 <<<<<<< Updated upstream
 =======
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
 		IFormerHavocItem: {
 			DankWaveStaff: {
@@ -180,9 +250,20 @@ Mods: {
 
 		Keybinds: {
 			"Abilities/Cycle Recipes.DisplayName": Abilities/Cycle Recipes
+<<<<<<< HEAD
 			"Cycle Aiming Style.DisplayName": Cycle Aiming Style
 		}
 >>>>>>> Stashed changes
+=======
+<<<<<<< Updated upstream
+			"Cycle Aiming Style.DisplayName": Cycle  Aiming  Style
+		}
+=======
+			"Cycle Aiming Style.DisplayName": Cycle Aiming Style
+		}
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 	}
 }
 

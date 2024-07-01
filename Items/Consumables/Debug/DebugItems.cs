@@ -180,13 +180,16 @@ namespace SGAmod.Items.Consumables.Debug
         }
     }
     
+<<<<<<< HEAD
+=======
 
-    /*
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
+
     public class Debug10 : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Debug-Cataclysmic Mothron Head to Unlimited Brit Power of supreme Manifest Destiny");
+            //DisplayName.SetDefault("Debug-Cataclysmic Mothron Head to Unlimited Brit Power of supreme Manifest Destiny");
         }
 
         public override void SetDefaults()
@@ -203,7 +206,7 @@ namespace SGAmod.Items.Consumables.Debug
             get { return "Terraria/Images/Gore_687"; }
         }
     }
-    */
+   
 
     /*
     public class Debug9 : ModItem

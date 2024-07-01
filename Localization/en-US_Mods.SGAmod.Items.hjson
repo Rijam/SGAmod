@@ -220,8 +220,6 @@ AlkalescentHeart: {
 	DisplayName: Alkalescent Heart
 	Tooltip:
 		'''
-		#TODO not implemented
-
 		Dealing crits debuff enemies, doing more damage while they are debuffed as follows:
 		While not poisoned, poison enemies
 		While poisoned, do 5% more damage and next crit Venoms
@@ -349,7 +347,7 @@ DankWoodFence: {
 }
 
 DankWoodItem: {
-	DisplayName: Dank Wood Item
+	DisplayName: Dank Wood
 	Tooltip: "'It smells odd...'"
 }
 
@@ -499,17 +497,21 @@ EngineerLeggings: {
 
 FamesChestplate: {
 	DisplayName: Fames Chestplate
-	Tooltip: ""
+	Tooltip: 6% increased ranged damage
 }
 
 FamesHelmet: {
-	DisplayName: Fames Helmet
-	Tooltip: ""
+	DisplayName: Fames Helm
+	Tooltip: 6% increased ranged crit chance
 }
 
 FamesLeggings: {
 	DisplayName: Fames Leggings
-	Tooltip: ""
+	Tooltip:
+		'''
+		6% increased ranged damage
+		15% increased movement speed
+		'''
 }
 
 ManifestedSandTosser: {
@@ -588,6 +590,12 @@ IlluminantEssence: {
 }
 <<<<<<< Updated upstream
 =======
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
 MidasTouch: {
 	Tooltip:
@@ -859,9 +867,18 @@ StygianCore: {
 	DisplayName: Stygian Core
 	Tooltip: Torn from Stygian Veins with a mining tool, this star is burning manifested fabric...
 }
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
 Debug11: {
 	DisplayName: Debug11
 	Tooltip: ""
 }
 >>>>>>> Stashed changes
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4

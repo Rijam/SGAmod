@@ -55,6 +55,23 @@ namespace SGAmod.Items
 				tooltips.Add(new TooltipLine(Mod, "Dedicated", Idglib.ColorText(c, Language.GetTextValue("Mods.SGAmod.Common.Tooltip.DedicatedPhilBill"))));
 			}
 <<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+            
+				
+                if (SGAWorld.downedWraiths < 1)
+                {
+                    Color c = Main.hslToRgb(0.5f, 0.1f, 0.7f);
+                    
+					Recipe recipe = Main.recipe[item.type];
+                    if (recipe.HasTile(TileID.Furnaces) && (recipe.HasResult(ItemID.CopperBar) || recipe.HasResult(ItemID.TinBar) || recipe.HasResult(ItemID.IronBar) || recipe.HasResult(ItemID.LeadBar) || recipe.HasResult(ItemID.SilverBar) || recipe.HasResult(ItemID.TungstenBar) || recipe.HasResult(ItemID.GoldBar) || recipe.HasResult(ItemID.PlatinumBar)))
+						tooltips.Add(new TooltipLine(Mod, "WraithClue", Idglib.ColorText(c, Language.GetTextValue("Mods.SGAmod.Common.Tooltip.BarWarning"))));
+					
+                }
+        }
+=======
+<<<<<<< Updated upstream
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 =======
 			
 			if (!SGAWorld.downedCopperWraith)
@@ -87,5 +104,6 @@ namespace SGAmod.Items
 			}
 >>>>>>> Stashed changes
 		}
+>>>>>>> Stashed changes
 	}
 }

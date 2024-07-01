@@ -16,7 +16,7 @@ namespace SGAmod.Items.Accessories.Expert
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
-			//player.GetModPlayer<SGAPlayer>().alkalescentHeart = true; #TODO
+			player.GetModPlayer<SGAPlayer>().alkalescentHeart = true; //#TODO
 		}
 
 		public override void SetDefaults()

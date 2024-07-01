@@ -1,9 +1,55 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.Graphics.Effects;
+using Terraria.Graphics.Shaders;
+using Terraria.ID;
+using Terraria.Utilities;
+using Terraria.GameContent.UI;
+using Terraria.UI;
+using Terraria.DataStructures;
+using Terraria.Graphics;
+using ReLogic.Graphics;
+using SGAmod.Items;
+using System.Reflection;
+using static SGAmod.EffectsSystem;
+
 
 namespace SGAmod
 {
+    internal class SGAUI : UIState
+    {
+        public static void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
+        {
+            int foundindex = layers.FindIndex(layer => layer.Name == "Vanilla: Resource Bars");
+            if (foundindex != -1)
+                layers.Insert(foundindex, new LegacyGameInterfaceLayer("SGAmod: HUD", DrawHUD, InterfaceScaleType.UI ));
+        }
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            base.Draw(spriteBatch);
+        }
+        protected override void DrawSelf(SpriteBatch spriteBatch)
+        {
+            base.DrawSelf(spriteBatch);
+            Player locply = Main.LocalPlayer;
+            SGAPlayer modply = locply.GetModPlayer<SGAPlayer>();
+            float perc = 0; //(float)modply.boosterPowerLeft / (float)modply.boosterPowerLeftMax;
+            Texture2D texture = ModContent.Request<Texture2D>("SGAmod/Core/ActionCooldown").Value;// ModContent.Request<Texture2D>("BoostBar")
+            int offsetY = -texture.Height + SGAConfigClient.Instance.HUDDisplacement;
 
 <<<<<<< Updated upstream
 =======
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
             if (modply.CooldownStacks != null && modply.CooldownStacks.Count > 0)
             {
@@ -130,13 +176,29 @@ namespace SGAmod
                     SGAmod mod = SGAmod.Instance;
                     SGAPlayer modply = locply.GetModPlayer<SGAPlayer>();
                     float perc = 100; //(float)modply.boosterPowerLeft / (float)modply.boosterPowerLeftMax;
+<<<<<<< HEAD
                     Texture2D texture = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/ActionCooldown").Value;// ModContent.Request<Texture2D>("BoostBar").Value;
+=======
+<<<<<<< Updated upstream
+                    Texture2D texture = ModContent.Request<Texture2D>("SGAmod/Core/ActionCooldown").Value;// ModContent.Request<Texture2D>("BoostBar").Value;
+=======
+                    Texture2D texture = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/ActionCooldown").Value;// ModContent.Request<Texture2D>("BoostBar").Value;
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                     int offsetY = -texture.Height + SGAConfigClient.Instance.HUDDisplacement;
 
 
                     if (modply.CooldownStacks != null && modply.CooldownStacks.Count > 0)
                     {
+<<<<<<< HEAD
                         texture = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/ActionCooldown").Value;
+=======
+<<<<<<< Updated upstream
+                        texture = ModContent.Request<Texture2D>("SGAmod/Core/ActionCooldown").Value;
+=======
+                        texture = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/ActionCooldown").Value;
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                         int drawx = (int)(-texture.Width / 4f);
                         int drawy = (int)(48 + offsetY);
 
@@ -292,5 +354,11 @@ namespace SGAmod
             return draw;
         }
     }
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 >>>>>>> Stashed changes
 }

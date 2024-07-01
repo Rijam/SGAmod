@@ -122,9 +122,9 @@ namespace SGAmod
 	{
 		float ElectricChargeScalingPerUse();
 
-		/*int MaxElectricCharge();
+		int MaxElectricCharge();
 		int ElectricChargePerUse();
-		int ElectricChargeWhileInUse();*/
+		int ElectricChargeWhileInUse();
 	}
 	public interface ISGABoss
 	{

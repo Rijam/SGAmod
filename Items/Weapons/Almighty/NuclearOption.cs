@@ -112,7 +112,15 @@ namespace SGAmod.Items.Weapons.Almighty
 
         public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
         {
+<<<<<<< HEAD
             Texture2D inner = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/BoostBar").Value;
+=======
+<<<<<<< Updated upstream
+            Texture2D inner = ModContent.Request<Texture2D>("SGAmod/Textures/BoostBar").Value;
+=======
+            Texture2D inner = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/BoostBar").Value;
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
             Vector2 slotsize = new Vector2(52f, 52f) * scale;
             //position -= slotsize * Main.inventoryScale / 2f - frame.Size() * scale / 2f;
@@ -301,8 +309,18 @@ namespace SGAmod.Items.Weapons.Almighty
             float alpha5 = MathHelper.Clamp((Projectile.timeLeft - 20f) / 20f, 0f, 1f);
 
             Texture2D explosionTex = TextureAssets.Projectile[Projectile.type].Value;
+<<<<<<< HEAD
             Texture2D lightBeamTex = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/LightBeam").Value;
             Texture2D glowOrbTex = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/GlowOrb").Value;
+=======
+<<<<<<< Updated upstream
+            Texture2D lightBeamTex = ModContent.Request<Texture2D>("SGAmod/Textures/LightBeam").Value;
+            Texture2D glowOrbTex = ModContent.Request<Texture2D>("SGAmod/Textures/GlowOrb").Value;
+=======
+            Texture2D lightBeamTex = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/LightBeam").Value;
+            Texture2D glowOrbTex = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/GlowOrb").Value;
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
             Vector2 exploorig = new Vector2(explosionTex.Width, explosionTex.Height / 7) / 2f;
             Vector2 lightorig = new Vector2(lightBeamTex.Width, lightBeamTex.Height / 4) / 2f;
@@ -441,7 +459,15 @@ namespace SGAmod.Items.Weapons.Almighty
             {
                 for (float f = -1f; f < 2; f += 2)
                 {
+<<<<<<< HEAD
                     RadialEffect.Parameters["overlayTexture"].SetValue(ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/Fire").Value);
+=======
+<<<<<<< Updated upstream
+                    RadialEffect.Parameters["overlayTexture"].SetValue(ModContent.Request<Texture2D>("SGAmod/Textures/Fire").Value);
+=======
+                    RadialEffect.Parameters["overlayTexture"].SetValue(ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/Fire").Value);
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
                     RadialEffect.Parameters["alpha"].SetValue(0.50f);
                     RadialEffect.Parameters["texOffset"].SetValue(new Vector2(f * Main.GlobalTimeWrappedHourly * 0.25f, -Main.GlobalTimeWrappedHourly * 0.575f));
                     RadialEffect.Parameters["texMultiplier"].SetValue(new Vector2(3f, 1f + i));
@@ -455,7 +481,15 @@ namespace SGAmod.Items.Weapons.Almighty
                     Main.spriteBatch.Draw(TextureAssets.BlackTile.Value, TextureAssets.BlackTile.Size() * 16f, null, Color.White, 0, TextureAssets.BlackTile.Size() * 0.5f, 96f, SpriteEffects.None, 0f);
                 }
             }
+<<<<<<< HEAD
             RadialEffect.Parameters["overlayTexture"].SetValue(ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/Fire").Value);
+=======
+<<<<<<< Updated upstream
+            RadialEffect.Parameters["overlayTexture"].SetValue(ModContent.Request<Texture2D>("SGAmod/Textures/Fire").Value);
+=======
+            RadialEffect.Parameters["overlayTexture"].SetValue(ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/Fire").Value);
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
             RadialEffect.Parameters["alpha"].SetValue(5f);
             RadialEffect.Parameters["texOffset"].SetValue(new Vector2(0, -Main.GlobalTimeWrappedHourly * 0.2575f));
             RadialEffect.Parameters["texMultiplier"].SetValue(new Vector2(0.5f, 1f));
@@ -493,7 +527,15 @@ namespace SGAmod.Items.Weapons.Almighty
             Main.spriteBatch.End();
             Main.spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, RasterizerState.CullCounterClockwise, null, Main.GameViewMatrix.TransformationMatrix);
 
+<<<<<<< HEAD
             RadialEffect.Parameters["overlayTexture"].SetValue(ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/Fire").Value);
+=======
+<<<<<<< Updated upstream
+            RadialEffect.Parameters["overlayTexture"].SetValue(ModContent.Request<Texture2D>("SGAmod/Textures/Fire").Value);
+=======
+            RadialEffect.Parameters["overlayTexture"].SetValue(ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/Fire").Value);
+>>>>>>> Stashed changes
+>>>>>>> a400078764b98522fee96ded515f61837496b4c4
             RadialEffect.Parameters["alpha"].SetValue(4f * alpha);
             RadialEffect.Parameters["texOffset"].SetValue(new Vector2(0, Main.GlobalTimeWrappedHourly * 0.575f));
             RadialEffect.Parameters["texMultiplier"].SetValue(new Vector2(3f, 0.75f));
