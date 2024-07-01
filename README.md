@@ -7,16 +7,12 @@ Join the Discord server: https://discord.gg/aGy34Xw
 
 Trail Helper doesnt perfectly work
 
-Cobalt Wraith's Swords always spin to the left.
-
 Just Block doesnt quite work.
 
 Cap Shield Proj doesnt spawn.
 
 Wraith Targetting pad doesnt work (IDK how to IL edit stuff yet).
 
-Credits dont work (The TML wiki is not helping with monomod/hookingpoint stuff).
+Credits cant be accessed properly
 
 Contagion and Tidal Wave are quite funky.
-
-Added bosses dont save yet.
