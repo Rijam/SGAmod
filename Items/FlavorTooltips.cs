@@ -11,10 +11,10 @@ namespace SGAmod.Items
 {
 	public class FlavorTooltips : GlobalItem
 	{
-		public override bool AppliesToEntity(Item entity, bool lateInstantiation)
+		/*public override bool AppliesToEntity(Item entity, bool lateInstantiation)
 		{
-			return entity.ModItem is IFormerHavocItem or IFormerThrowingItem or IDedicatedPhilBill;
-		}
+			return entity.ModItem is IFormerHavocItem or IFormerThrowingItem or IDedicatedPhilBill or null;
+		}*/
 
 		/// <summary>
 		/// Finds the index of a certain tooltip line.
@@ -54,17 +54,35 @@ namespace SGAmod.Items
 				Color c = Main.hslToRgb((float)(Main.GlobalTimeWrappedHourly / 5f) % 1f, 0.45f, 0.65f);
 				tooltips.Add(new TooltipLine(Mod, "Dedicated", Idglib.ColorText(c, Language.GetTextValue("Mods.SGAmod.Common.Tooltip.DedicatedPhilBill"))));
 			}
-            
-				
-                if (SGAWorld.downedWraiths < 1)
-                {
-                    Color c = Main.hslToRgb(0.5f, 0.1f, 0.7f);
-                    
-					Recipe recipe = Main.recipe[item.type];
-                    if (recipe.HasTile(TileID.Furnaces) && (recipe.HasResult(ItemID.CopperBar) || recipe.HasResult(ItemID.TinBar) || recipe.HasResult(ItemID.IronBar) || recipe.HasResult(ItemID.LeadBar) || recipe.HasResult(ItemID.SilverBar) || recipe.HasResult(ItemID.TungstenBar) || recipe.HasResult(ItemID.GoldBar) || recipe.HasResult(ItemID.PlatinumBar)))
-						tooltips.Add(new TooltipLine(Mod, "WraithClue", Idglib.ColorText(c, Language.GetTextValue("Mods.SGAmod.Common.Tooltip.BarWarning"))));
-					
-                }
-        }
+			
+			if (!SGAWorld.downedCopperWraith)
+			{
+				for (int i = 0; i < Recipe.numRecipes; i++)
+				{
+					Recipe recipe = Main.recipe[i];
+
+					if ((recipe.HasTile(TileID.Furnaces) || recipe.requiredTile.Any(tile => tile == TileID.Furnaces)) && !SGAWorld.downedCopperWraith)
+					{
+						if (recipe.HasResult(item.type))
+						{
+							Color c = Main.hslToRgb(0.5f, 0.1f, 0.7f);
+							tooltips.Add(new TooltipLine(Mod, "WraithClue", Idglib.ColorText(c, Language.GetTextValue("Mods.SGAmod.Common.Tooltip.BarWarning"))));
+						}
+					}
+				}
+			}
+			if (!SGAWorld.downedCobaltWraith)
+			{
+				for(int i = 0;i < Recipe.numRecipes; i++)
+				{
+					Recipe recipe = Main.recipe[i];
+					if ((recipe.HasResult(ItemID.AdamantiteForge) || recipe.HasResult(ItemID.TitaniumForge)) && recipe.HasResult(item.type))
+					{
+						Color c = Main.hslToRgb(0.3f, 0.1f, 0.7f);
+						tooltips.Add(new TooltipLine(Mod, "WraithClue", Idglib.ColorText(c, Language.GetTextValue("Mods.SGAmod.Common.Tooltip.ForgeLock"))));
+					}
+				}
+			}
+		}
 	}
 }

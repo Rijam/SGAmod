@@ -37,5 +37,13 @@ namespace SGAmod
         {
             damageStacks.Add(new DamageStack(damage, time));
         }
+
+		public static void PlayersGotHit()
+		{
+			foreach (SGAnpcs sganpc in Main.npc.Where(testby => testby.active).Select(testby => testby.GetGlobalNPC<SGAnpcs>()))
+			{
+				sganpc.NoHit = false;
+			}
+		}
     }
 }

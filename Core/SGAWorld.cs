@@ -29,6 +29,7 @@ namespace SGAmod
         public static int downedWraiths = 0;
 		public static bool downedCopperWraith = false;
         public static bool downedSpiderQueen = false;
+		public static bool downedCobaltWraith = false;
 		public static bool WorldIsTin = false;
 		public static bool WorldIsNovus = true;
 
@@ -119,8 +120,10 @@ namespace SGAmod
 		//Initialize all variables to their default values
 		public override void OnWorldLoad()
 		{
+			downedWraiths = 0;
 			downedSpiderQueen = false;
 			downedCopperWraith = false;
+			downedCobaltWraith= false;
 
 			modtimer = 0;
 			Instance = this;
@@ -375,7 +378,7 @@ namespace SGAmod
 			if (WorldIsNovus) { tag["WorldIsNovus"] = true; };
 			if (downedSpiderQueen) { tag["downedSpiderQuene"] = true; };
 			if (downedCopperWraith) { tag["downedCopperWraith"] = true; };
-            tag["downedWraiths"] = downedWraiths;
+			if (downedCobaltWraith) { tag["downedCobaltWraith"] = true;};
 
             tag["craftwarning"] = craftwarning;
             
@@ -457,9 +460,10 @@ namespace SGAmod
 			WorldIsNovus = tag.ContainsKey("WorldIsNovus");
 			downedSpiderQueen = tag.ContainsKey("downedSpiderQueen");
 			downedCopperWraith = tag.ContainsKey("downedCopperWraith");
+			downedCobaltWraith = tag.ContainsKey("downedCobaltWraith");
 
             if (tag.ContainsKey("craftwarning")) { craftwarning = tag.GetInt("craftwarning"); }
-            if (tag.ContainsKey("downedWraiths")) { downedWraiths = tag.GetInt("downedWraiths"); }
+            
             //var downed = tag.GetList<string>("downed");
             /*
 			if (tag.ContainsKey("WorldIsNovus"))
@@ -538,7 +542,9 @@ namespace SGAmod
 			downedBosses[0] = downedCopperWraith;
 			//downedBosses[1] = downedSpiritsOfCaliburn;
 			downedBosses[2] = downedSpiderQueen;
-			writer.Write(downedBosses);
+
+
+			downedBosses[5] = downedCobaltWraith;
 
 			writer.Write(modtimer);
 
@@ -591,6 +597,7 @@ namespace SGAmod
 			BitsByte downedBosses = reader.ReadByte();
 			downedCopperWraith = downedBosses[0];
 			downedSpiderQueen = downedBosses[2];
+			downedCobaltWraith = downedBosses[5];
 
 			modtimer = reader.ReadInt32();
 

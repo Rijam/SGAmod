@@ -29,8 +29,8 @@ namespace SGAmod.Projectiles.Melee
             Projectile.timeLeft = 90;
             Projectile.hide = true;
             
-            movein = 0.8f;
-            moveout = 0.2f;
+            movein = 0.2f;
+            moveout = 0.8f;
             thrustspeed = 3f;
         }
         

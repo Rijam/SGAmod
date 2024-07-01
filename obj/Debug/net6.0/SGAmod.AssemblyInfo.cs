@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SGAmod")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d78272672d2f23ffb73b3f3e13397a1d4d4cd9d6")]
 [assembly: System.Reflection.AssemblyProductAttribute("SGAmod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SGAmod")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

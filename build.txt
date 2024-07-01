@@ -1,6 +1,6 @@
 displayName = SGAmod: [c/FF0000:IN DEVELOPMENT VERSION]
 author = IDGCaptainUkraine & Rijam
-version = 0.0.0.7
+version = 0.0.0.84
 homepage = https://discord.gg/aGy34Xw
 modReferences = Idglibrary
 includeSource = true

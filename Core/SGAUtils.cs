@@ -28,7 +28,7 @@ namespace SGAmod
                 AddedWeight = new List<Point>();
 
             List<NPC> closetnpcs = new List<NPC>();
-            for (int i = 0;i < Main.maxNPCs;i++)
+            for (int i = 0; i < Main.maxNPCs;i++)
             {
                 NPC npc = Main.npc[i];
                 float distvectx = (Center2.X - npc.Center.X) * (Center2.X - npc.Center.X);
@@ -43,8 +43,8 @@ namespace SGAmod
                     }
                 }
             }
-
-            Func<NPC, float> sortbydistance = delegate (NPC npc)
+			//Sorter delegate based on distance, weights are accounted for
+			Func<NPC, float> sortbydistance = delegate (NPC npc)
             {
                 float distvectX = (Center2.X - npc.Center.X) * (Center2.X - npc.Center.X);
                 float distvecty = (Center2.Y - npc.Center.Y) * (Center2.Y - npc.Center.Y);
@@ -54,7 +54,8 @@ namespace SGAmod
                 Point weightedscore = AddedWeight.FirstOrDefault(npcid => npcid.X == npc.whoAmI);
                 score += weightedscore != default ? weightedscore.Y * Math.Abs(weightedscore.Y) : 0;
 
-                if (weightedscore != default && weightedscore.Y >= 1000000)
+				//Values of weight over 1000000 are simply "removed" from the sorter as invalid
+				if (weightedscore != default && weightedscore.Y >= 1000000)
                 {
                     score = 100000000;
                 }

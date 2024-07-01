@@ -11,6 +11,7 @@ using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using Terraria.WorldBuilding;
 
 
 namespace SGAmod
@@ -20,15 +21,7 @@ namespace SGAmod
 		public override void AddRecipes()
 		{
 			base.AddRecipes();
-            for (int i = 0; i < Recipe.numRecipes; i++)
-            {
-                Recipe recipe = Main.recipe[i];
-
-                if (recipe.HasTile(TileID.Furnaces))
-                {
-                    recipe.AddOnCraftCallback(SGARecipeCallbacks.WraithWarning);
-                }
-            }
+            
         }
 		
 
@@ -53,7 +46,9 @@ namespace SGAmod
 		public const string EvilBossMaterials = "SGAmod:EvilBossMaterials";
 		/// <summary> ItemID.CobaltOre, ItemID.PalladiumOre</summary>
 		public const string Tier1HardmodeOre = "SGAmod:Tier1HardmodeOre";
-
+		/// <summary> ItemID.SolarFragment, ItemID.VortexFragment, ItemID.NebulaFragment, ItemID.StardustFragment </summary>
+		public const string CelestialFragments = "SGAmod:CelestialFragments";
+		
 		public override void AddRecipeGroups()
 		{
 			List<int> chests = new List<int>();
@@ -127,23 +122,42 @@ namespace SGAmod
 				ItemID.PalladiumOre
 			});
 			RecipeGroup.RegisterGroup(Tier1HardmodeOre, group);
+			group = new(() => Language.GetTextValue("LegacyMisc.37" + "Lunar Fragments"), new int[]
+			{
+				ItemID.FragmentSolar,
+				ItemID.FragmentVortex,
+				ItemID.FragmentNebula,
+				ItemID.FragmentStardust
+			});
+			RecipeGroup.RegisterGroup(CelestialFragments, group);
 		}
 
         public override void PostAddRecipes()
         {
-            
-        }
-    }
+			for (int i = 0; i < Recipe.numRecipes; i++)
+			{
+				Recipe recipe = Main.recipe[i];
 
+				if ((recipe.HasTile(TileID.Furnaces) || recipe.requiredTile.Any(tile => tile == TileID.Furnaces)) && !SGAWorld.downedCopperWraith)
+				{
+					recipe.AddOnCraftCallback(SGARecipeCallbacks.WraithWarning);
+				}
+				if ((recipe.HasResult(ItemID.TitaniumForge) || recipe.HasResult(ItemID.AdamantiteForge)) && !SGAWorld.downedCobaltWraith)
+				{
+					recipe.AddCondition(new Condition("Mods.SGAmod.Common.Conditions.CobaltWraith", () => SGAWorld.downedCobaltWraith));
+				}
+			}
+			
+		}
+    }
+	
 	public static class SGARecipeCallbacks
 	{
 		public static void WraithWarning(Recipe recipe, Item item, List<Item> consumedItems, Item destinationStack)
 		{
-			if ((recipe.HasTile(TileID.Furnaces) || recipe.requiredTile.Any(tile => tile == TileID.Furnaces)) && SGAWorld.downedWraiths < 1)
-			{
 				if (!NPC.AnyNPCs(ModContent.NPCType<CopperWraith>()))
 				{
-					if(Main.netMode > NetmodeID.SinglePlayer)
+					if(Main.netMode > NetmodeID.MultiplayerClient)
 					{
 						
 					}
@@ -152,7 +166,6 @@ namespace SGAmod
 						SGAWorld.CraftWarning();
 					}
 				}
-			}
 		}
 	}
 }

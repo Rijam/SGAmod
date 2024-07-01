@@ -12,9 +12,13 @@ Mods: {
 				FormerHavocItem: Former Havoc mod item
 				DedicatedPhilBill: Dedicated to PhilBill44, and preserving his work
 				BarWarning: Crafting this will anger something...
+				ForgeLock: This recipe has been disabled by a powerful entity...
 			}
 
-			Conditions.NotWarned: Don't anger the Copper Wraith.
+			Conditions: {
+				NotWarned: Don't anger the Copper Wraith.
+				CobaltWraith: Defeat the Cobalt Wraith.
+			}
 		}
 
 		Buffs: {
@@ -39,7 +43,7 @@ Mods: {
 					Consecutive attacks will stack the debuff, making the slowing effect stronger, but this soft caps after a point
 					Does not affect bosses or enemies who are immune to poisoned
 					'''
-				SlowPrompt: (Hlod LEFT CONTROL for more info on Dank Slow)
+				SlowPrompt: (Hold LEFT CONTROL for more info on Dank Slow)
 			}
 
 			AcidBurn: {
@@ -198,7 +202,7 @@ Mods: {
 
 		Keybinds: {
 			"Abilities/Cycle Recipes.DisplayName": Abilities/Cycle Recipes
-			"Cycle Aiming Style.DisplayName": Cycle  Aiming  Style
+			"Cycle Aiming Style.DisplayName": Cycle Aiming Style
 		}
 	}
 }

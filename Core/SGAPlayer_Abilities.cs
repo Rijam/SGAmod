@@ -17,7 +17,7 @@ namespace SGAmod
             if (noModTeleport || maxBlink < 1 || (Player.mount != null && Player.mount.Active)) return false;
 
             int previousDash = Player.dashType;
-            
+			Player.dashType = 1;
             
 
             if (Math.Abs(Player.dashTime) > 0 && Player.dashDelay < 1 && Player.dashType > 0 && (Player.controlLeft || Player.controlRight))

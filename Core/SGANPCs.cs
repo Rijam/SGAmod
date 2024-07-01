@@ -2,9 +2,11 @@ using Microsoft.CodeAnalysis;
 using Microsoft.Xna.Framework;
 using SGAmod.Buffs.Debuffs;
 using SGAmod.Dusts;
+using SGAmod.Items.Weapons.Almighty;
 using System;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
@@ -75,6 +77,7 @@ namespace SGAmod
 		public float damagemul = 1f;
 		public List<DamageStack> damageStacks = new List<DamageStack>();
 		public int lastHitByItem = 0;
+		public bool NoHit = true;
 		
 
 		public override void ResetEffects(NPC npc)
@@ -240,7 +243,16 @@ namespace SGAmod
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
         {
 			IrradiatedExplosion(npc, IrradiatedAmount);
-        }
 
-    }
+			if (npc.type == NPCID.CultistBoss)
+			{
+				if (NPC.CountNPCS(NPCID.CultistBossClone) >= 6 && npc.GetGlobalNPC<SGAnpcs>().NoHit)
+				{
+					npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<NuclearOption>()));
+				}
+			}
+		}
+		
+
+	}
 }
