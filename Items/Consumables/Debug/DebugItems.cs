@@ -180,10 +180,7 @@ namespace SGAmod.Items.Consumables.Debug
         }
     }
     
-<<<<<<< HEAD
-=======
 
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
     public class Debug10 : ModItem
     {

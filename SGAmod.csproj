@@ -6,53 +6,19 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
-=======
-=======
-=======
-<<<<<<< Updated upstream
-    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
     <None Remove="Items\Materials\Crafted\ManaBattery.png" />
     <None Remove="Items\Weapons\Almighty\NuclearOption.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
->>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Idglibrary">
       <HintPath>..\..\ModReader\Idglibrary\Idglibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-  <ItemGroup>
-    <Folder Include="Items\Weapons\ExThrown\" />
-    <Folder Include="Textures\Clouds\" />
-  </ItemGroup>
-=======
-<<<<<<< Updated upstream
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
-=======
   <ItemGroup>
     <Folder Include="Items\Weapons\ExThrown\" />
     <Folder Include="Assets\Textures\Clouds\" />
     <Folder Include="Textures\" />
   </ItemGroup>
->>>>>>> Stashed changes
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 </Project>

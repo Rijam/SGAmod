@@ -588,14 +588,6 @@ IlluminantEssence: {
 	DisplayName: Illuminant Essence
 	Tooltip: ""
 }
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
 MidasTouch: {
 	Tooltip:
@@ -867,18 +859,8 @@ StygianCore: {
 	DisplayName: Stygian Core
 	Tooltip: Torn from Stygian Veins with a mining tool, this star is burning manifested fabric...
 }
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
 Debug11: {
 	DisplayName: Debug11
 	Tooltip: ""
 }
->>>>>>> Stashed changes
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4

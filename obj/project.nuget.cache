@@ -1,14 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "d+RRVKjfmCw=",
-=======
-<<<<<<< Updated upstream
-  "dgSpecHash": "QqdRp+Koab4AkgaD0fmyYq38mApBVhwAMoyup4AixqBLfBO0B5dc8wmuwsOqYQw9QuXVpOV3EJRw0FgdE2T0fA==",
-=======
-  "dgSpecHash": "d+RRVKjfmCw=",
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
   "success": true,
   "projectFilePath": "C:\\Users\\Sylvain\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\SGAmod\\SGAmod.csproj",
   "expectedPackageFiles": [

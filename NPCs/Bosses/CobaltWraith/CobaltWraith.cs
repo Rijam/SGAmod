@@ -348,16 +348,8 @@ namespace SGAmod.NPCs.Bosses.CobaltWraith
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(NPC.type, value);
             Main.npcFrameCount[NPC.type] = 1;
-<<<<<<< HEAD
 		 
 
-=======
-<<<<<<< Updated upstream
-=======
-		 
-
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
         }
         public override string Texture => "Terraria/Images/Projectile_" + ProjectileID.CobaltChainsaw;
         public override void SetDefaults()
@@ -378,27 +370,13 @@ namespace SGAmod.NPCs.Bosses.CobaltWraith
             AnimationType = 0;
             NPC.noTileCollide = true;
             NPC.noGravity = true;
-<<<<<<< HEAD
 			
-=======
-<<<<<<< Updated upstream
-=======
-			
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
         }
         public override bool CanHitPlayer(Player target, ref int cooldownSlot)
         {
             return NPC.ai[0] % 300 > 150;
         }
-<<<<<<< HEAD
 		
-=======
-<<<<<<< Updated upstream
-=======
-		
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
         public override void AI()
         {
             CopperArmorPiece myself = NPC.ModNPC as CopperArmorPiece;
@@ -431,15 +409,7 @@ namespace SGAmod.NPCs.Bosses.CobaltWraith
                     diff.Normalize();
                     NPC.position = NPC.position + (diff * 5);
 
-<<<<<<< HEAD
 					NPC.rotation = (float)Math.Atan2(NPC.position.Y - myowner.position.Y + (myowner.height * 0.5f), NPC.position.X - myowner.position.X + (myowner.width * 0.5f)) + 90f;
-=======
-<<<<<<< Updated upstream
-                    NPC.rotation = (float)Math.Atan2(NPC.position.Y - myowner.position.Y + (myowner.height * 0.5f), NPC.position.X - myowner.position.X + (myowner.width * 0.5f)) + 90f;
-=======
-					NPC.rotation = (float)Math.Atan2(NPC.position.Y - myowner.position.Y + (myowner.height * 0.5f), NPC.position.X - myowner.position.X + (myowner.width * 0.5f)) + 90f;
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
                     NPC.timeLeft = 999;
                 }
@@ -452,17 +422,8 @@ namespace SGAmod.NPCs.Bosses.CobaltWraith
             if ((Main.expertMode || Main.masterMode) || Main.rand.NextBool(4))
                 target.AddBuff(ModContent.BuffType<MassiveBleeding>(), 60 * 4, true);
         }
-<<<<<<< HEAD
 		
 	}
-=======
-<<<<<<< Updated upstream
-    }
-=======
-		
-	}
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
     public class CobaltArmorSword : CopperArmorChainmail
     {
@@ -498,14 +459,7 @@ namespace SGAmod.NPCs.Bosses.CobaltWraith
             AnimationType = 0;
             NPC.noTileCollide = true;
             NPC.noGravity = true;
-<<<<<<< HEAD
 			
-=======
-<<<<<<< Updated upstream
-=======
-			
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
         }
         public override void AI()
         {
@@ -516,13 +470,6 @@ namespace SGAmod.NPCs.Bosses.CobaltWraith
             else
             {
                 Player p = Main.player[NPC.target];
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-                NPC.ai[0]++;
-                NPC.spriteDirection = NPC.velocity.X > 0 ? -1 : 1;
-=======
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 				if (NPC.target < 0 || NPC.target == 255 || p.dead || !p.active)
 				{
 					NPC.TargetClosest(false);
@@ -530,10 +477,6 @@ namespace SGAmod.NPCs.Bosses.CobaltWraith
 				}
 				NPC.ai[0]++;
                 NPC.spriteDirection = NPC.velocity.X < 0 ? -1 : 1;
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
                 Vector2 itt = myowner.Center - NPC.Center + new Vector2(NPC.ai[1] * NPC.spriteDirection, NPC.ai[2]);
                 float locspeed = 0.25f;
                 if (NPC.ai[0] % 600 > 350)
@@ -654,13 +597,6 @@ namespace SGAmod.NPCs.Bosses.CobaltWraith
         {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CobaltWraithShard>(), 1, Main.expertMode ? 25 : 10, Main.expertMode ? 25 : 10));
         }
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-
-        public void createarmorthings()
-=======
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 		public override void OnKill()
 		{
 			if (!SGAWorld.downedCobaltWraith)
@@ -668,10 +604,6 @@ namespace SGAmod.NPCs.Bosses.CobaltWraith
 		}
 
 		public void createarmorthings()
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
         {
             for (float fx = -14f; fx < 15f; fx += 28)
             {

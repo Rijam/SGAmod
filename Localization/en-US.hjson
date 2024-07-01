@@ -11,36 +11,6 @@ Mods: {
 				FormerThrowingItem: Former Throwing class item
 				FormerHavocItem: Former Havoc mod item
 				DedicatedPhilBill: Dedicated to PhilBill44, and preserving his work
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-				BarWarning: Crafting this will anger something...
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-			}
-
-			Conditions.NotWarned: Don't anger the Copper Wraith.
-		}
-
-		Buffs: {
-<<<<<<< Updated upstream
-=======
-=======
-				BarWarning: Crafting this will anger something...
-				ForgeLock: This recipe has been disabled by a powerful entity...
-			}
-
-			Conditions: {
-				NotWarned: Don't anger the Copper Wraith.
-				CobaltWraith: Defeat the Cobalt Wraith.
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
-			}
-		}
-
-		Buffs: {
-<<<<<<< HEAD
-=======
 				BarWarning: Crafting this will anger something...
 				ForgeLock: This recipe has been disabled by a powerful entity...
 			}
@@ -52,9 +22,6 @@ Mods: {
 		}
 
 		Buffs: {
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 			RadioBuff: {
 				DisplayName: Irridiated
 				Description: Nor for players to see!
@@ -79,13 +46,6 @@ Mods: {
 				SlowPrompt: (Hold LEFT CONTROL for more info on Dank Slow)
 			}
 
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
->>>>>>> Stashed changes
 			AcidBurn: {
 				DisplayName: Acid Burn
 				Description: Reduced Defense and your defense works again your life
@@ -232,14 +192,6 @@ Mods: {
 				}
 			}
 		}
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
 		IFormerHavocItem: {
 			DankWaveStaff: {
@@ -250,20 +202,8 @@ Mods: {
 
 		Keybinds: {
 			"Abilities/Cycle Recipes.DisplayName": Abilities/Cycle Recipes
-<<<<<<< HEAD
 			"Cycle Aiming Style.DisplayName": Cycle Aiming Style
 		}
->>>>>>> Stashed changes
-=======
-<<<<<<< Updated upstream
-			"Cycle Aiming Style.DisplayName": Cycle  Aiming  Style
-		}
-=======
-			"Cycle Aiming Style.DisplayName": Cycle Aiming Style
-		}
->>>>>>> Stashed changes
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 	}
 }
 

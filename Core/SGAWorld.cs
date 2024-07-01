@@ -26,26 +26,10 @@ namespace SGAmod
 	{
         //Setting up variables for invasion
 #pragma warning disable CA2211 // Non-constant fields should not be visible
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-        public static int downedWraiths = 0;
-		public static bool downedCopperWraith = false;
-        public static bool downedSpiderQueen = false;
-=======
-<<<<<<< Updated upstream
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
-		public static bool downedSpiderQueen = false;
-=======
         public static int downedWraiths = 0;
 		public static bool downedCopperWraith = false;
         public static bool downedSpiderQueen = false;
 		public static bool downedCobaltWraith = false;
->>>>>>> Stashed changes
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 		public static bool WorldIsTin = false;
 		public static bool WorldIsNovus = true;
 
@@ -138,21 +122,8 @@ namespace SGAmod
 		{
 			downedWraiths = 0;
 			downedSpiderQueen = false;
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-			downedCopperWraith = false;
-=======
-<<<<<<< Updated upstream
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
-=======
 			downedCopperWraith = false;
 			downedCobaltWraith= false;
->>>>>>> Stashed changes
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
 			modtimer = 0;
 			Instance = this;
@@ -406,33 +377,12 @@ namespace SGAmod
 		{
 			if (WorldIsNovus) { tag["WorldIsNovus"] = true; };
 			if (downedSpiderQueen) { tag["downedSpiderQuene"] = true; };
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-			if (downedCopperWraith) { tag["downedCopperWraith"] = true; };
-            tag["downedWraiths"] = downedWraiths;
-=======
-<<<<<<< Updated upstream
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
-			/*
-=======
 			if (downedCopperWraith) { tag["downedCopperWraith"] = true; };
 			if (downedCobaltWraith) { tag["downedCobaltWraith"] = true;};
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
             tag["craftwarning"] = craftwarning;
             
             /*
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
->>>>>>> Stashed changes
 			//var downed = new List<string>();
 			// if (downedCustomInvasion) downed.Add("customInvasion");
 			//if (downedSPinky) downed.Add("downedSPinky");
@@ -509,21 +459,6 @@ namespace SGAmod
 			WorldIsTin = WorldGen.SavedOreTiers.Copper == TileID.Tin;
 			WorldIsNovus = tag.ContainsKey("WorldIsNovus");
 			downedSpiderQueen = tag.ContainsKey("downedSpiderQueen");
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-			downedCopperWraith = tag.ContainsKey("downedCopperWraith");
-
-            if (tag.ContainsKey("craftwarning")) { craftwarning = tag.GetInt("craftwarning"); }
-            if (tag.ContainsKey("downedWraiths")) { downedWraiths = tag.GetInt("downedWraiths"); }
-            //var downed = tag.GetList<string>("downed");
-            /*
-=======
-<<<<<<< Updated upstream
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
-			//var downed = tag.GetList<string>("downed");
-			/*
-=======
 			downedCopperWraith = tag.ContainsKey("downedCopperWraith");
 			downedCobaltWraith = tag.ContainsKey("downedCobaltWraith");
 
@@ -531,11 +466,6 @@ namespace SGAmod
             
             //var downed = tag.GetList<string>("downed");
             /*
->>>>>>> Stashed changes
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 			if (tag.ContainsKey("WorldIsNovus"))
 				WorldIsNovus = tag.GetBool("WorldIsNovus");
 			if (tag.ContainsKey("darknessVision"))

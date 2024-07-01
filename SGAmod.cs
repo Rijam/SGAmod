@@ -28,25 +28,11 @@ using System.Diagnostics;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using System.Reflection;
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-using SGAmod.Items.Weapons.Shields;
-using static SGAmod.EffectsSystem;
-=======
-<<<<<<< Updated upstream
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
-=======
 using Terraria.Graphics.CameraModifiers;
 using SGAmod.Items.Weapons.Shields;
 using static SGAmod.EffectsSystem;
 using SGAmod.Items.Weapons.Almighty;
 
->>>>>>> Stashed changes
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 /*
 using CalamityMod;
 using CalamityMod.CalPlayer;
@@ -216,58 +202,18 @@ namespace SGAmod
 
 			if (!Main.dedServ)
 			{
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-
-
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
-				Ref<Effect> screenRef = new(Assets.Request<Effect>("Effects/Shockwave", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value);
-				Filters.Scene["SGAmod:Shockwave"] = new Filter(new ScreenShaderData(screenRef, "Shockwave"), EffectPriority.VeryHigh);
-				Filters.Scene["SGAmod:ShockwaveBanshee"] = new Filter(new ScreenShaderData(screenRef, "Shockwave"), EffectPriority.VeryHigh);
-=======
-<<<<<<< HEAD
 
 
 				//Ref<Effect> screenRef = new(Assets.Request<Effect>("Effects/Shockwave", /*, ReLogic.Content.AssetRequestMode.ImmediateLoad*/).Value);
 				Filters.Scene["SGAmod:Shockwave"] = new Filter(new ScreenShaderData(Assets.Request<Effect>("Effects/Shockwave" , ReLogic.Content.AssetRequestMode.ImmediateLoad), "Shockwave"), EffectPriority.VeryHigh);
 				Filters.Scene["SGAmod:ShockwaveBanshee"] = new Filter(new ScreenShaderData(Assets.Request<Effect>("Effects/Shockwave" , ReLogic.Content.AssetRequestMode.ImmediateLoad), "Shockwave"), EffectPriority.VeryHigh);
->>>>>>> Stashed changes
-=======
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
 
-<<<<<<< HEAD
-=======
-				//Ref<Effect> screenRef = new(Assets.Request<Effect>("Effects/Shockwave", /*, ReLogic.Content.AssetRequestMode.ImmediateLoad*/).Value);
-				Filters.Scene["SGAmod:Shockwave"] = new Filter(new ScreenShaderData(Assets.Request<Effect>("Effects/Shockwave" , ReLogic.Content.AssetRequestMode.ImmediateLoad), "Shockwave"), EffectPriority.VeryHigh);
-				Filters.Scene["SGAmod:ShockwaveBanshee"] = new Filter(new ScreenShaderData(Assets.Request<Effect>("Effects/Shockwave" , ReLogic.Content.AssetRequestMode.ImmediateLoad), "Shockwave"), EffectPriority.VeryHigh);
->>>>>>> Stashed changes
-
-
-<<<<<<< Updated upstream
-
-                TrailEffect = Assets.Request<Effect>("Effects/trailShaders", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
-
-                RadialEffect = Assets.Request<Effect>("Effects/Radial", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
-                CataEffect = Assets.Request<Effect>("Effects/CataLogo", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
-=======
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
-<<<<<<< Updated upstream
-			SGAILHacks.Patch();
-=======
 
 				TrailEffect = Assets.Request<Effect>("Effects/trailShaders", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
 
                 RadialEffect = Assets.Request<Effect>("Effects/Radial", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 CataEffect = Assets.Request<Effect>("Effects/CataLogo" , ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
                 TextureBlendEffect = Assets.Request<Effect>("Effects/TextureBlend", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 
             }
@@ -290,54 +236,22 @@ namespace SGAmod
             SGAILHacks.Patch();
 
             
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
->>>>>>> Stashed changes
 		}
 
         public override void Unload()
         {
             SGAmod.ExpertiseCustomCurrencySystem = null;
 			SGAILHacks.Unpatch();
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
             if (!Main.dedServ)
             {
                 //Items.Weapons.Almighty.CataLogo.Unload();
             }
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
->>>>>>> Stashed changes
 		}
 
         
         
         
     }
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-    public class SGAmodSystem : ModSystem
-    {
-        public delegate void PostUpdateEverythingDelegate();
-=======
-<<<<<<< Updated upstream
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
-=======
     public partial class SGAmodSystem : ModSystem
     {
 
@@ -347,21 +261,10 @@ namespace SGAmod
 			Overlays.Scene.Deactivate("SGAmod:ScreenExplosions");
 		}
 		public delegate void PostUpdateEverythingDelegate();
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
         public static event PostUpdateEverythingDelegate PostUpdateEverythingEvent;
 
         public override void PostUpdateEverything()
         {
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-            if (SGAmod._screenShake > 0)
-                SGAmod._screenShake -= 1;
-=======
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 			Terraria.Cinematics.CinematicManager.Instance.Update(new GameTime());
 			RaysOfControlOrb.UpdateAll();
 			if (SGAmod._screenShake > 0)
@@ -371,10 +274,6 @@ namespace SGAmod
 			}
 				
                
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
             PostUpdateEverythingEvent?.Invoke();
 
             if (SGAmod.screenExplosions.Count > 0)
@@ -402,14 +301,6 @@ namespace SGAmod
         {
             SGAInterface.ModifyInterfaceLayers(layers);
         }
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-    }
-
-    
-=======
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
 		public delegate void ModifyTransformMatrixDelegate(ref SpriteViewMatrix Transform);
 		public static event ModifyTransformMatrixDelegate ModifyTransformMatrixEvent;
@@ -426,9 +317,4 @@ namespace SGAmod
 	}
 
     
->>>>>>> Stashed changes
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 }

@@ -1,22 +1,8 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.Xna.Framework;
 using SGAmod.Buffs.Debuffs;
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
 using SGAmod.Dusts;
 using SGAmod.Items.Weapons.Almighty;
-=======
-<<<<<<< Updated upstream
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
-=======
-using SGAmod.Dusts;
-using SGAmod.Items.Weapons.Almighty;
->>>>>>> Stashed changes
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 using System;
 using System.Collections.Generic;
 using Terraria;
@@ -51,14 +37,6 @@ namespace SGAmod
 		public bool acidBurn = false;
 		public bool gouged = false;
 		public int reducedDefense = 0; // #TODO
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 		public bool MassiveBleeding = false;
 		public bool DankSlow = false;
 
@@ -101,13 +79,6 @@ namespace SGAmod
 		public int lastHitByItem = 0;
 		public bool NoHit = true;
 		
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
->>>>>>> Stashed changes
 
 		public override void ResetEffects(NPC npc)
 		{
@@ -225,14 +196,6 @@ namespace SGAmod
 				Main.dust[dust].color = Main.hslToRgb(0f, 0.5f, 0.35f);
 			}
 		}
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
 
         public override void OnHitByItem(NPC npc, Player player, Item item, NPC.HitInfo hit, int damageDone)
         {
@@ -291,12 +254,5 @@ namespace SGAmod
 		}
 		
 
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
->>>>>>> Stashed changes
 	}
 }
