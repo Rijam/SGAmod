@@ -101,7 +101,7 @@ namespace SGAmod
 			//explode.strength = explode.strength *= MathHelper.Clamp((here- centerpos).Length()/ distance,0f,1f);
 			screenExplosions.Add(explode);
 
-			//Overlays.Scene.Activate("SGAmod:ScreenExplosions"); TODO
+			Overlays.Scene.Activate("SGAmod:ScreenExplosions");
 			return explode;
 		}
 	}

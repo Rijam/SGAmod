@@ -11,10 +11,48 @@ Mods: {
 				FormerThrowingItem: Former Throwing class item
 				FormerHavocItem: Former Havoc mod item
 				DedicatedPhilBill: Dedicated to PhilBill44, and preserving his work
+<<<<<<< Updated upstream
 			}
 		}
 
 		Buffs: {
+=======
+				BarWarning: Crafting this will anger something...
+				ForgeLock: This recipe has been disabled by a powerful entity...
+			}
+
+			Conditions: {
+				NotWarned: Don't anger the Copper Wraith.
+				CobaltWraith: Defeat the Cobalt Wraith.
+			}
+		}
+
+		Buffs: {
+			RadioBuff: {
+				DisplayName: Irridiated
+				Description: Nor for players to see!
+				RadioExplain:
+					'''
+					Irradiated enemies explode on death, doing damage around them based the irradiated ammounts
+					Gains more strength and deals extra damage if exposed to radiation sources for longer
+					Rate gained and max capped is based on a per-weapon basis
+					'''
+				RadioPrompt: (Hold LEFT CONTROL for more info on Irradiated)
+			}
+
+			DankSlow: {
+				DisplayName: DankSlow
+				Description: Players aren't supposed to have this debuff!
+				SlowExplain:
+					'''
+					Attacks may slow enemies
+					Consecutive attacks will stack the debuff, making the slowing effect stronger, but this soft caps after a point
+					Does not affect bosses or enemies who are immune to poisoned
+					'''
+				SlowPrompt: (Hold LEFT CONTROL for more info on Dank Slow)
+			}
+
+>>>>>>> Stashed changes
 			AcidBurn: {
 				DisplayName: Acid Burn
 				Description: Reduced Defense and your defense works again your life
@@ -130,6 +168,21 @@ Mods: {
 				}
 			}
 		}
+<<<<<<< Updated upstream
+=======
+
+		IFormerHavocItem: {
+			DankWaveStaff: {
+				DisplayName: Dank Wave Staff
+				Tooltip: ""
+			}
+		}
+
+		Keybinds: {
+			"Abilities/Cycle Recipes.DisplayName": Abilities/Cycle Recipes
+			"Cycle Aiming Style.DisplayName": Cycle Aiming Style
+		}
+>>>>>>> Stashed changes
 	}
 }
 

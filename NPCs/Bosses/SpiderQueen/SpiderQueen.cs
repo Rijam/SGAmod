@@ -127,7 +127,7 @@ namespace SGAmod.NPCs.Bosses.SpiderQueen
 
 			notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Items.Armor.Vanity.BossMasks.SpiderQueenMask>(), 7));
 			notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Items.Materials.BossDrops.VialOfAcid>(), 1, 25, 45));
-			// notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Items.Weapons.Shields.CorrodedShield>(), 3)); #TODO
+			notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Items.Weapons.Shields.CorrodedShield>(), 3)); 
 			notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Items.Accessories.Defense.CorrodedSkull>(), 3));
 		}
 

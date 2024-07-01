@@ -178,5 +178,128 @@ namespace SGAmod
 		{
 			Apocalyptical_Kill(damage, hitDirection, pvp, damageSource);
 		}
+<<<<<<< Updated upstream
 	}
+=======
+        public override void ProcessTriggers(TriggersSet triggersSet)
+        {
+			
+			if (SGAmod.ToggleRecipeHotKey.JustPressed)
+			{
+				if(AcidSet.Item1)
+				{
+					Items.Armor.Fames.FamesHelmet.ActivateHungerOfFames(this);
+				}
+			}
+
+			if(Main.netMode != NetmodeID.SinglePlayer && SGAmod.ToggleGamepadKey.JustPressed)
+			{
+				if(Main.LocalPlayer.GetModPlayer<SGAPlayer>().gamePadAutoAim > 0)
+				{
+					LockOnHelper.CycleUseModes();
+					SoundEngine.PlaySound(SoundID.Unlock with { Pitch = 1.5f });
+				}
+			}
+        }
+
+        public override void PostUpdateRunSpeeds()
+        {
+            
+        }
+        public override void PostUpdateEquips()
+        {
+			/*if (!Player.HeldItem.IsAir)
+			{
+				TrapDamageItems stuff = Player.HeldItem.GetGlobalItem<TrapDamageItems>();
+				if (stuff.misc == 3) shieldDamageReduce += 0.05f;
+			}*/
+
+
+            DashBlink();
+
+			if(Player.HeldItem != null)
+			{
+				int index = Player.GetModPlayer<SGAPlayer>().heldShield;
+				if(index >= 0)
+				{
+					if (Main.projectile[index].active)
+					{
+						CorrodedShieldProj myshield = (Main.projectile[Player.GetModPlayer<SGAPlayer>().heldShield].ModProjectile) as CorrodedShieldProj;
+						if (myshield != null) myshield.WhileHeld(Player);
+					}
+				}
+				else
+				{
+					if (Player.ownedProjectileCounts[ModContent.ProjectileType<CapShieldToss>()] < 1 && Player.HeldItem.ModItem != null)
+					{
+						int projtype = -1;
+						if (ShieldTypes.ContainsKey(Player.HeldItem.type))
+						{
+							ShieldTypes.TryGetValue(Player.HeldItem.type, out projtype);
+							if(projtype > 0)
+							{
+								if (Player.ownedProjectileCounts[projtype] < 1)
+								{
+									Projectile proj = Projectile.NewProjectileDirect(Projectile.GetSource_None(), Player.Center, Vector2.Zero, projtype, Player.HeldItem.damage, Player.HeldItem.knockBack, Player.whoAmI);
+									/*if (proj != null && proj.ModProjectile != null && Player.HeldItem != null && Player.HeldItem.ModItem is LaserMarker heldmarker) 
+									{
+										LaserMarkerProj marker = ((LaserMarkerProj)proj.ModProjectile);
+										SGAmod.GemColors.TryGetValue(heldmarker.gemType, out Color color);
+										((LaserMarkerProj)proj.ModProjectile).gemColor = color;
+									}*/
+								}
+							}
+						}
+					}
+				}
+				
+			}
+            ActionCooldownStack_PostUpdateEquips();
+        }
+        public override bool ImmuneTo(PlayerDeathReason damageSource, int cooldownCounter, bool dodgeable)
+        {
+            if (damageSource.SourceNPCIndex > -1)
+			{
+                if (TakeShieldHit(Main.npc[damageSource.SourceNPCIndex].damage))
+                {
+                    return true;
+                }
+                NPC npc = Main.npc[damageSource.SourceNPCIndex];
+				if (ShieldDamageCheck(npc.Center, npc.damage, npc.whoAmI + 1))
+				{
+					Player.AddImmuneTime(ImmunityCooldownID.General, 20);
+                    return true;
+                }
+					
+			}
+            if (damageSource.SourceProjectileLocalIndex > -1)
+            {
+                if (TakeShieldHit(Main.projectile[damageSource.SourceProjectileLocalIndex].damage))
+                {
+                    return true;
+                }
+                if (ShieldDamageCheck(Main.projectile[damageSource.SourceProjectileLocalIndex].Center, Main.projectile[damageSource.SourceProjectileLocalIndex].damage, -(damageSource.SourceProjectileLocalIndex - 1)))
+				{
+                    
+                    return true;
+                }
+					
+            }
+            
+            return false;
+			
+        }
+        public override void OnHurt(Player.HurtInfo info)
+        {
+			foreach (SGAnpcs sganpc in Main.npc.Where(testby => testby.active).Select(testby => testby.GetGlobalNPC<SGAnpcs>()))
+			{
+				sganpc.NoHit = false;
+			}
+			Player.GetModPlayer<NOPlayer>().Charge /= 2;
+
+            
+        }
+
+    }
+>>>>>>> Stashed changes
 }

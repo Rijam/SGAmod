@@ -148,12 +148,12 @@ namespace SGAmod.Items.Consumables.Debug
     }
     */
 
-    /*
+    
     public class Debug11 : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Debug-Start Credits");
+            
         }
 
         public override void SetDefaults()
@@ -179,7 +179,7 @@ namespace SGAmod.Items.Consumables.Debug
             return true;
         }
     }
-    */
+    
 
     /*
     public class Debug10 : ModItem

@@ -1,7 +1,13 @@
 using Microsoft.Xna.Framework;
 using SGAmod.Buffs.Debuffs;
+<<<<<<< Updated upstream
+=======
+using SGAmod.Dusts;
+using SGAmod.Items.Weapons.Almighty;
+>>>>>>> Stashed changes
 using System;
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -13,6 +19,51 @@ namespace SGAmod
 
 		public bool acidBurn = false;
 		public int reducedDefense = 0; // #TODO
+<<<<<<< Updated upstream
+=======
+		public bool MassiveBleeding = false;
+		public bool DankSlow = false;
+
+		//TimeSlow
+		public float TimeSlow = 0;
+		public bool TimeSlowImmune = false;
+
+		//Impale
+		public int impaled = 0;
+		private int nonStackingImpaled_;
+		public int nonStackingImpaled
+		{
+			get
+			{
+				return nonStackingImpaled_;
+			}
+			set
+			{
+				nonStackingImpaled_ = Math.Max(value, nonStackingImpaled_);
+			}
+		}
+		//Radiation
+		internal int IrradiatedAmount_;
+		public int IrradiatedAmount
+		{
+			get
+			{
+				return IrradiatedAmount_;
+			}
+			set
+			{
+				IrradiatedAmount_ = Math.Max(value, IrradiatedAmount_);
+			}
+		}
+
+		//Other
+		public int counter = 0;
+		public float damagemul = 1f;
+		public List<DamageStack> damageStacks = new List<DamageStack>();
+		public int lastHitByItem = 0;
+		public bool NoHit = true;
+		
+>>>>>>> Stashed changes
 
 		public override void ResetEffects(NPC npc)
 		{
@@ -54,5 +105,66 @@ namespace SGAmod
 				drawColor.B = (byte)(drawColor.B * 0.2f);
 			}
 		}
+<<<<<<< Updated upstream
+=======
+
+        public override void OnHitByItem(NPC npc, Player player, Item item, NPC.HitInfo hit, int damageDone)
+        {
+		
+            OnHit(npc, player, damageDone, hit.Knockback, hit.Crit, item, null, false);
+            
+        }
+    
+        public override void OnHitByProjectile(NPC npc, Projectile projectile, NPC.HitInfo hit, int damageDone)
+        {
+
+            OnHit(npc, Main.player[projectile.owner], damageDone, hit.Knockback, hit.Crit, null, projectile, true) ;
+
+        }
+
+        public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers)
+        {
+            if (gouged)
+            {
+				modifiers.Defense *= 0.5f;
+            }
+            
+        }
+        public override void ModifyHitByItem(NPC npc, Player player, Item item, ref NPC.HitModifiers modifiers)
+        {
+            
+            ModifyDamage(npc, player, ref modifiers.FinalDamage, item, null);
+
+        }
+        public override void ModifyHitByProjectile(NPC npc, Projectile projectile, ref NPC.HitModifiers modifiers)
+        {
+			
+			ModifyDamage(npc, Main.player[projectile.owner], ref modifiers.FinalDamage, null, projectile);
+
+		}
+        public override void PostAI(NPC npc)
+        {
+			counter++;
+			if (TimeSlow > 0 && npc.IsValidEnemy() && !TimeSlowImmune)
+			{
+				npc.position -= npc.velocity - (npc.velocity / (1 + TimeSlow));
+			}
+			TimeSlow = 0;
+        }
+        public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
+        {
+			IrradiatedExplosion(npc, IrradiatedAmount);
+
+			if (npc.type == NPCID.CultistBoss)
+			{
+				if (NPC.CountNPCS(NPCID.CultistBossClone) >= 6 && npc.GetGlobalNPC<SGAnpcs>().NoHit)
+				{
+					npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<NuclearOption>()));
+				}
+			}
+		}
+		
+
+>>>>>>> Stashed changes
 	}
 }
