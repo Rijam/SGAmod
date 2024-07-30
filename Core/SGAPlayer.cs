@@ -269,17 +269,7 @@ namespace SGAmod
 		{
 			Apocalyptical_Kill(damage, hitDirection, pvp, damageSource);
 		}
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-	}
-=======
-=======
-=======
-<<<<<<< Updated upstream
-	}
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
+
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
 			
@@ -334,7 +324,8 @@ namespace SGAmod
 						int projtype = -1;
 						if (ShieldTypes.ContainsKey(Player.HeldItem.type))
 						{
-							ShieldTypes.TryGetValue(Player.HeldItem.type, out projtype);
+							//ShieldTypes.TryGetValue(Player.HeldItem.type, out projtype);
+							projtype = ShieldTypes.GetValueOrDefault(Player.HeldItem.type);
 							if(projtype > 0)
 							{
 								if (Player.ownedProjectileCounts[projtype] < 1)
@@ -384,7 +375,10 @@ namespace SGAmod
                 }
 					
             }
-            
+			if (realIFrames > 0)
+			{
+				return true;
+			}
             return false;
 			
         }
@@ -399,12 +393,10 @@ namespace SGAmod
             
         }
 
-    }
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
->>>>>>> Stashed changes
+		public override void ModifyHurt(ref Player.HurtModifiers modifiers)
+		{
+			base.ModifyHurt(ref modifiers);
+		}
+	}
+
 }

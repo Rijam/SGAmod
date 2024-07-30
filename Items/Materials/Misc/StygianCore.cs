@@ -38,7 +38,7 @@ namespace SGAmod.Items.Materials.Misc
             Texture2D inner = TextureAssets.Item[ModContent.ItemType<AssemblyStar>()].Value;
 
             Vector2 slotSize = new Vector2(52f, 52f);
-            position -= slotSize * Main.inventoryScale / 2f - frame.Size() * scale / 2f;
+            position -= slotSize *  Main.inventoryScale / 2f - frame.Size() * scale / 2f;
             Vector2 drawPos = position + slotSize * Main.inventoryScale / 2f;
             Vector2 textureOrigin = new Vector2(inner.Width/2, inner.Height/2);
 

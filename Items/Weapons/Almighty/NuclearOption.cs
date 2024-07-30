@@ -156,6 +156,7 @@ namespace SGAmod.Items.Weapons.Almighty
             Projectile.tileCollide = false;
             Projectile.timeLeft = 300;
             Projectile.friendly = true;
+			
         }
         public override string Texture => "Terraria/Images/Misc/MoonExplosion/Explosion";
         public override void Load()
@@ -170,7 +171,8 @@ namespace SGAmod.Items.Weapons.Almighty
 
         public override void SetStaticDefaults()
         {
-            ProjectileID.Sets.TrailCacheLength[Projectile.type] = 10;
+			ProjectileID.Sets.DrawScreenCheckFluff[Projectile.type] = 4800;
+			ProjectileID.Sets.TrailCacheLength[Projectile.type] = 10;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
         public override void AI()
@@ -231,7 +233,7 @@ namespace SGAmod.Items.Weapons.Almighty
                         {
                             if (npc.ModNPC != null && npc.ModNPC.Mod.Name == "CalamityMod")
                             {
-                                npc.StrikeInstantKill();
+								npc.life = 0;
                                 if (npc.active)
                                 {
                                     npc.active = false;
