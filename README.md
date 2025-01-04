@@ -7,12 +7,8 @@ Join the Discord server: https://discord.gg/aGy34Xw
 
 Trail Helper doesnt perfectly work
 
-Just Block doesnt quite work.
-
-Cap Shield Proj doesnt spawn.
+If just block is supposed to reduce damage after the full block period then it doesnt work, otherwise its all good
 
 Wraith Targetting pad doesnt work (IDK how to IL edit stuff yet).
-
-Credits cant be accessed properly
 
 Contagion and Tidal Wave are quite funky.

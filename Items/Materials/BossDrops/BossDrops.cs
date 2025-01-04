@@ -23,14 +23,7 @@ namespace SGAmod.Items.Materials.BossDrops
 			Item.rare = ItemRarityID.Green;
 		}
 	}
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
+
 
     public class CopperWraithNotch : ModItem
     {
@@ -123,11 +116,4 @@ namespace SGAmod.Items.Materials.BossDrops
 			Item.rare = ItemRarityID.Green;
 		}
 	}
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
->>>>>>> Stashed changes
 }

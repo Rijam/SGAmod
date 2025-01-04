@@ -37,7 +37,6 @@ namespace SGAmod.Items.Accessories.Expert
         {
             SGAPlayer sgaplayer = player.GetModPlayer<SGAPlayer>();
             sgaplayer.gamePadAutoAim = 1;
-
 			
         }
     }

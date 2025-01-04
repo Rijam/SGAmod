@@ -98,7 +98,7 @@ namespace SGAmod.Items.Weapons.Almighty
                 NPC[] findnpc = SGAUtils.ClosestEnemies(player.Center, 1500, Main.MouseWorld, checkWalls: false, checkCanChase: true)?.ToArray();
                 NPC target = findnpc[i % findnpc.Count()];
 
-                Projectile proj = Projectile.NewProjectileDirect(Item.GetSource_FromThis(), player.Center, Vector2.UnitX.RotatedBy(MathHelper.PiOver4 + (i * (MathHelper.TwoPi / 4f))) * 8f, ModContent.ProjectileType<MegidoProj>(), damage, knockback, player.whoAmI, 0, target.whoAmI);
+                Projectile proj = Projectile.NewProjectileDirect(source, player.Center, Vector2.UnitX.RotatedBy(MathHelper.PiOver4 + (i * (MathHelper.TwoPi / 4f))) * 8f, ModContent.ProjectileType<MegidoProj>(), damage, knockback, player.whoAmI, 0, target.whoAmI);
                 proj.ai[1] = target.whoAmI;
                 proj.netUpdate = true;
             }
@@ -233,7 +233,7 @@ namespace SGAmod.Items.Weapons.Almighty
                     Projectile.oldPos[i] = Projectile.position;
             }
 
-            TrailHelper trail = new TrailHelper("DefaultPass", ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/NoiseFix").Value);
+            TrailHelper trail = new TrailHelper("DefaultPass", ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Effects/Noise").Value);
 
             Color colorz = Color.Turquoise;
             trail.color = delegate (float percent)

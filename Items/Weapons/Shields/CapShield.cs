@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.DataStructures;
 using Idglibrary;
 using SGAmod.Items.Materials.Bars;
+using Terraria.ModLoader.IO;
 
 namespace SGAmod.Items.Weapons.Shields
 {
@@ -44,7 +45,8 @@ namespace SGAmod.Items.Weapons.Shields
             Item.autoReuse = false;
             Item.channel = true;
             Item.noMelee = true;
-        }
+			ItemID.Sets.Glowsticks[Type] = true;
+		}
         public override bool CanUseItem(Player player)
         {
             if (player.altFunctionUse == 2) Item.channel = false;
@@ -151,13 +153,14 @@ namespace SGAmod.Items.Weapons.Shields
         {
             player.AddBuff(BuffID.ParryDamageBuff, 60 * 3);
         }
-        public virtual void DrawAdd(SpriteBatch spriteBatch)
+		
+		public virtual void DrawAdd(SpriteBatch spriteBatch)
         {
             if (!CanBlock) return;
 
             bool facingleft = Projectile.velocity.X > 0;
             SpriteEffects effect = SpriteEffects.None;
-            Texture2D texture = ModContent.Request<Texture2D>("SGAmod/items/Weapons/Shields/CapShieldProj").Value;
+            Texture2D texture = ModContent.Request<Texture2D>("SGAmod/Items/Weapons/Shields/CapShieldProj").Value;
             Vector2 origin = new Vector2(texture.Width * 0.5f, texture.Height * 0.5f);
             float facing = facingleft ? AngleAdjust : -AngleAdjust;
 

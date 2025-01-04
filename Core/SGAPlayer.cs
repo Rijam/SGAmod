@@ -120,8 +120,7 @@ namespace SGAmod
 			shieldBlockTime = 0;
 			shieldBlockAngle = 0f;
 			realIFrames -= 1;
-			
-			
+
 
 			gamePadAutoAim = 0;
 
@@ -262,24 +261,17 @@ namespace SGAmod
 		public override void PreUpdate()
 		{
 			ActionCooldownStack_PreUpdate();
+			if (gamePadAutoAim > 0)
+			{
+				LockOnHelper.ForceUsability = true;
+			}
 		}
-
 
         public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
 		{
 			Apocalyptical_Kill(damage, hitDirection, pvp, damageSource);
 		}
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-	}
-=======
-=======
-=======
-<<<<<<< Updated upstream
-	}
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
+
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
 			
@@ -291,16 +283,16 @@ namespace SGAmod
 				}
 			}
 
-			if(Main.netMode != NetmodeID.SinglePlayer && SGAmod.ToggleGamepadKey.JustPressed)
+			if(Main.netMode != NetmodeID.Server && SGAmod.ToggleGamepadKey.JustPressed)
 			{
 				if(Main.LocalPlayer.GetModPlayer<SGAPlayer>().gamePadAutoAim > 0)
 				{
+					
 					LockOnHelper.CycleUseModes();
 					SoundEngine.PlaySound(SoundID.Unlock with { Pitch = 1.5f });
 				}
 			}
         }
-
         public override void PostUpdateRunSpeeds()
         {
             
@@ -312,7 +304,7 @@ namespace SGAmod
 				TrapDamageItems stuff = Player.HeldItem.GetGlobalItem<TrapDamageItems>();
 				if (stuff.misc == 3) shieldDamageReduce += 0.05f;
 			}*/
-
+			
 
             DashBlink();
 
@@ -334,7 +326,8 @@ namespace SGAmod
 						int projtype = -1;
 						if (ShieldTypes.ContainsKey(Player.HeldItem.type))
 						{
-							ShieldTypes.TryGetValue(Player.HeldItem.type, out projtype);
+							//ShieldTypes.TryGetValue(Player.HeldItem.type, out projtype);
+							projtype = ShieldTypes.GetValueOrDefault(Player.HeldItem.type);
 							if(projtype > 0)
 							{
 								if (Player.ownedProjectileCounts[projtype] < 1)
@@ -384,7 +377,10 @@ namespace SGAmod
                 }
 					
             }
-            
+			if (realIFrames > 0)
+			{
+				return true;
+			}
             return false;
 			
         }
@@ -399,12 +395,10 @@ namespace SGAmod
             
         }
 
-    }
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> a400078764b98522fee96ded515f61837496b4c4
->>>>>>> Stashed changes
+		public override void ModifyHurt(ref Player.HurtModifiers modifiers)
+		{
+			base.ModifyHurt(ref modifiers);
+		}
+	}
+
 }

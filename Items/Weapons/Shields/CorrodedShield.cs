@@ -16,7 +16,7 @@ using SGAmod.Buffs;
 using Microsoft.Xna.Framework.Audio;
 using Terraria.Utilities;
 using SGAmod.Buffs.Debuffs;
-using System.ComponentModel;
+
 
 namespace SGAmod.Items.Weapons.Shields
 {
@@ -26,8 +26,10 @@ namespace SGAmod.Items.Weapons.Shields
         {
             get
             {
-                int typez = ModContent.ProjectileType<CorrodedShieldProj>();
-                Projectile proj = null;
+				Item item = Main.LocalPlayer.HeldItem;
+                int typez = SGAPlayer.ShieldTypes.GetValueOrDefault(item.type);
+
+				Projectile proj = null;
                 if (Main.LocalPlayer.ownedProjectileCounts[typez] > 0)
                 {
                     Projectile[] proj3 = Main.projectile.Where(testprog => testprog.active && testprog.owner == Main.LocalPlayer.whoAmI && testprog.type == typez ).ToArray();
@@ -162,6 +164,8 @@ namespace SGAmod.Items.Weapons.Shields
             }
         }
         public virtual float BlockAnglePublic => BlockAngle;
+
+		public string ItemName => Name.Replace("Proj", "");
         public virtual bool Blocking => true;
         public Player player
         {
@@ -205,8 +209,8 @@ namespace SGAmod.Items.Weapons.Shields
         public override void AI()
         {
             blocktimer += 1;
-            bool heldone = player.HeldItem.type != ModContent.ItemType<CorrodedShield>();
-            if (Projectile.ai[0] > 0 || ((player.HeldItem == null || heldone) && Projectile.timeLeft <= 10) || player.dead || (player.ownedProjectileCounts[ModContent.ProjectileType<CapShieldToss>()] > 0 && GetType() == typeof(CapShieldProj)))
+            bool heldone = player.HeldItem.type != Mod.Find<ModItem>(ItemName).Type;
+            if (Projectile.ai[0] > 0 || ((player.HeldItem == null || heldone) && Projectile.timeLeft <= 10) || player.dead || (player.ownedProjectileCounts[ModContent.ProjectileType<CapShieldToss>()] > 0 && Projectile.GetType() == typeof(CapShieldProj)))
             {
                 Projectile.Kill();
             }

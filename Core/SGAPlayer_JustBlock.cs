@@ -16,10 +16,6 @@ namespace SGAmod
 {
     public partial class SGAPlayer : ModPlayer
     {
-        public void ShieldRecharge()
-        {
-
-        }
 
         public void StartShieldRecharge()
         {
@@ -96,7 +92,7 @@ namespace SGAmod
 
                 if(damageSourceIndex > 0)
                 {
-
+					//add accessory that affect shield effects here
                 }
                 return true;
             }
@@ -108,11 +104,10 @@ namespace SGAmod
             Vector2 itavect = where - Player.Center;
             itavect.Normalize();
 
-            if (Player.GetModPlayer<SGAPlayer>().heldShield >= 0 && Player.ownedProjectileCounts[ModContent.ProjectileType<CapShieldProj>()] < 1)
+            if (Player.GetModPlayer<SGAPlayer>().heldShield >= 0 && Player.ownedProjectileCounts[ModContent.ProjectileType<CapShieldToss>()] < 1)
             {
                 int heldShield = Player.GetModPlayer<SGAPlayer>().heldShield;
                 int foundhim = -1;
-                int thetype;
                 Projectile proj = Main.projectile[heldShield];
                 if (proj.active)
                 {
@@ -137,7 +132,7 @@ namespace SGAmod
                             Vector2 angl = Vector2.Normalize(proj.velocity);
                             float diff = Vector2.Dot(itavect, angl);
 
-                            if (diff > (proj.ModProjectile as CorrodedShieldProj).BlockAnglePublic - Player.GetModPlayer<SGAPlayer>().shieldBlockAngle)
+                            if (diff > (proj.ModProjectile as CorrodedShieldProj).BlockAnglePublic - Player.GetModPlayer<SGAPlayer>().shieldBlockAngle && realIFrames <= 0)
                             {
                                 if (ShieldJustBlock(blocktime, proj, where, damage ,damageSourceIndex))
                                     return true;

@@ -40,7 +40,7 @@ namespace SGAmod.Items.Weapons.Almighty
         public float ChargePercent => (float)Charge / (float)ChargeMax;
         public int ChargeSpeed => (int)(((10 + Math.Min(Player.lifeRegen / 3, 10)) * MathHelper.Clamp(Player.lifeRegenTime / 400f, 0f, 5f) * (heldOption ? 1f : 0.25f)) * (UnlimitedPower ? 100f : 1f));
 
-        public bool hasOption => Player.HasItem(ModContent.ItemType<NuclearOption>());
+        public bool hasOption => Player.HasItem(ModContent.ItemType<NuclearOption>()) || Player.HeldItem.type == ModContent.ItemType<NuclearOption>();
         public bool heldOption => Player.HeldItem.type == ModContent.ItemType<NuclearOption>();
         public override void PostUpdate()
         {
@@ -156,6 +156,7 @@ namespace SGAmod.Items.Weapons.Almighty
             Projectile.tileCollide = false;
             Projectile.timeLeft = 300;
             Projectile.friendly = true;
+			
         }
         public override string Texture => "Terraria/Images/Misc/MoonExplosion/Explosion";
         public override void Load()
@@ -170,7 +171,8 @@ namespace SGAmod.Items.Weapons.Almighty
 
         public override void SetStaticDefaults()
         {
-            ProjectileID.Sets.TrailCacheLength[Projectile.type] = 10;
+			ProjectileID.Sets.DrawScreenCheckFluff[Projectile.type] = 4800;
+			ProjectileID.Sets.TrailCacheLength[Projectile.type] = 10;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
         public override void AI()
@@ -231,7 +233,7 @@ namespace SGAmod.Items.Weapons.Almighty
                         {
                             if (npc.ModNPC != null && npc.ModNPC.Mod.Name == "CalamityMod")
                             {
-                                npc.StrikeInstantKill();
+								npc.life = 0;
                                 if (npc.active)
                                 {
                                     npc.active = false;

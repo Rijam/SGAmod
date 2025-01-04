@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.Audio;
 using Terraria.GameContent;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 
@@ -54,7 +56,7 @@ namespace SGAmod.Credits
 
         public static void AddCreditEntries()
         {
-            int Width = Main.screenWidth / 2;
+            int Width = Main.ScreenSize.X / 2;
             int Height = Main.screenHeight + 48;
             Vector2 top = new Vector2(Width, Height);
 
@@ -64,7 +66,7 @@ namespace SGAmod.Credits
             line.bufferSpace = 200;
             line.customDrawData = delegate (CreditsLine liner)
             {
-                Texture2D logo = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/logo_space2_double").Value;
+                Texture2D logo = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/logo_space2_double", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 Main.spriteBatch.Draw(logo, liner.position, null, Color.White, 0, logo.Size() / 2f, 1f, default, 0);
             };
             line.font = FontAssets.DeathText.Value;
@@ -83,7 +85,7 @@ namespace SGAmod.Credits
             {
                 int frame = (int)(CreditsManager.timePassed / 7f) % 7;
 
-                Texture2D Draken = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/TrueDergon").Value;
+                Texture2D Draken = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/TrueDergon", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 Vector2 frameSize = new Vector2(Draken.Width, Draken.Height);
 
                 Rectangle rect = new Rectangle(0, (int)(frame * (frameSize.Y / 7)), (int)frameSize.X, (int)(frameSize.Y / 7));
@@ -94,7 +96,7 @@ namespace SGAmod.Credits
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(0, 122), null, Color.White, 0, dev.Size() / 2f, 1f, SpriteEffects.None, 0);
                 dev = ModContent.Request<Texture2D>("Items/Weapons/DragonRevolver").Value;*
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(120, 50), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);*/
-                Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Items/Armor/IDG/IDGSet").Value;
+                Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Items/Armor/IDG/IDGSet", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(-108, 54), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
 
             };
@@ -109,7 +111,7 @@ namespace SGAmod.Credits
             line.bufferSpace += 64;
             line.customDrawData = delegate (CreditsLine liner)
             {
-                Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Items/Armor/JellyBru/Jellybru_Armor_dev_vanity_Idle").Value;
+                Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Items/Armor/JellyBru/Jellybru_Armor_dev_vanity_Idle", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(-64, 48f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
                 /*dev = ModContent.Request<Texture2D>("Items/Weapons/Shields/AegisaltAetherstone").Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(64, 48f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
@@ -154,7 +156,7 @@ namespace SGAmod.Credits
             line._colors.Item3 = Color.Green;
             line.customDrawData = delegate (CreditsLine liner)
             {
-                Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Items/Armor/MisterCreeper/CreeperSet").Value;
+                Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Items/Armor/MisterCreeper/CreeperSet", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(110, 48f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
                 /*dev = ModContent.Request<Texture2D>("Items/Weapons/CreepersThrow").Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(-110, 48f), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
@@ -169,7 +171,7 @@ namespace SGAmod.Credits
             line.bufferSpace += 96;
             line.customDrawData = delegate (CreditsLine liner)
             {
-                Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/iconOld").Value;
+                Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/iconOld", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(0, 140), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
                 /*dev = ModContent.Request<Texture2D>("Items/Weapons/WaveBeam").Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(62, 60), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);*/
@@ -202,7 +204,7 @@ namespace SGAmod.Credits
             line.bufferSpace += 96;
             line.customDrawData = delegate (CreditsLine liner)
             {
-                Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/icon").Value;
+                Texture2D dev = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/UI/icon", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 Main.spriteBatch.Draw(dev, liner.position + new Vector2(0, 140), null, Color.White, 0, dev.Size() / 2f, 1f, default, 0);
             };
             creditsToSpawn.Add(line);
@@ -298,7 +300,7 @@ namespace SGAmod.Credits
                 int totalFrames = Main.npcFrameCount[Terraria.ID.NPCID.Guide];
                 int frame = (int)(CreditsManager.timePassed / 7f) % totalFrames;
 
-                Texture2D Jubia = ModContent.Request<Texture2D>("SGAmod/NPCs/TownNPCs/Goat").Value;
+                Texture2D Jubia = ModContent.Request<Texture2D>("SGAmod/NPCs/TownNPCs/Goat", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 Vector2 frameSize = new Vector2(Jubia.Width, Jubia.Height);
 
                 Rectangle rect = new Rectangle(0, (int)(frame * (frameSize.Y / totalFrames)), (int)frameSize.X, (int)(frameSize.Y / totalFrames));
@@ -319,7 +321,7 @@ namespace SGAmod.Credits
             line.delayTimer = 20;
             line.customDrawData = delegate (CreditsLine liner)
             {
-                Texture2D dedicated = ModContent.Request<Texture2D>("SGAmod/Items/Weapons/Almighty/NuclearOption").Value;
+                Texture2D dedicated = ModContent.Request<Texture2D>("SGAmod/Items/Weapons/Almighty/NuclearOption", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 Main.spriteBatch.Draw(dedicated, liner.position + new Vector2(-106, 42), null, Color.White, 0, dedicated.Size() / 2f, 1f, default, 0);
 
                 /*int frame = (int)(CreditsManager.timePassed / 7f) % 10;

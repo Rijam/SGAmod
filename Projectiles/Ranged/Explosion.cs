@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace SGAmod.Projectiles.Ranged
@@ -20,6 +21,7 @@ namespace SGAmod.Projectiles.Ranged
             Projectile.tileCollide = false;
             Projectile.penetrate = -1;
             Projectile.timeLeft = 2;
+			ProjectileID.Sets.Explosive[Projectile.type] = true;
         }
 
         public override string Texture => "SGAmod/Projectiles/BoulderBlast";

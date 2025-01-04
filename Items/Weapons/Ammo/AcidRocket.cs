@@ -27,6 +27,7 @@ namespace SGAmod.Items.Weapons.Ammo
             Item.shoot = ModContent.ProjectileType<AcidRocketProj>();
             Item.shootSpeed = 3f;
             Item.ammo = AmmoID.Rocket;
+			
         }
         public override void PickAmmo(Item weapon, Player player, ref int type, ref float speed, ref StatModifier damage, ref float knockback)
         {

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SGAmod")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86994bd92a4eb01c8d4c07fd056fcfae88788dcb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4bf6a1958b2f8644673d9d1b188630d0194965df")]
 [assembly: System.Reflection.AssemblyProductAttribute("SGAmod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SGAmod")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -192,7 +192,9 @@ namespace SGAmod
         public override void Load()
         {
             SGAMethodSwaps.Apply();
-            Instance = this;
+			LoadModList();
+			
+			Instance = this;
 
             ExpertiseCustomCurrencySystem = new ExpertiseCurrency(ModContent.ItemType<Items.Misc.ExpertiseItem>(), 999L);
             ExpertiseCustomCurrencyID = CustomCurrencyManager.RegisterCurrency(ExpertiseCustomCurrencySystem);
