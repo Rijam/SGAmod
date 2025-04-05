@@ -191,7 +191,7 @@ namespace SGAmod
 			{
 				Vector2 randomcircle = new Vector2(Main.rand.Next(-8000, 8000), Main.rand.Next(-8000, 8000));
 				randomcircle.Normalize();
-				int dust = Dust.NewDust(npc.position + randomcircle * (1.2f * (float)npc.width), npc.width + 4, npc.height + 4, 5, npc.velocity.X * 0.4f, (npc.velocity.Y - 7f) * 0.4f, 30, default, 1.5f);
+				int dust = Dust.NewDust(npc.position + randomcircle * (1.2f * (float)npc.width), npc.width + 4, npc.height + 4, DustID.Blood, npc.velocity.X * 0.4f, (npc.velocity.Y - 7f) * 0.4f, 30, default, 1.5f);
 				Main.dust[dust].noGravity = true;
 				Main.dust[dust].color = Main.hslToRgb(0f, 0.5f, 0.35f);
 			}

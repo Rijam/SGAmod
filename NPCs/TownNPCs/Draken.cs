@@ -142,6 +142,15 @@ namespace SGAmod.NPCs.TownNPCs
 			return false;
 		}
 
+		public override void ChatBubblePosition(ref Vector2 position, ref SpriteEffects spriteEffects)
+		{
+			position.X += 14 * NPC.direction;
+		}
+		public override void EmoteBubblePosition(ref Vector2 position, ref SpriteEffects spriteEffects)
+		{
+			base.EmoteBubblePosition(ref position, ref spriteEffects);
+		}
+
 		public override bool CheckConditions(int left, int right, int top, int bottom)
 		{
 			return true;

@@ -30,11 +30,11 @@ namespace SGAmod.Projectiles.Melee
             moveout = 3f;
             thrustspeed = 3.0f;
         }
-        /*public new float movementFactor
-        {
-            get { return Projectile.ai[0]; }
-            set { Projectile.ai[0] = value; }
-        }*/
-        
-    }
+
+		public new float movementFactor
+		{
+			get { return Projectile.ai[0]; }
+			set { Projectile.ai[0] = value; }
+		}
+	}
 }

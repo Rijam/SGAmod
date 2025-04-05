@@ -289,7 +289,7 @@ namespace SGAmod
 				{
 					
 					LockOnHelper.CycleUseModes();
-					SoundEngine.PlaySound(SoundID.Unlock with { Pitch = 1.5f });
+					SoundEngine.PlaySound(SoundID.Unlock with { Pitch = 1.5f }, Main.LocalPlayer.position);
 				}
 			}
         }

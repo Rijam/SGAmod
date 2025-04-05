@@ -56,8 +56,8 @@ namespace SGAmod.Credits
 
         public static void AddCreditEntries()
         {
-            int Width = Main.ScreenSize.X / 2;
-            int Height = Main.screenHeight + 48;
+            float Width = Main.screenWidth * Main.UIScale / 2;
+            float Height = Main.screenHeight * Main.UIScale + 48;
             Vector2 top = new Vector2(Width, Height);
 
             CreditsLine line = new CreditsLine(("", "", ""), top + new Vector2(0, 96));
@@ -324,9 +324,9 @@ namespace SGAmod.Credits
                 Texture2D dedicated = ModContent.Request<Texture2D>("SGAmod/Items/Weapons/Almighty/NuclearOption", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 Main.spriteBatch.Draw(dedicated, liner.position + new Vector2(-106, 42), null, Color.White, 0, dedicated.Size() / 2f, 1f, default, 0);
 
-                /*int frame = (int)(CreditsManager.timePassed / 7f) % 10;
+                int frame = (int)(CreditsManager.timePassed / 7f) % 10;
 
-                Texture2D NoHitCharm = ModContent.Request<Texture2D>("Items/Accessories/Charms/NoHitCharmlv1").Value;
+                /*Texture2D NoHitCharm = ModContent.Request<Texture2D>("Items/Accessories/Charms/NoHitCharmlv1").Value;
                 Vector2 frameSize = new Vector2(NoHitCharm.Width, NoHitCharm.Height);
 
                 Rectangle rect = new Rectangle(0, (int)(frame * (frameSize.Y / 10)), (int)frameSize.X, (int)(frameSize.Y / 10));
@@ -431,7 +431,7 @@ namespace SGAmod.Credits
             creditsRolling = true;
             credits = new List<CreditsLine>();
             creditsToSpawn = new List<CreditsLine>();
-            creditsRenderTarget = new RenderTarget2D(Main.graphics.GraphicsDevice, Main.screenWidth, Main.screenHeight, false, Main.graphics.GraphicsDevice.PresentationParameters.BackBufferFormat, DepthFormat.Depth24, 1, RenderTargetUsage.DiscardContents);
+            creditsRenderTarget = new RenderTarget2D(Main.graphics.GraphicsDevice, (int)(Main.screenWidth * Main.UIScale), (int)(Main.screenHeight * Main.UIScale), false, Main.graphics.GraphicsDevice.PresentationParameters.BackBufferFormat, DepthFormat.Depth24, 1, RenderTargetUsage.DiscardContents);
 			
             AddCreditEntries();
 
@@ -501,7 +501,7 @@ namespace SGAmod.Credits
             SpriteBatch sb = Main.spriteBatch;
             RenderTargetBinding[] binds = GD.GetRenderTargets();
 
-            Main.graphics.GraphicsDevice.SetRenderTarget(Main.screenTarget);
+            //Main.graphics.GraphicsDevice.SetRenderTarget(Main.screenTarget);
 
             Main.graphics.GraphicsDevice.SetRenderTarget(creditsRenderTarget);
             Main.graphics.GraphicsDevice.Clear(Color.Transparent);
@@ -538,7 +538,7 @@ namespace SGAmod.Credits
 
             hinttex = "Escape to Skip";
 
-            DynamicSpriteFontExtensionMethods.DrawString(sb, FontAssets.CombatText[1].Value,hinttex, new Vector2(0,creditsRenderTarget.Width), Color.White * fadeInAlpha, 0, new Vector2(-64,hinttexSize1.Y),1f,SpriteEffects.None, 0);
+            DynamicSpriteFontExtensionMethods.DrawString(sb, FontAssets.CombatText[1].Value,hinttex, new Vector2(0,creditsRenderTarget.Height), Color.White * fadeInAlpha, 0, new Vector2(-32,hinttexSize1.Y),1f,SpriteEffects.None, 0);
 
             sb.End();
             GD.SetRenderTargets(binds);
@@ -551,7 +551,7 @@ namespace SGAmod.Credits
 
             if (ScreenTexture != null && !ScreenTexture.IsDisposed)
             {
-                Vector2 standardSize = new Vector2(Main.screenWidth / (float)ScreenTexture.Width,Main.screenHeight / (float)ScreenTexture.Height);
+                Vector2 standardSize = new Vector2(Main.screenWidth * Main.UIScale / (float)ScreenTexture.Width,Main.screenHeight * Main.UIScale / (float)ScreenTexture.Height);
                 sb.Draw(ScreenTexture, Vector2.Zero, null, Color.White.MultiplyRGBA(new Color(colorAnimation,colorAnimation,colorAnimation, 1f)),0,Vector2.Zero,Vector2.One*standardSize,SpriteEffects.None,0f);
                
             }

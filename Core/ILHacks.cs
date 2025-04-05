@@ -19,7 +19,8 @@ namespace SGAmod
 			//SGAmod.Instance.Logger.Debug("Loading an unhealthy amount of IL patches");
 			SGAmod.Instance.Logger.Debug("Loading IL Edits");
 			IL_Player.StickyMovement += AddCustomWebsCollision;
-			
+			IL_LockOnHelper.Update += CursorHack;
+			IL_LockOnHelper.SetUP += CursorHack;
 
 			PrivateClassEdits.ApplyPatches();
 		}

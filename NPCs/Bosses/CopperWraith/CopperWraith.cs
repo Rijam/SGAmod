@@ -30,6 +30,7 @@ namespace SGAmod.NPCs.Bosses.CopperWraith
         public float speed = 0.3f;
         public string attachedType = "CopperWraith";
         public bool selfdestruct;
+	
 
         public override void SendExtraAI(BinaryWriter writer)
         {
@@ -66,6 +67,7 @@ namespace SGAmod.NPCs.Bosses.CopperWraith
                 Hide = true // Hides this NPC from the Bestiary, useful for multi-part NPCs whom you only want one entry.
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(NPC.type, value);
+			
         }
         public override string Texture => "Terraria/Images/Item_" + armortype;
 
@@ -151,7 +153,8 @@ namespace SGAmod.NPCs.Bosses.CopperWraith
                 Hide = true // Hides this NPC from the Bestiary, useful for multi-part NPCs whom you only want one entry.
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(NPC.type, value);
-        }
+			NPCID.Sets.NeedsExpertScaling[NPC.type] = true;
+		}
 
         public override string Texture => "Terraria/Images/Item_" + (ItemID.CopperChainmail);
         public override void AI()
@@ -249,7 +252,8 @@ namespace SGAmod.NPCs.Bosses.CopperWraith
                 Hide = true // Hides this NPC from the Bestiary, useful for multi-part NPCs whom you only want one entry.
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(NPC.type, value);
-        }
+			NPCID.Sets.NeedsExpertScaling[NPC.type] = true;
+		}
         public override string Texture => "Terraria/Images/Item_" + (ItemID.CopperHelmet);
     }
     public class CopperArmorGreaves : CopperArmorChainmail
@@ -266,7 +270,8 @@ namespace SGAmod.NPCs.Bosses.CopperWraith
                 Hide = true // Hides this NPC from the Bestiary, useful for multi-part NPCs whom you only want one entry.
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(NPC.type, value);
-        }
+			NPCID.Sets.NeedsExpertScaling[NPC.type] = true;
+		}
     }
 
     public class CopperArmorBow : CopperArmorPiece
@@ -299,7 +304,8 @@ namespace SGAmod.NPCs.Bosses.CopperWraith
                 Hide = true // Hides this NPC from the Bestiary, useful for multi-part NPCs whom you only want one entry.
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(NPC.type, value);
-        }
+			NPCID.Sets.NeedsExpertScaling[NPC.type] = true;
+		}
 
         public override void AI()
         {
@@ -375,7 +381,8 @@ namespace SGAmod.NPCs.Bosses.CopperWraith
                 Hide = true // Hides this NPC from the Bestiary, useful for multi-part NPCs whom you only want one entry.
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(NPC.type, value);
-        }
+			NPCID.Sets.NeedsExpertScaling[NPC.type] = true;
+		}
         public override string Texture => "Terraria/Images/Item_" + (ItemID.CopperShortsword);
 
         public override void SetDefaults()

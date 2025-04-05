@@ -20,7 +20,7 @@ namespace SGAmod.Items.Weapons.Melee.Spears
             Item.noUseGraphic = true;
             Item.useAnimation = 10;
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.useTime = 11;
+            Item.useTime = 10;
             Item.knockBack = 4.5f;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
@@ -29,6 +29,7 @@ namespace SGAmod.Items.Weapons.Melee.Spears
             Item.rare = ItemRarityID.Orange;
             Item.shoot = ModContent.ProjectileType<MossthornProj>();
             Item.shootSpeed = 4.5f;
+			
         }
         public override bool CanUseItem(Player player)
         {

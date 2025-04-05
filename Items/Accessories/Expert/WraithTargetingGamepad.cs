@@ -36,7 +36,8 @@ namespace SGAmod.Items.Accessories.Expert
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             SGAPlayer sgaplayer = player.GetModPlayer<SGAPlayer>();
-            sgaplayer.gamePadAutoAim = 1;
+            sgaplayer.gamePadAutoAim = 2;
+			
 			
         }
     }

@@ -28,7 +28,6 @@ using System.Diagnostics;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using System.Reflection;
-using Terraria.Graphics.CameraModifiers;
 using SGAmod.Items.Weapons.Shields;
 using static SGAmod.EffectsSystem;
 using SGAmod.Items.Weapons.Almighty;
@@ -111,7 +110,7 @@ namespace SGAmod
 
         public SGAmod()
         {
-
+			CloudAutoloadingEnabled = false;
         }
 
         //Hotkeys

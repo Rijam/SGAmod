@@ -739,7 +739,11 @@ BronzeWraithShard: {
 }
 
 WraithTargetingGamepad: {
-	Tooltip: Enables Terraria Gamepad auto-aiming with keyboard controls while worn
+	Tooltip: 
+	'''
+	Enables Terraria Gamepad auto-aiming with keyboard controls while worn
+	[c/FE0102:Whilst the auto-aiming pop ups, it gets stuck on one mode and im not sure thats even working. Check ILHack in the core folder and some sections of SGAplayer.]
+	'''
 	DisplayName: Wraith Targeting Gamepad
 }
 
@@ -792,6 +796,7 @@ Megido: {
 		'''
 		Targets 4 enemies nearby your cursor on use
 		[c/FFA500:Requires 1 Cooldown stack, adds 20 seconds each]
+		[c/FE0203:Prim Trail doesnt work. If you know how those work, please modify TrailHelper in the Effect Folder]
 		'''
 	DisplayName: Megido
 }

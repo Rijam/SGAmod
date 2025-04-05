@@ -316,7 +316,7 @@ namespace SGAmod.Items.Weapons.Almighty
 
                 foreach (CloudBoom cb in boomOfClouds.Where(testby => testby.timeLeft > 0))
                 {
-                    Texture2D cloudTex = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/Clouds/Clouds" + cb.cloudType).Value;
+                    Texture2D cloudTex = ModContent.Request<Texture2D>("SGAmod/Assets/Textures/HellionClouds/Clouds" + cb.cloudType).Value;
                     float cbalpha = MathHelper.Clamp(cb.timeLeft / (float)cb.timeLeftMax, 0f, 1f);
                     float cloudfadeAlpha = Math.Min((cb.timeLeftMax - cb.timeLeft) / 12f, 1f) * 0.75f;
 

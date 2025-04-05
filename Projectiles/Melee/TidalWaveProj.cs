@@ -28,17 +28,20 @@ namespace SGAmod.Projectiles.Melee
             Projectile.DamageType = DamageClass.Melee;
             Projectile.timeLeft = 90;
             Projectile.hide = true;
+			DrawOriginOffsetX = -39;
+			DrawOriginOffsetY = 39;
+
             
-            movein = 0.2f;
-            moveout = 0.8f;
+            movein = 0.8f;
+            moveout = 0.4f;
             thrustspeed = 3f;
         }
         
         public override void MakeProjectile()
         {
-            Vector2 center = new Vector2(Projectile.position.X + (Projectile.width / 2), Projectile.position.Y + (Projectile.width / 2));
-            Vector2 launchvector = new Vector2((float)Math.Cos(truedirection),(float)Math.Sin(truedirection));
-            int launchedProj = Projectile.NewProjectile(Projectile.GetSource_FromThis(), center + launchvector*42, launchvector * 8, ModContent.ProjectileType<TidalWaveProj2>(), 1, 0f);
+            
+            Vector2 launchvector = new Vector2((float)Math.Cos(Projectile.velocity.ToRotation()),(float)Math.Sin(Projectile.velocity.ToRotation()));
+            int launchedProj = Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, launchvector * 8, ModContent.ProjectileType<TidalWaveProj2>(), 1, 0f);
             Main.projectile[launchedProj].damage = Projectile.damage;
             Main.projectile[launchedProj].owner = Projectile.owner;
         }

@@ -1,4 +1,4 @@
-
+﻿
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\tModLoader.targets" />
   <PropertyGroup>
@@ -10,6 +10,10 @@
     <None Remove="Items\Weapons\Almighty\NuclearOption.png" />
   </ItemGroup>
   <ItemGroup>
+    <AdditionalFiles Remove="Assets\Textures\Clouds\**" />
+    <Compile Remove="Assets\Textures\Clouds\**" />
+    <EmbeddedResource Remove="Assets\Textures\Clouds\**" />
+    <None Remove="Assets\Textures\Clouds\**" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Idglibrary">
@@ -18,7 +22,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Items\Weapons\ExThrown\" />
-    <Folder Include="Assets\Textures\Clouds\" />
-    <Folder Include="Textures\" />
   </ItemGroup>
 </Project>

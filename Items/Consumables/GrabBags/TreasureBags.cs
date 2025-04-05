@@ -49,7 +49,7 @@ namespace SGAmod.Items.Consumables.GrabBags
 			itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<Items.Armor.Vanity.BossMasks.SpiderQueenMask>(), 7));
 			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Materials.BossDrops.VialOfAcid>(), 1, 35, 60));
 			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Accessories.Expert.AlkalescentHeart>()));
-			// itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Weapons.Shields.CorrodedShield>(), 3)); #TODO
+			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Weapons.Shields.CorrodedShield>(), 3)); 
 			itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Accessories.Defense.CorrodedSkull>(), 3));
 			itemLoot.Add(ItemDropRule.CoinsBasedOnNPCValue(ModContent.NPCType<NPCs.Bosses.SpiderQueen.SpiderQueen>()));
 		}

@@ -13,7 +13,7 @@ using System.Linq;
 namespace SGAmod.Effects
 {
 	//No steal, thanks please, and thank Boffin for the shader! (The rest of the code is IDG's)
-	//What the hell is this? - HatredNotFound, porter
+	//Something funny happened that made it not work, but honestly i dont even have the skills to remotely comprehend whats happening here to help fix it - Hatred
 	public class TrailHelper
 	{
 		Effect Effect => SGAmod.TrailEffect;
