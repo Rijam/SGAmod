@@ -739,11 +739,11 @@ BronzeWraithShard: {
 }
 
 WraithTargetingGamepad: {
-	Tooltip: 
-	'''
-	Enables Terraria Gamepad auto-aiming with keyboard controls while worn
-	[c/FE0102:Whilst the auto-aiming pop ups, it gets stuck on one mode and im not sure thats even working. Check ILHack in the core folder and some sections of SGAplayer.]
-	'''
+	Tooltip:
+		'''
+		Enables Terraria Gamepad auto-aiming with keyboard controls while worn
+		[c/FE0102:Whilst the auto-aiming pop ups, it gets stuck on one mode and im not sure thats even working. Check ILHack in the core folder and some sections of SGAplayer.]
+		'''
 	DisplayName: Wraith Targeting Gamepad
 }
 

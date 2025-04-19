@@ -1,7 +1,10 @@
 displayName = SGAmod: [c/FF0000:IN DEVELOPMENT VERSION]
 author = IDGCaptainUkraine & Rijam
 version = 0.0.0.84
+buildIgnore = .vs\*, .git\*, ignore\*, .gitignore, .gitattributes, .zip, Effects\fxcompiler,*.exe,*.zip,*.gif, *.xcf, *.idg, *.MD, *.csproj, *.user, obj\*, bin\*, vs\*, git\*
 homepage = https://discord.gg/aGy34Xw
-modReferences = Idglibrary
+hideCode = false
+hideResources = false
 includeSource = true
+modReferences = Idglibrary
 sortAfter = Idglibrary
