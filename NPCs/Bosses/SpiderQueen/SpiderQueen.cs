@@ -15,13 +15,14 @@ using SGAmod.Dusts;
 using SGAmod.Buffs.Debuffs;
 using Terraria.GameContent;
 using Terraria.GameContent.ItemDropRules;
+using SGAmod.Items.Placeable.Furniture.Trophies;
 
 namespace SGAmod.NPCs.Bosses.SpiderQueen
 {
 	[AutoloadBossHead]
 	public class SpiderQueen : ModNPC, ISGABoss
 	{
-		public int Trophy() => ItemID.IronPickaxe;
+		public int Trophy() => ModContent.ItemType<SpiderQueenTrophy>();
 		public bool Chance() => Main.rand.NextBool(10);
 		public int RelicName() => ItemID.IronPickaxe;
 		public void NoHitDrops() { }
@@ -127,7 +128,7 @@ namespace SGAmod.NPCs.Bosses.SpiderQueen
 
 			notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Items.Armor.Vanity.BossMasks.SpiderQueenMask>(), 7));
 			notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Items.Materials.BossDrops.VialOfAcid>(), 1, 25, 45));
-			// notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Items.Weapons.Shields.CorrodedShield>(), 3)); #TODO
+			notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Items.Weapons.Shields.CorrodedShield>(), 3)); 
 			notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<Items.Accessories.Defense.CorrodedSkull>(), 3));
 		}
 

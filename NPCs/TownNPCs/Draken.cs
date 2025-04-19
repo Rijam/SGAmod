@@ -18,6 +18,7 @@ using Terraria.GameContent.Personalities;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.UI;
 using Terraria.DataStructures;
+using SGAmod.Items.Materials.Misc;
 //using SGAmod.Dimensions;
 
 namespace SGAmod.NPCs.TownNPCs
@@ -139,6 +140,15 @@ namespace SGAmod.NPCs.TownNPCs
 				}
 			}
 			return false;
+		}
+
+		public override void ChatBubblePosition(ref Vector2 position, ref SpriteEffects spriteEffects)
+		{
+			position.X += 14 * NPC.direction;
+		}
+		public override void EmoteBubblePosition(ref Vector2 position, ref SpriteEffects spriteEffects)
+		{
+			base.EmoteBubblePosition(ref position, ref spriteEffects);
 		}
 
 		public override bool CheckConditions(int left, int right, int top, int bottom)
@@ -437,7 +447,12 @@ namespace SGAmod.NPCs.TownNPCs
 					chat.Add("Please tell me you did not rip those off some creature, don't hurt my wings...");
 					chat.Add("Where did you get wings from?");
 				}
-				/*
+
+                if (SGAWorld.downedSpiderQueen)
+                {
+                    chat.Add("You did a good favor to the world by ridding that giant spider, I can only feel remorse for those who became her dinner... Eaten alive...", 2.0);
+                }
+                /*
 				if (SGAWorld.downedMurk > 1)
 				{
 					if (SGAWorld.GennedVirulent)
@@ -449,10 +464,7 @@ namespace SGAmod.NPCs.TownNPCs
 						chat.Add("What Terrible secrets was that jungle-slime-creature hiding? An army of killer flies at its command...", 2.0);
 					}	
 				}
-				if (SGAWorld.downedSpiderQueen)
-				{
-					chat.Add("You did a good favor to the world by ridding that giant spider, I can only feel remorse for those who became her dinner... Eaten alive...", 2.0);
-				}
+				
 				if (SGAWorld.downedSharkvern)
 				{
 					chat.Add("Half Wyvern, Half Shark, completely brutal and sadly, undeserving of mercy; there was no other way", 2.0);
@@ -509,7 +521,7 @@ namespace SGAmod.NPCs.TownNPCs
 						chat.Add("I am sensing no other Shrines left uncovered on this planet, you are already a powerful friend. But I must wonder... These... Swords, weapons. I don't want to think whoever they belonged to, were meant to kill our kind long ago...", 2.0);
 				}
 				*/
-				chat.Add("One day, they might find us... I surely hope not.");
+                chat.Add("One day, they might find us... I surely hope not.");
 				if (!Main.dayTime)
 				{
 					chat.Add("At least I have somewhere nice to stay during the night.");
@@ -904,6 +916,9 @@ namespace SGAmod.NPCs.TownNPCs
 				shop.item[nextSlot].shopSpecialCurrency = SGAmod.ScrapCustomCurrencyID;
 				nextSlot++;
 			}
+			*/
+			.Add(new Item(ModContent.ItemType<AssemblyStar>()) { shopCustomPrice = 15, shopSpecialCurrency = SGAmod.ExpertiseCustomCurrencyID}, expertiseAbove(200))
+			/*
 			if (modplayer.ExpertiseCollectedTotal >= 200)
 			{
 				shop.item[nextSlot].SetDefaults(Mod.Find<ModItem>("AssemblyStar").Type);
@@ -964,7 +979,8 @@ namespace SGAmod.NPCs.TownNPCs
 				shop.item[nextSlot].shopSpecialCurrency = SGAmod.ScrapCustomCurrencyID;
 				nextSlot++;
 			}
-			if (modplayer.ExpertiseCollectedTotal >= 2000)
+			*/
+			/*if (modplayer.ExpertiseCollectedTotal >= 2000)
 			{
 				shop.item[nextSlot].SetDefaults(Main.dayTime ? ModContent.ItemType<Items.Tools.RodOfTeleportation>() : ItemID.RodofDiscord);
 				shop.item[nextSlot].shopCustomPrice = 100;

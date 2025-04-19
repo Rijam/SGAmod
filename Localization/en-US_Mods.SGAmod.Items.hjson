@@ -220,8 +220,6 @@ AlkalescentHeart: {
 	DisplayName: Alkalescent Heart
 	Tooltip:
 		'''
-		#TODO not implemented
-
 		Dealing crits debuff enemies, doing more damage while they are debuffed as follows:
 		While not poisoned, poison enemies
 		While poisoned, do 5% more damage and next crit Venoms
@@ -349,7 +347,7 @@ DankWoodFence: {
 }
 
 DankWoodItem: {
-	DisplayName: Dank Wood Item
+	DisplayName: Dank Wood
 	Tooltip: "'It smells odd...'"
 }
 
@@ -499,17 +497,21 @@ EngineerLeggings: {
 
 FamesChestplate: {
 	DisplayName: Fames Chestplate
-	Tooltip: ""
+	Tooltip: 6% increased ranged damage
 }
 
 FamesHelmet: {
-	DisplayName: Fames Helmet
-	Tooltip: ""
+	DisplayName: Fames Helm
+	Tooltip: 6% increased ranged crit chance
 }
 
 FamesLeggings: {
 	DisplayName: Fames Leggings
-	Tooltip: ""
+	Tooltip:
+		'''
+		6% increased ranged damage
+		15% increased movement speed
+		'''
 }
 
 ManifestedSandTosser: {
@@ -584,5 +586,286 @@ IceFairyDust: {
 
 IlluminantEssence: {
 	DisplayName: Illuminant Essence
+	Tooltip: ""
+}
+
+MidasTouch: {
+	Tooltip:
+		'''
+		Attacks always crit and deal double damage vs enemies debuffed with Midas
+		Doesn't work with a Flask of Gold
+		'''
+	DisplayName: Midas Touch
+}
+
+GlassSword: {
+	DisplayName: Glass Sword
+	Tooltip:
+		'''
+		Shatters on the first hit, throwing out several glass shards
+		Enemies hit with the broken edge afterwards are gouged
+		This weapon ignores enemy defense
+		'''
+}
+
+SpiderQueenTrophy: {
+	DisplayName: Spider Queen Trophy
+	Tooltip: ""
+}
+
+DankWaveStaff: {
+	DisplayName: Dank Wave Staff
+	Tooltip: Shoots a short piercing wave
+}
+
+Contagion: {
+	DisplayName: Contagion
+	Tooltip: Shoots a piercing wave of acid
+}
+
+Mossthorn: {
+	Tooltip: ""
+	DisplayName: Mossthorn
+}
+
+TidalWave: {
+	Tooltip:
+		'''
+		"Shoots a short range water ball"
+		"The water ball does not expire in water and crits wet enemies"
+		'''
+	DisplayName: Tidal Wave
+}
+
+AcidBullet: {
+	DisplayName: Acid Bullet
+	Tooltip:
+		'''
+		Has a high chance of inflicting Acid Burn
+		Acid Burn does damage based on the enemy's defense, and reduces their defense by 5
+		Acid Rounds quickly melt away after being fired and do not go far
+		'''
+}
+
+AcidRocket: {
+	Tooltip:
+		'''
+		Explodes into a cloud of acid on hit
+		Acid quickly melts away the rocket after being fired and does not go far
+		'''
+	DisplayName: Acid Rocket
+}
+
+Transformer: {
+	Tooltip:
+		'''
+		Electric Bolts will gain an additional arc
+		+2000 Max Electric Charge
+		+1 passive Electric Charge rate, per Active Cooldown Stack
+		'''
+	DisplayName: Transformer
+}
+
+BlinkTech: {
+	DisplayName: Blink Tech Canister
+	Tooltip:
+		'''
+		Enables a short range blink teleport, hide to disable blinking
+		Hold UP and press left or right to teleport in the chosen direction
+		Gives Chaos State for 2 seconds, which disables blinking
+		5% increased Technological Damage
+		+1500 Max Electric Charge, +1 passive Electric Recharge Rate
+		'''
+}
+
+EnergizerBattery: {
+	DisplayName: Energizer Battery
+	Tooltip:
+		'''
+		'Keeps going and going...'
+		Instantly restores 20% of your Max Electric Charge on use
+		Increases your Max Electric Charge by 200 per use (up to 2000)
+		After Sharkvern, this is raised to 3000
+		After Luminite Wraith, this is further increased to 5000
+		[c/FFA500:Requires 1 Cooldown stack, adds 40 seconds each]
+		'''
+}
+
+CorrodedShield: {
+	Tooltip:
+		'''
+		"Treasure belonging to a former adventurer. You'd rather not use it, but it looks powerful"
+		Attack with the shield to bash-dash, gaining invulnerability frames and hit enemies are Acid Burned
+		Can only hit 5 targets, bash-dash ends prematurely after the 5th
+		'''
+	DisplayName: Corroded Shield
+}
+
+CapShield: {
+	Tooltip:
+		'''
+		Performing a Just Block grants a few seconds of Striking Moment
+		Charge up to initiate a powerful dash-bash!
+		This bash-dash may be canceled early by unequipping the shield
+		Alt fire lets you throw the shield, which will bounce between nearby enemies
+		You can't use the shield while it is thrown, and the trhow gains a bounce per 30 defense
+		"Stars and Stripes!"
+		'''
+	DisplayName: Captain America's Shield
+}
+
+CopperWraithNotch: {
+	Tooltip: Intact remains of the Copper Wraith's animated armor
+	DisplayName: Copper Wraith Notch
+}
+
+TrueCopperWraithNotch: {
+	Tooltip:
+		'''
+		Unlocks IDG's Starter Bags in Draken's shop when consumed
+		-Permanent Upgrade-
+		'''
+	DisplayName: True Wraith Notch
+}
+
+CopperWraithShard: {
+	DisplayName: Copper Wraith Shard
+	Tooltip: The remains of a weak wraith; it is light and conductive
+}
+
+BronzeWraithShard: {
+	Tooltip: Tin and copper combined through the fire of a hellforge; thus stronger than a standard shard
+	DisplayName: Bronze Alloy Wraith Shard
+}
+
+WraithTargetingGamepad: {
+	Tooltip:
+		'''
+		Enables Terraria Gamepad auto-aiming with keyboard controls while worn
+		[c/FE0102:Whilst the auto-aiming pop ups, it gets stuck on one mode and im not sure thats even working. Check ILHack in the core folder and some sections of SGAplayer.]
+		'''
+	DisplayName: Wraith Targeting Gamepad
+}
+
+TinWraithShard: {
+	DisplayName: Tin Wraith Shard
+	Tooltip: The remains of a weak wraith; it is soft and malleable
+}
+
+CobaltWraithNotch: {
+	Tooltip: Intact remains of the Cobalt Wraith's animated armor, stronger than before
+	DisplayName: Cobalt Wraith Notch
+}
+
+CobaltWraithShard: {
+	DisplayName: Cobalt Wraith Shard
+	Tooltip: The remains of a stronger wraith; applyable uses in alloys and highly resistant to corrosion
+}
+
+EmpoweredWraithCoreFragment: {
+	DisplayName: Empowered Wraith Core Fragment
+	Tooltip: Summons forth the second of the Wraiths
+}
+
+WraithCoreFragment: {
+	DisplayName: Wraith Core Fragment
+	Tooltip: Summons forth the first of the Wraiths, who watches you craft bars with envy...
+}
+
+BottledMud: {
+	DisplayName: Bottled Mud
+	Tooltip: Brown and full of sedimental value
+}
+
+ManaBattery: {
+	DisplayName: Mana Battery
+	Tooltip: Encapsulated mana to be used as a form of energy for technological weapons
+}
+
+Almighty: {
+	Inferdumb: Will instantly kill any calamity enemies at max charge
+	AlmightyText:
+		'''
+		Almighty Deals armor-piercing damage that scales off your highest stat
+		Almighty also skips crits and goes straight to Apocalypticals
+		'''
+}
+
+Megido: {
+	Tooltip:
+		'''
+		Targets 4 enemies nearby your cursor on use
+		[c/FFA500:Requires 1 Cooldown stack, adds 20 seconds each]
+		[c/FE0203:Prim Trail doesnt work. If you know how those work, please modify TrailHelper in the Effect Folder]
+		'''
+	DisplayName: Megido
+}
+
+Debug10: {
+	Tooltip: ""
+	DisplayName: Debug-Cataclysmic Mothron Head to Unlimited Brit Power of supreme Destruction
+}
+
+NuclearOption: {
+	DisplayName: Nuclear Option
+	Tooltip:
+		'''
+		'Unleash the full raw, unfiltered, cataclysmic wrath of the British...'
+		Charges up by holding this item, based off life regen and by grazing projectiles
+		Will charge up very slowly if not actively held
+		At 50% charge or higher, activate to unleash a Nuclear Explosion
+		Sends out an initial shock wave, afterwards only the fireball does damage
+		Vaporizes most projectiles, and has more range and damage at higher charge
+		[c/FF0000:Getting hurt and losing health will halve your current charge]
+		[c/FF0000:Only charges up to half outside of boss fights]
+		'''
+}
+
+TheJoker: {
+	Tooltip:
+		'''
+		'The jokes on you!'
+		Is consumed when successfully using Almighty cards, and restores 20hp per stack
+		'''
+	DisplayName: The Joker
+}
+
+CardDeckPersona: {
+	Tooltip:
+		'''
+		Cooldown Stack times on Almighty cards are reduced by half
+		You have a chance to pull a Joker whenever you use a card
+		Jokers steal one of your hearts and enter your inventory
+		Successfully using a card causes you to get your hearts back
+		'Lookin' cool joker!'
+		'''
+	DisplayName: Hearts of the Cards
+}
+
+MorningStar: {
+	DisplayName: Morning Star
+	Tooltip:
+		'''
+		Calls down Lucifer's signature move to bring massive destruction in a wide area
+		[c/FFA500:Requires 4 Cooldown stack, adds 80 seconds each]
+		'''
+}
+
+AssemblyStar: {
+	DisplayName: Assembly Star
+	Tooltip:
+		'''
+		Raw assembly code forged directly by Draken
+		Can be used to craft previously uncraftable items
+		'''
+}
+
+StygianCore: {
+	DisplayName: Stygian Core
+	Tooltip: Torn from Stygian Veins with a mining tool, this star is burning manifested fabric...
+}
+
+Debug11: {
+	DisplayName: Debug11
 	Tooltip: ""
 }

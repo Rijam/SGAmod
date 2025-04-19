@@ -11,10 +11,41 @@ Mods: {
 				FormerThrowingItem: Former Throwing class item
 				FormerHavocItem: Former Havoc mod item
 				DedicatedPhilBill: Dedicated to PhilBill44, and preserving his work
+				BarWarning: Crafting this will anger something...
+				ForgeLock: This recipe has been disabled by a powerful entity...
+			}
+
+			Conditions: {
+				NotWarned: Don't anger the Copper Wraith.
+				CobaltWraith: Defeat the Cobalt Wraith.
 			}
 		}
 
 		Buffs: {
+			RadioBuff: {
+				DisplayName: Irridiated
+				Description: Nor for players to see!
+				RadioExplain:
+					'''
+					Irradiated enemies explode on death, doing damage around them based the irradiated ammounts
+					Gains more strength and deals extra damage if exposed to radiation sources for longer
+					Rate gained and max capped is based on a per-weapon basis
+					'''
+				RadioPrompt: (Hold LEFT CONTROL for more info on Irradiated)
+			}
+
+			DankSlow: {
+				DisplayName: DankSlow
+				Description: Players aren't supposed to have this debuff!
+				SlowExplain:
+					'''
+					Attacks may slow enemies
+					Consecutive attacks will stack the debuff, making the slowing effect stronger, but this soft caps after a point
+					Does not affect bosses or enemies who are immune to poisoned
+					'''
+				SlowPrompt: (Hold LEFT CONTROL for more info on Dank Slow)
+			}
+
 			AcidBurn: {
 				DisplayName: Acid Burn
 				Description: Reduced Defense and your defense works again your life
@@ -22,12 +53,32 @@ Mods: {
 
 			FamesHungerBuff: {
 				DisplayName: Fames Hunger Buff
-				Description: Mods.SGAmod.Buffs.FamesHungerBuff.Description
+				Description: Acidically consume everything, even yourself
 			}
 
 			SandySwiftnessBuff: {
 				DisplayName: Sandy Swiftness Buff
 				Description: Mods.SGAmod.Buffs.SandySwiftnessBuff.Description
+			}
+
+			Gouged: {
+				DisplayName: Gouged
+				Description: Mods.SGAmod.Buffs.Gouged.Description
+			}
+
+			MassiveBleeding: {
+				Description: Mods.SGAmod.Buffs.MassiveBleeding.Description
+				DisplayName: Massive Bleeding
+			}
+
+			RadioDebuff: {
+				DisplayName: Radio Debuff
+				Description: Mods.SGAmod.Buffs.RadioDebuff.Description
+			}
+
+			ShieldBreak: {
+				DisplayName: Shield Break
+				Description: Mods.SGAmod.Buffs.ShieldBreak.Description
 			}
 		}
 
@@ -39,7 +90,18 @@ Mods: {
 		}
 
 		Configs: {
-			SGAConfig.DisplayName: SGA Server Options
+			SGAConfig: {
+				DisplayName: SGA Server Options
+
+				QuestionableDetours: {
+					Tooltip:
+						'''
+						Enables/Disables Core Monogame detours, turning these may be required to get better logs/stablize the game
+						These are used for SGAmod's credit sequence
+						'''
+					Label: Update/Draw Detours
+				}
+			}
 
 			SGAConfigClient: {
 				DisplayName: SGA Client Options
@@ -129,6 +191,18 @@ Mods: {
 					Tooltip: Enables/Disables The Solar Dye on the rocks shot by the Lava Rocks Gun, may improve performance
 				}
 			}
+		}
+
+		IFormerHavocItem: {
+			DankWaveStaff: {
+				DisplayName: Dank Wave Staff
+				Tooltip: ""
+			}
+		}
+
+		Keybinds: {
+			"Abilities/Cycle Recipes.DisplayName": Abilities/Cycle Recipes
+			"Cycle Aiming Style.DisplayName": Cycle Aiming Style
 		}
 	}
 }

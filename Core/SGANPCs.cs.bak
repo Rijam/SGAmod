@@ -1,0 +1,90 @@
+using Microsoft.Xna.Framework;
+using SGAmod.Buffs.Debuffs;
+using System;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace SGAmod
+{
+	public partial class SGAnpcs : GlobalNPC
+	{
+		public override bool InstancePerEntity => true;
+
+		//Debuffs
+		public bool acidBurn = false;
+		public bool gouged = false;
+		public int reducedDefense = 0; // #TODO
+
+		//Other
+		public float damagemul = 1f;
+		public int lastHitByItem = 0;
+
+		public override void ResetEffects(NPC npc)
+		{
+			acidBurn = false;
+			gouged = false;
+			reducedDefense = 0;
+
+			damagemul = 1f;
+		}
+
+		public override void UpdateLifeRegen(NPC npc, ref int damage)
+		{
+			if (acidBurn)
+			{
+				int tier = 2;
+				//if (npc.HasBuff(ModContent.BuffType<RustBurn>()) && RustBurn.IsInorganic(npc))
+				//	tier = 3;
+				npc.lifeRegen -= 20 + Math.Min(tier * 150, npc.defense * tier);
+				if (damage < 5)
+					damage = 5;
+			}
+		}
+
+		public override void DrawEffects(NPC npc, ref Color drawColor)
+		{
+			if (acidBurn)
+			{
+				if (Main.rand.Next(5) < 4)
+				{
+					int dust = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, ModContent.DustType<Dusts.AcidDust>(), npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default, 1f);
+					Main.dust[dust].noGravity = true;
+					Main.dust[dust].velocity *= 1.8f;
+					Main.dust[dust].velocity.Y -= 0.5f;
+					if (Main.rand.NextBool(4))
+					{
+						Main.dust[dust].noGravity = false;
+						Main.dust[dust].scale *= 0.5f;
+					}
+				}
+				drawColor.R = (byte)(drawColor.R * 0.2f);
+				drawColor.G = (byte)(drawColor.G * 0.8f);
+				drawColor.B = (byte)(drawColor.B * 0.2f);
+			}
+			if (gouged)
+			{
+				Vector2 randomCircle = new Vector2(Main.rand.Next(-8000, 8000), Main.rand.Next(-8000, 8000));
+				int dust = Dust.NewDust(npc.Center + randomCircle, 0, 0, DustID.Blood, -npc.velocity.X * 0.3f, 4f + (npc.velocity.Y * -0.4f), 30, default, 0.85f);
+				Main.dust[dust].noGravity = true;
+				Main.dust[dust].color = Main.hslToRgb(0f, 0.5f, 0.35f);
+			}
+		}
+
+        public override void OnHitByItem(NPC npc, Player player, Item item, NPC.HitInfo hit, int damageDone)
+        {
+			
+            OnHit(npc, player, damageDone, hit.Knockback, hit.Crit, item, null, false);
+        }
+        public override void OnHitByProjectile(NPC npc, Projectile projectile, NPC.HitInfo hit, int damageDone)
+        {
+			OnHit(npc, Main.player[projectile.owner], damageDone, hit.Knockback, hit.Crit, null, projectile, true) ;
+        }
+
+        public override void ModifyHitByItem(NPC npc, Player player, Item item, ref int damage, ref float knockback, ref bool crit)
+        {
+            lastHitByItem = item.type;
+            DoModifies(npc, player, null, item, ref damage, ref knockback, ref crit);
+        }
+    }
+}

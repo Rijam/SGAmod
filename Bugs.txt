@@ -1,0 +1,5 @@
+Copper Wraith sometimes duplicates on reform
+Nuclear Option isnt rotating in the credits
+Nuclear Option doesnt show up on other people's screens.
+Wraith Targetting Pad doesnt perfectly work
+Megido is missing their prim trail

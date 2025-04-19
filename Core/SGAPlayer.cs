@@ -18,6 +18,8 @@ using Terraria.ModLoader.IO;
 using Terraria.Graphics.Shaders;
 using Terraria.Utilities;
 using SGAmod.Buffs.Debuffs;
+using SGAmod.Items.Weapons.Shields;
+using SGAmod.Items.Weapons.Almighty;
 
 namespace SGAmod
 {
@@ -33,21 +35,60 @@ namespace SGAmod
 
 		// Buffs
 		public bool acidBurn = false;
+		public bool MassiveBleeding = false;
 
 		// Accessories
 		public byte cobwebRepellent = 0;
+		public bool alkalescentHeart = false;
+		public int gamePadAutoAim = 0;
+		public bool transformerAccessory = false;
+		public bool personaDeck = false;
 
-		// Armor
-		public int sandStormTimer = 0;
+        // Armor
+        public int sandStormTimer = 0;
+		public (bool,bool) AcidSet = (false,false);
+		public bool jellybruSet = false;
+
+		//Shield related
+		public bool tpdcpu = false;
+		public bool ShieldBreak = false;
+		public int ShieldType = 0;
+		public int ShieldTypeDelay = 0;
+		public int shieldBlockTime = 0;
+		public float shieldBlockAngle = 0;
+		public float shieldDamageReduce = 0f;
+		public float shieldDamageBoost = 0f;
+		public int heldShield = -1;
+		public int heldShieldReset = 0;
+		public static Dictionary<int,int> ShieldTypes = new Dictionary<int, int>();
+		public (int, int, int) energyShieldAmountAndRecharge = (0, 0, 0);
+		public (int, int) GetEnergyShieldAmountAndRecharge => ((int)(energyShieldAmountAndRecharge.Item1 * techDamage), (int)(energyShieldAmountAndRecharge.Item2 * techDamage));
 
 		//Stat Related
 		public float UseTimeMul = 1f;
 		public float UseTimeMulPickaxe = 1f;
 		public float DoTResist = 1f;
+		public int realIFrames = 0;
 
-		// World
-		public bool Drakenshopunlock = false;
+		//Technology related
+		public int maxBlink = 0;
+		public int electricCharge = 0;
+		public int electricChargeMax = 0;
+		public float electricChargeCost = 1f;
+        public float electricChargeReducedDelay = 1f;
+        public float electricdelay = -500;
+        public int electricRechargeRate = 1;
+        public float electricRechargeRateMul = 1f;
+        public int electricpermboost = 0;
+		public float techDamage = 1f;
+
+        // World
+        public bool Drakenshopunlock = false;
 		public bool DankShrineZone = false;
+
+		// Other
+		public bool noModTeleport = false;
+		
 
 		protected float _critDamage = 0f;
 		public float CritDamage
@@ -67,12 +108,48 @@ namespace SGAmod
 		{
 			Player.breathMax = 200;
 			acidBurn = false;
+			MassiveBleeding = false;
 			sandStormTimer = Math.Max(sandStormTimer - 1, 0);
+			AcidSet = (false,false);
 			UseTimeMul = 1f;
 			UseTimeMulPickaxe = 1f;
 			DoTResist = 1f;
+			techDamage = 1f;
+			shieldDamageReduce = 0f;
+			shieldDamageBoost = 0f;
+			shieldBlockTime = 0;
+			shieldBlockAngle = 0f;
+			realIFrames -= 1;
+
+
+			gamePadAutoAim = 0;
+
+
+			heldShieldReset--;
+			if (heldShieldReset < 1) heldShield = -1;
 
 			cobwebRepellent = 0;
+			alkalescentHeart = false;
+			transformerAccessory = false;
+			personaDeck = false;
+			noModTeleport = false;
+            tpdcpu = false;
+
+            if (!ShieldBreak) electricdelay -= 1;
+			electricCharge = Math.Min(electricCharge + (electricdelay < 1 ? (int)(electricRechargeRate * electricRechargeRateMul):0),electricChargeMax);
+			electricChargeMax = electricpermboost;
+			electricRechargeRate = 0;
+			electricRechargeRateMul = 1f;
+			electricChargeCost = 1f;
+			electricChargeReducedDelay = 1f;
+			maxBlink = 0;
+			ShieldBreak = false;
+
+			if (ShieldTypeDelay > 0)
+				ShieldTypeDelay--;
+			else
+				ShieldType = 0;
+
 			Drakenshopunlock = false;
 			DankShrineZone = false;
 
@@ -150,6 +227,18 @@ namespace SGAmod
 				Player.lifeRegen -= 15 + (int)(Player.statDefense * 0.90f);
 				Player.statDefense -= 5;
 			}
+			if (MassiveBleeding)
+			{
+				if (Player.lifeRegen > 0)
+					Player.lifeRegen = 0;
+				Player.lifeRegenTime = 0;
+				Player.lifeRegen -= 10;
+			}
+
+			if ((ShieldType < 1 && ShieldBreak) /*|| (Pressured && !SpaceDiverSet)*/)
+			{
+				Player.lifeRegen -= 250;
+			}
 		}
 		public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
 		{
@@ -172,11 +261,144 @@ namespace SGAmod
 		public override void PreUpdate()
 		{
 			ActionCooldownStack_PreUpdate();
+			if (gamePadAutoAim > 0)
+			{
+				LockOnHelper.ForceUsability = true;
+			}
 		}
 
-		public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
+        public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
 		{
 			Apocalyptical_Kill(damage, hitDirection, pvp, damageSource);
 		}
+
+        public override void ProcessTriggers(TriggersSet triggersSet)
+        {
+			
+			if (SGAmod.ToggleRecipeHotKey.JustPressed)
+			{
+				if(AcidSet.Item1)
+				{
+					Items.Armor.Fames.FamesHelmet.ActivateHungerOfFames(this);
+				}
+			}
+
+			if(Main.netMode != NetmodeID.Server && SGAmod.ToggleGamepadKey.JustPressed)
+			{
+				if(Main.LocalPlayer.GetModPlayer<SGAPlayer>().gamePadAutoAim > 0)
+				{
+					
+					LockOnHelper.CycleUseModes();
+					SoundEngine.PlaySound(SoundID.Unlock with { Pitch = 1.5f }, Main.LocalPlayer.position);
+				}
+			}
+        }
+        public override void PostUpdateRunSpeeds()
+        {
+            
+        }
+        public override void PostUpdateEquips()
+        {
+			/*if (!Player.HeldItem.IsAir)
+			{
+				TrapDamageItems stuff = Player.HeldItem.GetGlobalItem<TrapDamageItems>();
+				if (stuff.misc == 3) shieldDamageReduce += 0.05f;
+			}*/
+			
+
+            DashBlink();
+
+			if(Player.HeldItem != null)
+			{
+				int index = Player.GetModPlayer<SGAPlayer>().heldShield;
+				if(index >= 0)
+				{
+					if (Main.projectile[index].active)
+					{
+						CorrodedShieldProj myshield = (Main.projectile[Player.GetModPlayer<SGAPlayer>().heldShield].ModProjectile) as CorrodedShieldProj;
+						if (myshield != null) myshield.WhileHeld(Player);
+					}
+				}
+				else
+				{
+					if (Player.ownedProjectileCounts[ModContent.ProjectileType<CapShieldToss>()] < 1 && Player.HeldItem.ModItem != null)
+					{
+						int projtype = -1;
+						if (ShieldTypes.ContainsKey(Player.HeldItem.type))
+						{
+							//ShieldTypes.TryGetValue(Player.HeldItem.type, out projtype);
+							projtype = ShieldTypes.GetValueOrDefault(Player.HeldItem.type);
+							if(projtype > 0)
+							{
+								if (Player.ownedProjectileCounts[projtype] < 1)
+								{
+									Projectile proj = Projectile.NewProjectileDirect(Projectile.GetSource_None(), Player.Center, Vector2.Zero, projtype, Player.HeldItem.damage, Player.HeldItem.knockBack, Player.whoAmI);
+									/*if (proj != null && proj.ModProjectile != null && Player.HeldItem != null && Player.HeldItem.ModItem is LaserMarker heldmarker) 
+									{
+										LaserMarkerProj marker = ((LaserMarkerProj)proj.ModProjectile);
+										SGAmod.GemColors.TryGetValue(heldmarker.gemType, out Color color);
+										((LaserMarkerProj)proj.ModProjectile).gemColor = color;
+									}*/
+								}
+							}
+						}
+					}
+				}
+				
+			}
+            ActionCooldownStack_PostUpdateEquips();
+        }
+        public override bool ImmuneTo(PlayerDeathReason damageSource, int cooldownCounter, bool dodgeable)
+        {
+            if (damageSource.SourceNPCIndex > -1)
+			{
+                if (TakeShieldHit(Main.npc[damageSource.SourceNPCIndex].damage))
+                {
+                    return true;
+                }
+                NPC npc = Main.npc[damageSource.SourceNPCIndex];
+				if (ShieldDamageCheck(npc.Center, npc.damage, npc.whoAmI + 1))
+				{
+					Player.AddImmuneTime(ImmunityCooldownID.General, 20);
+                    return true;
+                }
+					
+			}
+            if (damageSource.SourceProjectileLocalIndex > -1)
+            {
+                if (TakeShieldHit(Main.projectile[damageSource.SourceProjectileLocalIndex].damage))
+                {
+                    return true;
+                }
+                if (ShieldDamageCheck(Main.projectile[damageSource.SourceProjectileLocalIndex].Center, Main.projectile[damageSource.SourceProjectileLocalIndex].damage, -(damageSource.SourceProjectileLocalIndex - 1)))
+				{
+                    
+                    return true;
+                }
+					
+            }
+			if (realIFrames > 0)
+			{
+				return true;
+			}
+            return false;
+			
+        }
+        public override void OnHurt(Player.HurtInfo info)
+        {
+			foreach (SGAnpcs sganpc in Main.npc.Where(testby => testby.active).Select(testby => testby.GetGlobalNPC<SGAnpcs>()))
+			{
+				sganpc.NoHit = false;
+			}
+			Player.GetModPlayer<NOPlayer>().Charge /= 2;
+
+            
+        }
+
+		public override void ModifyHurt(ref Player.HurtModifiers modifiers)
+		{
+			base.ModifyHurt(ref modifiers);
+		}
 	}
+
 }

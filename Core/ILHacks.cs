@@ -7,6 +7,7 @@ using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using System.Reflection;
 using Microsoft.Xna.Framework;
+using Terraria.GameInput;
 
 namespace SGAmod
 {
@@ -17,18 +18,53 @@ namespace SGAmod
 		{
 			//SGAmod.Instance.Logger.Debug("Loading an unhealthy amount of IL patches");
 			SGAmod.Instance.Logger.Debug("Loading IL Edits");
-			Terraria.IL_Player.StickyMovement += AddCustomWebsCollision;
+			IL_Player.StickyMovement += AddCustomWebsCollision;
+			IL_LockOnHelper.Update += CursorHack;
+			IL_LockOnHelper.SetUP += CursorHack;
 
-			//PrivateClassEdits.ApplyPatches();
+			PrivateClassEdits.ApplyPatches();
 		}
 		internal static void Unpatch()
 		{
-			//PrivateClassEdits.RemovePatches();
+			PrivateClassEdits.RemovePatches();
 		}
 
-		//Allows custom-tiles for web collisions
+		//Modifies Gamepad Lock On Functions
+		internal static void CursorHack(ILContext il)
+		{
+			ILCursor c = new ILCursor(il);
+			
+			c = new ILCursor(il);
+			MethodInfo HackTheMethod = typeof(LockOnHelper).GetMethod("get_PredictedPosition", BindingFlags.Public | BindingFlags.Static);
+			c.TryGotoNext(i => i.MatchCall(HackTheMethod));
+			c.Index += 1;
+			c.EmitDelegate<AutoAimOverrideDelegate>(AutoAimOverride);//This part is used to hack the "predicted" position to, not be predicted, if the item we're using is an IHitScanItem interface type
+			
+        }
 
-		private delegate int CollisionOtherCobwebsDelegate(Player player, int starterNumber);
+		static internal void CursorAimingHack (ILContext il) //Removes aim prediction with hitscan items.
+		{
+			ILCursor c = new ILCursor(il);
+			MethodInfo HackTheMethod = typeof(LockOnHelper).GetMethod("get_PredictedPosition", BindingFlags.Public | BindingFlags.Static);
+            c.TryGotoNext(i => i.MatchCall(HackTheMethod));
+            c.Index++;
+            c.EmitDelegate<AutoAimOverrideDelegate>(AutoAimOverride);//This part is used to hack the "predicted" position to, not be predicted, if the item we're using is an IHitScanItem interface type
+        }
+
+		private delegate Vector2 AutoAimOverrideDelegate(Vector2 predictedLocation);
+
+		static private AutoAimOverrideDelegate AutoAimOverride = delegate (Vector2 predictedLocation)
+		{
+			if (Main.LocalPlayer.HeldItem?.ModItem is IHitScanItem)
+			{
+				return LockOnHelper.AimedTarget.Center + LockOnHelper.AimedTarget.velocity;
+			}
+
+			return predictedLocation;
+		};
+        //Allows custom-tiles for web collisions
+
+        private delegate int CollisionOtherCobwebsDelegate(Player player, int starterNumber);
 		private static int CollisionOtherCobwebsMethod(Player player, int starterNumber)
 		{
 			if (SGAWorld.modtimer > 120)
